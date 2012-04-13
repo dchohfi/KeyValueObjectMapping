@@ -1,0 +1,489 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		205756151538E60500A652E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756141538E60400A652E7 /* Foundation.framework */; };
+		2057561B1538E60500A652E7 /* KeyValueParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2057561A1538E60500A652E7 /* KeyValueParser.m */; };
+		205756231538E60500A652E7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756221538E60500A652E7 /* SenTestingKit.framework */; };
+		205756251538E60500A652E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756241538E60500A652E7 /* UIKit.framework */; };
+		205756261538E60500A652E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756141538E60400A652E7 /* Foundation.framework */; };
+		205756291538E60500A652E7 /* libKeyValueParser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756111538E60400A652E7 /* libKeyValueParser.a */; };
+		2057562F1538E60500A652E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2057562D1538E60500A652E7 /* InfoPlist.strings */; };
+		205756321538E60500A652E7 /* KeyValueParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 205756311538E60500A652E7 /* KeyValueParserTests.m */; };
+		205756441538E6C200A652E7 /* ValueParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756411538E6C200A652E7 /* ValueParser.h */; };
+		205756451538E6C200A652E7 /* GenericParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756421538E6C200A652E7 /* GenericParser.h */; };
+		205756461538E6C200A652E7 /* GenericParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 205756431538E6C200A652E7 /* GenericParser.m */; };
+		205756491538E6E100A652E7 /* ParserConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756471538E6E100A652E7 /* ParserConfiguration.h */; };
+		2057564A1538E6E100A652E7 /* ParserConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 205756481538E6E100A652E7 /* ParserConfiguration.m */; };
+		205756541538E6F300A652E7 /* NSArrayParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2057564C1538E6F300A652E7 /* NSArrayParser.h */; };
+		205756551538E6F300A652E7 /* NSArrayParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2057564D1538E6F300A652E7 /* NSArrayParser.m */; };
+		205756561538E6F300A652E7 /* NSDateParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2057564E1538E6F300A652E7 /* NSDateParser.h */; };
+		205756571538E6F300A652E7 /* NSDateParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2057564F1538E6F300A652E7 /* NSDateParser.m */; };
+		205756581538E6F300A652E7 /* NSURLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756501538E6F300A652E7 /* NSURLParser.h */; };
+		205756591538E6F300A652E7 /* NSURLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 205756511538E6F300A652E7 /* NSURLParser.m */; };
+		2057565A1538E6F300A652E7 /* SimpleParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756521538E6F300A652E7 /* SimpleParser.h */; };
+		2057565B1538E6F300A652E7 /* SimpleParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 205756531538E6F300A652E7 /* SimpleParser.m */; };
+		2057565F1538E72800A652E7 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 2057565D1538E72800A652E7 /* Person.m */; };
+		205756601538E72800A652E7 /* valid_json.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2057565E1538E72800A652E7 /* valid_json.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		205756271538E60500A652E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 205756081538E60400A652E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 205756101538E60400A652E7;
+			remoteInfo = KeyValueParser;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		205756111538E60400A652E7 /* libKeyValueParser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKeyValueParser.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		205756141538E60400A652E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		205756181538E60500A652E7 /* KeyValueParser-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyValueParser-Prefix.pch"; sourceTree = "<group>"; };
+		205756191538E60500A652E7 /* KeyValueParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyValueParser.h; sourceTree = "<group>"; };
+		2057561A1538E60500A652E7 /* KeyValueParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyValueParser.m; sourceTree = "<group>"; };
+		205756211538E60500A652E7 /* KeyValueParserTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeyValueParserTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		205756221538E60500A652E7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		205756241538E60500A652E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		2057562C1538E60500A652E7 /* KeyValueParserTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KeyValueParserTests-Info.plist"; sourceTree = "<group>"; };
+		2057562E1538E60500A652E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		205756301538E60500A652E7 /* KeyValueParserTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyValueParserTests.h; sourceTree = "<group>"; };
+		205756311538E60500A652E7 /* KeyValueParserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyValueParserTests.m; sourceTree = "<group>"; };
+		205756411538E6C200A652E7 /* ValueParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueParser.h; sourceTree = "<group>"; };
+		205756421538E6C200A652E7 /* GenericParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericParser.h; sourceTree = "<group>"; };
+		205756431538E6C200A652E7 /* GenericParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericParser.m; sourceTree = "<group>"; };
+		205756471538E6E100A652E7 /* ParserConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParserConfiguration.h; sourceTree = "<group>"; };
+		205756481538E6E100A652E7 /* ParserConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParserConfiguration.m; sourceTree = "<group>"; };
+		2057564C1538E6F300A652E7 /* NSArrayParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArrayParser.h; sourceTree = "<group>"; };
+		2057564D1538E6F300A652E7 /* NSArrayParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayParser.m; sourceTree = "<group>"; };
+		2057564E1538E6F300A652E7 /* NSDateParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateParser.h; sourceTree = "<group>"; };
+		2057564F1538E6F300A652E7 /* NSDateParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateParser.m; sourceTree = "<group>"; };
+		205756501538E6F300A652E7 /* NSURLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURLParser.h; sourceTree = "<group>"; };
+		205756511538E6F300A652E7 /* NSURLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLParser.m; sourceTree = "<group>"; };
+		205756521538E6F300A652E7 /* SimpleParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleParser.h; sourceTree = "<group>"; };
+		205756531538E6F300A652E7 /* SimpleParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleParser.m; sourceTree = "<group>"; };
+		2057565C1538E72800A652E7 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		2057565D1538E72800A652E7 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		2057565E1538E72800A652E7 /* valid_json.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = valid_json.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2057560E1538E60400A652E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				205756151538E60500A652E7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2057561D1538E60500A652E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				205756231538E60500A652E7 /* SenTestingKit.framework in Frameworks */,
+				205756251538E60500A652E7 /* UIKit.framework in Frameworks */,
+				205756261538E60500A652E7 /* Foundation.framework in Frameworks */,
+				205756291538E60500A652E7 /* libKeyValueParser.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		205756061538E60400A652E7 = {
+			isa = PBXGroup;
+			children = (
+				205756161538E60500A652E7 /* KeyValueParser */,
+				2057562A1538E60500A652E7 /* KeyValueParserTests */,
+				205756131538E60400A652E7 /* Frameworks */,
+				205756121538E60400A652E7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		205756121538E60400A652E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				205756111538E60400A652E7 /* libKeyValueParser.a */,
+				205756211538E60500A652E7 /* KeyValueParserTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		205756131538E60400A652E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				205756141538E60400A652E7 /* Foundation.framework */,
+				205756221538E60500A652E7 /* SenTestingKit.framework */,
+				205756241538E60500A652E7 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		205756161538E60500A652E7 /* KeyValueParser */ = {
+			isa = PBXGroup;
+			children = (
+				2057563B1538E69600A652E7 /* Configuration */,
+				205756401538E6B300A652E7 /* Formatters */,
+				205756191538E60500A652E7 /* KeyValueParser.h */,
+				2057561A1538E60500A652E7 /* KeyValueParser.m */,
+				205756171538E60500A652E7 /* Supporting Files */,
+			);
+			path = KeyValueParser;
+			sourceTree = "<group>";
+		};
+		205756171538E60500A652E7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				205756181538E60500A652E7 /* KeyValueParser-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2057562A1538E60500A652E7 /* KeyValueParserTests */ = {
+			isa = PBXGroup;
+			children = (
+				2057565C1538E72800A652E7 /* Person.h */,
+				2057565D1538E72800A652E7 /* Person.m */,
+				2057565E1538E72800A652E7 /* valid_json.plist */,
+				205756301538E60500A652E7 /* KeyValueParserTests.h */,
+				205756311538E60500A652E7 /* KeyValueParserTests.m */,
+				2057562B1538E60500A652E7 /* Supporting Files */,
+			);
+			path = KeyValueParserTests;
+			sourceTree = "<group>";
+		};
+		2057562B1538E60500A652E7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2057562C1538E60500A652E7 /* KeyValueParserTests-Info.plist */,
+				2057562D1538E60500A652E7 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2057563B1538E69600A652E7 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				205756471538E6E100A652E7 /* ParserConfiguration.h */,
+				205756481538E6E100A652E7 /* ParserConfiguration.m */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
+		205756401538E6B300A652E7 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				2057564B1538E6E700A652E7 /* Implementation */,
+				205756411538E6C200A652E7 /* ValueParser.h */,
+				205756421538E6C200A652E7 /* GenericParser.h */,
+				205756431538E6C200A652E7 /* GenericParser.m */,
+			);
+			name = Formatters;
+			sourceTree = "<group>";
+		};
+		2057564B1538E6E700A652E7 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				2057564C1538E6F300A652E7 /* NSArrayParser.h */,
+				2057564D1538E6F300A652E7 /* NSArrayParser.m */,
+				2057564E1538E6F300A652E7 /* NSDateParser.h */,
+				2057564F1538E6F300A652E7 /* NSDateParser.m */,
+				205756501538E6F300A652E7 /* NSURLParser.h */,
+				205756511538E6F300A652E7 /* NSURLParser.m */,
+				205756521538E6F300A652E7 /* SimpleParser.h */,
+				205756531538E6F300A652E7 /* SimpleParser.m */,
+			);
+			name = Implementation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2057560F1538E60400A652E7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				205756441538E6C200A652E7 /* ValueParser.h in Headers */,
+				205756451538E6C200A652E7 /* GenericParser.h in Headers */,
+				205756491538E6E100A652E7 /* ParserConfiguration.h in Headers */,
+				205756541538E6F300A652E7 /* NSArrayParser.h in Headers */,
+				205756561538E6F300A652E7 /* NSDateParser.h in Headers */,
+				205756581538E6F300A652E7 /* NSURLParser.h in Headers */,
+				2057565A1538E6F300A652E7 /* SimpleParser.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		205756101538E60400A652E7 /* KeyValueParser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 205756351538E60500A652E7 /* Build configuration list for PBXNativeTarget "KeyValueParser" */;
+			buildPhases = (
+				2057560D1538E60400A652E7 /* Sources */,
+				2057560E1538E60400A652E7 /* Frameworks */,
+				2057560F1538E60400A652E7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KeyValueParser;
+			productName = KeyValueParser;
+			productReference = 205756111538E60400A652E7 /* libKeyValueParser.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		205756201538E60500A652E7 /* KeyValueParserTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 205756381538E60500A652E7 /* Build configuration list for PBXNativeTarget "KeyValueParserTests" */;
+			buildPhases = (
+				2057561C1538E60500A652E7 /* Sources */,
+				2057561D1538E60500A652E7 /* Frameworks */,
+				2057561E1538E60500A652E7 /* Resources */,
+				2057561F1538E60500A652E7 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				205756281538E60500A652E7 /* PBXTargetDependency */,
+			);
+			name = KeyValueParserTests;
+			productName = KeyValueParserTests;
+			productReference = 205756211538E60500A652E7 /* KeyValueParserTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		205756081538E60400A652E7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = None;
+			};
+			buildConfigurationList = 2057560B1538E60400A652E7 /* Build configuration list for PBXProject "KeyValueParser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 205756061538E60400A652E7;
+			productRefGroup = 205756121538E60400A652E7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				205756101538E60400A652E7 /* KeyValueParser */,
+				205756201538E60500A652E7 /* KeyValueParserTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2057561E1538E60500A652E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2057562F1538E60500A652E7 /* InfoPlist.strings in Resources */,
+				205756601538E72800A652E7 /* valid_json.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2057561F1538E60500A652E7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2057560D1538E60400A652E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2057561B1538E60500A652E7 /* KeyValueParser.m in Sources */,
+				205756461538E6C200A652E7 /* GenericParser.m in Sources */,
+				2057564A1538E6E100A652E7 /* ParserConfiguration.m in Sources */,
+				205756551538E6F300A652E7 /* NSArrayParser.m in Sources */,
+				205756571538E6F300A652E7 /* NSDateParser.m in Sources */,
+				205756591538E6F300A652E7 /* NSURLParser.m in Sources */,
+				2057565B1538E6F300A652E7 /* SimpleParser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2057561C1538E60500A652E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				205756321538E60500A652E7 /* KeyValueParserTests.m in Sources */,
+				2057565F1538E72800A652E7 /* Person.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		205756281538E60500A652E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 205756101538E60400A652E7 /* KeyValueParser */;
+			targetProxy = 205756271538E60500A652E7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2057562D1538E60500A652E7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2057562E1538E60500A652E7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		205756331538E60500A652E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		205756341538E60500A652E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		205756361538E60500A652E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/KeyValueParser.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KeyValueParser/KeyValueParser-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		205756371538E60500A652E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/KeyValueParser.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KeyValueParser/KeyValueParser-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		205756391538E60500A652E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KeyValueParser/KeyValueParser-Prefix.pch";
+				INFOPLIST_FILE = "KeyValueParserTests/KeyValueParserTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		2057563A1538E60500A652E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KeyValueParser/KeyValueParser-Prefix.pch";
+				INFOPLIST_FILE = "KeyValueParserTests/KeyValueParserTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2057560B1538E60400A652E7 /* Build configuration list for PBXProject "KeyValueParser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				205756331538E60500A652E7 /* Debug */,
+				205756341538E60500A652E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		205756351538E60500A652E7 /* Build configuration list for PBXNativeTarget "KeyValueParser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				205756361538E60500A652E7 /* Debug */,
+				205756371538E60500A652E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		205756381538E60500A652E7 /* Build configuration list for PBXNativeTarget "KeyValueParserTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				205756391538E60500A652E7 /* Debug */,
+				2057563A1538E60500A652E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 205756081538E60400A652E7 /* Project object */;
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Diego Chohfi Turini</string>
+	<key>adress</key>
+	<string>Rua dos bobos, n 0</string>
+	<key>phone</key>
+	<string>+551199999999</string>
+	<key>age</key>
+	<integer>24</integer>
+	<key>birthDay</key>
+	<integer>565927200</integer>
+	<key>valid</key>
+	<true/>
+	<key>url</key>
+	<string>http://dchohfi.com/</string>
+	<key>nota</key>
+	<integer>10</integer>
+	<key>dateWithString</key>
+	<string>1970-01-01T00:00:00+0000</string>
+	<key>parents</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>Zuleica Escada Chohfi</string>
+		</dict>
+	</array>
+	<key>arrayPrimitive</key>
+	<array>
+		<string>hello</string>
+		<string>mutchaco</string>
+	</array>
+</dict>
+</plist>
