@@ -43,9 +43,8 @@
     STAssertEqualObjects(person.nota, [NSNumber numberWithInt:10], @"Should be equals");
     STAssertEqualObjects(person.dateWithString, [NSDate dateWithTimeIntervalSince1970:0], @"Should create equals NSDate");
     STAssertEquals((int)[person.arrayPrimitive count], 2, @"Should have same size");
-    NSString *firstObject = [person.arrayPrimitive objectAtIndex:0];
-//    STAssertEqualObjects(firstObject, @"hello", @"Should have hello on first position of array");
-    
+    STAssertEqualObjects([person.arrayPrimitive objectAtIndex:0], @"hello", @"Should have hello on first position of array");
+    STAssertEqualObjects([person.arrayPrimitive objectAtIndex:1], @"mutchaco", @"Should have muthaco on first position of array");    
 }
 
 - (void)testSkipArrayOnDictionary 

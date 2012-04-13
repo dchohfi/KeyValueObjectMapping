@@ -33,8 +33,9 @@
         GenericParser *genericParser = [[GenericParser alloc] init];
         NSMutableArray *valuesHolder = [NSMutableArray array];
         for(id value in values){
+            NSLog(@"VALOR DO ARRAY %@", value);
             Class valueClass = [value class];
-            [valuesHolder addObject:[genericParser transformValue:values forClass:valueClass withConfiguration:configuration]];
+            [valuesHolder addObject:[genericParser transformValue:value forClass:valueClass withConfiguration:configuration]];
         }
         return [NSArray arrayWithArray:valuesHolder];
     }
