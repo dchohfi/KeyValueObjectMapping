@@ -10,6 +10,8 @@
 
 @interface ParserConfiguration : NSObject
 
-@property(nonatomic, copy) NSString *datePattern;
+@property(nonatomic, strong) NSString *datePattern;
+@property(nonatomic, strong) NSString *splitToken;
+
 
 @end

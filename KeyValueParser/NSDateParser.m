@@ -1,4 +1,4 @@
-//
+
 //  NSDateParser.m
 //  KeyValueParser
 //
@@ -21,7 +21,7 @@
     }
     return self;
 }
-- (id) transformValue: (id) value {
+- (id)transformValue:(id)value forDynamicAttribute:(DynamicAttribute *)attribute {
     BOOL validDouble = [self validDouble:[NSString stringWithFormat:@"%@", value]];
     if(validDouble){
         return [NSDate dateWithTimeIntervalSince1970:[value doubleValue]];

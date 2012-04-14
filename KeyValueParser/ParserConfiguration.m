@@ -9,5 +9,12 @@
 #import "ParserConfiguration.h"
 
 @implementation ParserConfiguration
-@synthesize datePattern;
+@synthesize datePattern, splitToken;
+- (NSString *)splitToken{
+    if (splitToken) {
+        return splitToken;
+    }else{
+        return @"_";
+    }
+}
 @end

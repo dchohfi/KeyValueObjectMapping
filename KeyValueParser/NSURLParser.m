@@ -22,7 +22,7 @@
     }
     return self;
 }
-- (id) transformValue: (id) value {
+- (id)transformValue:(id)value forDynamicAttribute:(DynamicAttribute *)attribute {
     return [NSURL URLWithString:value];
 }
 - (BOOL) canTransformValueForClass: (Class) class {

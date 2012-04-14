@@ -31,6 +31,8 @@
 	<array>
 		<string>hello</string>
 		<string>mutchaco</string>
+		<integer>1</integer>
+		<real>3.1416</real>
 	</array>
 </dict>
 </plist>

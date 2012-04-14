@@ -7,11 +7,11 @@
 //
 
 #import "NSArrayParser.h"
-#import "GenericParser.h"
+#import "SimpleParser.h"
 
 @interface NSArrayParser()
 
-@property(nonatomic, strong)ParserConfiguration *configuration;
+@property(nonatomic, strong) ParserConfiguration *configuration;
 
 @end
 
@@ -26,15 +26,15 @@
     return self;   
 }
 
-- (id)transformValue:(id)values{
+- (id)transformValue:(id)values forDynamicAttribute:(DynamicAttribute *)attribute {
     BOOL validValues = ![[[values objectAtIndex:0] class] isSubclassOfClass:[NSDictionary class]];
     
     if(validValues){
-        GenericParser *genericParser = [[GenericParser alloc] init];
+        SimpleParser *simpleParser = [[SimpleParser alloc] init];
         NSMutableArray *valuesHolder = [NSMutableArray array];
         for(id value in values){
-            Class valueClass = [value class];
-            [valuesHolder addObject:[genericParser transformValue:value forClass:valueClass withConfiguration:configuration]];
+            DynamicAttribute *valueClassAsAttribute = [[DynamicAttribute alloc] initWithClass:[value class]];
+            [valuesHolder addObject:[simpleParser transformValue:value forDynamicAttribute:valueClassAsAttribute]];
         }
         return [NSArray arrayWithArray:valuesHolder];
     }

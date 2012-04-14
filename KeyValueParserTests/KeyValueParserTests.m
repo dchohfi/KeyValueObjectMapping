@@ -10,6 +10,7 @@
 #import "ParserConfiguration.h"
 #import "KeyValueParser.h"
 #import "Person.h"
+#import "PropertyNameParser.h"
 
 @interface KeyValueParserTests()
 
@@ -42,14 +43,16 @@
     STAssertEqualObjects(person.url, [NSURL URLWithString:@"http://dchohfi.com/"], @"Should create equals urls");
     STAssertEqualObjects(person.nota, [NSNumber numberWithInt:10], @"Should be equals");
     STAssertEqualObjects(person.dateWithString, [NSDate dateWithTimeIntervalSince1970:0], @"Should create equals NSDate");
-    STAssertEquals((int)[person.arrayPrimitive count], 2, @"Should have same size");
+    STAssertEquals((int)[person.arrayPrimitive count], 4, @"Should have same size");
     STAssertEqualObjects([person.arrayPrimitive objectAtIndex:0], @"hello", @"Should have hello on first position of array");
     STAssertEqualObjects([person.arrayPrimitive objectAtIndex:1], @"mutchaco", @"Should have muthaco on first position of array");    
+    STAssertEqualObjects([person.arrayPrimitive objectAtIndex:2], [NSNumber numberWithInt:1], @"Should have muthaco on first position of array");
+    STAssertEqualObjects([person.arrayPrimitive objectAtIndex:3], [NSNumber numberWithDouble:3.1416], @"Should have muthaco on first position of array");
+    configuration = nil;
 }
 
-- (void)testSkipArrayOnDictionary 
+- (void)testSplitPropetyName
 {
-    
 }
 
 @end

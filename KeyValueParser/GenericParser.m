@@ -13,34 +13,36 @@
 #import "NSArrayParser.h"
 
 @interface GenericParser()
-- (NSArray *) parsersWithConfiguration: (ParserConfiguration *) configuration;
+@property(nonatomic, strong) ParserConfiguration *configuration;
+@property(nonatomic, strong) NSArray *parsers;
 @end
 
 @implementation GenericParser
+@synthesize configuration, parsers;
+- (id)initWithConfiguration:(ParserConfiguration *) _configuration
+{
+    self = [super init];
+    if (self) {
+        configuration = _configuration;
+        parsers = [NSArray arrayWithObjects:
+                            [[NSDateParser alloc] initWithConfiguration:configuration],                         
+                            [[NSURLParser alloc] initWithConfiguration:configuration],
+                            [[NSArrayParser alloc] initWithConfiguration:configuration],
+                            nil];
+    }
+    return self;
+}
 
-- (id)transformValue:(id)value forClass: (Class) class withConfiguration: (ParserConfiguration *)configuration{
-    if(class){
-        for(id<ValueParser> parser in [self parsersWithConfiguration:configuration]){
-            if([parser canTransformValueForClass:class]){
-                return [parser transformValue:value];
+- (id)transformValue:(id)value forDynamicAttribute: (DynamicAttribute *) attribute {
+    if([attribute isValidObject]){
+        for(id<ValueParser> parser in parsers){
+            if([parser canTransformValueForClass:[attribute attributeClass]]){
+                return [parser transformValue:value forDynamicAttribute:attribute];
             }
         }
     }
     SimpleParser *simpleParser = [[SimpleParser alloc] init];
-    return [simpleParser transformValue:value];
-}
-
-- (NSArray *) parsersWithConfiguration: (ParserConfiguration *) configuration {
-    static NSArray *parsers = nil;
-    
-    if(!parsers){
-        parsers = [NSArray arrayWithObjects:
-                   [[NSDateParser alloc] initWithConfiguration:configuration],                         
-                   [[NSURLParser alloc] initWithConfiguration:configuration],
-                   [[NSArrayParser alloc] initWithConfiguration:configuration],
-                   nil];
-    }
-    return parsers;
+    return [simpleParser transformValue:value forDynamicAttribute:attribute];
 }
 
 @end

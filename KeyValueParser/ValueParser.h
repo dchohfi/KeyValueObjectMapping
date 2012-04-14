@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "ParserConfiguration.h"
+#import "DynamicAttribute.h"
 @protocol ValueParser <NSObject>
 
 - (id) initWithConfiguration: (ParserConfiguration *) configuration;
-- (id) transformValue: (id) value;
+- (id)transformValue:(id)values forDynamicAttribute:(DynamicAttribute *)attribute;
 - (BOOL) canTransformValueForClass: (Class) class;
 
 

@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DynamicAttribute.h"
 #import "ValueParser.h"
 @interface GenericParser : NSObject
-- (id)transformValue:(id)value forClass: (Class) class withConfiguration: (ParserConfiguration *)configuration;
+
+- (id)initWithConfiguration:(ParserConfiguration *) configuration;
+- (id)transformValue:(id)value forDynamicAttribute: (DynamicAttribute *) attribute;
 @end

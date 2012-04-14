@@ -10,6 +10,12 @@
 		2030CA581539E4F200F0ACAA /* DynamicAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 2030CA561539E4F200F0ACAA /* DynamicAttribute.h */; };
 		2030CA591539E4F200F0ACAA /* DynamicAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA571539E4F200F0ACAA /* DynamicAttribute.m */; };
 		2030CA5D1539E91300F0ACAA /* DynamicAttributeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA5C1539E91300F0ACAA /* DynamicAttributeTest.m */; };
+		2030CA601539FE4000F0ACAA /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA5F1539FE4000F0ACAA /* Tweet.m */; };
+		2030CA631539FF0800F0ACAA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA621539FF0800F0ACAA /* User.m */; };
+		2030CA651539FFDF00F0ACAA /* tweet.json in Resources */ = {isa = PBXBuildFile; fileRef = 2030CA641539FFDF00F0ACAA /* tweet.json */; };
+		2030CA6D153A00DB00F0ACAA /* KeyValueParserTestJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA6C153A00DB00F0ACAA /* KeyValueParserTestJSON.m */; };
+		2030CA71153A132300F0ACAA /* PropertyNameParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2030CA6F153A132300F0ACAA /* PropertyNameParser.h */; };
+		2030CA72153A132300F0ACAA /* PropertyNameParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA70153A132300F0ACAA /* PropertyNameParser.m */; };
 		205756151538E60500A652E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756141538E60400A652E7 /* Foundation.framework */; };
 		2057561B1538E60500A652E7 /* KeyValueParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2057561A1538E60500A652E7 /* KeyValueParser.m */; };
 		205756231538E60500A652E7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756221538E60500A652E7 /* SenTestingKit.framework */; };
@@ -50,6 +56,15 @@
 		2030CA571539E4F200F0ACAA /* DynamicAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicAttribute.m; sourceTree = "<group>"; };
 		2030CA5B1539E91300F0ACAA /* DynamicAttributeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicAttributeTest.h; sourceTree = "<group>"; };
 		2030CA5C1539E91300F0ACAA /* DynamicAttributeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicAttributeTest.m; sourceTree = "<group>"; };
+		2030CA5E1539FE4000F0ACAA /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
+		2030CA5F1539FE4000F0ACAA /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
+		2030CA611539FF0800F0ACAA /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		2030CA621539FF0800F0ACAA /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		2030CA641539FFDF00F0ACAA /* tweet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tweet.json; sourceTree = "<group>"; };
+		2030CA6B153A00DB00F0ACAA /* KeyValueParserTestJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyValueParserTestJSON.h; sourceTree = "<group>"; };
+		2030CA6C153A00DB00F0ACAA /* KeyValueParserTestJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyValueParserTestJSON.m; sourceTree = "<group>"; };
+		2030CA6F153A132300F0ACAA /* PropertyNameParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyNameParser.h; sourceTree = "<group>"; };
+		2030CA70153A132300F0ACAA /* PropertyNameParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyNameParser.m; sourceTree = "<group>"; };
 		205756111538E60400A652E7 /* libKeyValueParser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKeyValueParser.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		205756141538E60400A652E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		205756181538E60500A652E7 /* KeyValueParser-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyValueParser-Prefix.pch"; sourceTree = "<group>"; };
@@ -103,6 +118,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2030CA6A153A008A00F0ACAA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2057565C1538E72800A652E7 /* Person.h */,
+				2057565D1538E72800A652E7 /* Person.m */,
+				2030CA5E1539FE4000F0ACAA /* Tweet.h */,
+				2030CA5F1539FE4000F0ACAA /* Tweet.m */,
+				2030CA611539FF0800F0ACAA /* User.h */,
+				2030CA621539FF0800F0ACAA /* User.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2030CA6E153A131400F0ACAA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2030CA6F153A132300F0ACAA /* PropertyNameParser.h */,
+				2030CA70153A132300F0ACAA /* PropertyNameParser.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		205756061538E60400A652E7 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +172,7 @@
 		205756161538E60500A652E7 /* KeyValueParser */ = {
 			isa = PBXGroup;
 			children = (
+				2030CA6E153A131400F0ACAA /* Utils */,
 				2030CA561539E4F200F0ACAA /* DynamicAttribute.h */,
 				2030CA571539E4F200F0ACAA /* DynamicAttribute.m */,
 				2057563B1538E69600A652E7 /* Configuration */,
@@ -157,13 +195,13 @@
 		2057562A1538E60500A652E7 /* KeyValueParserTests */ = {
 			isa = PBXGroup;
 			children = (
-				2057565C1538E72800A652E7 /* Person.h */,
-				2057565D1538E72800A652E7 /* Person.m */,
-				2057565E1538E72800A652E7 /* valid_json.plist */,
+				2030CA6A153A008A00F0ACAA /* Model */,
 				2030CA5B1539E91300F0ACAA /* DynamicAttributeTest.h */,
 				2030CA5C1539E91300F0ACAA /* DynamicAttributeTest.m */,
 				205756301538E60500A652E7 /* KeyValueParserTests.h */,
 				205756311538E60500A652E7 /* KeyValueParserTests.m */,
+				2030CA6B153A00DB00F0ACAA /* KeyValueParserTestJSON.h */,
+				2030CA6C153A00DB00F0ACAA /* KeyValueParserTestJSON.m */,
 				2057562B1538E60500A652E7 /* Supporting Files */,
 			);
 			path = KeyValueParserTests;
@@ -172,6 +210,8 @@
 		2057562B1538E60500A652E7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2057565E1538E72800A652E7 /* valid_json.plist */,
+				2030CA641539FFDF00F0ACAA /* tweet.json */,
 				2057562C1538E60500A652E7 /* KeyValueParserTests-Info.plist */,
 				2057562D1538E60500A652E7 /* InfoPlist.strings */,
 			);
@@ -228,6 +268,7 @@
 				205756581538E6F300A652E7 /* NSURLParser.h in Headers */,
 				2057565A1538E6F300A652E7 /* SimpleParser.h in Headers */,
 				2030CA581539E4F200F0ACAA /* DynamicAttribute.h in Headers */,
+				2030CA71153A132300F0ACAA /* PropertyNameParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +345,7 @@
 			files = (
 				2057562F1538E60500A652E7 /* InfoPlist.strings in Resources */,
 				205756601538E72800A652E7 /* valid_json.plist in Resources */,
+				2030CA651539FFDF00F0ACAA /* tweet.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +380,7 @@
 				205756591538E6F300A652E7 /* NSURLParser.m in Sources */,
 				2057565B1538E6F300A652E7 /* SimpleParser.m in Sources */,
 				2030CA591539E4F200F0ACAA /* DynamicAttribute.m in Sources */,
+				2030CA72153A132300F0ACAA /* PropertyNameParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +391,9 @@
 				205756321538E60500A652E7 /* KeyValueParserTests.m in Sources */,
 				2057565F1538E72800A652E7 /* Person.m in Sources */,
 				2030CA5D1539E91300F0ACAA /* DynamicAttributeTest.m in Sources */,
+				2030CA601539FE4000F0ACAA /* Tweet.m in Sources */,
+				2030CA631539FF0800F0ACAA /* User.m in Sources */,
+				2030CA6D153A00DB00F0ACAA /* KeyValueParserTestJSON.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

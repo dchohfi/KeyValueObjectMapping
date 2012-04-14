@@ -24,7 +24,7 @@
     return self;
 }
 
-- (id)transformValue:(id)value{
+- (id)transformValue:(id)value forDynamicAttribute:(DynamicAttribute *)attribute {
     return value;
 }
 - (BOOL)canTransformValueForClass:(Class)class {
