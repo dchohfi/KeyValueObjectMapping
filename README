@@ -1,0 +1,6 @@
+Usage:
+
+ParserConfiguration *configuration = [[ParserConfiguration alloc] init];
+configuration.datePattern = @"yyyy-MM-dd'T'hh:mm:ssZ";
+KeyValueParser *parser = [[KeyValueParser alloc] initWithConfiguration:configuration];
+Person *person = [parser parseJson:jsonToParse forClass:[Person class]];
