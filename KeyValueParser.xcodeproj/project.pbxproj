@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2030CA581539E4F200F0ACAA /* DynamicAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 2030CA561539E4F200F0ACAA /* DynamicAttribute.h */; };
+		2030CA591539E4F200F0ACAA /* DynamicAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA571539E4F200F0ACAA /* DynamicAttribute.m */; };
+		2030CA5D1539E91300F0ACAA /* DynamicAttributeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA5C1539E91300F0ACAA /* DynamicAttributeTest.m */; };
 		205756151538E60500A652E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756141538E60400A652E7 /* Foundation.framework */; };
 		2057561B1538E60500A652E7 /* KeyValueParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2057561A1538E60500A652E7 /* KeyValueParser.m */; };
 		205756231538E60500A652E7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756221538E60500A652E7 /* SenTestingKit.framework */; };
@@ -43,6 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2030CA561539E4F200F0ACAA /* DynamicAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicAttribute.h; sourceTree = "<group>"; };
+		2030CA571539E4F200F0ACAA /* DynamicAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicAttribute.m; sourceTree = "<group>"; };
+		2030CA5B1539E91300F0ACAA /* DynamicAttributeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicAttributeTest.h; sourceTree = "<group>"; };
+		2030CA5C1539E91300F0ACAA /* DynamicAttributeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicAttributeTest.m; sourceTree = "<group>"; };
 		205756111538E60400A652E7 /* libKeyValueParser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKeyValueParser.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		205756141538E60400A652E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		205756181538E60500A652E7 /* KeyValueParser-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyValueParser-Prefix.pch"; sourceTree = "<group>"; };
@@ -128,6 +135,8 @@
 		205756161538E60500A652E7 /* KeyValueParser */ = {
 			isa = PBXGroup;
 			children = (
+				2030CA561539E4F200F0ACAA /* DynamicAttribute.h */,
+				2030CA571539E4F200F0ACAA /* DynamicAttribute.m */,
 				2057563B1538E69600A652E7 /* Configuration */,
 				205756401538E6B300A652E7 /* Formatters */,
 				205756191538E60500A652E7 /* KeyValueParser.h */,
@@ -151,6 +160,8 @@
 				2057565C1538E72800A652E7 /* Person.h */,
 				2057565D1538E72800A652E7 /* Person.m */,
 				2057565E1538E72800A652E7 /* valid_json.plist */,
+				2030CA5B1539E91300F0ACAA /* DynamicAttributeTest.h */,
+				2030CA5C1539E91300F0ACAA /* DynamicAttributeTest.m */,
 				205756301538E60500A652E7 /* KeyValueParserTests.h */,
 				205756311538E60500A652E7 /* KeyValueParserTests.m */,
 				2057562B1538E60500A652E7 /* Supporting Files */,
@@ -216,6 +227,7 @@
 				205756561538E6F300A652E7 /* NSDateParser.h in Headers */,
 				205756581538E6F300A652E7 /* NSURLParser.h in Headers */,
 				2057565A1538E6F300A652E7 /* SimpleParser.h in Headers */,
+				2030CA581539E4F200F0ACAA /* DynamicAttribute.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +337,7 @@
 				205756571538E6F300A652E7 /* NSDateParser.m in Sources */,
 				205756591538E6F300A652E7 /* NSURLParser.m in Sources */,
 				2057565B1538E6F300A652E7 /* SimpleParser.m in Sources */,
+				2030CA591539E4F200F0ACAA /* DynamicAttribute.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +347,7 @@
 			files = (
 				205756321538E60500A652E7 /* KeyValueParserTests.m in Sources */,
 				2057565F1538E72800A652E7 /* Person.m in Sources */,
+				2030CA5D1539E91300F0ACAA /* DynamicAttributeTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +488,7 @@
 				205756371538E60500A652E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		205756381538E60500A652E7 /* Build configuration list for PBXNativeTarget "KeyValueParserTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +497,7 @@
 				2057563A1538E60500A652E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
