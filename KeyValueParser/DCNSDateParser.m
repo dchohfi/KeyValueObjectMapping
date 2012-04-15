@@ -6,22 +6,22 @@
 //  Copyright (c) 2012 None. All rights reserved.
 //
 
-#import "NSDateParser.h"
-@interface NSDateParser()
-@property(nonatomic, strong) ParserConfiguration *configuration;
+#import "DCNSDateParser.h"
+@interface DCNSDateParser()
+@property(nonatomic, strong) DCParserConfiguration *configuration;
 - (BOOL) validDouble: (NSString *) doubleValue;
 @end
 
-@implementation NSDateParser
+@implementation DCNSDateParser
 @synthesize configuration;
-- (id) initWithConfiguration: (ParserConfiguration *) _configuration {
+- (id) initWithConfiguration: (DCParserConfiguration *) _configuration {
     self = [super init];
     if (self) {
         configuration = _configuration;
     }
     return self;
 }
-- (id)transformValue:(id)value forDynamicAttribute:(DynamicAttribute *)attribute {
+- (id)transformValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute {
     BOOL validDouble = [self validDouble:[NSString stringWithFormat:@"%@", value]];
     if(validDouble){
         return [NSDate dateWithTimeIntervalSince1970:[value doubleValue]];

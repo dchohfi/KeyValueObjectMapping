@@ -6,15 +6,15 @@
 //  Copyright (c) 2012 None. All rights reserved.
 //
 
-#import "DynamicAttribute.h"
+#import "DCDynamicAttribute.h"
 
-@interface DynamicAttribute()
+@interface DCDynamicAttribute()
 
 - (void) findTypeInformation: (NSString *) typeInformation;
 - (void) findTypeName: (NSString *) name;
 @end
 
-@implementation DynamicAttribute
+@implementation DCDynamicAttribute
 @synthesize attributeType, primitive, idType, attributeName, validObject;
 
 

@@ -6,29 +6,29 @@
 //  Copyright (c) 2012 None. All rights reserved.
 //
 
-#import "KeyValueParser.h"
-#import "GenericParser.h"
-#import "DynamicAttribute.h"
+#import "DCKeyValueParser.h"
+#import "DCGenericParser.h"
+#import "DCDynamicAttribute.h"
 #import <objc/runtime.h>
-#import "PropertyNameParser.h"
+#import "DCPropertyNameParser.h"
 
-@interface KeyValueParser()
-@property(nonatomic, strong) GenericParser *parser;
-@property(nonatomic, strong) ParserConfiguration *configuration;
-@property(nonatomic, strong) PropertyNameParser *propertyNameParser;
+@interface DCKeyValueParser()
+@property(nonatomic, strong) DCGenericParser *parser;
+@property(nonatomic, strong) DCParserConfiguration *configuration;
+@property(nonatomic, strong) DCPropertyNameParser *propertyNameParser;
 - (void) parseValue: (id) value forObject: (id) object 
         inAttribute: (NSString *) attributeDetails forKey: (NSString *) key;
 @end
 
-@implementation KeyValueParser
+@implementation DCKeyValueParser
 @synthesize configuration, propertyNameParser, parser;
 
-- (id) initWithConfiguration: (ParserConfiguration *) _configuration {
+- (id) initWithConfiguration: (DCParserConfiguration *) _configuration {
     self = [super init];
     if (self) {
         configuration = _configuration;
-        propertyNameParser = [[PropertyNameParser alloc] initWithConfiguration:configuration];
-        parser = [[GenericParser alloc] initWithConfiguration:configuration];
+        propertyNameParser = [[DCPropertyNameParser alloc] initWithConfiguration:configuration];
+        parser = [[DCGenericParser alloc] initWithConfiguration:configuration];
     }
     return self;   
 }
@@ -54,7 +54,7 @@
 }
 - (void) parseValue: (id) value forObject: (id) object 
 inAttribute: (NSString *) attributeDetails forKey: (NSString *) key {
-    DynamicAttribute *dynamicAttribute = [[DynamicAttribute alloc] initWithAttributeDescription: attributeDetails];
+    DCDynamicAttribute *dynamicAttribute = [[DCDynamicAttribute alloc] initWithAttributeDescription: attributeDetails];
     if([value isKindOfClass:[NSDictionary class]]){
         value = [self parseJson:(NSDictionary *) value forClass:[dynamicAttribute attributeClass]];
     }

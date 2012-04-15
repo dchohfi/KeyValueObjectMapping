@@ -7,10 +7,10 @@
 //
 
 #import "KeyValueParserTests.h"
-#import "ParserConfiguration.h"
-#import "KeyValueParser.h"
+#import "DCParserConfiguration.h"
+#import "DCKeyValueParser.h"
 #import "Person.h"
-#import "PropertyNameParser.h"
+#import "DCPropertyNameParser.h"
 
 @interface KeyValueParserTests()
 
@@ -29,9 +29,9 @@
 
 - (void)testValidPerson
 {         
-    ParserConfiguration *configuration = [[ParserConfiguration alloc] init];
+    DCParserConfiguration *configuration = [[DCParserConfiguration alloc] init];
     configuration.datePattern = @"yyyy-MM-dd'T'hh:mm:ssZ";
-    KeyValueParser *parser = [[KeyValueParser alloc] initWithConfiguration:configuration];
+    DCKeyValueParser *parser = [[DCKeyValueParser alloc] initWithConfiguration:configuration];
     Person *person = [parser parseJson:jsonToParse forClass:[Person class]];
     STAssertEqualObjects(person.name, @"Diego Chohfi Turini", @"Should be equals name");
     STAssertEqualObjects(person.adress, @"Rua dos bobos, n 0", @"Should be equals adress");

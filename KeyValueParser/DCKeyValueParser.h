@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ParserConfiguration.h"
+#import "DCParserConfiguration.h"
 
-@interface KeyValueParser : NSObject
+@interface DCKeyValueParser : NSObject
 
-- (id) initWithConfiguration: (ParserConfiguration *) configuration;
+- (id) initWithConfiguration: (DCParserConfiguration *) configuration;
 - (id) parseJson: (NSDictionary *) json forClass: (Class) class;
 
 @end

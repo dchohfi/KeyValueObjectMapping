@@ -6,17 +6,17 @@
 //  Copyright (c) 2012 None. All rights reserved.
 //
 
-#import "SimpleParser.h"
+#import "DCSimpleParser.h"
 
-@interface SimpleParser()
-@property(nonatomic, strong) ParserConfiguration *configuration;
+@interface DCSimpleParser()
+@property(nonatomic, strong) DCParserConfiguration *configuration;
 @end
 
-@implementation SimpleParser
+@implementation DCSimpleParser
 
 @synthesize configuration;
 
-- (id) initWithConfiguration: (ParserConfiguration *) _configuration {
+- (id) initWithConfiguration: (DCParserConfiguration *) _configuration {
     self = [super init];
     if (self) {
         configuration = _configuration;
@@ -24,7 +24,7 @@
     return self;
 }
 
-- (id)transformValue:(id)value forDynamicAttribute:(DynamicAttribute *)attribute {
+- (id)transformValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute {
     return value;
 }
 - (BOOL)canTransformValueForClass:(Class)class {

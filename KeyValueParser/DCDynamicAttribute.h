@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DynamicAttribute : NSObject
+@interface DCDynamicAttribute : NSObject
 
 @property(nonatomic, readonly) NSString *attributeType;
 @property(nonatomic, readonly) NSString *attributeName;

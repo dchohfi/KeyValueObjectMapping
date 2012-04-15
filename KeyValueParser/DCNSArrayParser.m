@@ -6,19 +6,19 @@
 //  Copyright (c) 2012 None. All rights reserved.
 //
 
-#import "NSArrayParser.h"
-#import "SimpleParser.h"
+#import "DCNSArrayParser.h"
+#import "DCSimpleParser.h"
 
-@interface NSArrayParser()
+@interface DCNSArrayParser()
 
-@property(nonatomic, strong) ParserConfiguration *configuration;
+@property(nonatomic, strong) DCParserConfiguration *configuration;
 
 @end
 
-@implementation NSArrayParser
+@implementation DCNSArrayParser
 @synthesize configuration;
 
-- (id)initWithConfiguration:(ParserConfiguration *)_configuration{
+- (id)initWithConfiguration:(DCParserConfiguration *)_configuration{
     self = [super init];
     if (self) {
         configuration = _configuration;
@@ -26,14 +26,14 @@
     return self;   
 }
 
-- (id)transformValue:(id)values forDynamicAttribute:(DynamicAttribute *)attribute {
+- (id)transformValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute {
     BOOL validValues = ![[[values objectAtIndex:0] class] isSubclassOfClass:[NSDictionary class]];
     
     if(validValues){
-        SimpleParser *simpleParser = [[SimpleParser alloc] init];
+        DCSimpleParser *simpleParser = [[DCSimpleParser alloc] init];
         NSMutableArray *valuesHolder = [NSMutableArray array];
         for(id value in values){
-            DynamicAttribute *valueClassAsAttribute = [[DynamicAttribute alloc] initWithClass:[value class]];
+            DCDynamicAttribute *valueClassAsAttribute = [[DCDynamicAttribute alloc] initWithClass:[value class]];
             [valuesHolder addObject:[simpleParser transformValue:value forDynamicAttribute:valueClassAsAttribute]];
         }
         return [NSArray arrayWithArray:valuesHolder];

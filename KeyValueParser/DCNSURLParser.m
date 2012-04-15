@@ -6,23 +6,23 @@
 //  Copyright (c) 2012 None. All rights reserved.
 //
 
-#import "NSURLParser.h"
+#import "DCNSURLParser.h"
 
-@interface NSURLParser()
-@property(nonatomic, strong) ParserConfiguration *configuration;
+@interface DCNSURLParser()
+@property(nonatomic, strong) DCParserConfiguration *configuration;
 @end
 
-@implementation NSURLParser
+@implementation DCNSURLParser
 @synthesize configuration;
 
-- (id) initWithConfiguration: (ParserConfiguration *) _configuration {
+- (id) initWithConfiguration: (DCParserConfiguration *) _configuration {
     self = [super init];
     if (self) {
         configuration = _configuration;
     }
     return self;
 }
-- (id)transformValue:(id)value forDynamicAttribute:(DynamicAttribute *)attribute {
+- (id)transformValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute {
     return [NSURL URLWithString:value];
 }
 - (BOOL) canTransformValueForClass: (Class) class {

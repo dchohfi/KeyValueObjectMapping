@@ -1,5 +1,5 @@
 //
-//  SimpleParser.h
+//  NSURLParser.h
 //  KeyValueParser
 //
 //  Created by Diego Chohfi on 4/13/12.
@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ValueParser.h"
-@interface SimpleParser : NSObject <ValueParser>
+#import "DCValueParser.h"
+
+@interface DCNSURLParser : NSObject <DCValueParser>
 
 @end

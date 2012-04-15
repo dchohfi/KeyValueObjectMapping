@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ValueParser.h"
-@interface NSDateParser : NSObject <ValueParser>
+#import "DCValueParser.h"
+@interface DCNSDateParser : NSObject <DCValueParser>
 
 @end

@@ -7,36 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2030CA581539E4F200F0ACAA /* DynamicAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 2030CA561539E4F200F0ACAA /* DynamicAttribute.h */; };
-		2030CA591539E4F200F0ACAA /* DynamicAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA571539E4F200F0ACAA /* DynamicAttribute.m */; };
+		2030CA581539E4F200F0ACAA /* DCDynamicAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 2030CA561539E4F200F0ACAA /* DCDynamicAttribute.h */; };
+		2030CA591539E4F200F0ACAA /* DCDynamicAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA571539E4F200F0ACAA /* DCDynamicAttribute.m */; };
 		2030CA5D1539E91300F0ACAA /* DynamicAttributeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA5C1539E91300F0ACAA /* DynamicAttributeTest.m */; };
 		2030CA601539FE4000F0ACAA /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA5F1539FE4000F0ACAA /* Tweet.m */; };
 		2030CA631539FF0800F0ACAA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA621539FF0800F0ACAA /* User.m */; };
 		2030CA651539FFDF00F0ACAA /* tweet.json in Resources */ = {isa = PBXBuildFile; fileRef = 2030CA641539FFDF00F0ACAA /* tweet.json */; };
 		2030CA6D153A00DB00F0ACAA /* KeyValueParserTestJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA6C153A00DB00F0ACAA /* KeyValueParserTestJSON.m */; };
-		2030CA71153A132300F0ACAA /* PropertyNameParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2030CA6F153A132300F0ACAA /* PropertyNameParser.h */; };
-		2030CA72153A132300F0ACAA /* PropertyNameParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA70153A132300F0ACAA /* PropertyNameParser.m */; };
+		2030CA71153A132300F0ACAA /* DCPropertyNameParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2030CA6F153A132300F0ACAA /* DCPropertyNameParser.h */; };
+		2030CA72153A132300F0ACAA /* DCPropertyNameParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA70153A132300F0ACAA /* DCPropertyNameParser.m */; };
 		205756151538E60500A652E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756141538E60400A652E7 /* Foundation.framework */; };
-		2057561B1538E60500A652E7 /* KeyValueParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2057561A1538E60500A652E7 /* KeyValueParser.m */; };
+		2057561B1538E60500A652E7 /* DCKeyValueParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2057561A1538E60500A652E7 /* DCKeyValueParser.m */; };
 		205756231538E60500A652E7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756221538E60500A652E7 /* SenTestingKit.framework */; };
 		205756251538E60500A652E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756241538E60500A652E7 /* UIKit.framework */; };
 		205756261538E60500A652E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756141538E60400A652E7 /* Foundation.framework */; };
 		205756291538E60500A652E7 /* libKeyValueParser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756111538E60400A652E7 /* libKeyValueParser.a */; };
 		2057562F1538E60500A652E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2057562D1538E60500A652E7 /* InfoPlist.strings */; };
 		205756321538E60500A652E7 /* KeyValueParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 205756311538E60500A652E7 /* KeyValueParserTests.m */; };
-		205756441538E6C200A652E7 /* ValueParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756411538E6C200A652E7 /* ValueParser.h */; };
-		205756451538E6C200A652E7 /* GenericParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756421538E6C200A652E7 /* GenericParser.h */; };
-		205756461538E6C200A652E7 /* GenericParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 205756431538E6C200A652E7 /* GenericParser.m */; };
-		205756491538E6E100A652E7 /* ParserConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756471538E6E100A652E7 /* ParserConfiguration.h */; };
-		2057564A1538E6E100A652E7 /* ParserConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 205756481538E6E100A652E7 /* ParserConfiguration.m */; };
-		205756541538E6F300A652E7 /* NSArrayParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2057564C1538E6F300A652E7 /* NSArrayParser.h */; };
-		205756551538E6F300A652E7 /* NSArrayParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2057564D1538E6F300A652E7 /* NSArrayParser.m */; };
-		205756561538E6F300A652E7 /* NSDateParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2057564E1538E6F300A652E7 /* NSDateParser.h */; };
-		205756571538E6F300A652E7 /* NSDateParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2057564F1538E6F300A652E7 /* NSDateParser.m */; };
-		205756581538E6F300A652E7 /* NSURLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756501538E6F300A652E7 /* NSURLParser.h */; };
-		205756591538E6F300A652E7 /* NSURLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 205756511538E6F300A652E7 /* NSURLParser.m */; };
-		2057565A1538E6F300A652E7 /* SimpleParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756521538E6F300A652E7 /* SimpleParser.h */; };
-		2057565B1538E6F300A652E7 /* SimpleParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 205756531538E6F300A652E7 /* SimpleParser.m */; };
+		205756441538E6C200A652E7 /* DCValueParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756411538E6C200A652E7 /* DCValueParser.h */; };
+		205756451538E6C200A652E7 /* DCGenericParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756421538E6C200A652E7 /* DCGenericParser.h */; };
+		205756461538E6C200A652E7 /* DCGenericParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 205756431538E6C200A652E7 /* DCGenericParser.m */; };
+		205756491538E6E100A652E7 /* DCParserConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756471538E6E100A652E7 /* DCParserConfiguration.h */; };
+		2057564A1538E6E100A652E7 /* DCParserConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 205756481538E6E100A652E7 /* DCParserConfiguration.m */; };
+		205756541538E6F300A652E7 /* DCNSArrayParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2057564C1538E6F300A652E7 /* DCNSArrayParser.h */; };
+		205756551538E6F300A652E7 /* DCNSArrayParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2057564D1538E6F300A652E7 /* DCNSArrayParser.m */; };
+		205756561538E6F300A652E7 /* DCNSDateParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2057564E1538E6F300A652E7 /* DCNSDateParser.h */; };
+		205756571538E6F300A652E7 /* DCNSDateParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2057564F1538E6F300A652E7 /* DCNSDateParser.m */; };
+		205756581538E6F300A652E7 /* DCNSURLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756501538E6F300A652E7 /* DCNSURLParser.h */; };
+		205756591538E6F300A652E7 /* DCNSURLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 205756511538E6F300A652E7 /* DCNSURLParser.m */; };
+		2057565A1538E6F300A652E7 /* DCSimpleParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756521538E6F300A652E7 /* DCSimpleParser.h */; };
+		2057565B1538E6F300A652E7 /* DCSimpleParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 205756531538E6F300A652E7 /* DCSimpleParser.m */; };
 		2057565F1538E72800A652E7 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 2057565D1538E72800A652E7 /* Person.m */; };
 		205756601538E72800A652E7 /* valid_json.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2057565E1538E72800A652E7 /* valid_json.plist */; };
 /* End PBXBuildFile section */
@@ -52,8 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2030CA561539E4F200F0ACAA /* DynamicAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicAttribute.h; sourceTree = "<group>"; };
-		2030CA571539E4F200F0ACAA /* DynamicAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicAttribute.m; sourceTree = "<group>"; };
+		2030CA561539E4F200F0ACAA /* DCDynamicAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDynamicAttribute.h; sourceTree = "<group>"; };
+		2030CA571539E4F200F0ACAA /* DCDynamicAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDynamicAttribute.m; sourceTree = "<group>"; };
 		2030CA5B1539E91300F0ACAA /* DynamicAttributeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicAttributeTest.h; sourceTree = "<group>"; };
 		2030CA5C1539E91300F0ACAA /* DynamicAttributeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicAttributeTest.m; sourceTree = "<group>"; };
 		2030CA5E1539FE4000F0ACAA /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
@@ -63,13 +63,13 @@
 		2030CA641539FFDF00F0ACAA /* tweet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tweet.json; sourceTree = "<group>"; };
 		2030CA6B153A00DB00F0ACAA /* KeyValueParserTestJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyValueParserTestJSON.h; sourceTree = "<group>"; };
 		2030CA6C153A00DB00F0ACAA /* KeyValueParserTestJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyValueParserTestJSON.m; sourceTree = "<group>"; };
-		2030CA6F153A132300F0ACAA /* PropertyNameParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyNameParser.h; sourceTree = "<group>"; };
-		2030CA70153A132300F0ACAA /* PropertyNameParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyNameParser.m; sourceTree = "<group>"; };
+		2030CA6F153A132300F0ACAA /* DCPropertyNameParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPropertyNameParser.h; sourceTree = "<group>"; };
+		2030CA70153A132300F0ACAA /* DCPropertyNameParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPropertyNameParser.m; sourceTree = "<group>"; };
 		205756111538E60400A652E7 /* libKeyValueParser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKeyValueParser.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		205756141538E60400A652E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		205756181538E60500A652E7 /* KeyValueParser-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyValueParser-Prefix.pch"; sourceTree = "<group>"; };
-		205756191538E60500A652E7 /* KeyValueParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyValueParser.h; sourceTree = "<group>"; };
-		2057561A1538E60500A652E7 /* KeyValueParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyValueParser.m; sourceTree = "<group>"; };
+		205756191538E60500A652E7 /* DCKeyValueParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCKeyValueParser.h; sourceTree = "<group>"; };
+		2057561A1538E60500A652E7 /* DCKeyValueParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCKeyValueParser.m; sourceTree = "<group>"; };
 		205756211538E60500A652E7 /* KeyValueParserTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeyValueParserTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		205756221538E60500A652E7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		205756241538E60500A652E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -77,19 +77,19 @@
 		2057562E1538E60500A652E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		205756301538E60500A652E7 /* KeyValueParserTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyValueParserTests.h; sourceTree = "<group>"; };
 		205756311538E60500A652E7 /* KeyValueParserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyValueParserTests.m; sourceTree = "<group>"; };
-		205756411538E6C200A652E7 /* ValueParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueParser.h; sourceTree = "<group>"; };
-		205756421538E6C200A652E7 /* GenericParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericParser.h; sourceTree = "<group>"; };
-		205756431538E6C200A652E7 /* GenericParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericParser.m; sourceTree = "<group>"; };
-		205756471538E6E100A652E7 /* ParserConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParserConfiguration.h; sourceTree = "<group>"; };
-		205756481538E6E100A652E7 /* ParserConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParserConfiguration.m; sourceTree = "<group>"; };
-		2057564C1538E6F300A652E7 /* NSArrayParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArrayParser.h; sourceTree = "<group>"; };
-		2057564D1538E6F300A652E7 /* NSArrayParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayParser.m; sourceTree = "<group>"; };
-		2057564E1538E6F300A652E7 /* NSDateParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateParser.h; sourceTree = "<group>"; };
-		2057564F1538E6F300A652E7 /* NSDateParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateParser.m; sourceTree = "<group>"; };
-		205756501538E6F300A652E7 /* NSURLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURLParser.h; sourceTree = "<group>"; };
-		205756511538E6F300A652E7 /* NSURLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLParser.m; sourceTree = "<group>"; };
-		205756521538E6F300A652E7 /* SimpleParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleParser.h; sourceTree = "<group>"; };
-		205756531538E6F300A652E7 /* SimpleParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleParser.m; sourceTree = "<group>"; };
+		205756411538E6C200A652E7 /* DCValueParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCValueParser.h; sourceTree = "<group>"; };
+		205756421538E6C200A652E7 /* DCGenericParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCGenericParser.h; sourceTree = "<group>"; };
+		205756431538E6C200A652E7 /* DCGenericParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCGenericParser.m; sourceTree = "<group>"; };
+		205756471538E6E100A652E7 /* DCParserConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCParserConfiguration.h; sourceTree = "<group>"; };
+		205756481538E6E100A652E7 /* DCParserConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCParserConfiguration.m; sourceTree = "<group>"; };
+		2057564C1538E6F300A652E7 /* DCNSArrayParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNSArrayParser.h; sourceTree = "<group>"; };
+		2057564D1538E6F300A652E7 /* DCNSArrayParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNSArrayParser.m; sourceTree = "<group>"; };
+		2057564E1538E6F300A652E7 /* DCNSDateParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNSDateParser.h; sourceTree = "<group>"; };
+		2057564F1538E6F300A652E7 /* DCNSDateParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNSDateParser.m; sourceTree = "<group>"; };
+		205756501538E6F300A652E7 /* DCNSURLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNSURLParser.h; sourceTree = "<group>"; };
+		205756511538E6F300A652E7 /* DCNSURLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNSURLParser.m; sourceTree = "<group>"; };
+		205756521538E6F300A652E7 /* DCSimpleParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCSimpleParser.h; sourceTree = "<group>"; };
+		205756531538E6F300A652E7 /* DCSimpleParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCSimpleParser.m; sourceTree = "<group>"; };
 		2057565C1538E72800A652E7 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		2057565D1538E72800A652E7 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		2057565E1538E72800A652E7 /* valid_json.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = valid_json.plist; sourceTree = "<group>"; };
@@ -134,8 +134,8 @@
 		2030CA6E153A131400F0ACAA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				2030CA6F153A132300F0ACAA /* PropertyNameParser.h */,
-				2030CA70153A132300F0ACAA /* PropertyNameParser.m */,
+				2030CA6F153A132300F0ACAA /* DCPropertyNameParser.h */,
+				2030CA70153A132300F0ACAA /* DCPropertyNameParser.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -173,12 +173,12 @@
 			isa = PBXGroup;
 			children = (
 				2030CA6E153A131400F0ACAA /* Utils */,
-				2030CA561539E4F200F0ACAA /* DynamicAttribute.h */,
-				2030CA571539E4F200F0ACAA /* DynamicAttribute.m */,
+				2030CA561539E4F200F0ACAA /* DCDynamicAttribute.h */,
+				2030CA571539E4F200F0ACAA /* DCDynamicAttribute.m */,
 				2057563B1538E69600A652E7 /* Configuration */,
 				205756401538E6B300A652E7 /* Formatters */,
-				205756191538E60500A652E7 /* KeyValueParser.h */,
-				2057561A1538E60500A652E7 /* KeyValueParser.m */,
+				205756191538E60500A652E7 /* DCKeyValueParser.h */,
+				2057561A1538E60500A652E7 /* DCKeyValueParser.m */,
 				205756171538E60500A652E7 /* Supporting Files */,
 			);
 			path = KeyValueParser;
@@ -221,8 +221,8 @@
 		2057563B1538E69600A652E7 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				205756471538E6E100A652E7 /* ParserConfiguration.h */,
-				205756481538E6E100A652E7 /* ParserConfiguration.m */,
+				205756471538E6E100A652E7 /* DCParserConfiguration.h */,
+				205756481538E6E100A652E7 /* DCParserConfiguration.m */,
 			);
 			name = Configuration;
 			sourceTree = "<group>";
@@ -231,9 +231,9 @@
 			isa = PBXGroup;
 			children = (
 				2057564B1538E6E700A652E7 /* Implementation */,
-				205756411538E6C200A652E7 /* ValueParser.h */,
-				205756421538E6C200A652E7 /* GenericParser.h */,
-				205756431538E6C200A652E7 /* GenericParser.m */,
+				205756411538E6C200A652E7 /* DCValueParser.h */,
+				205756421538E6C200A652E7 /* DCGenericParser.h */,
+				205756431538E6C200A652E7 /* DCGenericParser.m */,
 			);
 			name = Formatters;
 			sourceTree = "<group>";
@@ -241,14 +241,14 @@
 		2057564B1538E6E700A652E7 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
-				2057564C1538E6F300A652E7 /* NSArrayParser.h */,
-				2057564D1538E6F300A652E7 /* NSArrayParser.m */,
-				2057564E1538E6F300A652E7 /* NSDateParser.h */,
-				2057564F1538E6F300A652E7 /* NSDateParser.m */,
-				205756501538E6F300A652E7 /* NSURLParser.h */,
-				205756511538E6F300A652E7 /* NSURLParser.m */,
-				205756521538E6F300A652E7 /* SimpleParser.h */,
-				205756531538E6F300A652E7 /* SimpleParser.m */,
+				2057564C1538E6F300A652E7 /* DCNSArrayParser.h */,
+				2057564D1538E6F300A652E7 /* DCNSArrayParser.m */,
+				2057564E1538E6F300A652E7 /* DCNSDateParser.h */,
+				2057564F1538E6F300A652E7 /* DCNSDateParser.m */,
+				205756501538E6F300A652E7 /* DCNSURLParser.h */,
+				205756511538E6F300A652E7 /* DCNSURLParser.m */,
+				205756521538E6F300A652E7 /* DCSimpleParser.h */,
+				205756531538E6F300A652E7 /* DCSimpleParser.m */,
 			);
 			name = Implementation;
 			sourceTree = "<group>";
@@ -260,15 +260,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				205756441538E6C200A652E7 /* ValueParser.h in Headers */,
-				205756451538E6C200A652E7 /* GenericParser.h in Headers */,
-				205756491538E6E100A652E7 /* ParserConfiguration.h in Headers */,
-				205756541538E6F300A652E7 /* NSArrayParser.h in Headers */,
-				205756561538E6F300A652E7 /* NSDateParser.h in Headers */,
-				205756581538E6F300A652E7 /* NSURLParser.h in Headers */,
-				2057565A1538E6F300A652E7 /* SimpleParser.h in Headers */,
-				2030CA581539E4F200F0ACAA /* DynamicAttribute.h in Headers */,
-				2030CA71153A132300F0ACAA /* PropertyNameParser.h in Headers */,
+				205756441538E6C200A652E7 /* DCValueParser.h in Headers */,
+				205756451538E6C200A652E7 /* DCGenericParser.h in Headers */,
+				205756491538E6E100A652E7 /* DCParserConfiguration.h in Headers */,
+				205756541538E6F300A652E7 /* DCNSArrayParser.h in Headers */,
+				205756561538E6F300A652E7 /* DCNSDateParser.h in Headers */,
+				205756581538E6F300A652E7 /* DCNSURLParser.h in Headers */,
+				2057565A1538E6F300A652E7 /* DCSimpleParser.h in Headers */,
+				2030CA581539E4F200F0ACAA /* DCDynamicAttribute.h in Headers */,
+				2030CA71153A132300F0ACAA /* DCPropertyNameParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,15 +373,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2057561B1538E60500A652E7 /* KeyValueParser.m in Sources */,
-				205756461538E6C200A652E7 /* GenericParser.m in Sources */,
-				2057564A1538E6E100A652E7 /* ParserConfiguration.m in Sources */,
-				205756551538E6F300A652E7 /* NSArrayParser.m in Sources */,
-				205756571538E6F300A652E7 /* NSDateParser.m in Sources */,
-				205756591538E6F300A652E7 /* NSURLParser.m in Sources */,
-				2057565B1538E6F300A652E7 /* SimpleParser.m in Sources */,
-				2030CA591539E4F200F0ACAA /* DynamicAttribute.m in Sources */,
-				2030CA72153A132300F0ACAA /* PropertyNameParser.m in Sources */,
+				2057561B1538E60500A652E7 /* DCKeyValueParser.m in Sources */,
+				205756461538E6C200A652E7 /* DCGenericParser.m in Sources */,
+				2057564A1538E6E100A652E7 /* DCParserConfiguration.m in Sources */,
+				205756551538E6F300A652E7 /* DCNSArrayParser.m in Sources */,
+				205756571538E6F300A652E7 /* DCNSDateParser.m in Sources */,
+				205756591538E6F300A652E7 /* DCNSURLParser.m in Sources */,
+				2057565B1538E6F300A652E7 /* DCSimpleParser.m in Sources */,
+				2030CA591539E4F200F0ACAA /* DCDynamicAttribute.m in Sources */,
+				2030CA72153A132300F0ACAA /* DCPropertyNameParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

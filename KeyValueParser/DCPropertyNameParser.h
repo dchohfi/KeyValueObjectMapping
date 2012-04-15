@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ParserConfiguration.h"
+#import "DCParserConfiguration.h"
 
-@interface PropertyNameParser : NSObject
-- (id)initWithConfiguration: (ParserConfiguration *) configuration;
+@interface DCPropertyNameParser : NSObject
+- (id)initWithConfiguration: (DCParserConfiguration *) configuration;
 - (NSString *) splitKeyAndMakeCamelcased: (NSString *) key;
 @end

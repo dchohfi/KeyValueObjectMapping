@@ -7,8 +7,8 @@
 //
 
 #import "KeyValueParserTestJSON.h"
-#import "KeyValueParser.h"
-#import "ParserConfiguration.h"
+#import "DCKeyValueParser.h"
+#import "DCParserConfiguration.h"
 #import "Tweet.h"
 #import "User.h"
 @interface KeyValueParserTestJSON()
@@ -32,13 +32,13 @@
 }
 
 -(void) testCreateFromJson {
-    ParserConfiguration *config = [[ParserConfiguration alloc] init];
+    DCParserConfiguration *config = [[DCParserConfiguration alloc] init];
     config.datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = config.datePattern;
     NSDate *data = [formatter dateFromString:@"Sat Apr 14 00:20:07 +0000 2012"];
 
-    KeyValueParser * parser = [[KeyValueParser alloc] initWithConfiguration:config];
+    DCKeyValueParser * parser = [[DCKeyValueParser alloc] initWithConfiguration:config];
     
     Tweet *tweet = [parser parseJson:jsonParsed forClass:[Tweet class]];
     STAssertEqualObjects(tweet.idStr, @"190957570511478784", @"Should have same idStr");

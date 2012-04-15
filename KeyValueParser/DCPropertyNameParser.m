@@ -6,17 +6,17 @@
 //  Copyright (c) 2012 None. All rights reserved.
 //
 
-#import "PropertyNameParser.h"
+#import "DCPropertyNameParser.h"
 
-@interface PropertyNameParser()
+@interface DCPropertyNameParser()
 
-@property(nonatomic, strong) ParserConfiguration *configuration;
+@property(nonatomic, strong) DCParserConfiguration *configuration;
 
 @end
 
-@implementation PropertyNameParser
+@implementation DCPropertyNameParser
 @synthesize configuration;
-- (id)initWithConfiguration: (ParserConfiguration *) _configuration
+- (id)initWithConfiguration: (DCParserConfiguration *) _configuration
 {
     self = [super init];
     if (self) {

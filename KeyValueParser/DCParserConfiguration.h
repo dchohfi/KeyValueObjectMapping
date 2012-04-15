@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ParserConfiguration : NSObject
+@interface DCParserConfiguration : NSObject
 
 @property(nonatomic, strong) NSString *datePattern;
 @property(nonatomic, strong) NSString *splitToken;
