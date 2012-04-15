@@ -317,8 +317,9 @@
 		205756081538E60400A652E7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = DC;
 				LastUpgradeCheck = 0430;
-				ORGANIZATIONNAME = None;
+				ORGANIZATIONNAME = dchohfi;
 			};
 			buildConfigurationList = 2057560B1538E60400A652E7 /* Build configuration list for PBXProject "KeyValueParser" */;
 			compatibilityVersion = "Xcode 3.2";
