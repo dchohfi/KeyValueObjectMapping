@@ -15,7 +15,6 @@
 @synthesize source;
 @synthesize truncated;
 @synthesize inReplyToStatusIdStr;
-@synthesize inReplyToUserId;
 @synthesize inReplyToUserIdStr;
 @synthesize inReplyToScreenName;
 @synthesize user;

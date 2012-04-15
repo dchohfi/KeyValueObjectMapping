@@ -16,7 +16,6 @@
 @property(nonatomic, readonly) NSString *source;
 @property(nonatomic, readonly) BOOL truncated;
 @property(nonatomic, readonly) NSString *inReplyToStatusIdStr;
-@property(nonatomic, readonly) NSNumber *inReplyToUserId;
 @property(nonatomic, readonly) NSString *inReplyToUserIdStr;
 @property(nonatomic, readonly) NSString *inReplyToScreenName;
 @property(nonatomic, readonly) User *user;
