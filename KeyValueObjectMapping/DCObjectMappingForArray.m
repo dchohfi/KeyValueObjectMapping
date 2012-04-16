@@ -9,9 +9,12 @@
 #import "DCObjectMappingForArray.h"
 
 @implementation DCObjectMappingForArray
-
 @synthesize objectMapping, classForElementsOnArray;
 
+- (id)initWithClassForElements: (Class) _classForElementsOnArray withKeyAndAttributeName: (NSString *) keyForAttribute forClass: (Class) classReference
+{
+    return [self initWithObjectMapping:[[DCObjectMapping alloc] initWithKeyForAttribute:keyForAttribute onClass:classReference] forArrayElementOfType:_classForElementsOnArray];
+}
 - (id)initWithObjectMapping: (DCObjectMapping *) _objectMapping forArrayElementOfType: (Class) _classForElementsOnArray {
     self = [super init];
     if (self) {

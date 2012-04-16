@@ -13,6 +13,8 @@
 @property(nonatomic, readonly) DCObjectMapping *objectMapping;
 @property(nonatomic, readonly) Class classForElementsOnArray;
 
-- (id)initWithObjectMapping: (DCObjectMapping *) _objectMapping forArrayElementOfType: (Class) classForElementsOnArray;
+
+- (id)initWithClassForElements: (Class) classForElementsOnArray withKeyAndAttributeName: (NSString *) keyForAttribute forClass: (Class) classReference;
+- (id)initWithObjectMapping: (DCObjectMapping *) objectMapping forArrayElementOfType: (Class) classForElementsOnArray;
 
 @end

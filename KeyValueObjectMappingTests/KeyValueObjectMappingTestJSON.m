@@ -84,8 +84,8 @@
 }
 
 - (void)testArrayOfSpecific{
+    Class tweetClass = [Tweet class];
     NSMutableDictionary *userDictionary = [NSMutableDictionary dictionaryWithDictionary:[jsonParsed objectForKey:@"user"]];
-    [jsonParsed removeObjectForKey:@"user"];
     
     NSArray *tweetsForUser = [NSArray arrayWithObjects:jsonParsed, jsonParsed, nil];
     [userDictionary setObject:tweetsForUser forKey:@"tweets"];
@@ -93,11 +93,17 @@
     
     DCParserConfiguration *configuration = [[DCParserConfiguration alloc] init];
     configuration.datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
-    DCObjectMapping *mapping = [[DCObjectMapping alloc] initWithAttributeName:@"tweets" forKey:@"tweets" onClass:[User class]];
     
-    [configuration addMapper:[[DCObjectMappingForArray alloc] initWithObjectMapping:mapping forArrayElementOfType:[Tweet class]]];
+    [configuration addMapper:[[DCObjectMappingForArray alloc] initWithClassForElements:[Tweet class] withKeyAndAttributeName:@"tweets" forClass:[User class]]];
+    
     DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:configuration];
     User *user = [parser parseDictionary:userDictionary forClass:[User class]];
     STAssertEquals((int)[user.tweets count], 2, @"Should have same Tweets array size");
+    
+    [user.tweets enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        STAssertEquals(tweetClass, [obj class], @"Should be a Tweet");
+        Tweet *tweet = (Tweet *) obj;
+        STAssertNotNil(tweet.user, @"Should contain user on Tweet");
+    }];
 }
 @end
