@@ -10,11 +10,14 @@
 
 @implementation DCParserConfiguration
 @synthesize datePattern, splitToken;
-- (NSString *)splitToken{
-    if (splitToken) {
-        return splitToken;
-    }else{
-        return @"_";
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.splitToken = @"_";
+        self.datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
     }
+    return self;
 }
 @end

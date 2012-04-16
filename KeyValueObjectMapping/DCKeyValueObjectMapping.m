@@ -25,6 +25,11 @@
 @implementation DCKeyValueObjectMapping
 @synthesize configuration, propertyNameParser, parser;
 
+- (id)init
+{
+    return [self initWithConfiguration:[[DCParserConfiguration alloc] init]];
+}
+
 - (id) initWithConfiguration: (DCParserConfiguration *) _configuration {
     self = [super init];
     if (self) {
