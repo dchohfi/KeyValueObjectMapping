@@ -12,11 +12,12 @@
 
 @property(nonatomic, readonly) NSString *attributeType;
 @property(nonatomic, readonly) NSString *attributeName;
+@property(nonatomic, readonly) NSString *key;
 @property(nonatomic, readonly, getter = isPrimitive) BOOL primitive;
 @property(nonatomic, readonly, getter = isIdType) BOOL idType;
 @property(nonatomic, readonly, getter = isValidObject) BOOL validObject;
 
 - (id)initWithClass: (Class) class;
-- (id)initWithAttributeDescription: (NSString *) description;
+- (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) key;
 - (Class) attributeClass;
 @end

@@ -11,7 +11,7 @@
 @implementation DynamicAttributeTest
 
 - (void) testDynamicAttributeForPrimitiveInt {
-    DCDynamicAttribute *attribute = [[DCDynamicAttribute alloc] initWithAttributeDescription:@"Ti,R,N,Vage"];
+    DCDynamicAttribute *attribute = [[DCDynamicAttribute alloc] initWithAttributeDescription:@"Ti,R,N,Vage" forKey:@"age"];
     STAssertTrue([attribute isPrimitive], @"Should be a primitive attribute");
     STAssertFalse([attribute isIdType], @"Should not be and id type");
     STAssertFalse([attribute isValidObject], @"Should not be a valid object");
@@ -21,7 +21,7 @@
 }
 
 - (void) testDynamicAttributeForNSStringType {
-    DCDynamicAttribute *attribute = [[DCDynamicAttribute alloc] initWithAttributeDescription:@"T@\"NSString\",&,N,Vadress"];
+    DCDynamicAttribute *attribute = [[DCDynamicAttribute alloc] initWithAttributeDescription:@"T@\"NSString\",&,N,Vadress" forKey:@"adress"];
     STAssertFalse([attribute isPrimitive], @"Should be a class");
     STAssertFalse([attribute isIdType], @"Should not be and id type");
     STAssertTrue([attribute isValidObject], @"Should not be a valid object");
@@ -31,7 +31,7 @@
 }
 
 - (void) testDynamicAttributeForNSDateType {
-    DCDynamicAttribute *attribute = [[DCDynamicAttribute alloc] initWithAttributeDescription:@"T@\"NSDate\",&,N,VdataNascimento"];
+    DCDynamicAttribute *attribute = [[DCDynamicAttribute alloc] initWithAttributeDescription:@"T@\"NSDate\",&,N,VdataNascimento" forKey:@"dataNascimento"];
     STAssertFalse([attribute isPrimitive], @"Should be a class");
     STAssertFalse([attribute isIdType], @"Should not be and id type");
     STAssertTrue([attribute isValidObject], @"Should not be a valid object");
@@ -41,7 +41,7 @@
 }
 
 - (void) testDynamicAttributeForIdType {
-    DCDynamicAttribute *attribute = [[DCDynamicAttribute alloc] initWithAttributeDescription:@"T@,&,N,Vid"];
+    DCDynamicAttribute *attribute = [[DCDynamicAttribute alloc] initWithAttributeDescription:@"T@,&,N,Vid" forKey:@"id"];
     STAssertFalse([attribute isPrimitive], @"Should be a class");
     STAssertFalse([attribute isValidObject], @"Should not be a valid object");
     STAssertTrue([attribute isIdType], @"Should be and id type");

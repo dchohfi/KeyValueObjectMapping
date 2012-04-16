@@ -32,7 +32,7 @@
     DCParserConfiguration *configuration = [[DCParserConfiguration alloc] init];
     configuration.datePattern = @"yyyy-MM-dd'T'hh:mm:ssZ";
     DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:configuration];
-    Person *person = [parser parseJson:jsonToParse forClass:[Person class]];
+    Person *person = [parser parseDictionary: jsonToParse forClass:[Person class]];
     STAssertEqualObjects(person.name, @"Diego Chohfi Turini", @"Should be equals name");
     STAssertEqualObjects(person.adress, @"Rua dos bobos, n 0", @"Should be equals adress");
     STAssertEqualObjects(person.phone, @"+551199999999", @"Should be equals phone");

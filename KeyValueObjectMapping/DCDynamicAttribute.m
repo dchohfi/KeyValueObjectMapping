@@ -15,7 +15,7 @@
 @end
 
 @implementation DCDynamicAttribute
-@synthesize attributeType, primitive, idType, attributeName, validObject;
+@synthesize attributeType, primitive, idType, attributeName, validObject, key;
 
 
 - (id)initWithClass: (Class) class {
@@ -26,12 +26,13 @@
     }
     return self;
 }
-- (id)initWithAttributeDescription: (NSString *) description{
+- (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) _key{
     self = [super init];
     if (self) {
         NSArray *splitedDescription = [description componentsSeparatedByString:@","];
         [self findTypeInformation:[splitedDescription objectAtIndex:0]];
-        [self findTypeName: [splitedDescription lastObject]];    
+        [self findTypeName: [splitedDescription lastObject]];
+        key = _key;
     }
     return self;
 }

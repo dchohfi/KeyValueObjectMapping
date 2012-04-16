@@ -12,6 +12,7 @@
 @interface DCKeyValueObjectMapping : NSObject
 
 - (id) initWithConfiguration: (DCParserConfiguration *) configuration;
-- (id) parseJson: (NSDictionary *) json forClass: (Class) class;
+- (id) parseDictionary: (NSDictionary *) dictionary forClass: (Class) class;
+- (id) parseArray: (NSArray *) array forClass: (Class) class;
 
 @end

@@ -40,7 +40,7 @@
 
     DCKeyValueObjectMapping * parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:config];
     
-    Tweet *tweet = [parser parseJson:jsonParsed forClass:[Tweet class]];
+    Tweet *tweet = [parser parseDictionary:jsonParsed forClass:[Tweet class]];
     STAssertEqualObjects(tweet.idStr, @"190957570511478784", @"Should have same idStr");
     STAssertEqualObjects(tweet.text, @"@pedroh96 cara, comecei uma lib pra iOS, se puder dar uma olhada e/ou contribuir :D KeyValue Parse for Objective-C https://t.co/NWMMc60v", @"Should have same text");
     STAssertEqualObjects(tweet.source, @"<a href=\"http://www.osfoora.com/mac\" rel=\"nofollow\">Osfoora for Mac</a>", @"Should have same source");
