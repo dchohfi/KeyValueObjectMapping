@@ -8,7 +8,8 @@
 
 #import "DCNSArrayConverter.h"
 #import "DCSimpleConverter.h"
-
+#import "DCObjectMappingForArray.h"
+#import "DCKeyValueObjectMapping.h"
 @interface DCNSArrayConverter()
 
 @property(nonatomic, strong) DCParserConfiguration *configuration;
@@ -27,9 +28,8 @@
 }
 
 - (id)transformValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute {
-    BOOL validValues = ![[[values objectAtIndex:0] class] isSubclassOfClass:[NSDictionary class]];
-    
-    if(validValues){
+    BOOL primitiveArray = ![[[values objectAtIndex:0] class] isSubclassOfClass:[NSDictionary class]];
+    if(primitiveArray){
         DCSimpleConverter *simpleParser = [[DCSimpleConverter alloc] init];
         NSMutableArray *valuesHolder = [NSMutableArray array];
         for(id value in values){
@@ -37,6 +37,12 @@
             [valuesHolder addObject:[simpleParser transformValue:value forDynamicAttribute:valueClassAsAttribute]];
         }
         return [NSArray arrayWithArray:valuesHolder];
+    }else{
+        DCObjectMappingForArray *mapper = [configuration arrayMapperForMapper:attribute.objectMapping];
+        if(mapper){
+            DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:configuration];
+            return [parser parseArray:values forClass:mapper.classForElementsOnArray];
+        }
     }
     return nil;
 }

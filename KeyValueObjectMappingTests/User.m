@@ -20,4 +20,5 @@
 @synthesize friendsCount;
 @synthesize createdAt;
 @synthesize following;
+@synthesize tweets;
 @end

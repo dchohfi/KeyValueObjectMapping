@@ -65,4 +65,39 @@
     STAssertEqualObjects(user.createdAt, data, @"Should have same createdAt date");
 }
 
+- (void)testMultipleTweets{
+    Class tweetClass = [Tweet class];
+    
+    NSArray *arrayTweets = [NSArray arrayWithObjects:jsonParsed, jsonParsed, jsonParsed, nil];
+    DCParserConfiguration *configuration = [[DCParserConfiguration alloc] init];
+    configuration.datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
+    DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:configuration];
+    NSArray *parsedArray = [parser parseArray:arrayTweets forClass:tweetClass];
+    
+    STAssertEquals((int)[parsedArray count], 3, @"Should have same size of tweets");
+    STAssertTrue([parsedArray isKindOfClass:[NSArray class]], @"Should be a NSArray");
+    STAssertFalse([parsedArray isKindOfClass:[NSMutableArray class]], @"Should not be a NSMutableArray");
+    
+    [parsedArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        STAssertEquals(tweetClass, [obj class], @"Should be a Tweet");
+    }];
+}
+
+- (void)testArrayOfSpecific{
+    NSMutableDictionary *userDictionary = [NSMutableDictionary dictionaryWithDictionary:[jsonParsed objectForKey:@"user"]];
+    [jsonParsed removeObjectForKey:@"user"];
+    
+    NSArray *tweetsForUser = [NSArray arrayWithObjects:jsonParsed, jsonParsed, nil];
+    [userDictionary setObject:tweetsForUser forKey:@"tweets"];
+    
+    
+    DCParserConfiguration *configuration = [[DCParserConfiguration alloc] init];
+    configuration.datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
+    DCObjectMapping *mapping = [[DCObjectMapping alloc] initWithAttributeName:@"tweets" forKey:@"tweets" onClass:[User class]];
+    
+    [configuration addMapper:[[DCObjectMappingForArray alloc] initWithObjectMapping:mapping forArrayElementOfType:[Tweet class]]];
+    DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:configuration];
+    User *user = [parser parseDictionary:userDictionary forClass:[User class]];
+    STAssertEquals((int)[user.tweets count], 2, @"Should have same Tweets array size");
+}
 @end

@@ -20,4 +20,5 @@
 @property(nonatomic, readonly) long friendsCount;
 @property(nonatomic, readonly) NSDate *createdAt;
 @property(nonatomic, readonly) BOOL following;
+@property(nonatomic, readonly) NSArray *tweets;
 @end

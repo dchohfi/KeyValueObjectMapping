@@ -10,18 +10,18 @@
 
 @interface DCDynamicAttribute()
 
-- (void) findTypeInformation: (NSString *) typeInformation;
-- (void) findTypeName: (NSString *) name;
+- (NSString *) findTypeInformation: (NSString *) typeInformation;
+- (NSString *) findTypeName: (NSString *) name;
 @end
 
 @implementation DCDynamicAttribute
-@synthesize attributeType, primitive, idType, attributeName, validObject, key;
+@synthesize primitive, idType, validObject, objectMapping, typeName;
 
 
-- (id)initWithClass: (Class) class {
+- (id)initWithClass: (Class) classs {
     self = [super init];
     if (self) {
-        attributeType = NSStringFromClass(class);
+        objectMapping = [[DCObjectMapping alloc] initWithClass:classs];
         validObject = YES;
     }
     return self;
@@ -30,36 +30,34 @@
     self = [super init];
     if (self) {
         NSArray *splitedDescription = [description componentsSeparatedByString:@","];
-        [self findTypeInformation:[splitedDescription objectAtIndex:0]];
-        [self findTypeName: [splitedDescription lastObject]];
-        key = _key;
+        
+        NSString *attributeName = [self findTypeName: [splitedDescription lastObject]];
+        typeName = [self findTypeInformation:[splitedDescription objectAtIndex:0]];
+        
+        Class attributeClass = NSClassFromString(typeName);
+        objectMapping = [[DCObjectMapping alloc] initWithAttributeName:attributeName forKey:_key onClass:attributeClass];
     }
     return self;
 }
 
-- (void) findTypeName: (NSString *) name {
-    attributeName = [name substringFromIndex:1];
-}
-
-- (void) findTypeInformation: (NSString *) typeInformation {
+- (NSString *) findTypeInformation: (NSString *) typeInformation {
+    NSString *attrituteClass = nil;
+    
     BOOL isType = [[typeInformation substringToIndex:1] isEqualToString:@"T"];
     BOOL isAnObject = [[typeInformation substringWithRange:NSMakeRange(1, 1)] isEqualToString:@"@"];
     if(isType && !isAnObject){
-        attributeType = [typeInformation substringWithRange:NSMakeRange(1, 1)];
-        primitive = YES;        
+        primitive = YES;
+        attrituteClass = [typeInformation substringWithRange:NSMakeRange(1, 1)];
     }else if ([typeInformation length] == 2) {
         idType = YES;
     } else {
-        attributeType = [typeInformation substringWithRange:NSMakeRange(3, [typeInformation length] - 4)];
         validObject = YES;
+        attrituteClass = [typeInformation substringWithRange:NSMakeRange(3, [typeInformation length] - 4)];
     }
+    return attrituteClass;
 }
-
-- (Class) attributeClass{
-    if([self isPrimitive] || [self isIdType]){
-        return nil;
-    }
-    return NSClassFromString(attributeType);
+- (NSString *) findTypeName: (NSString *) name {
+    return [name substringFromIndex:1];
 }
 
 @end

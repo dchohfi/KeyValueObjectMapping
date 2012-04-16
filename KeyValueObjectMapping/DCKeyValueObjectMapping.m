@@ -67,15 +67,17 @@
     return object;
 }
 - (void) parseValue: (id) value forObject: (id) object inAttribute: (DCDynamicAttribute *) dynamicAttribute {
+    DCObjectMapping *objectMapping = dynamicAttribute.objectMapping;
+    
     if([value isKindOfClass:[NSDictionary class]]){
-        value = [self parseDictionary:(NSDictionary *) value forClass:[dynamicAttribute attributeClass]];
+        value = [self parseDictionary:(NSDictionary *) value forClass:objectMapping.classReference];
     }
     NSError *error;
-    NSString *key = [dynamicAttribute key];
+    NSString *key = objectMapping.key;
     value = [parser transformValue:value forDynamicAttribute:dynamicAttribute];
     if([object validateValue:&value forKey:key error:&error]){
         if([value isKindOfClass:[NSNull class]]){
-            [self setNilValueForKey: key onObject: object forClass:dynamicAttribute.attributeClass];
+            [self setNilValueForKey: key onObject: object forClass:objectMapping.classReference];
         }else {
             [object setValue:value forKey:key];
         }

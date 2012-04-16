@@ -36,7 +36,7 @@
 - (id)transformValue:(id)value forDynamicAttribute: (DCDynamicAttribute *) attribute {
     if([attribute isValidObject]){
         for(id<DCValueConverter> parser in parsers){
-            if([parser canTransformValueForClass:[attribute attributeClass]]){
+            if([parser canTransformValueForClass:attribute.objectMapping.classReference]){
                 return [parser transformValue:value forDynamicAttribute:attribute];
             }
         }

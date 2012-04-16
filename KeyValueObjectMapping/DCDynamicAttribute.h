@@ -7,17 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "DCObjectMapping.h"
 @interface DCDynamicAttribute : NSObject
 
-@property(nonatomic, readonly) NSString *attributeType;
-@property(nonatomic, readonly) NSString *attributeName;
-@property(nonatomic, readonly) NSString *key;
+@property(nonatomic, readonly) DCObjectMapping *objectMapping;
+@property(nonatomic, readonly) NSString *typeName;
 @property(nonatomic, readonly, getter = isPrimitive) BOOL primitive;
 @property(nonatomic, readonly, getter = isIdType) BOOL idType;
 @property(nonatomic, readonly, getter = isValidObject) BOOL validObject;
 
-- (id)initWithClass: (Class) class;
+- (id)initWithClass: (Class) classs;
 - (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) key;
-- (Class) attributeClass;
 @end
