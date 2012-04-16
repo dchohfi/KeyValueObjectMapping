@@ -11,7 +11,7 @@
 @implementation DCObjectMappingForArray
 @synthesize objectMapping, classForElementsOnArray;
 
-- (id)initWithClassForElements: (Class) _classForElementsOnArray withKeyAndAttributeName: (NSString *) keyForAttribute forClass: (Class) classReference
+- (id)initWithClassForElements: (Class) _classForElementsOnArray forKeyAndAttributeName: (NSString *) keyForAttribute inClass: (Class) classReference
 {
     return [self initWithObjectMapping:[[DCObjectMapping alloc] initWithKeyForAttribute:keyForAttribute onClass:classReference] forArrayElementOfType:_classForElementsOnArray];
 }

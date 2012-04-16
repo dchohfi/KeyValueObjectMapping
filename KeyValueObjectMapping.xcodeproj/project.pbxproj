@@ -21,6 +21,8 @@
 		20407617153C9EFC00E110DB /* DCObjectMappingForArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 20407615153C9EFC00E110DB /* DCObjectMappingForArray.m */; };
 		2040761A153CA4B700E110DB /* DCObjectMapping.h in Headers */ = {isa = PBXBuildFile; fileRef = 20407618153CA4B700E110DB /* DCObjectMapping.h */; };
 		2040761B153CA4B700E110DB /* DCObjectMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 20407619153CA4B700E110DB /* DCObjectMapping.m */; };
+		2040761D153CCEEB00E110DB /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 2040761C153CCEEB00E110DB /* user.json */; };
+		20407620153CCF2F00E110DB /* DCArrayOfTweetsOnUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2040761F153CCF2F00E110DB /* DCArrayOfTweetsOnUserTests.m */; };
 		205756151538E60500A652E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756141538E60400A652E7 /* Foundation.framework */; };
 		2057561B1538E60500A652E7 /* DCKeyValueObjectMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 2057561A1538E60500A652E7 /* DCKeyValueObjectMapping.m */; };
 		205756231538E60500A652E7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756221538E60500A652E7 /* SenTestingKit.framework */; };
@@ -74,6 +76,9 @@
 		20407615153C9EFC00E110DB /* DCObjectMappingForArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCObjectMappingForArray.m; sourceTree = "<group>"; };
 		20407618153CA4B700E110DB /* DCObjectMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCObjectMapping.h; sourceTree = "<group>"; };
 		20407619153CA4B700E110DB /* DCObjectMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCObjectMapping.m; sourceTree = "<group>"; };
+		2040761C153CCEEB00E110DB /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
+		2040761E153CCF2F00E110DB /* DCArrayOfTweetsOnUserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCArrayOfTweetsOnUserTests.h; sourceTree = "<group>"; };
+		2040761F153CCF2F00E110DB /* DCArrayOfTweetsOnUserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCArrayOfTweetsOnUserTests.m; sourceTree = "<group>"; };
 		205756111538E60400A652E7 /* libKeyValueObjectMapping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKeyValueObjectMapping.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		205756141538E60400A652E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		205756181538E60500A652E7 /* KeyValueObjectMapping-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyValueObjectMapping-Prefix.pch"; sourceTree = "<group>"; };
@@ -222,6 +227,8 @@
 				205756311538E60500A652E7 /* KeyValueObjectMappingTests.m */,
 				2030CA6B153A00DB00F0ACAA /* KeyValueObjectMappingTestJSON.h */,
 				2030CA6C153A00DB00F0ACAA /* KeyValueObjectMappingTestJSON.m */,
+				2040761E153CCF2F00E110DB /* DCArrayOfTweetsOnUserTests.h */,
+				2040761F153CCF2F00E110DB /* DCArrayOfTweetsOnUserTests.m */,
 				2057562B1538E60500A652E7 /* Supporting Files */,
 			);
 			path = KeyValueObjectMappingTests;
@@ -232,6 +239,7 @@
 			children = (
 				2057565E1538E72800A652E7 /* valid_json.plist */,
 				2030CA641539FFDF00F0ACAA /* tweet.json */,
+				2040761C153CCEEB00E110DB /* user.json */,
 				2057562C1538E60500A652E7 /* KeyValueObjectMappingTests-Info.plist */,
 				2057562D1538E60500A652E7 /* InfoPlist.strings */,
 			);
@@ -369,6 +377,7 @@
 				2057562F1538E60500A652E7 /* InfoPlist.strings in Resources */,
 				205756601538E72800A652E7 /* valid_json.plist in Resources */,
 				2030CA651539FFDF00F0ACAA /* tweet.json in Resources */,
+				2040761D153CCEEB00E110DB /* user.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +428,7 @@
 				2030CA601539FE4000F0ACAA /* Tweet.m in Sources */,
 				2030CA631539FF0800F0ACAA /* User.m in Sources */,
 				2030CA6D153A00DB00F0ACAA /* KeyValueObjectMappingTestJSON.m in Sources */,
+				20407620153CCF2F00E110DB /* DCArrayOfTweetsOnUserTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

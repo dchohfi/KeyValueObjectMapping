@@ -1,0 +1,22 @@
+{
+    "id_str": "27924446",
+    "name": "Diego Chohfi",
+    "screen_name": "dchohfi",
+    "location": "São Paulo",
+    "description": "Instrutor na @Caelum, desenvolvedor de coração, apaixonado por música e cerveja, sempre cerveja.",
+    "url": "http://about.me/dchohfi",
+    "protected": false,
+    "created_at": "Tue Mar 31 18:01:12 +0000 2009",
+    "tweets": [
+       {
+           "created_at": "Sat Apr 14 00:20:07 +0000 2012",
+           "id_str": 190957570511478800,
+           "text": "Tweet text"
+       },
+       {
+           "created_at": "Sat Apr 14 00:20:07 +0000 2012",
+           "id_str": 190957570511478800,
+           "text": "Tweet text"
+       }
+   ]
+}

@@ -39,7 +39,6 @@ And your User model looks like:
 @property(nonatomic, strong) NSNumber *followersCount;
 @property(nonatomic, strong) NSDate *createdAt;
 @end
-
 </pre>
 
 Using any JSON parser you need to transform this NSString to a NSDictionary representation:
@@ -78,3 +77,81 @@ NSLog(@"%@ - %@", tweet.idStr, tweet.name);
 </pre>
 
 Pretty easy, hã?
+
+Parsing NSArray properties
+-------------------------
+
+Since Objective-C don't support typed collections like Java and other static language we can't figure out what it the type of elements inside a collection. 
+But KeyValueObjectMapping can be configured to learn what is the type of elements that will be added to the collection on the specific attribute for the class.
+
+So, if the model User have many Tweets:
+<pre>
+#import <Foundation/Foundation.h>
+
+@interface User : NSObject
+@property(nonatomic, strong) NSString *idStr;
+@property(nonatomic, strong) NSString *name;
+@property(nonatomic, strong) NSString *screenName;
+@property(nonatomic, strong) NSString *location;
+@property(nonatomic, strong) NSString *description;
+@property(nonatomic, strong) NSURL *url;
+@property(nonatomic, strong) BOOL protected;
+@property(nonatomic, strong) NSNumber *followersCount;
+@property(nonatomic, strong) NSDate *createdAt;
+
+@property(nonatomic, strong) NSArray *tweets;
+
+@end
+</pre>
+
+The Tweet looks like:
+<pre>
+#import <Foundation/Foundation.h>
+
+@interface Tweet : NSObject
+@property(nonatomic, strong) NSString *idStr;
+@property(nonatomic, strong) NSString *text;
+@property(nonatomic, strong) NSDate *createdAt;
+
+@end
+</pre>
+
+And the JSON looks like:
+<pre>
+{
+    "id_str": "27924446",
+    "name": "Diego Chohfi",
+    "screen_name": "dchohfi",
+    "location": "São Paulo",
+    "description": "Instrutor na @Caelum, desenvolvedor de coração, apaixonado por música e cerveja, sempre cerveja.",
+    "url": "http://about.me/dchohfi",
+    "protected": false,
+    "created_at": "Tue Mar 31 18:01:12 +0000 2009",
+		"tweets" : [
+			{
+				"created_at" : "Sat Apr 14 00:20:07 +0000 2012",
+				"id_str" : 190957570511478784,
+				"text" : "Tweet text"
+			},
+			{
+				"created_at" : "Sat Apr 14 00:20:07 +0000 2012",
+				"id_str" : 190957570511478784,
+				"text" : "Tweet text"
+			}
+		]
+}
+</pre>
+
+Using DCObjectMappingForArray and adding it to the configuration, you tell to the KeyValueObjectMapping how to parse this specific attribute.
+
+<pre>
+	DCObjectMappingForArray *mapper = [[DCObjectMappingForArray alloc] initWithClassForElements:[Tweet class] 
+	  																																	 forKeyAndAttributeName:@"tweets" 
+								  																										    						inClass:[User class]];
+  DCParserConfiguration *config = [[DCParserConfiguration alloc] init];
+  [config addMapper:mapper];
+	config.datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
+	
+	DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:configuration];
+  User *user = [parser parseDictionary:jsonParsed forClass:[User class]];
+</pre>
