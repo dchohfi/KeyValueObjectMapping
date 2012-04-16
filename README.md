@@ -145,13 +145,13 @@ And the JSON looks like:
 Using DCObjectMappingForArray and adding it to the configuration, you tell to the KeyValueObjectMapping how to parse this specific attribute.
 
 <pre>
-	DCObjectMappingForArray *mapper = [[DCObjectMappingForArray alloc] initWithClassForElements:[Tweet class] 
-	  																																	 forKeyAndAttributeName:@"tweets" 
-								  																										    						inClass:[User class]];
-  DCParserConfiguration *config = [[DCParserConfiguration alloc] init];
-  [config addMapper:mapper];
-	config.datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
-	
-	DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:configuration];
-  User *user = [parser parseDictionary:jsonParsed forClass:[User class]];
+DCObjectMappingForArray *mapper = [[DCObjectMappingForArray alloc] initWithClassForElements:[Tweet class] 
+ 																																	   forKeyAndAttributeName:@"tweets" 
+						  																										    						  inClass:[User class]];
+DCParserConfiguration *config = [[DCParserConfiguration alloc] init];
+[config addMapper:mapper];
+config.datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
+
+DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:configuration];
+User *user = [parser parseDictionary:jsonParsed forClass:[User class]];
 </pre>
