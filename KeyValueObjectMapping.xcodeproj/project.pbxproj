@@ -1,0 +1,552 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2030CA581539E4F200F0ACAA /* DCDynamicAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 2030CA561539E4F200F0ACAA /* DCDynamicAttribute.h */; };
+		2030CA591539E4F200F0ACAA /* DCDynamicAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA571539E4F200F0ACAA /* DCDynamicAttribute.m */; };
+		2030CA5D1539E91300F0ACAA /* DynamicAttributeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA5C1539E91300F0ACAA /* DynamicAttributeTest.m */; };
+		2030CA601539FE4000F0ACAA /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA5F1539FE4000F0ACAA /* Tweet.m */; };
+		2030CA631539FF0800F0ACAA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA621539FF0800F0ACAA /* User.m */; };
+		2030CA651539FFDF00F0ACAA /* tweet.json in Resources */ = {isa = PBXBuildFile; fileRef = 2030CA641539FFDF00F0ACAA /* tweet.json */; };
+		2030CA6D153A00DB00F0ACAA /* KeyValueObjectMappingTestJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA6C153A00DB00F0ACAA /* KeyValueObjectMappingTestJSON.m */; };
+		2030CA71153A132300F0ACAA /* DCPropertyNameParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2030CA6F153A132300F0ACAA /* DCPropertyNameParser.h */; };
+		2030CA72153A132300F0ACAA /* DCPropertyNameParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA70153A132300F0ACAA /* DCPropertyNameParser.m */; };
+		205756151538E60500A652E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756141538E60400A652E7 /* Foundation.framework */; };
+		2057561B1538E60500A652E7 /* DCKeyValueObjectMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 2057561A1538E60500A652E7 /* DCKeyValueObjectMapping.m */; };
+		205756231538E60500A652E7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756221538E60500A652E7 /* SenTestingKit.framework */; };
+		205756251538E60500A652E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756241538E60500A652E7 /* UIKit.framework */; };
+		205756261538E60500A652E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756141538E60400A652E7 /* Foundation.framework */; };
+		205756291538E60500A652E7 /* libKeyValueObjectMapping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756111538E60400A652E7 /* libKeyValueObjectMapping.a */; };
+		2057562F1538E60500A652E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2057562D1538E60500A652E7 /* InfoPlist.strings */; };
+		205756321538E60500A652E7 /* KeyValueObjectMappingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 205756311538E60500A652E7 /* KeyValueObjectMappingTests.m */; };
+		205756441538E6C200A652E7 /* DCValueParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756411538E6C200A652E7 /* DCValueParser.h */; };
+		205756451538E6C200A652E7 /* DCGenericParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756421538E6C200A652E7 /* DCGenericParser.h */; };
+		205756461538E6C200A652E7 /* DCGenericParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 205756431538E6C200A652E7 /* DCGenericParser.m */; };
+		205756491538E6E100A652E7 /* DCParserConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756471538E6E100A652E7 /* DCParserConfiguration.h */; };
+		2057564A1538E6E100A652E7 /* DCParserConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 205756481538E6E100A652E7 /* DCParserConfiguration.m */; };
+		205756541538E6F300A652E7 /* DCNSArrayParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2057564C1538E6F300A652E7 /* DCNSArrayParser.h */; };
+		205756551538E6F300A652E7 /* DCNSArrayParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2057564D1538E6F300A652E7 /* DCNSArrayParser.m */; };
+		205756561538E6F300A652E7 /* DCNSDateParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2057564E1538E6F300A652E7 /* DCNSDateParser.h */; };
+		205756571538E6F300A652E7 /* DCNSDateParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2057564F1538E6F300A652E7 /* DCNSDateParser.m */; };
+		205756581538E6F300A652E7 /* DCNSURLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756501538E6F300A652E7 /* DCNSURLParser.h */; };
+		205756591538E6F300A652E7 /* DCNSURLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 205756511538E6F300A652E7 /* DCNSURLParser.m */; };
+		2057565A1538E6F300A652E7 /* DCSimpleParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756521538E6F300A652E7 /* DCSimpleParser.h */; };
+		2057565B1538E6F300A652E7 /* DCSimpleParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 205756531538E6F300A652E7 /* DCSimpleParser.m */; };
+		2057565F1538E72800A652E7 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 2057565D1538E72800A652E7 /* Person.m */; };
+		205756601538E72800A652E7 /* valid_json.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2057565E1538E72800A652E7 /* valid_json.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		205756271538E60500A652E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 205756081538E60400A652E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 205756101538E60400A652E7;
+			remoteInfo = KeyValueObjectMapping;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2030CA561539E4F200F0ACAA /* DCDynamicAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDynamicAttribute.h; sourceTree = "<group>"; };
+		2030CA571539E4F200F0ACAA /* DCDynamicAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDynamicAttribute.m; sourceTree = "<group>"; };
+		2030CA5B1539E91300F0ACAA /* DynamicAttributeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicAttributeTest.h; sourceTree = "<group>"; };
+		2030CA5C1539E91300F0ACAA /* DynamicAttributeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicAttributeTest.m; sourceTree = "<group>"; };
+		2030CA5E1539FE4000F0ACAA /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
+		2030CA5F1539FE4000F0ACAA /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
+		2030CA611539FF0800F0ACAA /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		2030CA621539FF0800F0ACAA /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		2030CA641539FFDF00F0ACAA /* tweet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tweet.json; sourceTree = "<group>"; };
+		2030CA6B153A00DB00F0ACAA /* KeyValueObjectMappingTestJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyValueObjectMappingTestJSON.h; sourceTree = "<group>"; };
+		2030CA6C153A00DB00F0ACAA /* KeyValueObjectMappingTestJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyValueObjectMappingTestJSON.m; sourceTree = "<group>"; };
+		2030CA6F153A132300F0ACAA /* DCPropertyNameParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPropertyNameParser.h; sourceTree = "<group>"; };
+		2030CA70153A132300F0ACAA /* DCPropertyNameParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPropertyNameParser.m; sourceTree = "<group>"; };
+		205756111538E60400A652E7 /* libKeyValueObjectMapping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKeyValueObjectMapping.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		205756141538E60400A652E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		205756181538E60500A652E7 /* KeyValueObjectMapping-Prefix.pch */ = {isa = PBXFileReference; path = "KeyValueObjectMapping-Prefix.pch"; sourceTree = "<group>"; };
+		205756191538E60500A652E7 /* DCKeyValueObjectMapping.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCKeyValueObjectMapping.h; sourceTree = "<group>"; };
+		2057561A1538E60500A652E7 /* DCKeyValueObjectMapping.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCKeyValueObjectMapping.m; sourceTree = "<group>"; };
+		205756211538E60500A652E7 /* KeyValueObjectMappingTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeyValueObjectMappingTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		205756221538E60500A652E7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		205756241538E60500A652E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		2057562C1538E60500A652E7 /* KeyValueObjectMappingTests-Info.plist */ = {isa = PBXFileReference; path = "KeyValueObjectMappingTests-Info.plist"; sourceTree = "<group>"; };
+		2057562E1538E60500A652E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		205756301538E60500A652E7 /* KeyValueObjectMappingTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyValueObjectMappingTests.h; sourceTree = "<group>"; };
+		205756311538E60500A652E7 /* KeyValueObjectMappingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyValueObjectMappingTests.m; sourceTree = "<group>"; };
+		205756411538E6C200A652E7 /* DCValueParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCValueParser.h; sourceTree = "<group>"; };
+		205756421538E6C200A652E7 /* DCGenericParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCGenericParser.h; sourceTree = "<group>"; };
+		205756431538E6C200A652E7 /* DCGenericParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCGenericParser.m; sourceTree = "<group>"; };
+		205756471538E6E100A652E7 /* DCParserConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCParserConfiguration.h; sourceTree = "<group>"; };
+		205756481538E6E100A652E7 /* DCParserConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCParserConfiguration.m; sourceTree = "<group>"; };
+		2057564C1538E6F300A652E7 /* DCNSArrayParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNSArrayParser.h; sourceTree = "<group>"; };
+		2057564D1538E6F300A652E7 /* DCNSArrayParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNSArrayParser.m; sourceTree = "<group>"; };
+		2057564E1538E6F300A652E7 /* DCNSDateParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNSDateParser.h; sourceTree = "<group>"; };
+		2057564F1538E6F300A652E7 /* DCNSDateParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNSDateParser.m; sourceTree = "<group>"; };
+		205756501538E6F300A652E7 /* DCNSURLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNSURLParser.h; sourceTree = "<group>"; };
+		205756511538E6F300A652E7 /* DCNSURLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNSURLParser.m; sourceTree = "<group>"; };
+		205756521538E6F300A652E7 /* DCSimpleParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCSimpleParser.h; sourceTree = "<group>"; };
+		205756531538E6F300A652E7 /* DCSimpleParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCSimpleParser.m; sourceTree = "<group>"; };
+		2057565C1538E72800A652E7 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		2057565D1538E72800A652E7 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		2057565E1538E72800A652E7 /* valid_json.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = valid_json.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2057560E1538E60400A652E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				205756151538E60500A652E7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2057561D1538E60500A652E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				205756231538E60500A652E7 /* SenTestingKit.framework in Frameworks */,
+				205756251538E60500A652E7 /* UIKit.framework in Frameworks */,
+				205756261538E60500A652E7 /* Foundation.framework in Frameworks */,
+				205756291538E60500A652E7 /* libKeyValueObjectMapping.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2030CA6A153A008A00F0ACAA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2057565C1538E72800A652E7 /* Person.h */,
+				2057565D1538E72800A652E7 /* Person.m */,
+				2030CA5E1539FE4000F0ACAA /* Tweet.h */,
+				2030CA5F1539FE4000F0ACAA /* Tweet.m */,
+				2030CA611539FF0800F0ACAA /* User.h */,
+				2030CA621539FF0800F0ACAA /* User.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2030CA6E153A131400F0ACAA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2030CA6F153A132300F0ACAA /* DCPropertyNameParser.h */,
+				2030CA70153A132300F0ACAA /* DCPropertyNameParser.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		205756061538E60400A652E7 = {
+			isa = PBXGroup;
+			children = (
+				205756161538E60500A652E7 /* KeyValueObjectMapping */,
+				2057562A1538E60500A652E7 /* KeyValueObjectMappingTests */,
+				205756131538E60400A652E7 /* Frameworks */,
+				205756121538E60400A652E7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		205756121538E60400A652E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				205756111538E60400A652E7 /* libKeyValueObjectMapping.a */,
+				205756211538E60500A652E7 /* KeyValueObjectMappingTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		205756131538E60400A652E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				205756141538E60400A652E7 /* Foundation.framework */,
+				205756221538E60500A652E7 /* SenTestingKit.framework */,
+				205756241538E60500A652E7 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		205756161538E60500A652E7 /* KeyValueObjectMapping */ = {
+			isa = PBXGroup;
+			children = (
+				2030CA6E153A131400F0ACAA /* Utils */,
+				2030CA561539E4F200F0ACAA /* DCDynamicAttribute.h */,
+				2030CA571539E4F200F0ACAA /* DCDynamicAttribute.m */,
+				2057563B1538E69600A652E7 /* Configuration */,
+				205756401538E6B300A652E7 /* Formatters */,
+				205756191538E60500A652E7 /* DCKeyValueObjectMapping.h */,
+				2057561A1538E60500A652E7 /* DCKeyValueObjectMapping.m */,
+				205756171538E60500A652E7 /* Supporting Files */,
+			);
+			path = KeyValueObjectMapping;
+			sourceTree = "<group>";
+		};
+		205756171538E60500A652E7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				205756181538E60500A652E7 /* KeyValueObjectMapping-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2057562A1538E60500A652E7 /* KeyValueObjectMappingTests */ = {
+			isa = PBXGroup;
+			children = (
+				2030CA6A153A008A00F0ACAA /* Model */,
+				2030CA5B1539E91300F0ACAA /* DynamicAttributeTest.h */,
+				2030CA5C1539E91300F0ACAA /* DynamicAttributeTest.m */,
+				205756301538E60500A652E7 /* KeyValueObjectMappingTests.h */,
+				205756311538E60500A652E7 /* KeyValueObjectMappingTests.m */,
+				2030CA6B153A00DB00F0ACAA /* KeyValueObjectMappingTestJSON.h */,
+				2030CA6C153A00DB00F0ACAA /* KeyValueObjectMappingTestJSON.m */,
+				2057562B1538E60500A652E7 /* Supporting Files */,
+			);
+			path = KeyValueObjectMappingTests;
+			sourceTree = "<group>";
+		};
+		2057562B1538E60500A652E7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2057565E1538E72800A652E7 /* valid_json.plist */,
+				2030CA641539FFDF00F0ACAA /* tweet.json */,
+				2057562C1538E60500A652E7 /* KeyValueObjectMappingTests-Info.plist */,
+				2057562D1538E60500A652E7 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2057563B1538E69600A652E7 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				205756471538E6E100A652E7 /* DCParserConfiguration.h */,
+				205756481538E6E100A652E7 /* DCParserConfiguration.m */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
+		205756401538E6B300A652E7 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				2057564B1538E6E700A652E7 /* Implementation */,
+				205756411538E6C200A652E7 /* DCValueParser.h */,
+				205756421538E6C200A652E7 /* DCGenericParser.h */,
+				205756431538E6C200A652E7 /* DCGenericParser.m */,
+			);
+			name = Formatters;
+			sourceTree = "<group>";
+		};
+		2057564B1538E6E700A652E7 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				2057564C1538E6F300A652E7 /* DCNSArrayParser.h */,
+				2057564D1538E6F300A652E7 /* DCNSArrayParser.m */,
+				2057564E1538E6F300A652E7 /* DCNSDateParser.h */,
+				2057564F1538E6F300A652E7 /* DCNSDateParser.m */,
+				205756501538E6F300A652E7 /* DCNSURLParser.h */,
+				205756511538E6F300A652E7 /* DCNSURLParser.m */,
+				205756521538E6F300A652E7 /* DCSimpleParser.h */,
+				205756531538E6F300A652E7 /* DCSimpleParser.m */,
+			);
+			name = Implementation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2057560F1538E60400A652E7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				205756441538E6C200A652E7 /* DCValueParser.h in Headers */,
+				205756451538E6C200A652E7 /* DCGenericParser.h in Headers */,
+				205756491538E6E100A652E7 /* DCParserConfiguration.h in Headers */,
+				205756541538E6F300A652E7 /* DCNSArrayParser.h in Headers */,
+				205756561538E6F300A652E7 /* DCNSDateParser.h in Headers */,
+				205756581538E6F300A652E7 /* DCNSURLParser.h in Headers */,
+				2057565A1538E6F300A652E7 /* DCSimpleParser.h in Headers */,
+				2030CA581539E4F200F0ACAA /* DCDynamicAttribute.h in Headers */,
+				2030CA71153A132300F0ACAA /* DCPropertyNameParser.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		205756101538E60400A652E7 /* KeyValueObjectMapping */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 205756351538E60500A652E7 /* Build configuration list for PBXNativeTarget "KeyValueObjectMapping" */;
+			buildPhases = (
+				2057560D1538E60400A652E7 /* Sources */,
+				2057560E1538E60400A652E7 /* Frameworks */,
+				2057560F1538E60400A652E7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KeyValueObjectMapping;
+			productName = KeyValueObjectMapping;
+			productReference = 205756111538E60400A652E7 /* libKeyValueObjectMapping.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		205756201538E60500A652E7 /* KeyValueObjectMappingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 205756381538E60500A652E7 /* Build configuration list for PBXNativeTarget "KeyValueObjectMappingTests" */;
+			buildPhases = (
+				2057561C1538E60500A652E7 /* Sources */,
+				2057561D1538E60500A652E7 /* Frameworks */,
+				2057561E1538E60500A652E7 /* Resources */,
+				2057561F1538E60500A652E7 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				205756281538E60500A652E7 /* PBXTargetDependency */,
+			);
+			name = KeyValueObjectMappingTests;
+			productName = KeyValueObjectMappingTests;
+			productReference = 205756211538E60500A652E7 /* KeyValueObjectMappingTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		205756081538E60400A652E7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DC;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = dchohfi;
+			};
+			buildConfigurationList = 2057560B1538E60400A652E7 /* Build configuration list for PBXProject "KeyValueObjectMapping" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 205756061538E60400A652E7;
+			productRefGroup = 205756121538E60400A652E7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				205756101538E60400A652E7 /* KeyValueObjectMapping */,
+				205756201538E60500A652E7 /* KeyValueObjectMappingTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2057561E1538E60500A652E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2057562F1538E60500A652E7 /* InfoPlist.strings in Resources */,
+				205756601538E72800A652E7 /* valid_json.plist in Resources */,
+				2030CA651539FFDF00F0ACAA /* tweet.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2057561F1538E60500A652E7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2057560D1538E60400A652E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2057561B1538E60500A652E7 /* DCKeyValueObjectMapping.m in Sources */,
+				205756461538E6C200A652E7 /* DCGenericParser.m in Sources */,
+				2057564A1538E6E100A652E7 /* DCParserConfiguration.m in Sources */,
+				205756551538E6F300A652E7 /* DCNSArrayParser.m in Sources */,
+				205756571538E6F300A652E7 /* DCNSDateParser.m in Sources */,
+				205756591538E6F300A652E7 /* DCNSURLParser.m in Sources */,
+				2057565B1538E6F300A652E7 /* DCSimpleParser.m in Sources */,
+				2030CA591539E4F200F0ACAA /* DCDynamicAttribute.m in Sources */,
+				2030CA72153A132300F0ACAA /* DCPropertyNameParser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2057561C1538E60500A652E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				205756321538E60500A652E7 /* KeyValueObjectMappingTests.m in Sources */,
+				2057565F1538E72800A652E7 /* Person.m in Sources */,
+				2030CA5D1539E91300F0ACAA /* DynamicAttributeTest.m in Sources */,
+				2030CA601539FE4000F0ACAA /* Tweet.m in Sources */,
+				2030CA631539FF0800F0ACAA /* User.m in Sources */,
+				2030CA6D153A00DB00F0ACAA /* KeyValueObjectMappingTestJSON.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		205756281538E60500A652E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 205756101538E60400A652E7 /* KeyValueObjectMapping */;
+			targetProxy = 205756271538E60500A652E7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2057562D1538E60500A652E7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2057562E1538E60500A652E7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		205756331538E60500A652E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		205756341538E60500A652E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		205756361538E60500A652E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/KeyValueObjectMapping.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KeyValueObjectMapping/KeyValueObjectMapping-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = KeyValueObjectMapping;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		205756371538E60500A652E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/KeyValueObjectMapping.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KeyValueObjectMapping/KeyValueObjectMapping-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = KeyValueObjectMapping;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		205756391538E60500A652E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KeyValueObjectMapping/KeyValueObjectMapping-Prefix.pch";
+				INFOPLIST_FILE = "KeyValueObjectMappingTests/KeyValueObjectMappingTests-Info.plist";
+				PRODUCT_NAME = KeyValueObjectMappingTests;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		2057563A1538E60500A652E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KeyValueObjectMapping/KeyValueObjectMapping-Prefix.pch";
+				INFOPLIST_FILE = "KeyValueObjectMappingTests/KeyValueObjectMappingTests-Info.plist";
+				PRODUCT_NAME = KeyValueObjectMappingTests;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2057560B1538E60400A652E7 /* Build configuration list for PBXProject "KeyValueObjectMapping" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				205756331538E60500A652E7 /* Debug */,
+				205756341538E60500A652E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		205756351538E60500A652E7 /* Build configuration list for PBXNativeTarget "KeyValueObjectMapping" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				205756361538E60500A652E7 /* Debug */,
+				205756371538E60500A652E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		205756381538E60500A652E7 /* Build configuration list for PBXNativeTarget "KeyValueObjectMappingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				205756391538E60500A652E7 /* Debug */,
+				2057563A1538E60500A652E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 205756081538E60400A652E7 /* Project object */;
+}
