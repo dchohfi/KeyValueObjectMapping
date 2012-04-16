@@ -7,13 +7,13 @@
 //
 
 #import "DCKeyValueObjectMapping.h"
-#import "DCGenericParser.h"
+#import "DCGenericConverter.h"
 #import "DCDynamicAttribute.h"
 #import <objc/runtime.h>
 #import "DCPropertyNameParser.h"
 
 @interface DCKeyValueObjectMapping()
-@property(nonatomic, strong) DCGenericParser *parser;
+@property(nonatomic, strong) DCGenericConverter *parser;
 @property(nonatomic, strong) DCParserConfiguration *configuration;
 @property(nonatomic, strong) DCPropertyNameParser *propertyNameParser;
 - (void) parseValue: (id) value forObject: (id) object inAttribute: (DCDynamicAttribute *) dynamicAttribute;
@@ -35,7 +35,7 @@
     if (self) {
         configuration = _configuration;
         propertyNameParser = [[DCPropertyNameParser alloc] initWithConfiguration:configuration];
-        parser = [[DCGenericParser alloc] initWithConfiguration:configuration];
+        parser = [[DCGenericConverter alloc] initWithConfiguration:configuration];
     }
     return self;   
 }

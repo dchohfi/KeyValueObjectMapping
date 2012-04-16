@@ -1,23 +1,23 @@
 //
-//  GenericParser.m
+//  DCGenericConverter.m
 //  KeyValueObjectMapping
 //
 //  Created by Diego Chohfi on 4/13/12.
 //  Copyright (c) 2012 None. All rights reserved.
 //
 
-#import "DCGenericParser.h"
-#import "DCNSDateParser.h"
-#import "DCNSURLParser.h"
-#import "DCSimpleParser.h"
-#import "DCNSArrayParser.h"
+#import "DCGenericConverter.h"
+#import "DCNSDateConverter.h"
+#import "DCNSURLConverter.h"
+#import "DCSimpleConverter.h"
+#import "DCNSArrayConverter.h"
 
-@interface DCGenericParser()
+@interface DCGenericConverter()
 @property(nonatomic, strong) DCParserConfiguration *configuration;
 @property(nonatomic, strong) NSArray *parsers;
 @end
 
-@implementation DCGenericParser
+@implementation DCGenericConverter
 @synthesize configuration, parsers;
 - (id)initWithConfiguration:(DCParserConfiguration *) _configuration
 {
@@ -25,9 +25,9 @@
     if (self) {
         configuration = _configuration;
         parsers = [NSArray arrayWithObjects:
-                            [[DCNSDateParser alloc] initWithConfiguration:configuration],                         
-                            [[DCNSURLParser alloc] initWithConfiguration:configuration],
-                            [[DCNSArrayParser alloc] initWithConfiguration:configuration],
+                            [[DCNSDateConverter alloc] initWithConfiguration:configuration],                         
+                            [[DCNSURLConverter alloc] initWithConfiguration:configuration],
+                            [[DCNSArrayConverter alloc] initWithConfiguration:configuration],
                             nil];
     }
     return self;
@@ -35,13 +35,13 @@
 
 - (id)transformValue:(id)value forDynamicAttribute: (DCDynamicAttribute *) attribute {
     if([attribute isValidObject]){
-        for(id<DCValueParser> parser in parsers){
+        for(id<DCValueConverter> parser in parsers){
             if([parser canTransformValueForClass:[attribute attributeClass]]){
                 return [parser transformValue:value forDynamicAttribute:attribute];
             }
         }
     }
-    DCSimpleParser *simpleParser = [[DCSimpleParser alloc] init];
+    DCSimpleConverter *simpleParser = [[DCSimpleConverter alloc] init];
     return [simpleParser transformValue:value forDynamicAttribute:attribute];
 }
 

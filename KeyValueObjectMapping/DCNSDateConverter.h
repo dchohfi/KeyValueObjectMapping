@@ -1,5 +1,5 @@
 //
-//  NSDateParser.h
+//  DCNSDateConverter.h
 //  KeyValueObjectMapping
 //
 //  Created by Diego Chohfi on 4/13/12.
@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DCValueParser.h"
-@interface DCNSDateParser : NSObject <DCValueParser>
+#import "DCValueConverter.h"
+@interface DCNSDateConverter : NSObject <DCValueConverter>
 
 @end

@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "DCParserConfiguration.h"
 #import "DCDynamicAttribute.h"
-@protocol DCValueParser <NSObject>
+@protocol DCValueConverter <NSObject>
 
 - (id) initWithConfiguration: (DCParserConfiguration *) configuration;
-- (id)transformValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute;
+- (id) transformValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute;
 - (BOOL) canTransformValueForClass: (Class) class;
 
 

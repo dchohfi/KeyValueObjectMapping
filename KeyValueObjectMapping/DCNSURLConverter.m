@@ -1,18 +1,18 @@
 //
-//  NSURLParser.m
+//  DCNSURLConverter.m
 //  KeyValueObjectMapping
 //
 //  Created by Diego Chohfi on 4/13/12.
 //  Copyright (c) 2012 None. All rights reserved.
 //
 
-#import "DCNSURLParser.h"
+#import "DCNSURLConverter.h"
 
-@interface DCNSURLParser()
+@interface DCNSURLConverter()
 @property(nonatomic, strong) DCParserConfiguration *configuration;
 @end
 
-@implementation DCNSURLParser
+@implementation DCNSURLConverter
 @synthesize configuration;
 
 - (id) initWithConfiguration: (DCParserConfiguration *) _configuration {

@@ -1,21 +1,21 @@
 //
-//  NSArrayParser.m
+//  DCNSArrayConverter.m
 //  KeyValueObjectMapping
 //
 //  Created by Diego Chohfi on 4/13/12.
 //  Copyright (c) 2012 None. All rights reserved.
 //
 
-#import "DCNSArrayParser.h"
-#import "DCSimpleParser.h"
+#import "DCNSArrayConverter.h"
+#import "DCSimpleConverter.h"
 
-@interface DCNSArrayParser()
+@interface DCNSArrayConverter()
 
 @property(nonatomic, strong) DCParserConfiguration *configuration;
 
 @end
 
-@implementation DCNSArrayParser
+@implementation DCNSArrayConverter
 @synthesize configuration;
 
 - (id)initWithConfiguration:(DCParserConfiguration *)_configuration{
@@ -30,7 +30,7 @@
     BOOL validValues = ![[[values objectAtIndex:0] class] isSubclassOfClass:[NSDictionary class]];
     
     if(validValues){
-        DCSimpleParser *simpleParser = [[DCSimpleParser alloc] init];
+        DCSimpleConverter *simpleParser = [[DCSimpleConverter alloc] init];
         NSMutableArray *valuesHolder = [NSMutableArray array];
         for(id value in values){
             DCDynamicAttribute *valueClassAsAttribute = [[DCDynamicAttribute alloc] initWithClass:[value class]];

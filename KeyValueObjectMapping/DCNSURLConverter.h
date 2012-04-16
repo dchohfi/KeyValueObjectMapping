@@ -1,5 +1,5 @@
 //
-//  SimpleParser.h
+//  DCNSURLConverter.h
 //  KeyValueObjectMapping
 //
 //  Created by Diego Chohfi on 4/13/12.
@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DCValueParser.h"
-@interface DCSimpleParser : NSObject <DCValueParser>
+#import "DCValueConverter.h"
+
+@interface DCNSURLConverter : NSObject <DCValueConverter>
 
 @end

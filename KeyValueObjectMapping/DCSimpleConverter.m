@@ -1,18 +1,18 @@
 //
-//  SimpleParser.m
+//  DCSimpleConverter.m
 //  KeyValueObjectMapping
 //
 //  Created by Diego Chohfi on 4/13/12.
 //  Copyright (c) 2012 None. All rights reserved.
 //
 
-#import "DCSimpleParser.h"
+#import "DCSimpleConverter.h"
 
-@interface DCSimpleParser()
+@interface DCSimpleConverter()
 @property(nonatomic, strong) DCParserConfiguration *configuration;
 @end
 
-@implementation DCSimpleParser
+@implementation DCSimpleConverter
 
 @synthesize configuration;
 

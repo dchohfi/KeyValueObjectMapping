@@ -1,18 +1,18 @@
 
-//  NSDateParser.m
+//  DCNSDateConverter.m
 //  KeyValueObjectMapping
 //
 //  Created by Diego Chohfi on 4/13/12.
 //  Copyright (c) 2012 None. All rights reserved.
 //
 
-#import "DCNSDateParser.h"
-@interface DCNSDateParser()
+#import "DCNSDateConverter.h"
+@interface DCNSDateConverter()
 @property(nonatomic, strong) DCParserConfiguration *configuration;
 - (BOOL) validDouble: (NSString *) doubleValue;
 @end
 
-@implementation DCNSDateParser
+@implementation DCNSDateConverter
 @synthesize configuration;
 - (id) initWithConfiguration: (DCParserConfiguration *) _configuration {
     self = [super init];

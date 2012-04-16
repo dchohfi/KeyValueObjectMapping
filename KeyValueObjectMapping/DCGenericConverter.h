@@ -1,5 +1,5 @@
 //
-//  GenericParser.h
+//  DCGenericConverter.h
 //  KeyValueObjectMapping
 //
 //  Created by Diego Chohfi on 4/13/12.
@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "DCDynamicAttribute.h"
-#import "DCValueParser.h"
-@interface DCGenericParser : NSObject
+#import "DCParserConfiguration.h"
 
+@interface DCGenericConverter : NSObject
 - (id)initWithConfiguration:(DCParserConfiguration *) configuration;
 - (id)transformValue:(id)value forDynamicAttribute: (DCDynamicAttribute *) attribute;
 @end
