@@ -73,7 +73,7 @@ config.datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
 
 KeyValueObjectMapping * parser = [[KeyValueObjectMapping alloc] initWithConfiguration:config];
 
-Tweet *tweet = [parser parseJson:jsonParsed forClass:[Tweet class]];
+Tweet *tweet = [parser parseDictionary:jsonParsed forClass:[Tweet class]];
 NSLog(@"%@ - %@", tweet.idStr, tweet.name);
 </pre>
 
