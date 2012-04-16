@@ -17,12 +17,13 @@
 		2030CA71153A132300F0ACAA /* DCPropertyNameParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2030CA6F153A132300F0ACAA /* DCPropertyNameParser.h */; };
 		2030CA72153A132300F0ACAA /* DCPropertyNameParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA70153A132300F0ACAA /* DCPropertyNameParser.m */; };
 		20407612153C997900E110DB /* DCGenericConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20407611153C997900E110DB /* DCGenericConverter.m */; };
-		20407616153C9EFC00E110DB /* DCObjectMappingForArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 20407614153C9EFC00E110DB /* DCObjectMappingForArray.h */; };
+		20407616153C9EFC00E110DB /* DCObjectMappingForArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 20407614153C9EFC00E110DB /* DCObjectMappingForArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20407617153C9EFC00E110DB /* DCObjectMappingForArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 20407615153C9EFC00E110DB /* DCObjectMappingForArray.m */; };
 		2040761A153CA4B700E110DB /* DCObjectMapping.h in Headers */ = {isa = PBXBuildFile; fileRef = 20407618153CA4B700E110DB /* DCObjectMapping.h */; };
 		2040761B153CA4B700E110DB /* DCObjectMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 20407619153CA4B700E110DB /* DCObjectMapping.m */; };
 		2040761D153CCEEB00E110DB /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 2040761C153CCEEB00E110DB /* user.json */; };
 		20407620153CCF2F00E110DB /* DCArrayOfTweetsOnUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2040761F153CCF2F00E110DB /* DCArrayOfTweetsOnUserTests.m */; };
+		20407621153CD5DB00E110DB /* DCKeyValueObjectMapping.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756191538E60500A652E7 /* DCKeyValueObjectMapping.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		205756151538E60500A652E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756141538E60400A652E7 /* Foundation.framework */; };
 		2057561B1538E60500A652E7 /* DCKeyValueObjectMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 2057561A1538E60500A652E7 /* DCKeyValueObjectMapping.m */; };
 		205756231538E60500A652E7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756221538E60500A652E7 /* SenTestingKit.framework */; };
@@ -33,7 +34,7 @@
 		205756321538E60500A652E7 /* KeyValueObjectMappingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 205756311538E60500A652E7 /* KeyValueObjectMappingTests.m */; };
 		205756441538E6C200A652E7 /* DCValueConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756411538E6C200A652E7 /* DCValueConverter.h */; };
 		205756451538E6C200A652E7 /* DCGenericConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756421538E6C200A652E7 /* DCGenericConverter.h */; };
-		205756491538E6E100A652E7 /* DCParserConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756471538E6E100A652E7 /* DCParserConfiguration.h */; };
+		205756491538E6E100A652E7 /* DCParserConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756471538E6E100A652E7 /* DCParserConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2057564A1538E6E100A652E7 /* DCParserConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 205756481538E6E100A652E7 /* DCParserConfiguration.m */; };
 		205756541538E6F300A652E7 /* DCNSArrayConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 2057564C1538E6F300A652E7 /* DCNSArrayConverter.h */; };
 		205756551538E6F300A652E7 /* DCNSArrayConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2057564D1538E6F300A652E7 /* DCNSArrayConverter.m */; };
@@ -299,6 +300,7 @@
 				2030CA71153A132300F0ACAA /* DCPropertyNameParser.h in Headers */,
 				20407616153C9EFC00E110DB /* DCObjectMappingForArray.h in Headers */,
 				2040761A153CA4B700E110DB /* DCObjectMapping.h in Headers */,
+				20407621153CD5DB00E110DB /* DCKeyValueObjectMapping.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

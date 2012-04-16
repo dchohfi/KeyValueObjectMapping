@@ -63,6 +63,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "KeyValueObjectMapping"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
