@@ -44,10 +44,10 @@ And your User model looks like:
 
 Using any JSON parser you need to transform this NSString to a NSDictionary representation:
 <pre>
-	NSError *error;
-	NSDictionary *jsonParsed = [NSJSONSerialization JSONObjectWithData:jsonData
-		                              options:NSJSONReadingMutableContainers 
-																	error:&error];
+NSError *error;
+NSDictionary *jsonParsed = [NSJSONSerialization JSONObjectWithData:jsonData
+	                              options:NSJSONReadingMutableContainers 
+																error:&error];
 </pre>
 
 If you don't use KeyValueObjectMapping you need to create an instance of User type, and set all the properties with the same key name on the dictionary. And transform it when needed.
