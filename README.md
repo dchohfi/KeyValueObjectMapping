@@ -32,7 +32,7 @@ And your User model looks like:
 @property(nonatomic, strong) NSString *idStr;
 @property(nonatomic, strong) NSString *name;
 @property(nonatomic, strong) NSString *screenName;
-@property(nonatomic, strongy) NSString *location;
+@property(nonatomic, strong) NSString *location;
 @property(nonatomic, strong) NSString *description;
 @property(nonatomic, strong) NSURL *url;
 @property(nonatomic, strong) BOOL protected;

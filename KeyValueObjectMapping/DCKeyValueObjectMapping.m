@@ -17,7 +17,9 @@
 @property(nonatomic, strong) DCParserConfiguration *configuration;
 @property(nonatomic, strong) DCPropertyNameParser *propertyNameParser;
 - (void) parseValue: (id) value forObject: (id) object inAttribute: (DCDynamicAttribute *) dynamicAttribute;
-- (DCDynamicAttribute *) findAttributeForClass: (Class) class andKey: (NSString *) key;
+- (DCDynamicAttribute *) findAttributeForKey: (NSString *) key onClass: (Class) class;
+- (DCDynamicAttribute *) findPropertyForKey: (NSString *)key onClass: (Class)class;
+- (void)setNilValueForKey:(NSString *)key onObject: (id) object forClass: (Class) class;
 @end
 
 @implementation DCKeyValueObjectMapping
@@ -52,7 +54,7 @@
     NSArray *keys = [dictionary allKeys];
     for (NSString *key in keys) {
         id value = [dictionary valueForKey:key];
-        DCDynamicAttribute *dynamicAttribute = [self findAttributeForClass:class andKey:key];
+        DCDynamicAttribute *dynamicAttribute = [self findAttributeForKey:key onClass:class];
         if(dynamicAttribute){
             [self parseValue:value forObject:object inAttribute:dynamicAttribute];
         }
@@ -68,29 +70,33 @@
     value = [parser transformValue:value forDynamicAttribute:dynamicAttribute];
     if([object validateValue:&value forKey:key error:&error]){
         if([value isKindOfClass:[NSNull class]]){
-            if([dynamicAttribute attributeClass] == [NSString class]){
-                [object setValue:nil forKey:key];
-            }else{
-                [object setNilValueForKey:key];   
-            }
+            [self setNilValueForKey: key onObject: object forClass:dynamicAttribute.attributeClass];
         }else {
             [object setValue:value forKey:key];
         }
     }
 }
-- (DCDynamicAttribute *) findAttributeForClass: (Class) class andKey: (NSString *) key{
-    DCDynamicAttribute *dynamicAttribute = nil;
+- (void)setNilValueForKey:(NSString *)key onObject: (id) object forClass: (Class) class {
+    if(class == [NSString class]){
+        [object setValue:nil forKey:key];
+    }else{
+        [object setNilValueForKey:key];   
+    }
+}
+- (DCDynamicAttribute *) findPropertyForKey: (NSString *)key onClass: (Class)class{
     objc_property_t property = class_getProperty(class, [key UTF8String]);
     if (property) {
         NSString *attributeDetails = [NSString stringWithUTF8String:property_getAttributes(property)];
-        dynamicAttribute = [[DCDynamicAttribute alloc] initWithAttributeDescription: attributeDetails forKey:key];
-    }else{
+        return [[DCDynamicAttribute alloc] initWithAttributeDescription: attributeDetails forKey:key];
+    }
+    return nil;
+}
+
+- (DCDynamicAttribute *) findAttributeForKey: (NSString *) key onClass: (Class) class {
+    DCDynamicAttribute *dynamicAttribute = [self findPropertyForKey:key onClass:class];
+    if(!dynamicAttribute){
         key = [propertyNameParser splitKeyAndMakeCamelcased:key];
-        objc_property_t property = class_getProperty(class, [key UTF8String]);
-        if (property) {
-            NSString *attributeDetails = [NSString stringWithUTF8String:property_getAttributes(property)];
-            dynamicAttribute = [[DCDynamicAttribute alloc] initWithAttributeDescription: attributeDetails forKey:key];
-        }
+        dynamicAttribute = [self findPropertyForKey:key onClass:class];
     }
     return dynamicAttribute;
 }
