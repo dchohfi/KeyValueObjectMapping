@@ -1,14 +1,14 @@
 Introduction
 =========================
 
-KeyValueParser is a framework that provides an easy way to deal with any key/value type, as JSON, plist and even a common NSDictionary.
+KeyValueObjectMapping is a framework that provides an easy way to deal with any key/value type, as JSON, plist and even a common NSDictionary.
 
 It's made to be used with NSJSONSerialization and other resources, and the main goal is to avoid the tedious work when you need to deal with key/value types.
 
 Usage
 -------------------------
 
-KeyValueParser is a simple object, all you need to do is create a new object and start to transform a dictionary to any classes.
+KeyValueObjectMapping is a simple object, all you need to do is create a new object and start to transform a dictionary to any classes.
 
 Let's assume that you have some JSON like that:
 <pre>
@@ -50,7 +50,7 @@ Using any JSON parser you need to transform this NSString to a NSDictionary repr
 																	error:&error];
 </pre>
 
-If you don't use KeyValueParser you need to create an instance of User type, and set all the properties with the same key name on the dictionary. And transform it when needed.
+If you don't use KeyValueObjectMapping you need to create an instance of User type, and set all the properties with the same key name on the dictionary. And transform it when needed.
 
 <pre>
 User *user = [[User alloc] init];
@@ -65,13 +65,13 @@ NSDate *date = [formatter dateFromString:@"Sat Apr 14 00:20:07 +0000 2012"];
 [user setCreatedAt: date];
 </pre>
 
-Boring job, don't you think? So, if you use KeyValueParser you just need to give the dictionary and the class that you want to create, and everthing else will be made automatically. And you can configure the parser to behave like you want, giving some pattern for NSDate parser, the character that separate the keys (on example we have used an '_' character, which is the default), and so on.
+Boring job, don't you think? So, if you use KeyValueObjectMapping you just need to give the dictionary and the class that you want to create, and everthing else will be made automatically. And you can configure the parser to behave like you want, giving some pattern for NSDate parser, the character that separate the keys (on example we have used an '_' character, which is the default), and so on.
 
 <pre>
 ParserConfiguration *config = [[ParserConfiguration alloc] init];
 config.datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
 
-KeyValueParser * parser = [[KeyValueParser alloc] initWithConfiguration:config];
+KeyValueObjectMapping * parser = [[KeyValueObjectMapping alloc] initWithConfiguration:config];
 
 Tweet *tweet = [parser parseJson:jsonParsed forClass:[Tweet class]];
 NSLog(@"%@ - %@", tweet.idStr, tweet.name);
