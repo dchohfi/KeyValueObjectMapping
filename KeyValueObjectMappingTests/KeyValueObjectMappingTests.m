@@ -51,8 +51,14 @@
     configuration = nil;
 }
 
-- (void)testSplitPropetyName
+- (void)testNullValuesPassed
 {
+    DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:[[DCParserConfiguration alloc] init]];
+    Person *person = [parser parseDictionary: nil forClass:[Person class]];
+    STAssertNil(person, @"Should be nill return when dictionary is nil");
+    
+    person = [parser parseDictionary: [NSDictionary dictionary] forClass:nil];
+    STAssertNil(person, @"Should be nill return when class is nil");
 }
 
 @end

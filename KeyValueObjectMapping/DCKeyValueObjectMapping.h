@@ -13,6 +13,6 @@
 
 - (id) initWithConfiguration: (DCParserConfiguration *) configuration;
 - (id) parseDictionary: (NSDictionary *) dictionary forClass: (Class) class;
-- (id) parseArray: (NSArray *) array forClass: (Class) class;
+- (NSArray *) parseArray: (NSArray *) array forClass: (Class) class;
 
 @end

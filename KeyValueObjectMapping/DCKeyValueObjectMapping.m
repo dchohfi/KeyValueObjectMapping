@@ -33,8 +33,8 @@
     return self;   
 }
 
-- (id) parseArray: (NSArray *) array forClass: (Class) class {
-    if(!array){
+- (NSArray *) parseArray: (NSArray *) array forClass: (Class) class {
+    if(!array || !class){
         return nil;
     }
     NSMutableArray *values = [[NSMutableArray alloc] initWithCapacity:[array count]];
@@ -42,10 +42,10 @@
         id value = [self parseDictionary:dictionary forClass:class];
         [values addObject:value];
     }
-    return values;
+    return [NSArray arrayWithArray:values];
 }
 - (id) parseDictionary: (NSDictionary *) dictionary forClass: (Class) class{
-    if(!dictionary){
+    if(!dictionary || !class){
         return nil;
     }
     NSObject *object = [[class alloc] init];
