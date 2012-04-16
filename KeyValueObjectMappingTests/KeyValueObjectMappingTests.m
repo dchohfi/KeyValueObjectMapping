@@ -10,6 +10,7 @@
 #import "DCParserConfiguration.h"
 #import "DCKeyValueObjectMapping.h"
 #import "Person.h"
+#import "Tweet.h"
 #import "DCPropertyNameParser.h"
 
 @interface KeyValueObjectMappingTests()
@@ -49,6 +50,24 @@
     STAssertEqualObjects([person.arrayPrimitive objectAtIndex:2], [NSNumber numberWithInt:1], @"Should have muthaco on first position of array");
     STAssertEqualObjects([person.arrayPrimitive objectAtIndex:3], [NSNumber numberWithDouble:3.1416], @"Should have muthaco on first position of array");
     configuration = nil;
+}
+
+- (void)testMultipleTweets{
+    Class tweetClass = [Tweet class];
+    
+    NSArray *arrayTweets = [NSArray arrayWithObjects:jsonToParse, jsonToParse, jsonToParse, nil];
+    DCParserConfiguration *configuration = [[DCParserConfiguration alloc] init];
+    configuration.datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
+    DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:configuration];
+    NSArray *parsedArray = [parser parseArray:arrayTweets forClass:tweetClass];
+    
+    STAssertEquals((int)[parsedArray count], 3, @"Should have same size of tweets");
+    STAssertTrue([parsedArray isKindOfClass:[NSArray class]], @"Should be a NSArray");
+    STAssertFalse([parsedArray isKindOfClass:[NSMutableArray class]], @"Should not be a NSMutableArray");
+    
+    [parsedArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        STAssertTrue(tweetClass == [obj class], @"Should be a Tweet");
+    }];
 }
 
 - (void)testNullValuesPassed
