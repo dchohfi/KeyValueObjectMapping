@@ -13,7 +13,9 @@
 
 @property(nonatomic, strong) NSString *datePattern;
 @property(nonatomic, strong) NSString *splitToken;
+@property(nonatomic, readonly) NSMutableArray *objectMappers;
 
-- (void)addMapper: (DCObjectMappingForArray *)mapper;
+- (void) addArrayMapper: (DCObjectMappingForArray *)mapper;
+- (void) addObjectMapping: (DCObjectMapping *) mapper;
 - (DCObjectMappingForArray *) arrayMapperForMapper: (DCObjectMapping *) mapper;
 @end

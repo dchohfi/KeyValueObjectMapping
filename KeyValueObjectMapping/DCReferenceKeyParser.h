@@ -7,13 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DCParserConfiguration.h"
 
-@interface DCPropertyNameParser : NSObject
+@interface DCReferenceKeyParser : NSObject
 
 @property(nonatomic, readonly) NSString *splitToken;
 
-+ (DCPropertyNameParser *) parserForToken: (NSString *) splitToken;
++ (DCReferenceKeyParser *) parserForToken: (NSString *) splitToken;
 - (NSString *) splitKeyAndMakeCamelcased: (NSString *) key;
 
 @end

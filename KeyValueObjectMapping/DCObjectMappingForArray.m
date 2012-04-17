@@ -11,10 +11,17 @@
 @implementation DCObjectMappingForArray
 @synthesize objectMapping, classForElementsOnArray;
 
-- (id)initWithClassForElements: (Class) _classForElementsOnArray forKeyAndAttributeName: (NSString *) keyForAttribute inClass: (Class) classReference
-{
-    return [self initWithObjectMapping:[[DCObjectMapping alloc] initWithKeyForAttribute:keyForAttribute onClass:classReference] forArrayElementOfType:_classForElementsOnArray];
++ (DCObjectMappingForArray *) mapperForClassElements: (Class) classForElementsOnArray forAttribute: (NSString *) attribute onClass: (Class) classReference{
+    
+    DCObjectMapping *objectMapping = [DCObjectMapping mapKeyPath:attribute toAttribute:attribute onClass:classReference];
+    
+    return  [[self alloc] initWithObjectMapping:objectMapping forArrayElementOfType:classForElementsOnArray];
 }
+
++ (DCObjectMappingForArray *) mapperForClass: (Class) classForElementsOnArray onMapping: (DCObjectMapping *) objectMapping{
+    return [[self alloc] initWithObjectMapping:objectMapping forArrayElementOfType:classForElementsOnArray];
+}
+
 - (id)initWithObjectMapping: (DCObjectMapping *) _objectMapping forArrayElementOfType: (Class) _classForElementsOnArray {
     self = [super init];
     if (self) {

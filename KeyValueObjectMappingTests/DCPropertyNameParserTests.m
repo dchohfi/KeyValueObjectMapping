@@ -7,11 +7,11 @@
 //
 
 #import "DCPropertyNameParserTests.h"
-#import "DCPropertyNameParser.h"
+#import "DCReferenceKeyParser.h"
 
 @interface DCPropertyNameParserTests()
 
-@property(nonatomic, strong) DCPropertyNameParser *parser;
+@property(nonatomic, strong) DCReferenceKeyParser *parser;
 
 @end
 
@@ -19,7 +19,7 @@
 @synthesize parser;
 
 - (void)setUp{
-    parser = [DCPropertyNameParser parserForToken:@"_"];
+    parser = [DCReferenceKeyParser parserForToken:@"_"];
 }
 
 - (void)testPropertyNameParserForSingleWord {

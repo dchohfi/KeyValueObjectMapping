@@ -9,7 +9,7 @@
 #import "DCObjectMapping.h"
 
 @implementation DCObjectMapping
-@synthesize attributeName, key, classReference;
+@synthesize attributeName, keyReference, classReference;
 
 
 - (id)initWithClass: (Class) _classReference
@@ -21,20 +21,25 @@
     return self;
 }
 
-- (id)initWithKeyForAttribute: (NSString *) _attributeAndKey onClass: (Class) _classReference
-{
-    return [self initWithAttributeName:_attributeAndKey forKey:_attributeAndKey onClass:_classReference];
++ (DCObjectMapping *) mapKeyPath: (NSString *) keyPath toAttribute: (NSString *) attributeName onClass: (Class) attributeClass{
+    return [[self alloc] initWithKeyPath:keyPath toAttribute:attributeName onClass:attributeClass];
 }
 
-- (id)initWithAttributeName: (NSString *) _attributeName forKey: (NSString *) _key onClass: (Class) _classReference
-{
+- (id)initWithKeyPath: (NSString *) _keyReference toAttribute: (NSString *) _attributeName onClass: (Class) _classReference {
     self = [super init];
     if (self) {
         attributeName = _attributeName;
-        key = _key;
+        keyReference = _keyReference;
         classReference = _classReference;
     }
     return self;
+}
+
+- (BOOL) isEqualsForKey: (NSString *) key andClassReference: (Class) _classReference {
+    if([self.keyReference isEqualToString:key] && self.classReference == _classReference){
+        return YES;
+    }
+    return NO;
 }
 
 @end

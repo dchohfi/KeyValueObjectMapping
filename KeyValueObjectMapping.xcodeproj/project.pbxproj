@@ -10,14 +10,15 @@
 		20231F3A153DC785008516EE /* DCPropertyNameParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20231F39153DC785008516EE /* DCPropertyNameParserTests.m */; };
 		20231F42153DD45B008516EE /* DCPropertyFinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 20231F40153DD45B008516EE /* DCPropertyFinder.h */; };
 		20231F43153DD45B008516EE /* DCPropertyFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 20231F41153DD45B008516EE /* DCPropertyFinder.m */; };
+		20231F46153E1F78008516EE /* DCPropertyFinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20231F45153E1F78008516EE /* DCPropertyFinderTests.m */; };
 		2030CA581539E4F200F0ACAA /* DCDynamicAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 2030CA561539E4F200F0ACAA /* DCDynamicAttribute.h */; };
 		2030CA591539E4F200F0ACAA /* DCDynamicAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA571539E4F200F0ACAA /* DCDynamicAttribute.m */; };
 		2030CA5D1539E91300F0ACAA /* DCDynamicAttributeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA5C1539E91300F0ACAA /* DCDynamicAttributeTest.m */; };
 		2030CA601539FE4000F0ACAA /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA5F1539FE4000F0ACAA /* Tweet.m */; };
 		2030CA631539FF0800F0ACAA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA621539FF0800F0ACAA /* User.m */; };
 		2030CA651539FFDF00F0ACAA /* tweet.json in Resources */ = {isa = PBXBuildFile; fileRef = 2030CA641539FFDF00F0ACAA /* tweet.json */; };
-		2030CA71153A132300F0ACAA /* DCPropertyNameParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2030CA6F153A132300F0ACAA /* DCPropertyNameParser.h */; };
-		2030CA72153A132300F0ACAA /* DCPropertyNameParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA70153A132300F0ACAA /* DCPropertyNameParser.m */; };
+		2030CA71153A132300F0ACAA /* DCReferenceKeyParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2030CA6F153A132300F0ACAA /* DCReferenceKeyParser.h */; };
+		2030CA72153A132300F0ACAA /* DCReferenceKeyParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA70153A132300F0ACAA /* DCReferenceKeyParser.m */; };
 		20407612153C997900E110DB /* DCGenericConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20407611153C997900E110DB /* DCGenericConverter.m */; };
 		20407616153C9EFC00E110DB /* DCObjectMappingForArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 20407614153C9EFC00E110DB /* DCObjectMappingForArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20407617153C9EFC00E110DB /* DCObjectMappingForArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 20407615153C9EFC00E110DB /* DCObjectMappingForArray.m */; };
@@ -65,6 +66,8 @@
 		20231F39153DC785008516EE /* DCPropertyNameParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPropertyNameParserTests.m; sourceTree = "<group>"; };
 		20231F40153DD45B008516EE /* DCPropertyFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPropertyFinder.h; sourceTree = "<group>"; };
 		20231F41153DD45B008516EE /* DCPropertyFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPropertyFinder.m; sourceTree = "<group>"; };
+		20231F44153E1F78008516EE /* DCPropertyFinderTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPropertyFinderTests.h; sourceTree = "<group>"; };
+		20231F45153E1F78008516EE /* DCPropertyFinderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPropertyFinderTests.m; sourceTree = "<group>"; };
 		2030CA561539E4F200F0ACAA /* DCDynamicAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDynamicAttribute.h; sourceTree = "<group>"; };
 		2030CA571539E4F200F0ACAA /* DCDynamicAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDynamicAttribute.m; sourceTree = "<group>"; };
 		2030CA5B1539E91300F0ACAA /* DCDynamicAttributeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDynamicAttributeTest.h; sourceTree = "<group>"; };
@@ -74,8 +77,8 @@
 		2030CA611539FF0800F0ACAA /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		2030CA621539FF0800F0ACAA /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		2030CA641539FFDF00F0ACAA /* tweet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tweet.json; sourceTree = "<group>"; };
-		2030CA6F153A132300F0ACAA /* DCPropertyNameParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPropertyNameParser.h; sourceTree = "<group>"; };
-		2030CA70153A132300F0ACAA /* DCPropertyNameParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPropertyNameParser.m; sourceTree = "<group>"; };
+		2030CA6F153A132300F0ACAA /* DCReferenceKeyParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCReferenceKeyParser.h; sourceTree = "<group>"; };
+		2030CA70153A132300F0ACAA /* DCReferenceKeyParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCReferenceKeyParser.m; sourceTree = "<group>"; };
 		20407611153C997900E110DB /* DCGenericConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCGenericConverter.m; sourceTree = "<group>"; };
 		20407614153C9EFC00E110DB /* DCObjectMappingForArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCObjectMappingForArray.h; sourceTree = "<group>"; };
 		20407615153C9EFC00E110DB /* DCObjectMappingForArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCObjectMappingForArray.m; sourceTree = "<group>"; };
@@ -136,6 +139,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20231F47153E2A6A008516EE /* Finders */ = {
+			isa = PBXGroup;
+			children = (
+				20231F40153DD45B008516EE /* DCPropertyFinder.h */,
+				20231F41153DD45B008516EE /* DCPropertyFinder.m */,
+			);
+			name = Finders;
+			sourceTree = "<group>";
+		};
 		2030CA6A153A008A00F0ACAA /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,10 +164,8 @@
 		2030CA6E153A131400F0ACAA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				2030CA6F153A132300F0ACAA /* DCPropertyNameParser.h */,
-				2030CA70153A132300F0ACAA /* DCPropertyNameParser.m */,
-				20231F40153DD45B008516EE /* DCPropertyFinder.h */,
-				20231F41153DD45B008516EE /* DCPropertyFinder.m */,
+				2030CA6F153A132300F0ACAA /* DCReferenceKeyParser.h */,
+				2030CA70153A132300F0ACAA /* DCReferenceKeyParser.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -207,6 +217,7 @@
 			children = (
 				205756191538E60500A652E7 /* DCKeyValueObjectMapping.h */,
 				2057561A1538E60500A652E7 /* DCKeyValueObjectMapping.m */,
+				20231F47153E2A6A008516EE /* Finders */,
 				2030CA6E153A131400F0ACAA /* Utils */,
 				2057563B1538E69600A652E7 /* Configuration */,
 				205756401538E6B300A652E7 /* Converters */,
@@ -227,11 +238,13 @@
 		2057562A1538E60500A652E7 /* KeyValueObjectMappingTests */ = {
 			isa = PBXGroup;
 			children = (
+				205756301538E60500A652E7 /* KeyValueObjectMappingTests.h */,
+				205756311538E60500A652E7 /* KeyValueObjectMappingTests.m */,
 				2030CA6A153A008A00F0ACAA /* Model */,
 				2030CA5B1539E91300F0ACAA /* DCDynamicAttributeTest.h */,
 				2030CA5C1539E91300F0ACAA /* DCDynamicAttributeTest.m */,
-				205756301538E60500A652E7 /* KeyValueObjectMappingTests.h */,
-				205756311538E60500A652E7 /* KeyValueObjectMappingTests.m */,
+				20231F44153E1F78008516EE /* DCPropertyFinderTests.h */,
+				20231F45153E1F78008516EE /* DCPropertyFinderTests.m */,
 				2040761E153CCF2F00E110DB /* DCArrayOfTweetsOnUserTests.h */,
 				2040761F153CCF2F00E110DB /* DCArrayOfTweetsOnUserTests.m */,
 				20231F38153DC785008516EE /* DCPropertyNameParserTests.h */,
@@ -303,7 +316,7 @@
 				205756581538E6F300A652E7 /* DCNSURLConverter.h in Headers */,
 				2057565A1538E6F300A652E7 /* DCSimpleConverter.h in Headers */,
 				2030CA581539E4F200F0ACAA /* DCDynamicAttribute.h in Headers */,
-				2030CA71153A132300F0ACAA /* DCPropertyNameParser.h in Headers */,
+				2030CA71153A132300F0ACAA /* DCReferenceKeyParser.h in Headers */,
 				20407616153C9EFC00E110DB /* DCObjectMappingForArray.h in Headers */,
 				2040761A153CA4B700E110DB /* DCObjectMapping.h in Headers */,
 				20407621153CD5DB00E110DB /* DCKeyValueObjectMapping.h in Headers */,
@@ -420,7 +433,7 @@
 				205756591538E6F300A652E7 /* DCNSURLConverter.m in Sources */,
 				2057565B1538E6F300A652E7 /* DCSimpleConverter.m in Sources */,
 				2030CA591539E4F200F0ACAA /* DCDynamicAttribute.m in Sources */,
-				2030CA72153A132300F0ACAA /* DCPropertyNameParser.m in Sources */,
+				2030CA72153A132300F0ACAA /* DCReferenceKeyParser.m in Sources */,
 				20407612153C997900E110DB /* DCGenericConverter.m in Sources */,
 				20407617153C9EFC00E110DB /* DCObjectMappingForArray.m in Sources */,
 				2040761B153CA4B700E110DB /* DCObjectMapping.m in Sources */,
@@ -439,6 +452,7 @@
 				2030CA631539FF0800F0ACAA /* User.m in Sources */,
 				20407620153CCF2F00E110DB /* DCArrayOfTweetsOnUserTests.m in Sources */,
 				20231F3A153DC785008516EE /* DCPropertyNameParserTests.m in Sources */,
+				20231F46153E1F78008516EE /* DCPropertyFinderTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

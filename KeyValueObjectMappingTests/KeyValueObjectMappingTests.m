@@ -11,7 +11,6 @@
 #import "DCKeyValueObjectMapping.h"
 #import "Person.h"
 #import "Tweet.h"
-#import "DCPropertyNameParser.h"
 
 @interface KeyValueObjectMappingTests()
 
@@ -125,7 +124,7 @@
     DCParserConfiguration *configuration = [[DCParserConfiguration alloc] init];
     configuration.datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
     
-    [configuration addMapper:[[DCObjectMappingForArray alloc] initWithClassForElements:[Tweet class] forKeyAndAttributeName:@"tweets" inClass:[User class]]];
+    [configuration addArrayMapper:[DCObjectMappingForArray mapperForClassElements:[Tweet class] forAttribute:@"tweets" onClass:[User class]]];
     
     DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:configuration];
     User *user = [parser parseDictionary:userDictionary forClass:[User class]];
@@ -138,7 +137,25 @@
     }];
 }
 
-- (void)testNullValuesPassed
+- (void) testObjectMappingForNameAttribute {
+    NSMutableDictionary *userDictionary = [NSMutableDictionary dictionaryWithDictionary:[json objectForKey:@"user"]];
+    NSString *name = [userDictionary objectForKey:@"name"];
+    
+    [userDictionary removeObjectForKey:@"name"];
+    [userDictionary setObject:name forKey:@"borba"];
+    
+    DCObjectMapping *mapping = [DCObjectMapping mapKeyPath:@"borba" toAttribute:@"name" onClass:[User class]];
+    DCParserConfiguration *configuration = [[DCParserConfiguration alloc] init];
+    [configuration addObjectMapping:mapping];
+    
+    DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:configuration];
+    
+    User *user = [parser parseDictionary:userDictionary forClass:[User class]];
+    STAssertEqualObjects(name, user.name, @"Should be able to use value on borba key and set it to user name property");
+    
+}
+
+- (void) testNullValuesPassed
 {
     DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:[[DCParserConfiguration alloc] init]];
     Person *person = [parser parseDictionary: nil forClass:[Person class]];

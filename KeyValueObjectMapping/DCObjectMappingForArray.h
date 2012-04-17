@@ -14,7 +14,8 @@
 @property(nonatomic, readonly) Class classForElementsOnArray;
 
 
-- (id)initWithClassForElements: (Class) classForElementsOnArray forKeyAndAttributeName: (NSString *) keyForAttribute inClass: (Class) classReference;
-- (id)initWithObjectMapping: (DCObjectMapping *) objectMapping forArrayElementOfType: (Class) classForElementsOnArray;
++ (DCObjectMappingForArray *) mapperForClassElements: (Class) classForElementsOnArray forAttribute: (NSString *) attribute onClass: (Class) classReference;
+
++ (DCObjectMappingForArray *) mapperForClass: (Class) classForElementsOnArray onMapping: (DCObjectMapping *) objectMapping;
 
 @end

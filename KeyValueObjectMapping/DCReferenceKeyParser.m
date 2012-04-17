@@ -6,12 +6,12 @@
 //  Copyright (c) 2012 None. All rights reserved.
 //
 
-#import "DCPropertyNameParser.h"
+#import "DCReferenceKeyParser.h"
 
-@implementation DCPropertyNameParser
+@implementation DCReferenceKeyParser
 @synthesize splitToken;
 
-+ (DCPropertyNameParser *) parserForToken: (NSString *) _splitToken {
++ (DCReferenceKeyParser *) parserForToken: (NSString *) _splitToken {
     return [[self alloc] initWithSplitToken:_splitToken];
 }
 

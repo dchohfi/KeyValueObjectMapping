@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "DCDynamicAttribute.h"
-#import "DCPropertyNameParser.h"
+#import "DCReferenceKeyParser.h"
 
 @interface DCPropertyFinder : NSObject
 
-+ (DCPropertyFinder *) finderWithNameParser: (DCPropertyNameParser *) _nameParser ;
-- (DCDynamicAttribute *) findAttributeForKey: (NSString *) key onClass: (Class) class;
++ (DCPropertyFinder *) finderWithKeyParser: (DCReferenceKeyParser *) keyParser;
+- (DCDynamicAttribute *) findAttributeForKey: (NSString *) key onClass: (Class) className;
+- (void) addMapper: (DCObjectMapping *) mapping;
+
 
 @end

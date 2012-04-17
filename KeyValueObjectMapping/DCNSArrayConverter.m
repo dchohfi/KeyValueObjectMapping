@@ -34,13 +34,7 @@
 - (id)transformValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute {
     BOOL primitiveArray = ![[[values objectAtIndex:0] class] isSubclassOfClass:[NSDictionary class]];
     if(primitiveArray){
-        DCSimpleConverter *simpleParser = [[DCSimpleConverter alloc] init];
-        NSMutableArray *valuesHolder = [NSMutableArray array];
-        for(id value in values){
-            DCDynamicAttribute *valueClassAsAttribute = [[DCDynamicAttribute alloc] initWithClass:[value class]];
-            [valuesHolder addObject:[simpleParser transformValue:value forDynamicAttribute:valueClassAsAttribute]];
-        }
-        return [NSArray arrayWithArray:valuesHolder];
+        return [self parsePrimitveValues:values];
     }else{
         DCObjectMappingForArray *mapper = [configuration arrayMapperForMapper:attribute.objectMapping];
         if(mapper){
@@ -50,6 +44,17 @@
     }
     return nil;
 }
+
+- (NSArray *) parsePrimitveValues: (NSArray *) primitiveValues {
+    DCSimpleConverter *simpleParser = [[DCSimpleConverter alloc] init];
+    NSMutableArray *valuesHolder = [NSMutableArray array];
+    for(id value in primitiveValues){
+        DCDynamicAttribute *valueClassAsAttribute = [[DCDynamicAttribute alloc] initWithClass:[value class]];
+        [valuesHolder addObject:[simpleParser transformValue:value forDynamicAttribute:valueClassAsAttribute]];
+    }
+    return [NSArray arrayWithArray:valuesHolder];
+}
+
 - (BOOL)canTransformValueForClass:(Class) classe {
     return [classe isSubclassOfClass:[NSArray class]];
 }

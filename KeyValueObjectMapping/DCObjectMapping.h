@@ -10,12 +10,13 @@
 
 @interface DCObjectMapping : NSObject
 
-@property(nonatomic, readonly) NSString *key;
+@property(nonatomic, readonly) NSString *keyReference;
 @property(nonatomic, readonly) NSString *attributeName;
 @property(nonatomic, readonly) Class classReference;
 
++ (DCObjectMapping *) mapKeyPath: (NSString *) keyPath toAttribute: (NSString *) attributeName onClass: (Class) attributeClass;
+
 - (id)initWithClass: (Class) classReference;
-- (id)initWithKeyForAttribute: (NSString *) _attributeAndKey onClass: (Class) _classReference;
-- (id)initWithAttributeName: (NSString *) attributeName forKey: (NSString *) key onClass: (Class) classReference;
+- (BOOL) isEqualsForKey: (NSString *) key andClassReference: (Class) classReference;
 
 @end

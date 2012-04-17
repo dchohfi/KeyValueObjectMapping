@@ -35,7 +35,7 @@
         typeName = [self findTypeInformation:[splitedDescription objectAtIndex:0]];
         
         Class attributeClass = NSClassFromString(typeName);
-        objectMapping = [[DCObjectMapping alloc] initWithAttributeName:attributeName forKey:_key onClass:attributeClass];
+        objectMapping = [DCObjectMapping mapKeyPath:_key toAttribute:attributeName onClass:attributeClass];
     }
     return self;
 }

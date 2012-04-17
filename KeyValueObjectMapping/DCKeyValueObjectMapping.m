@@ -9,12 +9,14 @@
 #import "DCKeyValueObjectMapping.h"
 #import "DCGenericConverter.h"
 #import "DCDynamicAttribute.h"
-#import "DCPropertyNameParser.h"
+#import "DCReferenceKeyParser.h"
 #import "DCPropertyFinder.h"
 
 @interface DCKeyValueObjectMapping()
+
 @property(nonatomic, strong) DCGenericConverter *converter;
 @property(nonatomic, strong) DCPropertyFinder *propertyFinder;
+
 - (void) parseValue: (id) value forObject: (id) object inAttribute: (DCDynamicAttribute *) dynamicAttribute;
 - (void)setNilValueForKey:(NSString *)key onObject: (id) object forClass: (Class) class;
 @end
@@ -30,9 +32,13 @@
 - (id) initWithConfiguration: (DCParserConfiguration *) configuration {
     self = [super init];
     if (self) {
-        DCPropertyNameParser *propertyNameParser = [DCPropertyNameParser parserForToken: configuration.splitToken];
+        DCReferenceKeyParser *keyParser = [DCReferenceKeyParser parserForToken: configuration.splitToken];
         
-        propertyFinder = [DCPropertyFinder finderWithNameParser:propertyNameParser];
+        propertyFinder = [DCPropertyFinder finderWithKeyParser:keyParser];
+        
+        [configuration.objectMappers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            [propertyFinder addMapper:obj];
+        }];
         
         converter = [[DCGenericConverter alloc] initWithConfiguration:configuration];
     }
@@ -72,13 +78,13 @@
         value = [self parseDictionary:(NSDictionary *) value forClass:objectMapping.classReference];
     }
     NSError *error;
-    NSString *key = objectMapping.key;
+    NSString *attributeName = objectMapping.attributeName;
     value = [converter transformValue:value forDynamicAttribute:dynamicAttribute];
-    if([object validateValue:&value forKey:key error:&error]){
+    if([object validateValue:&value forKey:attributeName error:&error]){
         if([value isKindOfClass:[NSNull class]]){
-            [self setNilValueForKey: key onObject: object forClass:objectMapping.classReference];
+            [self setNilValueForKey: attributeName onObject: object forClass:objectMapping.classReference];
         }else {
-            [object setValue:value forKey:key];
+            [object setValue:value forKey:attributeName];
         }
     }
 }

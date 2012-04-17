@@ -33,9 +33,9 @@
 
 - (void)testShouldCreateAnUserWithTweets {
     
-    DCObjectMappingForArray *mapper = [[DCObjectMappingForArray alloc] initWithClassForElements:[Tweet class] forKeyAndAttributeName:@"tweets" inClass:[User class]];
+    DCObjectMappingForArray *mapper = [DCObjectMappingForArray mapperForClassElements:[Tweet class] forAttribute:@"tweets" onClass:[User class]];
     DCParserConfiguration *configuration = [[DCParserConfiguration alloc] init];
-    [configuration addMapper:mapper];
+    [configuration addArrayMapper:mapper];
     
     DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:configuration];
     User *user = [parser parseDictionary:jsonParsed forClass:[User class]];

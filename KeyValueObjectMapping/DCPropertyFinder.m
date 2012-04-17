@@ -11,42 +11,71 @@
 
 @interface DCPropertyFinder()
 
-@property(nonatomic, strong) DCPropertyNameParser *nameParser;
-
-- (DCDynamicAttribute *) findPropertyForKey: (NSString *)key onClass: (Class)class;
+@property(nonatomic, strong) DCReferenceKeyParser *keyParser;
+@property(nonatomic, strong) NSMutableArray *mappers;
 
 @end
 
 @implementation DCPropertyFinder
-@synthesize nameParser;
+@synthesize keyParser, mappers;
 
-+ (DCPropertyFinder *) finderWithNameParser: (DCPropertyNameParser *) _nameParser {
-    return [[self alloc] initWithNameParser:_nameParser];
+#pragma mark - public methods
+
++ (DCPropertyFinder *) finderWithKeyParser: (DCReferenceKeyParser *) _keyParser {
+    return [[self alloc] initWithKeyParser:_keyParser];
 }
 
-- (id)initWithNameParser: (DCPropertyNameParser *) _nameParser {
+- (DCDynamicAttribute *) findAttributeForKey: (NSString *) key onClass: (Class) class {
+    NSString *originalKey = key;
+    
+    DCObjectMapping *mapper = [self findMapperForKey:key onClass:class];
+    
+    if(mapper){
+        key = mapper.attributeName;
+    }
+    
+    NSString *propertyDetails = [self findPropertyDetailsForKey:key onClass:class];
+    if(!propertyDetails){
+        key = [keyParser splitKeyAndMakeCamelcased:key];
+        propertyDetails = [self findPropertyDetailsForKey:key onClass:class];
+    }
+    
+    if(!propertyDetails)
+        return nil;
+    
+    DCDynamicAttribute *dynamicAttribute = [[DCDynamicAttribute alloc] initWithAttributeDescription: propertyDetails forKey:originalKey];
+    return dynamicAttribute;
+}
+
+- (void) addMapper:(DCObjectMapping *)mapping {
+    [mappers addObject:mapping];
+}
+
+#pragma mark - private methods
+- (id)initWithKeyParser: (DCReferenceKeyParser *) _keyParser {
     self = [super init];
     if (self) {
-        nameParser = _nameParser;
+        keyParser = _keyParser;
+        mappers = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
-- (DCDynamicAttribute *) findPropertyForKey: (NSString *)key onClass: (Class)class{
+- (NSString *) findPropertyDetailsForKey: (NSString *)key onClass: (Class)class{
     objc_property_t property = class_getProperty(class, [key UTF8String]);
     if (property) {
         NSString *attributeDetails = [NSString stringWithUTF8String:property_getAttributes(property)];
-        return [[DCDynamicAttribute alloc] initWithAttributeDescription: attributeDetails forKey:key];
+        return attributeDetails;
     }
     return nil;
 }
 
-- (DCDynamicAttribute *) findAttributeForKey: (NSString *) key onClass: (Class) class {
-    DCDynamicAttribute *dynamicAttribute = [self findPropertyForKey:key onClass:class];
-    if(!dynamicAttribute){
-        key = [nameParser splitKeyAndMakeCamelcased:key];
-        dynamicAttribute = [self findPropertyForKey:key onClass:class];
+- (DCObjectMapping *) findMapperForKey: (NSString *) key onClass: (Class) class {
+    for(DCObjectMapping *mapper in mappers){
+        if([mapper isEqualsForKey:key andClassReference:class]){
+            return mapper;
+        }
     }
-    return dynamicAttribute;
+    return nil;
 }
 @end
