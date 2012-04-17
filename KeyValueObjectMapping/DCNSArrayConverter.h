@@ -10,4 +10,5 @@
 #import "DCValueConverter.h"
 
 @interface DCNSArrayConverter : NSObject <DCValueConverter>
++ (DCNSArrayConverter *) arrayConverterForConfiguration: (DCParserConfiguration *)configuration;
 @end

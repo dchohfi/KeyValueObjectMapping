@@ -9,33 +9,32 @@
 #import "DCKeyValueObjectMapping.h"
 #import "DCGenericConverter.h"
 #import "DCDynamicAttribute.h"
-#import <objc/runtime.h>
 #import "DCPropertyNameParser.h"
+#import "DCPropertyFinder.h"
 
 @interface DCKeyValueObjectMapping()
-@property(nonatomic, strong) DCGenericConverter *parser;
-@property(nonatomic, strong) DCParserConfiguration *configuration;
-@property(nonatomic, strong) DCPropertyNameParser *propertyNameParser;
+@property(nonatomic, strong) DCGenericConverter *converter;
+@property(nonatomic, strong) DCPropertyFinder *propertyFinder;
 - (void) parseValue: (id) value forObject: (id) object inAttribute: (DCDynamicAttribute *) dynamicAttribute;
-- (DCDynamicAttribute *) findAttributeForKey: (NSString *) key onClass: (Class) class;
-- (DCDynamicAttribute *) findPropertyForKey: (NSString *)key onClass: (Class)class;
 - (void)setNilValueForKey:(NSString *)key onObject: (id) object forClass: (Class) class;
 @end
 
 @implementation DCKeyValueObjectMapping
-@synthesize configuration, propertyNameParser, parser;
+@synthesize converter, propertyFinder;
 
 - (id)init
 {
     return [self initWithConfiguration:[[DCParserConfiguration alloc] init]];
 }
 
-- (id) initWithConfiguration: (DCParserConfiguration *) _configuration {
+- (id) initWithConfiguration: (DCParserConfiguration *) configuration {
     self = [super init];
     if (self) {
-        configuration = _configuration;
-        propertyNameParser = [[DCPropertyNameParser alloc] initWithSplitToken:configuration.splitToken];
-        parser = [[DCGenericConverter alloc] initWithConfiguration:configuration];
+        DCPropertyNameParser *propertyNameParser = [DCPropertyNameParser parserForToken: configuration.splitToken];
+        
+        propertyFinder = [DCPropertyFinder finderWithNameParser:propertyNameParser];
+        
+        converter = [[DCGenericConverter alloc] initWithConfiguration:configuration];
     }
     return self;   
 }
@@ -59,7 +58,7 @@
     NSArray *keys = [dictionary allKeys];
     for (NSString *key in keys) {
         id value = [dictionary valueForKey:key];
-        DCDynamicAttribute *dynamicAttribute = [self findAttributeForKey:key onClass:class];
+        DCDynamicAttribute *dynamicAttribute = [propertyFinder findAttributeForKey:key onClass:class];
         if(dynamicAttribute){
             [self parseValue:value forObject:object inAttribute:dynamicAttribute];
         }
@@ -74,7 +73,7 @@
     }
     NSError *error;
     NSString *key = objectMapping.key;
-    value = [parser transformValue:value forDynamicAttribute:dynamicAttribute];
+    value = [converter transformValue:value forDynamicAttribute:dynamicAttribute];
     if([object validateValue:&value forKey:key error:&error]){
         if([value isKindOfClass:[NSNull class]]){
             [self setNilValueForKey: key onObject: object forClass:objectMapping.classReference];
@@ -90,22 +89,4 @@
         [object setNilValueForKey:key];   
     }
 }
-- (DCDynamicAttribute *) findPropertyForKey: (NSString *)key onClass: (Class)class{
-    objc_property_t property = class_getProperty(class, [key UTF8String]);
-    if (property) {
-        NSString *attributeDetails = [NSString stringWithUTF8String:property_getAttributes(property)];
-        return [[DCDynamicAttribute alloc] initWithAttributeDescription: attributeDetails forKey:key];
-    }
-    return nil;
-}
-
-- (DCDynamicAttribute *) findAttributeForKey: (NSString *) key onClass: (Class) class {
-    DCDynamicAttribute *dynamicAttribute = [self findPropertyForKey:key onClass:class];
-    if(!dynamicAttribute){
-        key = [propertyNameParser splitKeyAndMakeCamelcased:key];
-        dynamicAttribute = [self findPropertyForKey:key onClass:class];
-    }
-    return dynamicAttribute;
-}
-
 @end

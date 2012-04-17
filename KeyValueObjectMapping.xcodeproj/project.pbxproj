@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		20231F3A153DC785008516EE /* DCPropertyNameParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20231F39153DC785008516EE /* DCPropertyNameParserTests.m */; };
+		20231F42153DD45B008516EE /* DCPropertyFinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 20231F40153DD45B008516EE /* DCPropertyFinder.h */; };
+		20231F43153DD45B008516EE /* DCPropertyFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 20231F41153DD45B008516EE /* DCPropertyFinder.m */; };
 		2030CA581539E4F200F0ACAA /* DCDynamicAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 2030CA561539E4F200F0ACAA /* DCDynamicAttribute.h */; };
 		2030CA591539E4F200F0ACAA /* DCDynamicAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA571539E4F200F0ACAA /* DCDynamicAttribute.m */; };
 		2030CA5D1539E91300F0ACAA /* DCDynamicAttributeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA5C1539E91300F0ACAA /* DCDynamicAttributeTest.m */; };
@@ -61,6 +63,8 @@
 /* Begin PBXFileReference section */
 		20231F38153DC785008516EE /* DCPropertyNameParserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPropertyNameParserTests.h; sourceTree = "<group>"; };
 		20231F39153DC785008516EE /* DCPropertyNameParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPropertyNameParserTests.m; sourceTree = "<group>"; };
+		20231F40153DD45B008516EE /* DCPropertyFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPropertyFinder.h; sourceTree = "<group>"; };
+		20231F41153DD45B008516EE /* DCPropertyFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPropertyFinder.m; sourceTree = "<group>"; };
 		2030CA561539E4F200F0ACAA /* DCDynamicAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDynamicAttribute.h; sourceTree = "<group>"; };
 		2030CA571539E4F200F0ACAA /* DCDynamicAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDynamicAttribute.m; sourceTree = "<group>"; };
 		2030CA5B1539E91300F0ACAA /* DCDynamicAttributeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDynamicAttributeTest.h; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 			children = (
 				2030CA6F153A132300F0ACAA /* DCPropertyNameParser.h */,
 				2030CA70153A132300F0ACAA /* DCPropertyNameParser.m */,
+				20231F40153DD45B008516EE /* DCPropertyFinder.h */,
+				20231F41153DD45B008516EE /* DCPropertyFinder.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -301,6 +307,7 @@
 				20407616153C9EFC00E110DB /* DCObjectMappingForArray.h in Headers */,
 				2040761A153CA4B700E110DB /* DCObjectMapping.h in Headers */,
 				20407621153CD5DB00E110DB /* DCKeyValueObjectMapping.h in Headers */,
+				20231F42153DD45B008516EE /* DCPropertyFinder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +424,7 @@
 				20407612153C997900E110DB /* DCGenericConverter.m in Sources */,
 				20407617153C9EFC00E110DB /* DCObjectMappingForArray.m in Sources */,
 				2040761B153CA4B700E110DB /* DCObjectMapping.m in Sources */,
+				20231F43153DD45B008516EE /* DCPropertyFinder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

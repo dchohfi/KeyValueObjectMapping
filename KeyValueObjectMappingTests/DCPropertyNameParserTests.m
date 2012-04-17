@@ -19,7 +19,7 @@
 @synthesize parser;
 
 - (void)setUp{
-    parser = [[DCPropertyNameParser alloc] initWithSplitToken:@"_"];
+    parser = [DCPropertyNameParser parserForToken:@"_"];
 }
 
 - (void)testPropertyNameParserForSingleWord {

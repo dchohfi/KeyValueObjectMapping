@@ -8,24 +8,17 @@
 
 #import "DCNSURLConverter.h"
 
-@interface DCNSURLConverter()
-@property(nonatomic, strong) DCParserConfiguration *configuration;
-@end
-
 @implementation DCNSURLConverter
-@synthesize configuration;
 
-- (id) initWithConfiguration: (DCParserConfiguration *) _configuration {
-    self = [super init];
-    if (self) {
-        configuration = _configuration;
-    }
-    return self;
++ (DCNSURLConverter *) urlConverter {
+    return [[self alloc] init];
 }
+
 - (id)transformValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute {
     return [NSURL URLWithString:value];
 }
 - (BOOL) canTransformValueForClass: (Class) class {
     return [class isSubclassOfClass:[NSURL class]];
 }
+
 @end

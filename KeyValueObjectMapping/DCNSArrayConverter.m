@@ -19,6 +19,10 @@
 @implementation DCNSArrayConverter
 @synthesize configuration;
 
++ (DCNSArrayConverter *) arrayConverterForConfiguration: (DCParserConfiguration *)configuration {
+    return [[self alloc] initWithConfiguration: configuration];
+}
+
 - (id)initWithConfiguration:(DCParserConfiguration *)_configuration{
     self = [super init];
     if (self) {

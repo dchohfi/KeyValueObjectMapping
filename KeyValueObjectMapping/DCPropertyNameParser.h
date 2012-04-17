@@ -12,6 +12,8 @@
 @interface DCPropertyNameParser : NSObject
 
 @property(nonatomic, readonly) NSString *splitToken;
-- (id)initWithSplitToken: (NSString *) splitToken;
+
++ (DCPropertyNameParser *) parserForToken: (NSString *) splitToken;
 - (NSString *) splitKeyAndMakeCamelcased: (NSString *) key;
+
 @end

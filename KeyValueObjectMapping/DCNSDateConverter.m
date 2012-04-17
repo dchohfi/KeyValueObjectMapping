@@ -8,16 +8,22 @@
 
 #import "DCNSDateConverter.h"
 @interface DCNSDateConverter()
-@property(nonatomic, strong) DCParserConfiguration *configuration;
+@property(nonatomic, strong) NSString *pattern;
 - (BOOL) validDouble: (NSString *) doubleValue;
 @end
 
 @implementation DCNSDateConverter
-@synthesize configuration;
-- (id) initWithConfiguration: (DCParserConfiguration *) _configuration {
+@synthesize pattern;
+
+
++ (DCNSDateConverter *) dateConverterForPattern: (NSString *) pattern{
+    return [[self alloc] initWithDatePattern: pattern];
+}
+
+- (id) initWithDatePattern: (NSString *) _pattern {
     self = [super init];
     if (self) {
-        configuration = _configuration;
+        pattern = _pattern;
     }
     return self;
 }
@@ -27,7 +33,7 @@
         return [NSDate dateWithTimeIntervalSince1970:[value doubleValue]];
     }else{
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        formatter.dateFormat = configuration.datePattern;
+        formatter.dateFormat = pattern;
         return [formatter dateFromString:value];
     }
 }

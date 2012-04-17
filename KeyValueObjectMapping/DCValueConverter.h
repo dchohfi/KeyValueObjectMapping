@@ -11,7 +11,6 @@
 #import "DCDynamicAttribute.h"
 @protocol DCValueConverter <NSObject>
 
-- (id) initWithConfiguration: (DCParserConfiguration *) configuration;
 - (id) transformValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute;
 - (BOOL) canTransformValueForClass: (Class) class;
 

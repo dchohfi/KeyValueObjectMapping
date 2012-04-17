@@ -19,16 +19,16 @@
 
 @implementation DCGenericConverter
 @synthesize configuration, parsers;
+
 - (id)initWithConfiguration:(DCParserConfiguration *) _configuration
 {
     self = [super init];
     if (self) {
         configuration = _configuration;
         parsers = [NSArray arrayWithObjects:
-                            [[DCNSDateConverter alloc] initWithConfiguration:configuration],                         
-                            [[DCNSURLConverter alloc] initWithConfiguration:configuration],
-                            [[DCNSArrayConverter alloc] initWithConfiguration:configuration],
-                            nil];
+                   [DCNSDateConverter dateConverterForPattern:configuration.datePattern],
+                   [DCNSURLConverter urlConverter],
+                   [DCNSArrayConverter arrayConverterForConfiguration: configuration], nil];
     }
     return self;
 }

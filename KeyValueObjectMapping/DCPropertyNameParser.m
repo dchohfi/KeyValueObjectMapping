@@ -10,6 +10,11 @@
 
 @implementation DCPropertyNameParser
 @synthesize splitToken;
+
++ (DCPropertyNameParser *) parserForToken: (NSString *) _splitToken {
+    return [[self alloc] initWithSplitToken:_splitToken];
+}
+
 - (id)initWithSplitToken: (NSString *) _splitToken
 {
     self = [super init];
