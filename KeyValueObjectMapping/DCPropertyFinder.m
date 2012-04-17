@@ -12,7 +12,7 @@
 @interface DCPropertyFinder()
 
 @property(nonatomic, strong) DCReferenceKeyParser *keyParser;
-@property(nonatomic, strong) NSMutableArray *mappers;
+@property(nonatomic, strong) NSArray *mappers;
 
 @end
 
@@ -47,8 +47,8 @@
     return dynamicAttribute;
 }
 
-- (void) addMapper:(DCObjectMapping *)mapping {
-    [mappers addObject:mapping];
+- (void) setMappers: (NSArray *) _mappers{
+    mappers = [NSArray arrayWithArray:_mappers];
 }
 
 #pragma mark - private methods

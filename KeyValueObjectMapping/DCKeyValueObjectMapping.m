@@ -35,10 +35,7 @@
         DCReferenceKeyParser *keyParser = [DCReferenceKeyParser parserForToken: configuration.splitToken];
         
         propertyFinder = [DCPropertyFinder finderWithKeyParser:keyParser];
-        
-        [configuration.objectMappers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            [propertyFinder addMapper:obj];
-        }];
+        [propertyFinder setMappers:[configuration objectMappers]];
         
         converter = [[DCGenericConverter alloc] initWithConfiguration:configuration];
     }

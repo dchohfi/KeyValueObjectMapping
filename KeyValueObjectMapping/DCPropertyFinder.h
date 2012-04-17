@@ -14,7 +14,7 @@
 
 + (DCPropertyFinder *) finderWithKeyParser: (DCReferenceKeyParser *) keyParser;
 - (DCDynamicAttribute *) findAttributeForKey: (NSString *) key onClass: (Class) className;
-- (void) addMapper: (DCObjectMapping *) mapping;
+- (void) setMappers: (NSArray *) mappers;
 
 
 @end

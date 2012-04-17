@@ -44,7 +44,7 @@
 
 - (void) testOverrideAttributeFinderForNameOnUser {
     DCObjectMapping *mapping = [DCObjectMapping mapKeyPath:@"borba" toAttribute:@"name" onClass:[User class]];
-    [finder addMapper:mapping];
+    [finder setMappers:[NSArray arrayWithObject:mapping]];
  
     DCDynamicAttribute *dynamicProperty = [finder findAttributeForKey:@"borba" onClass:[User class]];
     STAssertNotNil(dynamicProperty, @"Should be able to find name property on User class");
