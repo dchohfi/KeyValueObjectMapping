@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 None. All rights reserved.
 //
 
-#import "DynamicAttributeTest.h"
+#import "DCDynamicAttributeTest.h"
 #import "DCDynamicAttribute.h"
-@implementation DynamicAttributeTest
+@implementation DCDynamicAttributeTest
 
 - (void) testDynamicAttributeForPrimitiveInt {
     DCDynamicAttribute *attribute = [[DCDynamicAttribute alloc] initWithAttributeDescription:@"Ti,R,N,Vage" forKey:@"age"];

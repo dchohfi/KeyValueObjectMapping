@@ -34,7 +34,7 @@
     self = [super init];
     if (self) {
         configuration = _configuration;
-        propertyNameParser = [[DCPropertyNameParser alloc] initWithConfiguration:configuration];
+        propertyNameParser = [[DCPropertyNameParser alloc] initWithSplitToken:configuration.splitToken];
         parser = [[DCGenericConverter alloc] initWithConfiguration:configuration];
     }
     return self;   

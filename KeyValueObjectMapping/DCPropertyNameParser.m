@@ -8,25 +8,21 @@
 
 #import "DCPropertyNameParser.h"
 
-@interface DCPropertyNameParser()
-
-@property(nonatomic, strong) DCParserConfiguration *configuration;
-
-@end
-
 @implementation DCPropertyNameParser
-@synthesize configuration;
-- (id)initWithConfiguration: (DCParserConfiguration *) _configuration
+@synthesize splitToken;
+- (id)initWithSplitToken: (NSString *) _splitToken
 {
     self = [super init];
     if (self) {
-        configuration = _configuration;
+        splitToken = _splitToken;
     }
     return self;
 }
 
 - (NSString *) splitKeyAndMakeCamelcased: (NSString *) key {
-    NSArray *splitedKeys = [key componentsSeparatedByString:configuration.splitToken];
+    if(!key || [key isEqualToString:@""])
+        return @"";
+    NSArray *splitedKeys = [key componentsSeparatedByString:splitToken];
     NSMutableString *parsedKeyName = [NSMutableString string];
     [parsedKeyName appendString:[[splitedKeys objectAtIndex:0] lowercaseString]];
     for(int i=1; i<[splitedKeys count]; i++){

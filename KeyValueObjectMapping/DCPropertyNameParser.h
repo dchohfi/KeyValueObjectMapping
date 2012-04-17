@@ -10,6 +10,8 @@
 #import "DCParserConfiguration.h"
 
 @interface DCPropertyNameParser : NSObject
-- (id)initWithConfiguration: (DCParserConfiguration *) configuration;
+
+@property(nonatomic, readonly) NSString *splitToken;
+- (id)initWithSplitToken: (NSString *) splitToken;
 - (NSString *) splitKeyAndMakeCamelcased: (NSString *) key;
 @end

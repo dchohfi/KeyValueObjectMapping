@@ -8,5 +8,5 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface DynamicAttributeTest : SenTestCase
+@interface DCDynamicAttributeTest : SenTestCase
 @end
