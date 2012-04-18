@@ -39,8 +39,6 @@ Let's assume that you have some JSON like that:
 
 And your User model looks like:
 <pre>
-#import <Foundation/Foundation.h>
-
 @interface User : NSObject
 @property(nonatomic, strong) NSString *idStr;
 @property(nonatomic, strong) NSString *name;
@@ -98,8 +96,6 @@ If your JSON have some specific key that doesn't match the attribute name you ca
 
 Your tweet model:
 <pre>
-#import <Foundation/Foundation.h>
-
 @interface Tweet : NSObject
 @property(nonatomic, readonly) NSString *idStr;
 @property(nonatomic, readonly) NSString *tweetText;
@@ -145,8 +141,6 @@ But **KeyValueObjectMapping** can be configured to learn what is the type of ele
 
 So, if the model User have many Tweets:
 <pre>
-#import <Foundation/Foundation.h>
-
 @interface User : NSObject
 @property(nonatomic, strong) NSString *idStr;
 @property(nonatomic, strong) NSString *name;
@@ -165,8 +159,6 @@ So, if the model User have many Tweets:
 
 The Tweet looks like:
 <pre>
-#import <Foundation/Foundation.h>
-
 @interface Tweet : NSObject
 @property(nonatomic, strong) NSString *idStr;
 @property(nonatomic, strong) NSString *text;
