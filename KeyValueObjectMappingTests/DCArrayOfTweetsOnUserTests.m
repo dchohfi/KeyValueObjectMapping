@@ -34,11 +34,11 @@
 - (void)testShouldCreateAnUserWithTweets {
     
     DCArrayMapping *mapper = [DCArrayMapping mapperForClassElements:[Tweet class] forAttribute:@"tweets" onClass:[User class]];
-    DCParserConfiguration *configuration = [[DCParserConfiguration alloc] init];
+    DCParserConfiguration *configuration = [DCParserConfiguration configuration];
     [configuration addArrayMapper:mapper];
     
-    DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:configuration];
-    User *user = [parser parseDictionary:jsonParsed forClass:[User class]];
+    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[User class] andConfiguration:configuration];
+    User *user = [parser parseDictionary:jsonParsed];
     STAssertNotNil(user.tweets, @"Tweets should not be nil");
     STAssertEquals((int)user.tweets.count, 2, @"Should have 2 tweets on array of tweets");
 }

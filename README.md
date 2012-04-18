@@ -78,12 +78,9 @@ NSDate *date = [formatter dateFromString:@"Sat Apr 14 00:20:07 +0000 2012"];
 Boring job, don't you think? So, if you use **KeyValueObjectMapping** you just need to give the dictionary and the class that you want to create, and everthing else will be made automatically. And you can configure the parser to behave like you want, giving some pattern for *NSDate* parser, the character that separate the keys (on example we have used an '_' character, which is the default), and so on.
 
 <pre>
-ParserConfiguration *config = [[ParserConfiguration alloc] init];
-config.datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
+DCKeyValueObjectMapping * parser = [DCKeyValueObjectMapping mapperForClass: [Tweet class]];
 
-KeyValueObjectMapping * parser = [[KeyValueObjectMapping alloc] initWithConfiguration:config];
-
-Tweet *tweet = [parser parseDictionary:jsonParsed forClass:[Tweet class]];
+Tweet *tweet = [parser parseDictionary:jsonParsed];
 NSLog(@"%@ - %@", tweet.idStr, tweet.name);
 </pre>
 
@@ -121,7 +118,7 @@ And the JSON received follow the struct:
 Using **DCObjectMapping** you can parse this JSON and override the key names like that:
 
 <pre>
-DCParserConfiguration *config = [[DCParserConfiguration alloc] init];
+DCParserConfiguration *config = [DCParserConfiguration configuration];
 
 DCObjectMapping *textToTweetText = [DCObjectMapping mapKeyPath:@"text" toAttribute:@"tweetText" onClass:[Tweet class]];
 DCObjectMapping *userToUserOwner = [DCObjectMapping mapKeyPath:@"user" toAttribute:@"userOwner" onClass:[Tweet class]];
@@ -129,8 +126,8 @@ DCObjectMapping *userToUserOwner = [DCObjectMapping mapKeyPath:@"user" toAttribu
 [config addObjectMapping:textToTweetText];
 [config addObjectMapping:userToUserOwner];
 
-DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:config];
-Tweet *tweetParsed [parser parseDictionary:json forClass:[Tweet class]];;
+DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass: [Tweet class]  andConfiguration:config];
+Tweet *tweetParsed [parser parseDictionary:json];
 </pre>
 
 Parsing NSArray properties
@@ -196,12 +193,12 @@ And the JSON looks like:
 Using **DCArrayMapping** and adding it to the configuration, you tell to the **KeyValueObjectMapping** how to parse this specific attribute.
 
 <pre>
-DCArrayMapping *mapper = [[DCArrayMapping alloc] initWithClassForElements:[Tweet class] forKeyAndAttributeName:@"tweets"] inClass:[User class]];
+DCArrayMapping *mapper = [DCArrayMapping mapperForClassElements: :[Tweet class] forAttribute:@"tweets"] onClass:[User class]];
 											
-DCParserConfiguration *config = [[DCParserConfiguration alloc] init];
+DCParserConfiguration *config = [DCParserConfiguration configuration];
 [config addArrayMapper:mapper];
 config.datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
 
-DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:configuration];
-User *user = [parser parseDictionary:jsonParsed forClass:[User class]];
+DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping mapperForClass:[User class]  andConfiguration:configuration];
+User *user = [parser parseDictionary:jsonParsed];
 </pre>

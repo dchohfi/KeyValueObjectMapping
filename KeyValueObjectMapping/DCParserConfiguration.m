@@ -15,7 +15,11 @@
 @end
 
 @implementation DCParserConfiguration
-@synthesize datePattern, splitToken, arrayMappers, objectMappers;
+@synthesize datePattern, splitToken, arrayMappers, objectMappers, aggregators;
+
++ (DCParserConfiguration *) configuration {
+    return [[self alloc] init];
+}
 
 - (id)init
 {
@@ -23,6 +27,7 @@
     if (self) {
         arrayMappers = [[NSMutableArray alloc] init];
         objectMappers = [[NSMutableArray alloc] init];
+        aggregators = [[NSMutableArray alloc] init];
         splitToken = @"_";
         datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
     }
@@ -35,6 +40,9 @@
 - (void) addObjectMapping: (DCObjectMapping *) mapper {
     [objectMappers addObject:mapper];
 }
+- (void) addAggregator: (DCPropertyAggregator *) aggregator {
+    [aggregators addObject:aggregator];
+}
 - (DCArrayMapping *) arrayMapperForMapper: (DCObjectMapping *) mapper{
     for(DCArrayMapping *arrayMapper in arrayMappers){
         BOOL sameKey = [arrayMapper.objectMapping.keyReference isEqualToString:mapper.keyReference];
@@ -45,5 +53,4 @@
     }
     return nil;
 }
-
 @end

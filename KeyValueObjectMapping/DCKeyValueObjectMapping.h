@@ -11,8 +11,11 @@
 
 @interface DCKeyValueObjectMapping : NSObject
 
-- (id) initWithConfiguration: (DCParserConfiguration *) configuration;
-- (id) parseDictionary: (NSDictionary *) dictionary forClass: (Class) class;
-- (NSArray *) parseArray: (NSArray *) array forClass: (Class) class;
+@property(nonatomic, readonly) Class classToGenerate;
+
++ (DCKeyValueObjectMapping *) mapperForClass: (Class) classToGenerate;
++ (DCKeyValueObjectMapping *) mapperForClass: (Class) classToGenerate andConfiguration: (DCParserConfiguration *) configuration;
+- (id) parseDictionary: (NSDictionary *) dictionary;
+- (NSArray *) parseArray: (NSArray *) array;
 
 @end

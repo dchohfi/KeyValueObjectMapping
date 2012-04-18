@@ -39,10 +39,10 @@
 
 - (void) testValidPlistToPerson
 {         
-    DCParserConfiguration *configuration = [[DCParserConfiguration alloc] init];
+    DCParserConfiguration *configuration = [DCParserConfiguration configuration];
     configuration.datePattern = @"yyyy-MM-dd'T'hh:mm:ssZ";
-    DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:configuration];
-    Person *person = [parser parseDictionary: plist forClass:[Person class]];
+    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[Person class] andConfiguration:configuration];
+    Person *person = [parser parseDictionary: plist];
     STAssertEqualObjects(person.name, @"Diego Chohfi Turini", @"Should be equals name");
     STAssertEqualObjects(person.adress, @"Rua dos bobos, n 0", @"Should be equals adress");
     STAssertEqualObjects(person.phone, @"+551199999999", @"Should be equals phone");
@@ -62,15 +62,15 @@
 }
 
 -(void) testValidJsonToTweet {
-    DCParserConfiguration *config = [[DCParserConfiguration alloc] init];
+    DCParserConfiguration *config = [DCParserConfiguration configuration];
     config.datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = config.datePattern;
     NSDate *data = [formatter dateFromString:@"Sat Apr 14 00:20:07 +0000 2012"];
     
-    DCKeyValueObjectMapping * parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:config];
+    DCKeyValueObjectMapping * parser = [DCKeyValueObjectMapping mapperForClass:[Tweet class] andConfiguration:config];
     
-    Tweet *tweet = [parser parseDictionary:json forClass:[Tweet class]];
+    Tweet *tweet = [parser parseDictionary:json];
     STAssertEqualObjects(tweet.idStr, @"190957570511478784", @"Should have same idStr");
     STAssertEqualObjects(tweet.text, @"@pedroh96 cara, comecei uma lib pra iOS, se puder dar uma olhada e/ou contribuir :D KeyValue Parse for Objective-C https://t.co/NWMMc60v", @"Should have same text");
     STAssertEqualObjects(tweet.source, @"<a href=\"http://www.osfoora.com/mac\" rel=\"nofollow\">Osfoora for Mac</a>", @"Should have same source");
@@ -99,10 +99,10 @@
     Class tweetClass = [Tweet class];
     
     NSArray *arrayTweets = [NSArray arrayWithObjects:json, json, json, nil];
-    DCParserConfiguration *configuration = [[DCParserConfiguration alloc] init];
+    DCParserConfiguration *configuration = [DCParserConfiguration configuration];
     configuration.datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
-    DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:configuration];
-    NSArray *parsedArray = [parser parseArray:arrayTweets forClass:tweetClass];
+    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:tweetClass andConfiguration:configuration];
+    NSArray *parsedArray = [parser parseArray:arrayTweets];
     
     STAssertEquals((int)[parsedArray count], 3, @"Should have same size of tweets");
     STAssertTrue([parsedArray isKindOfClass:[NSArray class]], @"Should be a NSArray");
@@ -121,13 +121,13 @@
     [userDictionary setObject:tweetsForUser forKey:@"tweets"];
     
     
-    DCParserConfiguration *configuration = [[DCParserConfiguration alloc] init];
+    DCParserConfiguration *configuration = [DCParserConfiguration configuration];
     configuration.datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
     
     [configuration addArrayMapper:[DCArrayMapping mapperForClassElements:[Tweet class] forAttribute:@"tweets" onClass:[User class]]];
     
-    DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:configuration];
-    User *user = [parser parseDictionary:userDictionary forClass:[User class]];
+    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[User class] andConfiguration:configuration];
+    User *user = [parser parseDictionary:userDictionary];
     STAssertEquals((int)[user.tweets count], 2, @"Should have same Tweets array size");
     
     [user.tweets enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -145,30 +145,32 @@
     [userDictionary setObject:name forKey:@"borba"];
     
     DCObjectMapping *mapping = [DCObjectMapping mapKeyPath:@"borba" toAttribute:@"name" onClass:[User class]];
-    DCParserConfiguration *configuration = [[DCParserConfiguration alloc] init];
+    DCParserConfiguration *configuration = [DCParserConfiguration configuration];
     [configuration addObjectMapping:mapping];
     
-    DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:configuration];
+    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[User class] andConfiguration:configuration];
     
-    User *user = [parser parseDictionary:userDictionary forClass:[User class]];
+    User *user = [parser parseDictionary:userDictionary];
     STAssertEqualObjects(name, user.name, @"Should be able to use value on borba key and set it to user name property");
     
 }
 
 - (void) testNullValuesPassed
 {
-    DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:[[DCParserConfiguration alloc] init]];
-    Person *person = [parser parseDictionary: nil forClass:[Person class]];
+    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[Person class]];
+    Person *person = [parser parseDictionary: nil];
     STAssertNil(person, @"Should be nill when dictionary is nil");
     
-    person = [parser parseDictionary: [NSDictionary dictionary] forClass:nil];
-    STAssertNil(person, @"Should be nill when class is nil");
-    
-    NSArray *persons = [parser parseArray: nil forClass:[Person class]];
+    NSArray *persons = [parser parseArray: nil];
     STAssertNil(persons, @"Should be nill when array is nil");
     
-    persons = [parser parseArray: [NSArray array] forClass:nil];
-    STAssertNil(persons, @"Should be nill when class is nil");
+    parser = [DCKeyValueObjectMapping mapperForClass:nil];
+    person = [parser parseDictionary: [NSDictionary dictionary]];
+    STAssertNil(person, @"Should be nill when class is nil");
+    
+    persons = [parser parseArray: [NSArray array]];
+    STAssertNotNil(persons, @"Should not be when class is nil");
+    STAssertEquals((int)[persons count], 0, @"Should return empty array when class is nil");
 }
 
 @end
