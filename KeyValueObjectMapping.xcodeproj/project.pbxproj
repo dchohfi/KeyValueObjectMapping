@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20231F3A153DC785008516EE /* DCPropertyNameParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20231F39153DC785008516EE /* DCPropertyNameParserTests.m */; };
+		20231F3A153DC785008516EE /* DCReferenceKeyParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20231F39153DC785008516EE /* DCReferenceKeyParserTests.m */; };
 		20231F42153DD45B008516EE /* DCPropertyFinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 20231F40153DD45B008516EE /* DCPropertyFinder.h */; };
 		20231F43153DD45B008516EE /* DCPropertyFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 20231F41153DD45B008516EE /* DCPropertyFinder.m */; };
 		20231F46153E1F78008516EE /* DCPropertyFinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20231F45153E1F78008516EE /* DCPropertyFinderTests.m */; };
@@ -62,8 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		20231F38153DC785008516EE /* DCPropertyNameParserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPropertyNameParserTests.h; sourceTree = "<group>"; };
-		20231F39153DC785008516EE /* DCPropertyNameParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPropertyNameParserTests.m; sourceTree = "<group>"; };
+		20231F38153DC785008516EE /* DCReferenceKeyParserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCReferenceKeyParserTests.h; sourceTree = "<group>"; };
+		20231F39153DC785008516EE /* DCReferenceKeyParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCReferenceKeyParserTests.m; sourceTree = "<group>"; };
 		20231F40153DD45B008516EE /* DCPropertyFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPropertyFinder.h; sourceTree = "<group>"; };
 		20231F41153DD45B008516EE /* DCPropertyFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPropertyFinder.m; sourceTree = "<group>"; };
 		20231F44153E1F78008516EE /* DCPropertyFinderTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPropertyFinderTests.h; sourceTree = "<group>"; };
@@ -247,8 +247,8 @@
 				20231F45153E1F78008516EE /* DCPropertyFinderTests.m */,
 				2040761E153CCF2F00E110DB /* DCArrayOfTweetsOnUserTests.h */,
 				2040761F153CCF2F00E110DB /* DCArrayOfTweetsOnUserTests.m */,
-				20231F38153DC785008516EE /* DCPropertyNameParserTests.h */,
-				20231F39153DC785008516EE /* DCPropertyNameParserTests.m */,
+				20231F38153DC785008516EE /* DCReferenceKeyParserTests.h */,
+				20231F39153DC785008516EE /* DCReferenceKeyParserTests.m */,
 				2057562B1538E60500A652E7 /* Supporting Files */,
 			);
 			path = KeyValueObjectMappingTests;
@@ -451,7 +451,7 @@
 				2030CA601539FE4000F0ACAA /* Tweet.m in Sources */,
 				2030CA631539FF0800F0ACAA /* User.m in Sources */,
 				20407620153CCF2F00E110DB /* DCArrayOfTweetsOnUserTests.m in Sources */,
-				20231F3A153DC785008516EE /* DCPropertyNameParserTests.m in Sources */,
+				20231F3A153DC785008516EE /* DCReferenceKeyParserTests.m in Sources */,
 				20231F46153E1F78008516EE /* DCPropertyFinderTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

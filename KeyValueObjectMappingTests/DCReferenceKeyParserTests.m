@@ -1,21 +1,21 @@
 //
-//  DCPropertyNameParserTests.m
-//  KeyValueObjectMapping
+//  DCReferenceKeyParserTests.m
+//  DCKeyValueObjectMappingTests
 //
 //  Created by Diego Chohfi on 4/17/12.
 //  Copyright (c) 2012 dchohfi. All rights reserved.
 //
 
-#import "DCPropertyNameParserTests.h"
+#import "DCReferenceKeyParserTests.h"
 #import "DCReferenceKeyParser.h"
 
-@interface DCPropertyNameParserTests()
+@interface DCReferenceKeyParserTests()
 
 @property(nonatomic, strong) DCReferenceKeyParser *parser;
 
 @end
 
-@implementation DCPropertyNameParserTests
+@implementation DCReferenceKeyParserTests
 @synthesize parser;
 
 - (void)setUp{
