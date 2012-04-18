@@ -49,5 +49,4 @@
     STAssertNil(attribute.typeName, @"Should be null when attribut is id");
     STAssertEqualObjects(attribute.objectMapping.attributeName, @"id", @"AttributeName should be id");
 }
-
 @end

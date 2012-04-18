@@ -159,10 +159,16 @@
 {
     DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:[[DCParserConfiguration alloc] init]];
     Person *person = [parser parseDictionary: nil forClass:[Person class]];
-    STAssertNil(person, @"Should be nill return when dictionary is nil");
+    STAssertNil(person, @"Should be nill when dictionary is nil");
     
     person = [parser parseDictionary: [NSDictionary dictionary] forClass:nil];
-    STAssertNil(person, @"Should be nill return when class is nil");
+    STAssertNil(person, @"Should be nill when class is nil");
+    
+    NSArray *persons = [parser parseArray: nil forClass:[Person class]];
+    STAssertNil(persons, @"Should be nill when array is nil");
+    
+    persons = [parser parseArray: [NSArray array] forClass:nil];
+    STAssertNil(persons, @"Should be nill when class is nil");
 }
 
 @end

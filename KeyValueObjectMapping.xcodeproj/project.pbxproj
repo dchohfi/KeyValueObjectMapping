@@ -69,8 +69,8 @@
 		20231F41153DD45B008516EE /* DCPropertyFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPropertyFinder.m; sourceTree = "<group>"; };
 		20231F44153E1F78008516EE /* DCPropertyFinderTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPropertyFinderTests.h; sourceTree = "<group>"; };
 		20231F45153E1F78008516EE /* DCPropertyFinderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPropertyFinderTests.m; sourceTree = "<group>"; };
-		20231F4F153E6A4F008516EE /* DCCoverageFix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCoverageFix.h; sourceTree = "<group>"; };
-		20231F50153E6A50008516EE /* DCCoverageFix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCoverageFix.m; sourceTree = "<group>"; };
+		20231F4F153E6A4F008516EE /* DCCoverageFix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCCoverageFix.h; path = KeyValueObjectMappingTests/DCCoverageFix.h; sourceTree = SOURCE_ROOT; };
+		20231F50153E6A50008516EE /* DCCoverageFix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCCoverageFix.m; path = KeyValueObjectMappingTests/DCCoverageFix.m; sourceTree = SOURCE_ROOT; };
 		2030CA561539E4F200F0ACAA /* DCDynamicAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDynamicAttribute.h; sourceTree = "<group>"; };
 		2030CA571539E4F200F0ACAA /* DCDynamicAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDynamicAttribute.m; sourceTree = "<group>"; };
 		2030CA5B1539E91300F0ACAA /* DCDynamicAttributeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDynamicAttributeTest.h; sourceTree = "<group>"; };
@@ -241,6 +241,8 @@
 		2057562A1538E60500A652E7 /* KeyValueObjectMappingTests */ = {
 			isa = PBXGroup;
 			children = (
+				20231F4F153E6A4F008516EE /* DCCoverageFix.h */,
+				20231F50153E6A50008516EE /* DCCoverageFix.m */,
 				205756301538E60500A652E7 /* KeyValueObjectMappingTests.h */,
 				205756311538E60500A652E7 /* KeyValueObjectMappingTests.m */,
 				2030CA6A153A008A00F0ACAA /* Model */,
@@ -253,8 +255,6 @@
 				20231F38153DC785008516EE /* DCReferenceKeyParserTests.h */,
 				20231F39153DC785008516EE /* DCReferenceKeyParserTests.m */,
 				2057562B1538E60500A652E7 /* Supporting Files */,
-				20231F4F153E6A4F008516EE /* DCCoverageFix.h */,
-				20231F50153E6A50008516EE /* DCCoverageFix.m */,
 			);
 			path = KeyValueObjectMappingTests;
 			sourceTree = "<group>";
@@ -530,6 +530,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/KeyValueObjectMapping.dst;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KeyValueObjectMapping/KeyValueObjectMapping-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -543,6 +545,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/KeyValueObjectMapping.dst;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KeyValueObjectMapping/KeyValueObjectMapping-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
