@@ -91,11 +91,57 @@ NSLog(@"%@ - %@", tweet.idStr, tweet.name);
 
 Pretty easy, hã?
 
+Overriding Key Name for Attribute
+-------------------------
+
+If your JSON have some specific key that doesn't match the attribute name you can use **DCObjectMapping** to map this key to the attribute, the attribute type can be a specific Object either.
+
+Your tweet model:
+<pre>
+#import <Foundation/Foundation.h>
+
+@interface Tweet : NSObject
+@property(nonatomic, readonly) NSString *idStr;
+@property(nonatomic, readonly) NSString *tweetText;
+
+@property(nonatomic, readonly) User *userOwner;
+
+@end
+</pre>
+
+And the JSON received follow the struct:
+<pre>
+{
+    "id_str": 190957570511478800,
+    "text": "Tweet text",
+    "user": {
+        "name": "Diego Chohfi",
+        "screen_name": "dchohfi",
+        "location": "São Paulo"
+    }
+}
+</pre>
+
+Using **DCObjectMapping** you can parse this JSON and override the key names like that:
+
+<pre>
+DCParserConfiguration *config = [[DCParserConfiguration alloc] init];
+
+DCObjectMapping *textToTweetText = [DCObjectMapping mapKeyPath:@"text" toAttribute:@"tweetText" onClass:[Tweet class]];
+DCObjectMapping *userToUserOwner = [DCObjectMapping mapKeyPath:@"user" toAttribute:@"userOwner" onClass:[Tweet class]];
+
+[config addObjectMapping:textToTweetText];
+[config addObjectMapping:userToUserOwner];
+
+DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:config];
+Tweet *tweetParsed [parser parseDictionary:json forClass:[Tweet class]];;
+</pre>
+
 Parsing NSArray properties
 -------------------------
 
 Since Objective-C don't support typed collections like Java and other static language we can't figure out what it the type of elements inside a collection. 
-But KeyValueObjectMapping can be configured to learn what is the type of elements that will be added to the collection on the specific attribute for the class.
+But **KeyValueObjectMapping** can be configured to learn what is the type of elements that will be added to the collection on the specific attribute for the class.
 
 So, if the model User have many Tweets:
 <pre>
@@ -155,7 +201,7 @@ And the JSON looks like:
 }
 </pre>
 
-Using DCArrayMapping and adding it to the configuration, you tell to the KeyValueObjectMapping how to parse this specific attribute.
+Using **DCArrayMapping** and adding it to the configuration, you tell to the **KeyValueObjectMapping** how to parse this specific attribute.
 
 <pre>
 DCArrayMapping *mapper = [[DCArrayMapping alloc] initWithClassForElements:[Tweet class] forKeyAndAttributeName:@"tweets"] inClass:[User class]];
