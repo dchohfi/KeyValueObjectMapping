@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		201F6F53153F31FD009A24B9 /* DCCoverageFix.m in Sources */ = {isa = PBXBuildFile; fileRef = 201F6F52153F31FD009A24B9 /* DCCoverageFix.m */; };
 		205FD3AA153F02AA00693E13 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 205FD3A8153F02AA00693E13 /* InfoPlist.strings */; };
 		205FD3B4153F02AA00693E13 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205FD3B3153F02AA00693E13 /* SenTestingKit.framework */; };
 		205FD3B6153F02AA00693E13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205FD3B5153F02AA00693E13 /* UIKit.framework */; };
@@ -41,7 +42,6 @@
 		205FD40D153F03F000693E13 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD408153F03F000693E13 /* Person.m */; };
 		205FD40E153F03F000693E13 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD40A153F03F000693E13 /* Tweet.m */; };
 		205FD40F153F03F000693E13 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD40C153F03F000693E13 /* User.m */; };
-		205FD41C153F040900693E13 /* DCCoverageFix.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD411153F040900693E13 /* DCCoverageFix.m */; };
 		205FD41D153F040900693E13 /* KeyValueObjectMappingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD413153F040900693E13 /* KeyValueObjectMappingTests.m */; };
 		205FD41E153F040900693E13 /* DCDynamicAttributeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD415153F040900693E13 /* DCDynamicAttributeTest.m */; };
 		205FD41F153F040900693E13 /* DCPropertyFinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD417153F040900693E13 /* DCPropertyFinderTests.m */; };
@@ -64,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		201F6F51153F31FD009A24B9 /* DCCoverageFix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCoverageFix.h; sourceTree = "<group>"; };
+		201F6F52153F31FD009A24B9 /* DCCoverageFix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCoverageFix.m; sourceTree = "<group>"; };
 		205FD3A3153F02AA00693E13 /* KeyValueObjectMapping.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeyValueObjectMapping.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		205FD3A7153F02AA00693E13 /* KeyValueObjectMapping-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KeyValueObjectMapping-Info.plist"; sourceTree = "<group>"; };
 		205FD3A9153F02AA00693E13 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -105,8 +107,6 @@
 		205FD40A153F03F000693E13 /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
 		205FD40B153F03F000693E13 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		205FD40C153F03F000693E13 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		205FD410153F040900693E13 /* DCCoverageFix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCoverageFix.h; sourceTree = "<group>"; };
-		205FD411153F040900693E13 /* DCCoverageFix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCoverageFix.m; sourceTree = "<group>"; };
 		205FD412153F040900693E13 /* KeyValueObjectMappingTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyValueObjectMappingTests.h; sourceTree = "<group>"; };
 		205FD413153F040900693E13 /* KeyValueObjectMappingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyValueObjectMappingTests.m; sourceTree = "<group>"; };
 		205FD414153F040900693E13 /* DCDynamicAttributeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDynamicAttributeTest.h; sourceTree = "<group>"; };
@@ -203,10 +203,10 @@
 			isa = PBXGroup;
 			children = (
 				205FD406153F03E500693E13 /* Model */,
+				201F6F51153F31FD009A24B9 /* DCCoverageFix.h */,
+				201F6F52153F31FD009A24B9 /* DCCoverageFix.m */,
 				205FD412153F040900693E13 /* KeyValueObjectMappingTests.h */,
 				205FD413153F040900693E13 /* KeyValueObjectMappingTests.m */,
-				205FD410153F040900693E13 /* DCCoverageFix.h */,
-				205FD411153F040900693E13 /* DCCoverageFix.m */,
 				205FD414153F040900693E13 /* DCDynamicAttributeTest.h */,
 				205FD415153F040900693E13 /* DCDynamicAttributeTest.m */,
 				205FD416153F040900693E13 /* DCPropertyFinderTests.h */,
@@ -511,12 +511,12 @@
 				205FD40D153F03F000693E13 /* Person.m in Sources */,
 				205FD40E153F03F000693E13 /* Tweet.m in Sources */,
 				205FD40F153F03F000693E13 /* User.m in Sources */,
-				205FD41C153F040900693E13 /* DCCoverageFix.m in Sources */,
 				205FD41D153F040900693E13 /* KeyValueObjectMappingTests.m in Sources */,
 				205FD41E153F040900693E13 /* DCDynamicAttributeTest.m in Sources */,
 				205FD41F153F040900693E13 /* DCPropertyFinderTests.m in Sources */,
 				205FD420153F040900693E13 /* DCArrayOfTweetsOnUserTests.m in Sources */,
 				205FD421153F040900693E13 /* DCReferenceKeyParserTests.m in Sources */,
+				201F6F53153F31FD009A24B9 /* DCCoverageFix.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,8 +604,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KeyValueObjectMapping/KeyValueObjectMapping-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
@@ -633,8 +633,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KeyValueObjectMapping/KeyValueObjectMapping-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
@@ -657,8 +657,8 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KeyValueObjectMapping/KeyValueObjectMapping-Prefix.pch";
 				INFOPLIST_FILE = "KeyValueObjectMappingTests/KeyValueObjectMappingTests-Info.plist";
@@ -680,8 +680,8 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KeyValueObjectMapping/KeyValueObjectMapping-Prefix.pch";
 				INFOPLIST_FILE = "KeyValueObjectMappingTests/KeyValueObjectMappingTests-Info.plist";

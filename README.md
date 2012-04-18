@@ -1,9 +1,20 @@
 Introduction
 =========================
 
-KeyValueObjectMapping is a framework that provides an easy way to deal with any key/value type, as JSON, plist and even a common NSDictionary.
+**KeyValueObjectMapping** is a Cocoa framework that provides an easy way to deal with any key/value type, as JSON, plist and even a common NSDictionary.
 
 It's made to be used with NSJSONSerialization and other resources, and the main goal is to avoid the tedious work when you need to deal with key/value types.
+
+Features
+-------------------------
+
+*. Transform any kind of Key/Value type to a desired object. Can be a JSON, PLIST or a simple NSDictionary.
+*. Don't generate accessors to all the attribute, keep your properties *readonly* and framework will do it's magic to put the value on the object.
+*. Based on Convention over Configuration
+	1. If your attribute follow the same name of the key on the NSDictionary everything will be done automatically.
+	1. If the key on NSDictionary are splited between some character, you can configure which character is and the framework will split and camelcase it to find the properly attribute.
+*. Map any key to a specific attribute that doesn't follow the convention sugin **DCObjectMapping**.
+*. To map an *one-to-many* relation use **DCArrayMapping** to tell what is the specific type of elements that will be inserted.
 
 Usage
 -------------------------
@@ -78,8 +89,7 @@ NSLog(@"%@ - %@", tweet.idStr, tweet.name);
 
 Pretty easy, hã?
 
-Parsing NSArray properties
--------------------------
+##### Parsing NSArray properties
 
 Since Objective-C don't support typed collections like Java and other static language we can't figure out what it the type of elements inside a collection. 
 But KeyValueObjectMapping can be configured to learn what is the type of elements that will be added to the collection on the specific attribute for the class.
