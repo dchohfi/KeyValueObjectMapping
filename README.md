@@ -197,7 +197,6 @@ DCArrayMapping *mapper = [DCArrayMapping mapperForClassElements: :[Tweet class] 
 											
 DCParserConfiguration *config = [DCParserConfiguration configuration];
 [config addArrayMapper:mapper];
-config.datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
 
 DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping mapperForClass:[User class]  andConfiguration:configuration];
 User *user = [parser parseDictionary:jsonParsed];
