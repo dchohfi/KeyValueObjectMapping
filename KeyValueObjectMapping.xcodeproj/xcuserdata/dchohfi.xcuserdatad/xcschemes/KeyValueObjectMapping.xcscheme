@@ -13,8 +13,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "205756101538E60400A652E7"
-               BuildableName = "libKeyValueObjectMapping.a"
+               BlueprintIdentifier = "205FD3A2153F02AA00693E13"
+               BuildableName = "KeyValueObjectMapping.framework"
                BlueprintName = "KeyValueObjectMapping"
                ReferencedContainer = "container:KeyValueObjectMapping.xcodeproj">
             </BuildableReference>
@@ -31,7 +31,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "205756201538E60500A652E7"
+               BlueprintIdentifier = "205FD3B0153F02AA00693E13"
                BuildableName = "KeyValueObjectMappingTests.octest"
                BlueprintName = "KeyValueObjectMappingTests"
                ReferencedContainer = "container:KeyValueObjectMapping.xcodeproj">
@@ -44,7 +44,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
@@ -63,7 +63,6 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
-      customArchiveName = "KeyValueObjectMapping"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

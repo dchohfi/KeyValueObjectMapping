@@ -7,338 +7,348 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20231F3A153DC785008516EE /* DCReferenceKeyParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20231F39153DC785008516EE /* DCReferenceKeyParserTests.m */; };
-		20231F42153DD45B008516EE /* DCPropertyFinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 20231F40153DD45B008516EE /* DCPropertyFinder.h */; };
-		20231F43153DD45B008516EE /* DCPropertyFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 20231F41153DD45B008516EE /* DCPropertyFinder.m */; };
-		20231F46153E1F78008516EE /* DCPropertyFinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20231F45153E1F78008516EE /* DCPropertyFinderTests.m */; };
-		20231F51153E6A50008516EE /* DCCoverageFix.m in Sources */ = {isa = PBXBuildFile; fileRef = 20231F50153E6A50008516EE /* DCCoverageFix.m */; };
-		2030CA581539E4F200F0ACAA /* DCDynamicAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 2030CA561539E4F200F0ACAA /* DCDynamicAttribute.h */; };
-		2030CA591539E4F200F0ACAA /* DCDynamicAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA571539E4F200F0ACAA /* DCDynamicAttribute.m */; };
-		2030CA5D1539E91300F0ACAA /* DCDynamicAttributeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA5C1539E91300F0ACAA /* DCDynamicAttributeTest.m */; };
-		2030CA601539FE4000F0ACAA /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA5F1539FE4000F0ACAA /* Tweet.m */; };
-		2030CA631539FF0800F0ACAA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA621539FF0800F0ACAA /* User.m */; };
-		2030CA651539FFDF00F0ACAA /* tweet.json in Resources */ = {isa = PBXBuildFile; fileRef = 2030CA641539FFDF00F0ACAA /* tweet.json */; };
-		2030CA71153A132300F0ACAA /* DCReferenceKeyParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2030CA6F153A132300F0ACAA /* DCReferenceKeyParser.h */; };
-		2030CA72153A132300F0ACAA /* DCReferenceKeyParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CA70153A132300F0ACAA /* DCReferenceKeyParser.m */; };
-		20407612153C997900E110DB /* DCGenericConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20407611153C997900E110DB /* DCGenericConverter.m */; };
-		20407616153C9EFC00E110DB /* DCArrayMapping.h in Headers */ = {isa = PBXBuildFile; fileRef = 20407614153C9EFC00E110DB /* DCArrayMapping.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		20407617153C9EFC00E110DB /* DCArrayMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 20407615153C9EFC00E110DB /* DCArrayMapping.m */; };
-		2040761A153CA4B700E110DB /* DCObjectMapping.h in Headers */ = {isa = PBXBuildFile; fileRef = 20407618153CA4B700E110DB /* DCObjectMapping.h */; };
-		2040761B153CA4B700E110DB /* DCObjectMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 20407619153CA4B700E110DB /* DCObjectMapping.m */; };
-		2040761D153CCEEB00E110DB /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 2040761C153CCEEB00E110DB /* user.json */; };
-		20407620153CCF2F00E110DB /* DCArrayOfTweetsOnUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2040761F153CCF2F00E110DB /* DCArrayOfTweetsOnUserTests.m */; };
-		20407621153CD5DB00E110DB /* DCKeyValueObjectMapping.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756191538E60500A652E7 /* DCKeyValueObjectMapping.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		205756151538E60500A652E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756141538E60400A652E7 /* Foundation.framework */; };
-		2057561B1538E60500A652E7 /* DCKeyValueObjectMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 2057561A1538E60500A652E7 /* DCKeyValueObjectMapping.m */; };
-		205756231538E60500A652E7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756221538E60500A652E7 /* SenTestingKit.framework */; };
-		205756251538E60500A652E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756241538E60500A652E7 /* UIKit.framework */; };
-		205756261538E60500A652E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756141538E60400A652E7 /* Foundation.framework */; };
-		205756291538E60500A652E7 /* libKeyValueObjectMapping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 205756111538E60400A652E7 /* libKeyValueObjectMapping.a */; };
-		2057562F1538E60500A652E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2057562D1538E60500A652E7 /* InfoPlist.strings */; };
-		205756321538E60500A652E7 /* KeyValueObjectMappingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 205756311538E60500A652E7 /* KeyValueObjectMappingTests.m */; };
-		205756441538E6C200A652E7 /* DCValueConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756411538E6C200A652E7 /* DCValueConverter.h */; };
-		205756451538E6C200A652E7 /* DCGenericConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756421538E6C200A652E7 /* DCGenericConverter.h */; };
-		205756491538E6E100A652E7 /* DCParserConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756471538E6E100A652E7 /* DCParserConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2057564A1538E6E100A652E7 /* DCParserConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 205756481538E6E100A652E7 /* DCParserConfiguration.m */; };
-		205756541538E6F300A652E7 /* DCNSArrayConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 2057564C1538E6F300A652E7 /* DCNSArrayConverter.h */; };
-		205756551538E6F300A652E7 /* DCNSArrayConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2057564D1538E6F300A652E7 /* DCNSArrayConverter.m */; };
-		205756561538E6F300A652E7 /* DCNSDateConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 2057564E1538E6F300A652E7 /* DCNSDateConverter.h */; };
-		205756571538E6F300A652E7 /* DCNSDateConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2057564F1538E6F300A652E7 /* DCNSDateConverter.m */; };
-		205756581538E6F300A652E7 /* DCNSURLConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756501538E6F300A652E7 /* DCNSURLConverter.h */; };
-		205756591538E6F300A652E7 /* DCNSURLConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 205756511538E6F300A652E7 /* DCNSURLConverter.m */; };
-		2057565A1538E6F300A652E7 /* DCSimpleConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 205756521538E6F300A652E7 /* DCSimpleConverter.h */; };
-		2057565B1538E6F300A652E7 /* DCSimpleConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 205756531538E6F300A652E7 /* DCSimpleConverter.m */; };
-		2057565F1538E72800A652E7 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 2057565D1538E72800A652E7 /* Person.m */; };
-		205756601538E72800A652E7 /* plist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2057565E1538E72800A652E7 /* plist.plist */; };
+		205FD3AA153F02AA00693E13 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 205FD3A8153F02AA00693E13 /* InfoPlist.strings */; };
+		205FD3B4153F02AA00693E13 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205FD3B3153F02AA00693E13 /* SenTestingKit.framework */; };
+		205FD3B6153F02AA00693E13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205FD3B5153F02AA00693E13 /* UIKit.framework */; };
+		205FD3B8153F02AA00693E13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205FD3B7153F02AA00693E13 /* Foundation.framework */; };
+		205FD3BB153F02AA00693E13 /* KeyValueObjectMapping.framework in Resources */ = {isa = PBXBuildFile; fileRef = 205FD3A3153F02AA00693E13 /* KeyValueObjectMapping.framework */; };
+		205FD3C1153F02AA00693E13 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 205FD3BF153F02AA00693E13 /* InfoPlist.strings */; };
+		205FD3D0153F02F700693E13 /* DCPropertyFinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 205FD3CE153F02F700693E13 /* DCPropertyFinder.h */; };
+		205FD3D1153F02F700693E13 /* DCPropertyFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD3CF153F02F700693E13 /* DCPropertyFinder.m */; };
+		205FD3D5153F030800693E13 /* DCReferenceKeyParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 205FD3D3153F030800693E13 /* DCReferenceKeyParser.h */; };
+		205FD3D6153F030800693E13 /* DCReferenceKeyParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD3D4153F030800693E13 /* DCReferenceKeyParser.m */; };
+		205FD3DA153F031C00693E13 /* DCParserConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 205FD3D8153F031C00693E13 /* DCParserConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		205FD3DB153F031C00693E13 /* DCParserConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD3D9153F031C00693E13 /* DCParserConfiguration.m */; };
+		205FD3E0153F032F00693E13 /* DCValueConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 205FD3DD153F032F00693E13 /* DCValueConverter.h */; };
+		205FD3E1153F032F00693E13 /* DCGenericConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 205FD3DE153F032F00693E13 /* DCGenericConverter.h */; };
+		205FD3E2153F032F00693E13 /* DCGenericConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD3DF153F032F00693E13 /* DCGenericConverter.m */; };
+		205FD3EC153F033A00693E13 /* DCNSArrayConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 205FD3E4153F033A00693E13 /* DCNSArrayConverter.h */; };
+		205FD3ED153F033A00693E13 /* DCNSArrayConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD3E5153F033A00693E13 /* DCNSArrayConverter.m */; };
+		205FD3EE153F033A00693E13 /* DCNSDateConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 205FD3E6153F033A00693E13 /* DCNSDateConverter.h */; };
+		205FD3EF153F033A00693E13 /* DCNSDateConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD3E7153F033A00693E13 /* DCNSDateConverter.m */; };
+		205FD3F0153F033A00693E13 /* DCNSURLConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 205FD3E8153F033A00693E13 /* DCNSURLConverter.h */; };
+		205FD3F1153F033A00693E13 /* DCNSURLConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD3E9153F033A00693E13 /* DCNSURLConverter.m */; };
+		205FD3F2153F033A00693E13 /* DCSimpleConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 205FD3EA153F033A00693E13 /* DCSimpleConverter.h */; };
+		205FD3F3153F033A00693E13 /* DCSimpleConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD3EB153F033A00693E13 /* DCSimpleConverter.m */; };
+		205FD3FB153F034D00693E13 /* DCDynamicAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 205FD3F5153F034D00693E13 /* DCDynamicAttribute.h */; };
+		205FD3FC153F034D00693E13 /* DCDynamicAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD3F6153F034D00693E13 /* DCDynamicAttribute.m */; };
+		205FD3FD153F034D00693E13 /* DCObjectMapping.h in Headers */ = {isa = PBXBuildFile; fileRef = 205FD3F7153F034D00693E13 /* DCObjectMapping.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		205FD3FE153F034D00693E13 /* DCObjectMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD3F8153F034D00693E13 /* DCObjectMapping.m */; };
+		205FD3FF153F034D00693E13 /* DCArrayMapping.h in Headers */ = {isa = PBXBuildFile; fileRef = 205FD3F9153F034D00693E13 /* DCArrayMapping.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		205FD400153F034D00693E13 /* DCArrayMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD3FA153F034D00693E13 /* DCArrayMapping.m */; };
+		205FD403153F035700693E13 /* DCKeyValueObjectMapping.h in Headers */ = {isa = PBXBuildFile; fileRef = 205FD401153F035700693E13 /* DCKeyValueObjectMapping.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		205FD404153F035700693E13 /* DCKeyValueObjectMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD402153F035700693E13 /* DCKeyValueObjectMapping.m */; };
+		205FD40D153F03F000693E13 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD408153F03F000693E13 /* Person.m */; };
+		205FD40E153F03F000693E13 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD40A153F03F000693E13 /* Tweet.m */; };
+		205FD40F153F03F000693E13 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD40C153F03F000693E13 /* User.m */; };
+		205FD41C153F040900693E13 /* DCCoverageFix.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD411153F040900693E13 /* DCCoverageFix.m */; };
+		205FD41D153F040900693E13 /* KeyValueObjectMappingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD413153F040900693E13 /* KeyValueObjectMappingTests.m */; };
+		205FD41E153F040900693E13 /* DCDynamicAttributeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD415153F040900693E13 /* DCDynamicAttributeTest.m */; };
+		205FD41F153F040900693E13 /* DCPropertyFinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD417153F040900693E13 /* DCPropertyFinderTests.m */; };
+		205FD420153F040900693E13 /* DCArrayOfTweetsOnUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD419153F040900693E13 /* DCArrayOfTweetsOnUserTests.m */; };
+		205FD421153F040900693E13 /* DCReferenceKeyParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD41B153F040900693E13 /* DCReferenceKeyParserTests.m */; };
+		205FD425153F041F00693E13 /* plist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 205FD422153F041F00693E13 /* plist.plist */; };
+		205FD426153F041F00693E13 /* tweet.json in Resources */ = {isa = PBXBuildFile; fileRef = 205FD423153F041F00693E13 /* tweet.json */; };
+		205FD427153F041F00693E13 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 205FD424153F041F00693E13 /* user.json */; };
+		205FD42B153F053300693E13 /* DCFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 205FD42A153F053300693E13 /* DCFramework.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		205756271538E60500A652E7 /* PBXContainerItemProxy */ = {
+		205FD3B9153F02AA00693E13 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 205756081538E60400A652E7 /* Project object */;
+			containerPortal = 205FD396153F02AA00693E13 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 205756101538E60400A652E7;
+			remoteGlobalIDString = 205FD3A2153F02AA00693E13;
 			remoteInfo = KeyValueObjectMapping;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		20231F38153DC785008516EE /* DCReferenceKeyParserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCReferenceKeyParserTests.h; sourceTree = "<group>"; };
-		20231F39153DC785008516EE /* DCReferenceKeyParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCReferenceKeyParserTests.m; sourceTree = "<group>"; };
-		20231F40153DD45B008516EE /* DCPropertyFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPropertyFinder.h; sourceTree = "<group>"; };
-		20231F41153DD45B008516EE /* DCPropertyFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPropertyFinder.m; sourceTree = "<group>"; };
-		20231F44153E1F78008516EE /* DCPropertyFinderTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPropertyFinderTests.h; sourceTree = "<group>"; };
-		20231F45153E1F78008516EE /* DCPropertyFinderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPropertyFinderTests.m; sourceTree = "<group>"; };
-		20231F4F153E6A4F008516EE /* DCCoverageFix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCCoverageFix.h; path = KeyValueObjectMappingTests/DCCoverageFix.h; sourceTree = SOURCE_ROOT; };
-		20231F50153E6A50008516EE /* DCCoverageFix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCCoverageFix.m; path = KeyValueObjectMappingTests/DCCoverageFix.m; sourceTree = SOURCE_ROOT; };
-		2030CA561539E4F200F0ACAA /* DCDynamicAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDynamicAttribute.h; sourceTree = "<group>"; };
-		2030CA571539E4F200F0ACAA /* DCDynamicAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDynamicAttribute.m; sourceTree = "<group>"; };
-		2030CA5B1539E91300F0ACAA /* DCDynamicAttributeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDynamicAttributeTest.h; sourceTree = "<group>"; };
-		2030CA5C1539E91300F0ACAA /* DCDynamicAttributeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDynamicAttributeTest.m; sourceTree = "<group>"; };
-		2030CA5E1539FE4000F0ACAA /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
-		2030CA5F1539FE4000F0ACAA /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
-		2030CA611539FF0800F0ACAA /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		2030CA621539FF0800F0ACAA /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		2030CA641539FFDF00F0ACAA /* tweet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tweet.json; sourceTree = "<group>"; };
-		2030CA6F153A132300F0ACAA /* DCReferenceKeyParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCReferenceKeyParser.h; sourceTree = "<group>"; };
-		2030CA70153A132300F0ACAA /* DCReferenceKeyParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCReferenceKeyParser.m; sourceTree = "<group>"; };
-		20407611153C997900E110DB /* DCGenericConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCGenericConverter.m; sourceTree = "<group>"; };
-		20407614153C9EFC00E110DB /* DCArrayMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCArrayMapping.h; sourceTree = "<group>"; };
-		20407615153C9EFC00E110DB /* DCArrayMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCArrayMapping.m; sourceTree = "<group>"; };
-		20407618153CA4B700E110DB /* DCObjectMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCObjectMapping.h; sourceTree = "<group>"; };
-		20407619153CA4B700E110DB /* DCObjectMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCObjectMapping.m; sourceTree = "<group>"; };
-		2040761C153CCEEB00E110DB /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
-		2040761E153CCF2F00E110DB /* DCArrayOfTweetsOnUserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCArrayOfTweetsOnUserTests.h; sourceTree = "<group>"; };
-		2040761F153CCF2F00E110DB /* DCArrayOfTweetsOnUserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCArrayOfTweetsOnUserTests.m; sourceTree = "<group>"; };
-		205756111538E60400A652E7 /* libKeyValueObjectMapping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKeyValueObjectMapping.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		205756141538E60400A652E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		205756181538E60500A652E7 /* KeyValueObjectMapping-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyValueObjectMapping-Prefix.pch"; sourceTree = "<group>"; };
-		205756191538E60500A652E7 /* DCKeyValueObjectMapping.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCKeyValueObjectMapping.h; sourceTree = "<group>"; };
-		2057561A1538E60500A652E7 /* DCKeyValueObjectMapping.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCKeyValueObjectMapping.m; sourceTree = "<group>"; };
-		205756211538E60500A652E7 /* KeyValueObjectMappingTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeyValueObjectMappingTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		205756221538E60500A652E7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		205756241538E60500A652E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		2057562C1538E60500A652E7 /* KeyValueObjectMappingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KeyValueObjectMappingTests-Info.plist"; sourceTree = "<group>"; };
-		2057562E1538E60500A652E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		205756301538E60500A652E7 /* KeyValueObjectMappingTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyValueObjectMappingTests.h; sourceTree = "<group>"; };
-		205756311538E60500A652E7 /* KeyValueObjectMappingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyValueObjectMappingTests.m; sourceTree = "<group>"; };
-		205756411538E6C200A652E7 /* DCValueConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCValueConverter.h; sourceTree = "<group>"; };
-		205756421538E6C200A652E7 /* DCGenericConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCGenericConverter.h; sourceTree = "<group>"; };
-		205756471538E6E100A652E7 /* DCParserConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCParserConfiguration.h; sourceTree = "<group>"; };
-		205756481538E6E100A652E7 /* DCParserConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCParserConfiguration.m; sourceTree = "<group>"; };
-		2057564C1538E6F300A652E7 /* DCNSArrayConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNSArrayConverter.h; sourceTree = "<group>"; };
-		2057564D1538E6F300A652E7 /* DCNSArrayConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNSArrayConverter.m; sourceTree = "<group>"; };
-		2057564E1538E6F300A652E7 /* DCNSDateConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNSDateConverter.h; sourceTree = "<group>"; };
-		2057564F1538E6F300A652E7 /* DCNSDateConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNSDateConverter.m; sourceTree = "<group>"; };
-		205756501538E6F300A652E7 /* DCNSURLConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNSURLConverter.h; sourceTree = "<group>"; };
-		205756511538E6F300A652E7 /* DCNSURLConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNSURLConverter.m; sourceTree = "<group>"; };
-		205756521538E6F300A652E7 /* DCSimpleConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCSimpleConverter.h; sourceTree = "<group>"; };
-		205756531538E6F300A652E7 /* DCSimpleConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCSimpleConverter.m; sourceTree = "<group>"; };
-		2057565C1538E72800A652E7 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		2057565D1538E72800A652E7 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		2057565E1538E72800A652E7 /* plist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plist.plist; sourceTree = "<group>"; };
+		205FD3A3153F02AA00693E13 /* KeyValueObjectMapping.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeyValueObjectMapping.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		205FD3A7153F02AA00693E13 /* KeyValueObjectMapping-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KeyValueObjectMapping-Info.plist"; sourceTree = "<group>"; };
+		205FD3A9153F02AA00693E13 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		205FD3AB153F02AA00693E13 /* KeyValueObjectMapping-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyValueObjectMapping-Prefix.pch"; sourceTree = "<group>"; };
+		205FD3B1153F02AA00693E13 /* KeyValueObjectMappingTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeyValueObjectMappingTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		205FD3B3153F02AA00693E13 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		205FD3B5153F02AA00693E13 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		205FD3B7153F02AA00693E13 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		205FD3BE153F02AA00693E13 /* KeyValueObjectMappingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KeyValueObjectMappingTests-Info.plist"; sourceTree = "<group>"; };
+		205FD3C0153F02AA00693E13 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		205FD3CE153F02F700693E13 /* DCPropertyFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPropertyFinder.h; sourceTree = "<group>"; };
+		205FD3CF153F02F700693E13 /* DCPropertyFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPropertyFinder.m; sourceTree = "<group>"; };
+		205FD3D3153F030800693E13 /* DCReferenceKeyParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCReferenceKeyParser.h; sourceTree = "<group>"; };
+		205FD3D4153F030800693E13 /* DCReferenceKeyParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCReferenceKeyParser.m; sourceTree = "<group>"; };
+		205FD3D8153F031C00693E13 /* DCParserConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCParserConfiguration.h; sourceTree = "<group>"; };
+		205FD3D9153F031C00693E13 /* DCParserConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCParserConfiguration.m; sourceTree = "<group>"; };
+		205FD3DD153F032F00693E13 /* DCValueConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCValueConverter.h; sourceTree = "<group>"; };
+		205FD3DE153F032F00693E13 /* DCGenericConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCGenericConverter.h; sourceTree = "<group>"; };
+		205FD3DF153F032F00693E13 /* DCGenericConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCGenericConverter.m; sourceTree = "<group>"; };
+		205FD3E4153F033A00693E13 /* DCNSArrayConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNSArrayConverter.h; sourceTree = "<group>"; };
+		205FD3E5153F033A00693E13 /* DCNSArrayConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNSArrayConverter.m; sourceTree = "<group>"; };
+		205FD3E6153F033A00693E13 /* DCNSDateConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNSDateConverter.h; sourceTree = "<group>"; };
+		205FD3E7153F033A00693E13 /* DCNSDateConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNSDateConverter.m; sourceTree = "<group>"; };
+		205FD3E8153F033A00693E13 /* DCNSURLConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNSURLConverter.h; sourceTree = "<group>"; };
+		205FD3E9153F033A00693E13 /* DCNSURLConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNSURLConverter.m; sourceTree = "<group>"; };
+		205FD3EA153F033A00693E13 /* DCSimpleConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCSimpleConverter.h; sourceTree = "<group>"; };
+		205FD3EB153F033A00693E13 /* DCSimpleConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCSimpleConverter.m; sourceTree = "<group>"; };
+		205FD3F5153F034D00693E13 /* DCDynamicAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDynamicAttribute.h; sourceTree = "<group>"; };
+		205FD3F6153F034D00693E13 /* DCDynamicAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDynamicAttribute.m; sourceTree = "<group>"; };
+		205FD3F7153F034D00693E13 /* DCObjectMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCObjectMapping.h; sourceTree = "<group>"; };
+		205FD3F8153F034D00693E13 /* DCObjectMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCObjectMapping.m; sourceTree = "<group>"; };
+		205FD3F9153F034D00693E13 /* DCArrayMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCArrayMapping.h; sourceTree = "<group>"; };
+		205FD3FA153F034D00693E13 /* DCArrayMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCArrayMapping.m; sourceTree = "<group>"; };
+		205FD401153F035700693E13 /* DCKeyValueObjectMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCKeyValueObjectMapping.h; sourceTree = "<group>"; };
+		205FD402153F035700693E13 /* DCKeyValueObjectMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCKeyValueObjectMapping.m; sourceTree = "<group>"; };
+		205FD407153F03F000693E13 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		205FD408153F03F000693E13 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		205FD409153F03F000693E13 /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
+		205FD40A153F03F000693E13 /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
+		205FD40B153F03F000693E13 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		205FD40C153F03F000693E13 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		205FD410153F040900693E13 /* DCCoverageFix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCoverageFix.h; sourceTree = "<group>"; };
+		205FD411153F040900693E13 /* DCCoverageFix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCoverageFix.m; sourceTree = "<group>"; };
+		205FD412153F040900693E13 /* KeyValueObjectMappingTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyValueObjectMappingTests.h; sourceTree = "<group>"; };
+		205FD413153F040900693E13 /* KeyValueObjectMappingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyValueObjectMappingTests.m; sourceTree = "<group>"; };
+		205FD414153F040900693E13 /* DCDynamicAttributeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDynamicAttributeTest.h; sourceTree = "<group>"; };
+		205FD415153F040900693E13 /* DCDynamicAttributeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDynamicAttributeTest.m; sourceTree = "<group>"; };
+		205FD416153F040900693E13 /* DCPropertyFinderTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPropertyFinderTests.h; sourceTree = "<group>"; };
+		205FD417153F040900693E13 /* DCPropertyFinderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPropertyFinderTests.m; sourceTree = "<group>"; };
+		205FD418153F040900693E13 /* DCArrayOfTweetsOnUserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCArrayOfTweetsOnUserTests.h; sourceTree = "<group>"; };
+		205FD419153F040900693E13 /* DCArrayOfTweetsOnUserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCArrayOfTweetsOnUserTests.m; sourceTree = "<group>"; };
+		205FD41A153F040900693E13 /* DCReferenceKeyParserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCReferenceKeyParserTests.h; sourceTree = "<group>"; };
+		205FD41B153F040900693E13 /* DCReferenceKeyParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCReferenceKeyParserTests.m; sourceTree = "<group>"; };
+		205FD422153F041F00693E13 /* plist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plist.plist; sourceTree = "<group>"; };
+		205FD423153F041F00693E13 /* tweet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tweet.json; sourceTree = "<group>"; };
+		205FD424153F041F00693E13 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
+		205FD42A153F053300693E13 /* DCFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCFramework.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2057560E1538E60400A652E7 /* Frameworks */ = {
+		205FD39D153F02AA00693E13 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				205756151538E60500A652E7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2057561D1538E60500A652E7 /* Frameworks */ = {
+		205FD3AD153F02AA00693E13 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				205756231538E60500A652E7 /* SenTestingKit.framework in Frameworks */,
-				205756251538E60500A652E7 /* UIKit.framework in Frameworks */,
-				205756261538E60500A652E7 /* Foundation.framework in Frameworks */,
-				205756291538E60500A652E7 /* libKeyValueObjectMapping.a in Frameworks */,
+				205FD3B4153F02AA00693E13 /* SenTestingKit.framework in Frameworks */,
+				205FD3B6153F02AA00693E13 /* UIKit.framework in Frameworks */,
+				205FD3B8153F02AA00693E13 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		20231F47153E2A6A008516EE /* Finders */ = {
+		205FD394153F02AA00693E13 = {
 			isa = PBXGroup;
 			children = (
-				20231F40153DD45B008516EE /* DCPropertyFinder.h */,
-				20231F41153DD45B008516EE /* DCPropertyFinder.m */,
-			);
-			name = Finders;
-			sourceTree = "<group>";
-		};
-		2030CA6A153A008A00F0ACAA /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				2057565C1538E72800A652E7 /* Person.h */,
-				2057565D1538E72800A652E7 /* Person.m */,
-				2030CA5E1539FE4000F0ACAA /* Tweet.h */,
-				2030CA5F1539FE4000F0ACAA /* Tweet.m */,
-				2030CA611539FF0800F0ACAA /* User.h */,
-				2030CA621539FF0800F0ACAA /* User.m */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		2030CA6E153A131400F0ACAA /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				2030CA6F153A132300F0ACAA /* DCReferenceKeyParser.h */,
-				2030CA70153A132300F0ACAA /* DCReferenceKeyParser.m */,
-			);
-			name = Utils;
-			sourceTree = "<group>";
-		};
-		20407613153C9EC800E110DB /* Mappers */ = {
-			isa = PBXGroup;
-			children = (
-				2030CA561539E4F200F0ACAA /* DCDynamicAttribute.h */,
-				2030CA571539E4F200F0ACAA /* DCDynamicAttribute.m */,
-				20407618153CA4B700E110DB /* DCObjectMapping.h */,
-				20407619153CA4B700E110DB /* DCObjectMapping.m */,
-				20407614153C9EFC00E110DB /* DCArrayMapping.h */,
-				20407615153C9EFC00E110DB /* DCArrayMapping.m */,
-			);
-			name = Mappers;
-			sourceTree = "<group>";
-		};
-		205756061538E60400A652E7 = {
-			isa = PBXGroup;
-			children = (
-				205756161538E60500A652E7 /* KeyValueObjectMapping */,
-				2057562A1538E60500A652E7 /* KeyValueObjectMappingTests */,
-				205756131538E60400A652E7 /* Frameworks */,
-				205756121538E60400A652E7 /* Products */,
+				205FD3A5153F02AA00693E13 /* KeyValueObjectMapping */,
+				205FD3BC153F02AA00693E13 /* KeyValueObjectMappingTests */,
+				205FD3B2153F02AA00693E13 /* Frameworks */,
+				205FD3A4153F02AA00693E13 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		205756121538E60400A652E7 /* Products */ = {
+		205FD3A4153F02AA00693E13 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				205756111538E60400A652E7 /* libKeyValueObjectMapping.a */,
-				205756211538E60500A652E7 /* KeyValueObjectMappingTests.octest */,
+				205FD3A3153F02AA00693E13 /* KeyValueObjectMapping.framework */,
+				205FD3B1153F02AA00693E13 /* KeyValueObjectMappingTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		205756131538E60400A652E7 /* Frameworks */ = {
+		205FD3A5153F02AA00693E13 /* KeyValueObjectMapping */ = {
 			isa = PBXGroup;
 			children = (
-				205756141538E60400A652E7 /* Foundation.framework */,
-				205756221538E60500A652E7 /* SenTestingKit.framework */,
-				205756241538E60500A652E7 /* UIKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		205756161538E60500A652E7 /* KeyValueObjectMapping */ = {
-			isa = PBXGroup;
-			children = (
-				205756191538E60500A652E7 /* DCKeyValueObjectMapping.h */,
-				2057561A1538E60500A652E7 /* DCKeyValueObjectMapping.m */,
-				20231F47153E2A6A008516EE /* Finders */,
-				2030CA6E153A131400F0ACAA /* Utils */,
-				2057563B1538E69600A652E7 /* Configuration */,
-				205756401538E6B300A652E7 /* Converters */,
-				20407613153C9EC800E110DB /* Mappers */,
-				205756171538E60500A652E7 /* Supporting Files */,
+				205FD401153F035700693E13 /* DCKeyValueObjectMapping.h */,
+				205FD402153F035700693E13 /* DCKeyValueObjectMapping.m */,
+				205FD3CD153F02EE00693E13 /* Finders */,
+				205FD3D2153F02FD00693E13 /* Utils */,
+				205FD3D7153F030F00693E13 /* Configuration */,
+				205FD3DC153F032300693E13 /* Converters */,
+				205FD3F4153F034300693E13 /* Mappers */,
+				205FD3A6153F02AA00693E13 /* Supporting Files */,
 			);
 			path = KeyValueObjectMapping;
 			sourceTree = "<group>";
 		};
-		205756171538E60500A652E7 /* Supporting Files */ = {
+		205FD3A6153F02AA00693E13 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				205756181538E60500A652E7 /* KeyValueObjectMapping-Prefix.pch */,
+				205FD3A7153F02AA00693E13 /* KeyValueObjectMapping-Info.plist */,
+				205FD3A8153F02AA00693E13 /* InfoPlist.strings */,
+				205FD3AB153F02AA00693E13 /* KeyValueObjectMapping-Prefix.pch */,
+				205FD42A153F053300693E13 /* DCFramework.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2057562A1538E60500A652E7 /* KeyValueObjectMappingTests */ = {
+		205FD3B2153F02AA00693E13 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				20231F4F153E6A4F008516EE /* DCCoverageFix.h */,
-				20231F50153E6A50008516EE /* DCCoverageFix.m */,
-				205756301538E60500A652E7 /* KeyValueObjectMappingTests.h */,
-				205756311538E60500A652E7 /* KeyValueObjectMappingTests.m */,
-				2030CA6A153A008A00F0ACAA /* Model */,
-				2030CA5B1539E91300F0ACAA /* DCDynamicAttributeTest.h */,
-				2030CA5C1539E91300F0ACAA /* DCDynamicAttributeTest.m */,
-				20231F44153E1F78008516EE /* DCPropertyFinderTests.h */,
-				20231F45153E1F78008516EE /* DCPropertyFinderTests.m */,
-				2040761E153CCF2F00E110DB /* DCArrayOfTweetsOnUserTests.h */,
-				2040761F153CCF2F00E110DB /* DCArrayOfTweetsOnUserTests.m */,
-				20231F38153DC785008516EE /* DCReferenceKeyParserTests.h */,
-				20231F39153DC785008516EE /* DCReferenceKeyParserTests.m */,
-				2057562B1538E60500A652E7 /* Supporting Files */,
+				205FD3B3153F02AA00693E13 /* SenTestingKit.framework */,
+				205FD3B5153F02AA00693E13 /* UIKit.framework */,
+				205FD3B7153F02AA00693E13 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		205FD3BC153F02AA00693E13 /* KeyValueObjectMappingTests */ = {
+			isa = PBXGroup;
+			children = (
+				205FD406153F03E500693E13 /* Model */,
+				205FD412153F040900693E13 /* KeyValueObjectMappingTests.h */,
+				205FD413153F040900693E13 /* KeyValueObjectMappingTests.m */,
+				205FD410153F040900693E13 /* DCCoverageFix.h */,
+				205FD411153F040900693E13 /* DCCoverageFix.m */,
+				205FD414153F040900693E13 /* DCDynamicAttributeTest.h */,
+				205FD415153F040900693E13 /* DCDynamicAttributeTest.m */,
+				205FD416153F040900693E13 /* DCPropertyFinderTests.h */,
+				205FD417153F040900693E13 /* DCPropertyFinderTests.m */,
+				205FD418153F040900693E13 /* DCArrayOfTweetsOnUserTests.h */,
+				205FD419153F040900693E13 /* DCArrayOfTweetsOnUserTests.m */,
+				205FD41A153F040900693E13 /* DCReferenceKeyParserTests.h */,
+				205FD41B153F040900693E13 /* DCReferenceKeyParserTests.m */,
+				205FD3BD153F02AA00693E13 /* Supporting Files */,
 			);
 			path = KeyValueObjectMappingTests;
 			sourceTree = "<group>";
 		};
-		2057562B1538E60500A652E7 /* Supporting Files */ = {
+		205FD3BD153F02AA00693E13 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2057565E1538E72800A652E7 /* plist.plist */,
-				2030CA641539FFDF00F0ACAA /* tweet.json */,
-				2040761C153CCEEB00E110DB /* user.json */,
-				2057562C1538E60500A652E7 /* KeyValueObjectMappingTests-Info.plist */,
-				2057562D1538E60500A652E7 /* InfoPlist.strings */,
+				205FD422153F041F00693E13 /* plist.plist */,
+				205FD423153F041F00693E13 /* tweet.json */,
+				205FD424153F041F00693E13 /* user.json */,
+				205FD3BE153F02AA00693E13 /* KeyValueObjectMappingTests-Info.plist */,
+				205FD3BF153F02AA00693E13 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2057563B1538E69600A652E7 /* Configuration */ = {
+		205FD3CD153F02EE00693E13 /* Finders */ = {
 			isa = PBXGroup;
 			children = (
-				205756471538E6E100A652E7 /* DCParserConfiguration.h */,
-				205756481538E6E100A652E7 /* DCParserConfiguration.m */,
+				205FD3CE153F02F700693E13 /* DCPropertyFinder.h */,
+				205FD3CF153F02F700693E13 /* DCPropertyFinder.m */,
+			);
+			name = Finders;
+			sourceTree = "<group>";
+		};
+		205FD3D2153F02FD00693E13 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				205FD3D3153F030800693E13 /* DCReferenceKeyParser.h */,
+				205FD3D4153F030800693E13 /* DCReferenceKeyParser.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		205FD3D7153F030F00693E13 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				205FD3D8153F031C00693E13 /* DCParserConfiguration.h */,
+				205FD3D9153F031C00693E13 /* DCParserConfiguration.m */,
 			);
 			name = Configuration;
 			sourceTree = "<group>";
 		};
-		205756401538E6B300A652E7 /* Converters */ = {
+		205FD3DC153F032300693E13 /* Converters */ = {
 			isa = PBXGroup;
 			children = (
-				2057564B1538E6E700A652E7 /* Implementation */,
-				205756411538E6C200A652E7 /* DCValueConverter.h */,
-				205756421538E6C200A652E7 /* DCGenericConverter.h */,
-				20407611153C997900E110DB /* DCGenericConverter.m */,
+				205FD3E3153F033200693E13 /* Implementation */,
+				205FD3DD153F032F00693E13 /* DCValueConverter.h */,
+				205FD3DE153F032F00693E13 /* DCGenericConverter.h */,
+				205FD3DF153F032F00693E13 /* DCGenericConverter.m */,
 			);
 			name = Converters;
 			sourceTree = "<group>";
 		};
-		2057564B1538E6E700A652E7 /* Implementation */ = {
+		205FD3E3153F033200693E13 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
-				2057564C1538E6F300A652E7 /* DCNSArrayConverter.h */,
-				2057564D1538E6F300A652E7 /* DCNSArrayConverter.m */,
-				2057564E1538E6F300A652E7 /* DCNSDateConverter.h */,
-				2057564F1538E6F300A652E7 /* DCNSDateConverter.m */,
-				205756501538E6F300A652E7 /* DCNSURLConverter.h */,
-				205756511538E6F300A652E7 /* DCNSURLConverter.m */,
-				205756521538E6F300A652E7 /* DCSimpleConverter.h */,
-				205756531538E6F300A652E7 /* DCSimpleConverter.m */,
+				205FD3E4153F033A00693E13 /* DCNSArrayConverter.h */,
+				205FD3E5153F033A00693E13 /* DCNSArrayConverter.m */,
+				205FD3E6153F033A00693E13 /* DCNSDateConverter.h */,
+				205FD3E7153F033A00693E13 /* DCNSDateConverter.m */,
+				205FD3E8153F033A00693E13 /* DCNSURLConverter.h */,
+				205FD3E9153F033A00693E13 /* DCNSURLConverter.m */,
+				205FD3EA153F033A00693E13 /* DCSimpleConverter.h */,
+				205FD3EB153F033A00693E13 /* DCSimpleConverter.m */,
 			);
 			name = Implementation;
+			sourceTree = "<group>";
+		};
+		205FD3F4153F034300693E13 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				205FD3F5153F034D00693E13 /* DCDynamicAttribute.h */,
+				205FD3F6153F034D00693E13 /* DCDynamicAttribute.m */,
+				205FD3F7153F034D00693E13 /* DCObjectMapping.h */,
+				205FD3F8153F034D00693E13 /* DCObjectMapping.m */,
+				205FD3F9153F034D00693E13 /* DCArrayMapping.h */,
+				205FD3FA153F034D00693E13 /* DCArrayMapping.m */,
+			);
+			name = Mappers;
+			sourceTree = "<group>";
+		};
+		205FD406153F03E500693E13 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				205FD407153F03F000693E13 /* Person.h */,
+				205FD408153F03F000693E13 /* Person.m */,
+				205FD409153F03F000693E13 /* Tweet.h */,
+				205FD40A153F03F000693E13 /* Tweet.m */,
+				205FD40B153F03F000693E13 /* User.h */,
+				205FD40C153F03F000693E13 /* User.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		2057560F1538E60400A652E7 /* Headers */ = {
+		205FD39E153F02AA00693E13 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				205756441538E6C200A652E7 /* DCValueConverter.h in Headers */,
-				205756451538E6C200A652E7 /* DCGenericConverter.h in Headers */,
-				205756491538E6E100A652E7 /* DCParserConfiguration.h in Headers */,
-				205756541538E6F300A652E7 /* DCNSArrayConverter.h in Headers */,
-				205756561538E6F300A652E7 /* DCNSDateConverter.h in Headers */,
-				205756581538E6F300A652E7 /* DCNSURLConverter.h in Headers */,
-				2057565A1538E6F300A652E7 /* DCSimpleConverter.h in Headers */,
-				2030CA581539E4F200F0ACAA /* DCDynamicAttribute.h in Headers */,
-				2030CA71153A132300F0ACAA /* DCReferenceKeyParser.h in Headers */,
-				20407616153C9EFC00E110DB /* DCArrayMapping.h in Headers */,
-				2040761A153CA4B700E110DB /* DCObjectMapping.h in Headers */,
-				20407621153CD5DB00E110DB /* DCKeyValueObjectMapping.h in Headers */,
-				20231F42153DD45B008516EE /* DCPropertyFinder.h in Headers */,
+				205FD3D0153F02F700693E13 /* DCPropertyFinder.h in Headers */,
+				205FD3D5153F030800693E13 /* DCReferenceKeyParser.h in Headers */,
+				205FD3DA153F031C00693E13 /* DCParserConfiguration.h in Headers */,
+				205FD3E0153F032F00693E13 /* DCValueConverter.h in Headers */,
+				205FD3E1153F032F00693E13 /* DCGenericConverter.h in Headers */,
+				205FD3EC153F033A00693E13 /* DCNSArrayConverter.h in Headers */,
+				205FD3EE153F033A00693E13 /* DCNSDateConverter.h in Headers */,
+				205FD3F0153F033A00693E13 /* DCNSURLConverter.h in Headers */,
+				205FD3F2153F033A00693E13 /* DCSimpleConverter.h in Headers */,
+				205FD3FB153F034D00693E13 /* DCDynamicAttribute.h in Headers */,
+				205FD3FD153F034D00693E13 /* DCObjectMapping.h in Headers */,
+				205FD3FF153F034D00693E13 /* DCArrayMapping.h in Headers */,
+				205FD403153F035700693E13 /* DCKeyValueObjectMapping.h in Headers */,
+				205FD42B153F053300693E13 /* DCFramework.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		205756101538E60400A652E7 /* KeyValueObjectMapping */ = {
+		205FD3A2153F02AA00693E13 /* KeyValueObjectMapping */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 205756351538E60500A652E7 /* Build configuration list for PBXNativeTarget "KeyValueObjectMapping" */;
+			buildConfigurationList = 205FD3C7153F02AA00693E13 /* Build configuration list for PBXNativeTarget "KeyValueObjectMapping" */;
 			buildPhases = (
-				2057560D1538E60400A652E7 /* Sources */,
-				2057560E1538E60400A652E7 /* Frameworks */,
-				2057560F1538E60400A652E7 /* Headers */,
+				205FD39B153F02AA00693E13 /* ShellScript */,
+				205FD39C153F02AA00693E13 /* Sources */,
+				205FD39D153F02AA00693E13 /* Frameworks */,
+				205FD39E153F02AA00693E13 /* Headers */,
+				205FD39F153F02AA00693E13 /* Resources */,
+				205FD3A0153F02AA00693E13 /* ShellScript */,
+				205FD3A1153F02AA00693E13 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -346,72 +356,120 @@
 			);
 			name = KeyValueObjectMapping;
 			productName = KeyValueObjectMapping;
-			productReference = 205756111538E60400A652E7 /* libKeyValueObjectMapping.a */;
-			productType = "com.apple.product-type.library.static";
+			productReference = 205FD3A3153F02AA00693E13 /* KeyValueObjectMapping.framework */;
+			productType = "com.apple.product-type.bundle";
 		};
-		205756201538E60500A652E7 /* KeyValueObjectMappingTests */ = {
+		205FD3B0153F02AA00693E13 /* KeyValueObjectMappingTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 205756381538E60500A652E7 /* Build configuration list for PBXNativeTarget "KeyValueObjectMappingTests" */;
+			buildConfigurationList = 205FD3CA153F02AA00693E13 /* Build configuration list for PBXNativeTarget "KeyValueObjectMappingTests" */;
 			buildPhases = (
-				2057561C1538E60500A652E7 /* Sources */,
-				2057561D1538E60500A652E7 /* Frameworks */,
-				2057561E1538E60500A652E7 /* Resources */,
-				2057561F1538E60500A652E7 /* ShellScript */,
+				205FD3AC153F02AA00693E13 /* Sources */,
+				205FD3AD153F02AA00693E13 /* Frameworks */,
+				205FD3AE153F02AA00693E13 /* Resources */,
+				205FD3AF153F02AA00693E13 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				205756281538E60500A652E7 /* PBXTargetDependency */,
+				205FD3BA153F02AA00693E13 /* PBXTargetDependency */,
 			);
 			name = KeyValueObjectMappingTests;
 			productName = KeyValueObjectMappingTests;
-			productReference = 205756211538E60500A652E7 /* KeyValueObjectMappingTests.octest */;
+			productReference = 205FD3B1153F02AA00693E13 /* KeyValueObjectMappingTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		205756081538E60400A652E7 /* Project object */ = {
+		205FD396153F02AA00693E13 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = DC;
 				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = dchohfi;
 			};
-			buildConfigurationList = 2057560B1538E60400A652E7 /* Build configuration list for PBXProject "KeyValueObjectMapping" */;
+			buildConfigurationList = 205FD399153F02AA00693E13 /* Build configuration list for PBXProject "KeyValueObjectMapping" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 205756061538E60400A652E7;
-			productRefGroup = 205756121538E60400A652E7 /* Products */;
+			mainGroup = 205FD394153F02AA00693E13;
+			productRefGroup = 205FD3A4153F02AA00693E13 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				205756101538E60400A652E7 /* KeyValueObjectMapping */,
-				205756201538E60500A652E7 /* KeyValueObjectMappingTests */,
+				205FD3A2153F02AA00693E13 /* KeyValueObjectMapping */,
+				205FD3B0153F02AA00693E13 /* KeyValueObjectMappingTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2057561E1538E60500A652E7 /* Resources */ = {
+		205FD39F153F02AA00693E13 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2057562F1538E60500A652E7 /* InfoPlist.strings in Resources */,
-				205756601538E72800A652E7 /* plist.plist in Resources */,
-				2030CA651539FFDF00F0ACAA /* tweet.json in Resources */,
-				2040761D153CCEEB00E110DB /* user.json in Resources */,
+				205FD3AA153F02AA00693E13 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		205FD3AE153F02AA00693E13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				205FD3BB153F02AA00693E13 /* KeyValueObjectMapping.framework in Resources */,
+				205FD3C1153F02AA00693E13 /* InfoPlist.strings in Resources */,
+				205FD425153F041F00693E13 /* plist.plist in Resources */,
+				205FD426153F041F00693E13 /* tweet.json in Resources */,
+				205FD427153F041F00693E13 /* user.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2057561F1538E60500A652E7 /* ShellScript */ = {
+		205FD39B153F02AA00693E13 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n    # Nothing for the slave script to do\n    exit 0\nfi\nset -u\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    UFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n\tUFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version  from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    UFW_OTHER_PLATFORM=iphonesimulator\nelse\n    UFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\n    UFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\n\n# Short-circuit if all binaries are up to date\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n   [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n   [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\n   [[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n   [[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n   [[ ! \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\n    exit 0\nfi\n\n\n# Clean other platform if needed\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\n\techo \"Platform \\\"$UFW_SDK_PLATFORM\\\" was cleaned recently. Cleaning \\\"$UFW_OTHER_PLATFORM\\\" as well\"\n\techo xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\n\txcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\nfi\n\n\n# Make sure we are building from fresh binaries\n\nrm -rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\n";
+		};
+		205FD3A0153F02AA00693E13 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "HEADERS_ROOT=$SRCROOT/$PRODUCT_NAME\nFRAMEWORK_HEADERS_DIR=\"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Versions/$FRAMEWORK_VERSION/Headers\"\n\n## only header files expected at this point\nPUBLIC_HEADERS=$(find $FRAMEWORK_HEADERS_DIR/. -not -type d 2> /dev/null | sed -e \"s@.*/@@g\")\n\nFIND_OPTS=\"\"\nfor PUBLIC_HEADER in $PUBLIC_HEADERS; do\n  if [ -n \"$FIND_OPTS\" ]; then\n    FIND_OPTS=\"$FIND_OPTS -o\"\n  fi\n  FIND_OPTS=\"$FIND_OPTS -name '$PUBLIC_HEADER'\"\ndone\n\nif [ -n \"$FIND_OPTS\" ]; then\n  for ORIG_HEADER in $(eval \"find $HEADERS_ROOT/. $FIND_OPTS\" 2> /dev/null | sed -e \"s@^$HEADERS_ROOT/./@@g\"); do\n    PUBLIC_HEADER=$(basename $ORIG_HEADER)\n    RELATIVE_PATH=$(dirname $ORIG_HEADER)\n    if [ -e $FRAMEWORK_HEADERS_DIR/$PUBLIC_HEADER ]; then\n      mkdir -p \"$FRAMEWORK_HEADERS_DIR/$RELATIVE_PATH\"\n      mv \"$FRAMEWORK_HEADERS_DIR/$PUBLIC_HEADER\" \"$FRAMEWORK_HEADERS_DIR/$RELATIVE_PATH/$PUBLIC_HEADER\"\n    fi\n  done\nfi\n";
+		};
+		205FD3A1153F02AA00693E13 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n    # Nothing for the slave script to do\n    exit 0\nfi\nset -u\nexport UFW_MASTER_SCRIPT_RUNNING=1\n\n\n# Functions\n\n## List files in the specified directory, storing to the specified array.\n#\n# @param $1 The path to list\n# @param $2 The name of the array to fill\n#\n##\nlist_files ()\n{\n    filelist=$(ls \"$1\")\n    while read line\n    do\n        eval \"$2[\\${#$2[*]}]=\\\"\\$line\\\"\"\n    done <<< \"$filelist\"\n}\n\n\n# Sanity check\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\n    echo \"Framework target \\\"${TARGET_NAME}\\\" had no source files to build from. Make sure your source files have the correct target membership\"\n    exit 1\nfi\n\n\n# Gather information\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    UFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n    UFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    UFW_OTHER_PLATFORM=iphonesimulator\nelse\n    UFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\n    UFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\n\n# Short-circuit if all binaries are up to date.\n# We already checked the other platform in the prerun script.\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\n    exit 0\nfi\n\n\n# Make sure the other platform gets built\n\necho \"Build other platform\"\n\necho xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\n\n\n# Build the fat static library binary\n\necho \"Create universal static library\"\n\necho \"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\necho mv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nmv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\n\n\n# Build framework structure\n\necho \"Build symlinks\"\n\necho ln -sfh A \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Versions/Current\"\nln -sfh A \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Versions/Current\"\necho ln -sfh Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Headers\"\nln -sfh Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Headers\"\necho ln -sfh Versions/Current/Resources \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Resources\"\nln -sfh Versions/Current/Resources \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Resources\"\necho ln -sfh \"Versions/Current/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${EXECUTABLE_NAME}\"\nln -sfh \"Versions/Current/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${EXECUTABLE_NAME}\"\n\n\n# Link to binary for unit tests\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/.fake_fw_testing.framework\"\nln -sfh \"../${WRAPPER_NAME}/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/.fake_fw_testing.framework/.fake_fw_testing\"\n\n\n# Build embedded framework structure\n\necho \"Build Embedded Framework\"\n\necho rm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\necho mkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\necho cp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\ncp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\n\ndeclare -a UFW_FILE_LIST\nlist_files \"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\" UFW_FILE_LIST\nfor filename in \"${UFW_FILE_LIST[@]}\"\ndo\n    if [[ \"${filename}\" != \"Info.plist\" ]] && [[ ! \"${filename}\" =~ .*\\.lproj$ ]]\n    then\n        echo ln -sfh \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\n        ln -sfh \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\n    fi\ndone\n\n\n# Replace other platform's framework with a copy of this one (so that both have the same universal binary)\n\necho \"Copy from $UFW_SDK_PLATFORM to $UFW_OTHER_PLATFORM\"\n\necho rm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\nrm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\necho cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\ncp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n";
+		};
+		205FD3AF153F02AA00693E13 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -427,56 +485,64 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2057560D1538E60400A652E7 /* Sources */ = {
+		205FD39C153F02AA00693E13 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2057561B1538E60500A652E7 /* DCKeyValueObjectMapping.m in Sources */,
-				2057564A1538E6E100A652E7 /* DCParserConfiguration.m in Sources */,
-				205756551538E6F300A652E7 /* DCNSArrayConverter.m in Sources */,
-				205756571538E6F300A652E7 /* DCNSDateConverter.m in Sources */,
-				205756591538E6F300A652E7 /* DCNSURLConverter.m in Sources */,
-				2057565B1538E6F300A652E7 /* DCSimpleConverter.m in Sources */,
-				2030CA591539E4F200F0ACAA /* DCDynamicAttribute.m in Sources */,
-				2030CA72153A132300F0ACAA /* DCReferenceKeyParser.m in Sources */,
-				20407612153C997900E110DB /* DCGenericConverter.m in Sources */,
-				20407617153C9EFC00E110DB /* DCArrayMapping.m in Sources */,
-				2040761B153CA4B700E110DB /* DCObjectMapping.m in Sources */,
-				20231F43153DD45B008516EE /* DCPropertyFinder.m in Sources */,
+				205FD3D1153F02F700693E13 /* DCPropertyFinder.m in Sources */,
+				205FD3D6153F030800693E13 /* DCReferenceKeyParser.m in Sources */,
+				205FD3DB153F031C00693E13 /* DCParserConfiguration.m in Sources */,
+				205FD3E2153F032F00693E13 /* DCGenericConverter.m in Sources */,
+				205FD3ED153F033A00693E13 /* DCNSArrayConverter.m in Sources */,
+				205FD3EF153F033A00693E13 /* DCNSDateConverter.m in Sources */,
+				205FD3F1153F033A00693E13 /* DCNSURLConverter.m in Sources */,
+				205FD3F3153F033A00693E13 /* DCSimpleConverter.m in Sources */,
+				205FD3FC153F034D00693E13 /* DCDynamicAttribute.m in Sources */,
+				205FD3FE153F034D00693E13 /* DCObjectMapping.m in Sources */,
+				205FD400153F034D00693E13 /* DCArrayMapping.m in Sources */,
+				205FD404153F035700693E13 /* DCKeyValueObjectMapping.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2057561C1538E60500A652E7 /* Sources */ = {
+		205FD3AC153F02AA00693E13 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				205756321538E60500A652E7 /* KeyValueObjectMappingTests.m in Sources */,
-				2057565F1538E72800A652E7 /* Person.m in Sources */,
-				2030CA5D1539E91300F0ACAA /* DCDynamicAttributeTest.m in Sources */,
-				2030CA601539FE4000F0ACAA /* Tweet.m in Sources */,
-				2030CA631539FF0800F0ACAA /* User.m in Sources */,
-				20407620153CCF2F00E110DB /* DCArrayOfTweetsOnUserTests.m in Sources */,
-				20231F3A153DC785008516EE /* DCReferenceKeyParserTests.m in Sources */,
-				20231F46153E1F78008516EE /* DCPropertyFinderTests.m in Sources */,
-				20231F51153E6A50008516EE /* DCCoverageFix.m in Sources */,
+				205FD40D153F03F000693E13 /* Person.m in Sources */,
+				205FD40E153F03F000693E13 /* Tweet.m in Sources */,
+				205FD40F153F03F000693E13 /* User.m in Sources */,
+				205FD41C153F040900693E13 /* DCCoverageFix.m in Sources */,
+				205FD41D153F040900693E13 /* KeyValueObjectMappingTests.m in Sources */,
+				205FD41E153F040900693E13 /* DCDynamicAttributeTest.m in Sources */,
+				205FD41F153F040900693E13 /* DCPropertyFinderTests.m in Sources */,
+				205FD420153F040900693E13 /* DCArrayOfTweetsOnUserTests.m in Sources */,
+				205FD421153F040900693E13 /* DCReferenceKeyParserTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		205756281538E60500A652E7 /* PBXTargetDependency */ = {
+		205FD3BA153F02AA00693E13 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 205756101538E60400A652E7 /* KeyValueObjectMapping */;
-			targetProxy = 205756271538E60500A652E7 /* PBXContainerItemProxy */;
+			target = 205FD3A2153F02AA00693E13 /* KeyValueObjectMapping */;
+			targetProxy = 205FD3B9153F02AA00693E13 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2057562D1538E60500A652E7 /* InfoPlist.strings */ = {
+		205FD3A8153F02AA00693E13 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2057562E1538E60500A652E7 /* en */,
+				205FD3A9153F02AA00693E13 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		205FD3BF153F02AA00693E13 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				205FD3C0153F02AA00693E13 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -484,7 +550,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		205756331538E60500A652E7 /* Debug */ = {
+		205FD3C5153F02AA00693E13 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -508,7 +574,7 @@
 			};
 			name = Debug;
 		};
-		205756341538E60500A652E7 /* Release */ = {
+		205FD3C6153F02AA00693E13 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -526,37 +592,65 @@
 			};
 			name = Release;
 		};
-		205756361538E60500A652E7 /* Debug */ = {
+		205FD3C8153F02AA00693E13 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /tmp/KeyValueObjectMapping.dst;
+				ARCHS = (
+					armv6,
+					"$(ARCHS_STANDARD_32_BIT)",
+				);
+				CONTENTS_FOLDER_PATH = "$(WRAPPER_NAME)/Versions/$(FRAMEWORK_VERSION)";
+				DEAD_CODE_STRIPPING = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KeyValueObjectMapping/KeyValueObjectMapping-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = KeyValueObjectMapping;
+				GCC_THUMB_SUPPORT = NO;
+				INFOPLIST_FILE = "KeyValueObjectMapping/KeyValueObjectMapping-Info.plist";
+				INFOPLIST_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Info.plist";
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MACH_O_TYPE = mh_object;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				UNLOCALIZED_RESOURCES_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Resources";
+				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
 		};
-		205756371538E60500A652E7 /* Release */ = {
+		205FD3C9153F02AA00693E13 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /tmp/KeyValueObjectMapping.dst;
+				ARCHS = (
+					armv6,
+					"$(ARCHS_STANDARD_32_BIT)",
+				);
+				CONTENTS_FOLDER_PATH = "$(WRAPPER_NAME)/Versions/$(FRAMEWORK_VERSION)";
+				DEAD_CODE_STRIPPING = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KeyValueObjectMapping/KeyValueObjectMapping-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = KeyValueObjectMapping;
+				GCC_THUMB_SUPPORT = NO;
+				INFOPLIST_FILE = "KeyValueObjectMapping/KeyValueObjectMapping-Info.plist";
+				INFOPLIST_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Info.plist";
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MACH_O_TYPE = mh_object;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				UNLOCALIZED_RESOURCES_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Resources";
+				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
 		};
-		205756391538E60500A652E7 /* Debug */ = {
+		205FD3CB153F02AA00693E13 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
@@ -568,12 +662,18 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KeyValueObjectMapping/KeyValueObjectMapping-Prefix.pch";
 				INFOPLIST_FILE = "KeyValueObjectMappingTests/KeyValueObjectMappingTests-Info.plist";
-				PRODUCT_NAME = KeyValueObjectMappingTests;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+					"-framework",
+					.fake_fw_testing,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
-		2057563A1538E60500A652E7 /* Release */ = {
+		205FD3CC153F02AA00693E13 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
@@ -585,7 +685,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KeyValueObjectMapping/KeyValueObjectMapping-Prefix.pch";
 				INFOPLIST_FILE = "KeyValueObjectMappingTests/KeyValueObjectMappingTests-Info.plist";
-				PRODUCT_NAME = KeyValueObjectMappingTests;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+					"-framework",
+					.fake_fw_testing,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -593,34 +699,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2057560B1538E60400A652E7 /* Build configuration list for PBXProject "KeyValueObjectMapping" */ = {
+		205FD399153F02AA00693E13 /* Build configuration list for PBXProject "KeyValueObjectMapping" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				205756331538E60500A652E7 /* Debug */,
-				205756341538E60500A652E7 /* Release */,
+				205FD3C5153F02AA00693E13 /* Debug */,
+				205FD3C6153F02AA00693E13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		205756351538E60500A652E7 /* Build configuration list for PBXNativeTarget "KeyValueObjectMapping" */ = {
+		205FD3C7153F02AA00693E13 /* Build configuration list for PBXNativeTarget "KeyValueObjectMapping" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				205756361538E60500A652E7 /* Debug */,
-				205756371538E60500A652E7 /* Release */,
+				205FD3C8153F02AA00693E13 /* Debug */,
+				205FD3C9153F02AA00693E13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		205756381538E60500A652E7 /* Build configuration list for PBXNativeTarget "KeyValueObjectMappingTests" */ = {
+		205FD3CA153F02AA00693E13 /* Build configuration list for PBXNativeTarget "KeyValueObjectMappingTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				205756391538E60500A652E7 /* Debug */,
-				2057563A1538E60500A652E7 /* Release */,
+				205FD3CB153F02AA00693E13 /* Debug */,
+				205FD3CC153F02AA00693E13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 205756081538E60400A652E7 /* Project object */;
+	rootObject = 205FD396153F02AA00693E13 /* Project object */;
 }
