@@ -15,11 +15,13 @@ Features
     1. If the key on NSDictionary are splited between some character, you can configure which character is and the framework will split and camelcase it to find the properly attribute.
 * Map any key to a specific attribute that doesn't follow the convention sugin **DCObjectMapping**.
 * To map an *one-to-many* relation use **DCArrayMapping** to tell what is the specific type of elements that will be inserted.
+* Parse *NSDate* using a specific date pattern(passed through the configuration) or if it's send on JSON in milliseconds since Jan 1, 1970 will be parsed with no additional configuration.
+* Having a property pointing to a **NSURL**, framework will try to *[NSURL URLWithString:]* with the value.
 
 Usage
 -------------------------
 
-KeyValueObjectMapping is a simple object, all you need to do is create a new object and start to transform a dictionary to any classes.
+**KeyValueObjectMapping** is a simple object, all you need to do is create a new object and start to transform a dictionary to any classes.
 
 Let's assume that you have some JSON like that:
 <pre>
@@ -60,7 +62,7 @@ NSDictionary *jsonParsed = [NSJSONSerialization JSONObjectWithData:jsonData
 																error:&error];
 </pre>
 
-If you don't use KeyValueObjectMapping you need to create an instance of User type, and set all the properties with the same key name on the dictionary. And transform it when needed.
+If you don't use **KeyValueObjectMapping** you need to create an instance of User type, and set all the properties with the same key name on the dictionary. And transform it when needed.
 
 <pre>
 User *user = [[User alloc] init];
@@ -75,7 +77,7 @@ NSDate *date = [formatter dateFromString:@"Sat Apr 14 00:20:07 +0000 2012"];
 [user setCreatedAt: date];
 </pre>
 
-Boring job, don't you think? So, if you use KeyValueObjectMapping you just need to give the dictionary and the class that you want to create, and everthing else will be made automatically. And you can configure the parser to behave like you want, giving some pattern for NSDate parser, the character that separate the keys (on example we have used an '_' character, which is the default), and so on.
+Boring job, don't you think? So, if you use **KeyValueObjectMapping** you just need to give the dictionary and the class that you want to create, and everthing else will be made automatically. And you can configure the parser to behave like you want, giving some pattern for NSDate parser, the character that separate the keys (on example we have used an '_' character, which is the default), and so on.
 
 <pre>
 ParserConfiguration *config = [[ParserConfiguration alloc] init];
@@ -89,7 +91,8 @@ NSLog(@"%@ - %@", tweet.idStr, tweet.name);
 
 Pretty easy, hã?
 
-##### Parsing NSArray properties
+Parsing NSArray properties
+-------------------------
 
 Since Objective-C don't support typed collections like Java and other static language we can't figure out what it the type of elements inside a collection. 
 But KeyValueObjectMapping can be configured to learn what is the type of elements that will be added to the collection on the specific attribute for the class.
