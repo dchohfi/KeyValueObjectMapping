@@ -8,7 +8,7 @@
 
 #import "DCNSArrayConverter.h"
 #import "DCSimpleConverter.h"
-#import "DCObjectMappingForArray.h"
+#import "DCArrayMapping.h"
 #import "DCKeyValueObjectMapping.h"
 @interface DCNSArrayConverter()
 
@@ -36,7 +36,7 @@
     if(primitiveArray){
         return [self parsePrimitveValues:values];
     }else{
-        DCObjectMappingForArray *mapper = [configuration arrayMapperForMapper:attribute.objectMapping];
+        DCArrayMapping *mapper = [configuration arrayMapperForMapper:attribute.objectMapping];
         if(mapper){
             DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:configuration];
             return [parser parseArray:values forClass:mapper.classForElementsOnArray];

@@ -72,7 +72,7 @@
 
 - (DCObjectMapping *) findMapperForKey: (NSString *) key onClass: (Class) class {
     for(DCObjectMapping *mapper in mappers){
-        if([mapper isEqualsForKey:key andClassReference:class]){
+        if([mapper sameKey:key andClassReference:class]){
             return mapper;
         }
     }

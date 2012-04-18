@@ -29,14 +29,14 @@
     return self;
 }
 
-- (void)addArrayMapper: (DCObjectMappingForArray *)mapper{
+- (void)addArrayMapper: (DCArrayMapping *)mapper{
     [arrayMappers addObject:mapper];
 }
 - (void) addObjectMapping: (DCObjectMapping *) mapper {
     [objectMappers addObject:mapper];
 }
-- (DCObjectMappingForArray *) arrayMapperForMapper: (DCObjectMapping *) mapper{
-    for(DCObjectMappingForArray *arrayMapper in arrayMappers){
+- (DCArrayMapping *) arrayMapperForMapper: (DCObjectMapping *) mapper{
+    for(DCArrayMapping *arrayMapper in arrayMappers){
         BOOL sameKey = [arrayMapper.objectMapping.keyReference isEqualToString:mapper.keyReference];
         BOOL sameAttributeName = [arrayMapper.objectMapping.attributeName isEqualToString:mapper.attributeName];
         if(sameKey && sameAttributeName){

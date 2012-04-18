@@ -35,7 +35,7 @@
     return self;
 }
 
-- (BOOL) isEqualsForKey: (NSString *) key andClassReference: (Class) _classReference {
+- (BOOL) sameKey: (NSString *) key andClassReference: (Class) _classReference {
     if([self.keyReference isEqualToString:key] && self.classReference == _classReference){
         return YES;
     }

@@ -17,6 +17,6 @@
 + (DCObjectMapping *) mapKeyPath: (NSString *) keyPath toAttribute: (NSString *) attributeName onClass: (Class) attributeClass;
 
 - (id)initWithClass: (Class) classReference;
-- (BOOL) isEqualsForKey: (NSString *) key andClassReference: (Class) classReference;
+- (BOOL) sameKey: (NSString *) key andClassReference: (Class) classReference;
 
 @end

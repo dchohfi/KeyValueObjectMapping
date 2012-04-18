@@ -33,7 +33,7 @@
 
 - (void)testShouldCreateAnUserWithTweets {
     
-    DCObjectMappingForArray *mapper = [DCObjectMappingForArray mapperForClassElements:[Tweet class] forAttribute:@"tweets" onClass:[User class]];
+    DCArrayMapping *mapper = [DCArrayMapping mapperForClassElements:[Tweet class] forAttribute:@"tweets" onClass:[User class]];
     DCParserConfiguration *configuration = [[DCParserConfiguration alloc] init];
     [configuration addArrayMapper:mapper];
     

@@ -124,7 +124,7 @@
     DCParserConfiguration *configuration = [[DCParserConfiguration alloc] init];
     configuration.datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
     
-    [configuration addArrayMapper:[DCObjectMappingForArray mapperForClassElements:[Tweet class] forAttribute:@"tweets" onClass:[User class]]];
+    [configuration addArrayMapper:[DCArrayMapping mapperForClassElements:[Tweet class] forAttribute:@"tweets" onClass:[User class]]];
     
     DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping alloc] initWithConfiguration:configuration];
     User *user = [parser parseDictionary:userDictionary forClass:[User class]];

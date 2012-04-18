@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DCObjectMappingForArray.h"
+#import "DCArrayMapping.h"
 
 @interface DCParserConfiguration : NSObject
 
@@ -15,7 +15,7 @@
 @property(nonatomic, strong) NSString *splitToken;
 @property(nonatomic, readonly) NSMutableArray *objectMappers;
 
-- (void) addArrayMapper: (DCObjectMappingForArray *)mapper;
+- (void) addArrayMapper: (DCArrayMapping *)mapper;
 - (void) addObjectMapping: (DCObjectMapping *) mapper;
-- (DCObjectMappingForArray *) arrayMapperForMapper: (DCObjectMapping *) mapper;
+- (DCArrayMapping *) arrayMapperForMapper: (DCObjectMapping *) mapper;
 @end

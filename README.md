@@ -142,10 +142,10 @@ And the JSON looks like:
 }
 </pre>
 
-Using DCObjectMappingForArray and adding it to the configuration, you tell to the KeyValueObjectMapping how to parse this specific attribute.
+Using DCArrayMapping and adding it to the configuration, you tell to the KeyValueObjectMapping how to parse this specific attribute.
 
 <pre>
-DCObjectMappingForArray *mapper = [[DCObjectMappingForArray alloc] initWithClassForElements:[Tweet class] forKeyAndAttributeName:@"tweets"] inClass:[User class]];
+DCArrayMapping *mapper = [[DCArrayMapping alloc] initWithClassForElements:[Tweet class] forKeyAndAttributeName:@"tweets"] inClass:[User class]];
 											
 DCParserConfiguration *config = [[DCParserConfiguration alloc] init];
 [config addMapper:mapper];
