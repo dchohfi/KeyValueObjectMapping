@@ -127,7 +127,7 @@ DCObjectMapping *userToUserOwner = [DCObjectMapping mapKeyPath:@"user" toAttribu
 [config addObjectMapping:userToUserOwner];
 
 DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass: [Tweet class]  andConfiguration:config];
-Tweet *tweetParsed [parser parseDictionary:json];
+Tweet *tweetParsed = [parser parseDictionary:json];
 </pre>
 
 Parsing NSArray properties
