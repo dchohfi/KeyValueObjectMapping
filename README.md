@@ -8,13 +8,13 @@ It's made to be used with NSJSONSerialization and other resources, and the main 
 Features
 -------------------------
 
-1. Transform any kind of Key/Value type to a desired object. Can be a JSON, PLIST or a simple NSDictionary.
-1. Don't generate accessors to all the attribute, keep your properties *readonly* and framework will do it's magic to put the value on the object.
-1. Based on Convention over Configuration
+* Transform any kind of Key/Value type to a desired object. Can be a JSON, PLIST or a simple NSDictionary.
+* Don't generate accessors to all the attribute, keep your properties *readonly* and framework will do it's magic to put the value on the object.
+* Based on Convention over Configuration
     1. If your attribute follow the same name of the key on the NSDictionary everything will be done automatically.
     1. If the key on NSDictionary are splited between some character, you can configure which character is and the framework will split and camelcase it to find the properly attribute.
-1. Map any key to a specific attribute that doesn't follow the convention sugin **DCObjectMapping**.
-1. To map an *one-to-many* relation use **DCArrayMapping** to tell what is the specific type of elements that will be inserted.
+* Map any key to a specific attribute that doesn't follow the convention sugin **DCObjectMapping**.
+* To map an *one-to-many* relation use **DCArrayMapping** to tell what is the specific type of elements that will be inserted.
 
 Usage
 -------------------------
