@@ -75,16 +75,27 @@ NSDate *date = [formatter dateFromString:@"Sat Apr 14 00:20:07 +0000 2012"];
 [user setCreatedAt: date];
 </pre>
 
-Boring job, don't you think? So, if you use **KeyValueObjectMapping** you just need to give the dictionary and the class that you want to create, and everthing else will be made automatically. And you can configure the parser to behave like you want, giving some pattern for *NSDate* parser, the character that separate the keys (on example we have used an '_' character, which is the default), and so on.
+Boring job, don't you think? So, if you use **KeyValueObjectMapping** you just need to give the dictionary and the class that you want to create, and everthing else will be made automatically. 
 
 <pre>
-DCKeyValueObjectMapping * parser = [DCKeyValueObjectMapping mapperForClass: [Tweet class]];
+DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass: [Tweet class]];
 
 Tweet *tweet = [parser parseDictionary:jsonParsed];
 NSLog(@"%@ - %@", tweet.idStr, tweet.name);
 </pre>
 
 Pretty easy, hã?
+
+If your *NSDate* pattern are different then the default, which is @"eee MMM dd HH:mm:ss ZZZZ yyyy", you can configure to use a different one. So, there is an object to add custom configuration to the framework.
+
+Using **DCParserConfiguration** you can change the default behavior of some components, like the default pattern to parse a date.
+
+<pre>
+DCParserConfiguration *config = [DCParserConfiguration configuration];
+config.dateFormat = @"dd/MM/yyyy";
+
+DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass: [Tweet class] andConfiguration: config];
+</pre>
 
 Overriding Key Name for Attribute
 -------------------------
