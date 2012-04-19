@@ -12,8 +12,8 @@ Features
 * Don't generate accessors to all the attribute, keep your properties *readonly* and framework will do it's magic to put the value on the object.
 * Based on Convention over Configuration
     1. If your attribute follow the same name of the key on the NSDictionary everything will be done automatically.
-    1. If the key on NSDictionary are splited between some character, you can configure which character is and the framework will split and camelcase it to find the properly attribute.
-* Map any key to a specific attribute that doesn't follow the convention sugin **DCObjectMapping**.
+    1. If the keys on source are separated by some character, you can configure which character is and the framework will split and camelcase it to find the properly attribute.
+* Map any key to a specific attribute that doesn't follow the convention using **DCObjectMapping**.
 * To map an *one-to-many* relation use **DCArrayMapping** to tell what is the specific type of elements that will be inserted.
 * Parse *NSDate* using a specific date pattern(passed through the configuration) or if it's send on JSON in milliseconds since Jan 1, 1970 (*UNIX* timestamp) will be parsed with no additional configuration.
 * Having a property pointing to a **NSURL**, framework will try to *[NSURL URLWithString:]* with the value.
