@@ -15,7 +15,7 @@
 		201F6F6B153F6421009A24B9 /* DCPropertyAggregatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 201F6F6A153F6421009A24B9 /* DCPropertyAggregatorTests.m */; };
 		201F6F6F153F789A009A24B9 /* DCAttributeSetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 201F6F6D153F789A009A24B9 /* DCAttributeSetter.h */; };
 		201F6F70153F789A009A24B9 /* DCAttributeSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 201F6F6E153F789A009A24B9 /* DCAttributeSetter.m */; };
-		201F6F73153F7C9E009A24B9 /* DCDictionaryRearranger.h in Headers */ = {isa = PBXBuildFile; fileRef = 201F6F71153F7C9E009A24B9 /* DCDictionaryRearranger.h */; };
+		201F6F73153F7C9E009A24B9 /* DCDictionaryRearranger.h in Headers */ = {isa = PBXBuildFile; fileRef = 201F6F71153F7C9E009A24B9 /* DCDictionaryRearranger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		201F6F74153F7C9E009A24B9 /* DCDictionaryRearranger.m in Sources */ = {isa = PBXBuildFile; fileRef = 201F6F72153F7C9E009A24B9 /* DCDictionaryRearranger.m */; };
 		205FD3AA153F02AA00693E13 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 205FD3A8153F02AA00693E13 /* InfoPlist.strings */; };
 		205FD3B4153F02AA00693E13 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205FD3B3153F02AA00693E13 /* SenTestingKit.framework */; };
