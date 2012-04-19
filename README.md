@@ -86,7 +86,7 @@ NSLog(@"%@ - %@", tweet.idStr, tweet.name);
 
 #### DCParserConfiguration
 
-If your *NSDate* pattern are different then the default, which is @"eee MMM dd HH:mm:ss ZZZZ yyyy", you can configure to use a different one. So, there is an object to add custom configuration to the framework.
+If your *NSDate* pattern are different then the default, which is `@"eee MMM dd HH:mm:ss ZZZZ yyyy"`, you can configure to use a different one. So, there is an object to add custom configuration to the framework.
 
 Using **DCParserConfiguration** you can change the default behavior of some components, like the default pattern to parse a date.
 
