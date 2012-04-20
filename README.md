@@ -1,7 +1,7 @@
 Introduction
 =========================
 
-**KeyValueObjectMapping** is a Cocoa framework that provides an easy way to deal with any key/value type, as JSON, plist and even a common *NSDictionary*.
+**KeyValueObjectMapping** is a Cocoa framework that provides an easy way to deal with any key/value type, as JSON, plist and even a common *NSDictionary*. With no additional framework.
 
 It's made to be used with *NSJSONSerialization* and other resources, and the main goal is to avoid the tedious work when you need to deal with key/value types.
 
