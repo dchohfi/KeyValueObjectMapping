@@ -212,3 +212,51 @@ DCParserConfiguration *config = [DCParserConfiguration configuration];
 DCKeyValueObjectMapping *parser = [[DCKeyValueObjectMapping mapperForClass:[User class]  andConfiguration:configuration];
 User *user = [parser parseDictionary:jsonParsed];
 </pre>
+
+Aggregating values to specific type
+-------------------------
+
+Sometimes you faces an JSON to parse that you don't have access to modify the struct, and you don't want to make your classes follow that specific struct.
+Using **DCPropertyAggregator** you can aggregate more than one key/value to a specific attribute on your domain.
+
+So, if your JSON looks like that:
+<pre>
+{
+	"tweet" : "Some text",
+	"latitude" : -23.588453,
+	"longitude" : -46.632103,
+	"distance" : 100
+}
+</pre>
+
+If you follow this JSON struct your objects won't be so organized, right?
+So, you can make your objects follow something different:
+<pre>
+@interface Tweet : NSObject
+@property(nonatomic, readonly) NSString *text;
+@property(nonatomic, readonly) Location *location;
+@end
+
+@interface Location : NSObject
+@property(nonatomic, readonly) NSNumber *distance;
+@property(nonatomic, readonly) Point *point;
+@end
+
+@interface Point : NSObject
+@property(nonatomic, readonly) NSNumber *latitude;
+@property(nonatomic, readonly) NSNumber *longitude;
+@end
+</pre>
+
+And using **DCPropertyAggregator** to map this specific behavior:
+<pre>
+DCPropertyAggregator *aggregteLatLong = [DCPropertyAggregator aggregateKeys:[NSSet setWithObjects:@"latitude", @"longitude", nil] intoAttribute:@"point"];
+DCPropertyAggregator *aggregatePointDist = [DCPropertyAggregator aggregateKeys:[NSSet setWithObjects:@"point", @"distance", nil] intoAttribute:@"location"];
+
+DCParserConfiguration *configuration = [DCParserConfiguration configuration];
+[configuration addAggregator:aggregteLatLong];
+[configuration addAggregator:aggregatePointDist];
+
+DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[Tweet class] andConfiguration:configuration];
+Tweet *tweet = [parser parseDictionary: json];
+</pre>
