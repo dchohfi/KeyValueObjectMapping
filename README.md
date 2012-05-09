@@ -26,9 +26,9 @@ Since **KeyValueObjectMapping** uses [iOS-Universal-Framework](https://github.co
 
 * Required import:
 
-<pre>
+```objc
 	#import <KeyValueObjectMapping/DCKeyValueObjectMapping.h>
-</pre>
+```
 
 Usage
 -------------------------
