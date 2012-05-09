@@ -18,6 +18,18 @@ Features
 * Parse *NSDate* using a specific date pattern(passed through the configuration) or if it's send on JSON in milliseconds since Jan 1, 1970 (*UNIX* timestamp) will be parsed with no additional configuration.
 * Having a property pointing to a **NSURL**, framework will try to *[NSURL URLWithString:]* with the value.
 
+Installation
+-------------------------
+Since **KeyValueObjectMapping** uses [iOS-Universal-Framework](https://github.com/kstenerud/iOS-Universal-Framework) to build and compile the project, you can easily drag the *.framework* that **iOS-Universal-Framework** generates into your application, import the header *DCKeyValueObjectMapping.h* and start using the framework.
+
+* There is a zip of the *.framework* here: https://github.com/downloads/dchohfi/KeyValueObjectMapping/KeyValueObjectMapping.framework.zip
+
+* Required import:
+
+<pre>
+	#import <KeyValueObjectMapping/DCKeyValueObjectMapping.h>
+</pre>
+
 Usage
 -------------------------
 
