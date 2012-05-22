@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		201F6F53153F31FD009A24B9 /* DCCoverageFix.m in Sources */ = {isa = PBXBuildFile; fileRef = 201F6F52153F31FD009A24B9 /* DCCoverageFix.m */; };
-		201F6F5E153F56BE009A24B9 /* DCPropertyAggregator.h in Headers */ = {isa = PBXBuildFile; fileRef = 201F6F5C153F56BE009A24B9 /* DCPropertyAggregator.h */; };
+		201F6F5E153F56BE009A24B9 /* DCPropertyAggregator.h in Headers */ = {isa = PBXBuildFile; fileRef = 201F6F5C153F56BE009A24B9 /* DCPropertyAggregator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		201F6F5F153F56BE009A24B9 /* DCPropertyAggregator.m in Sources */ = {isa = PBXBuildFile; fileRef = 201F6F5D153F56BE009A24B9 /* DCPropertyAggregator.m */; };
 		201F6F63153F632F009A24B9 /* Bus.m in Sources */ = {isa = PBXBuildFile; fileRef = 201F6F62153F632F009A24B9 /* Bus.m */; };
 		201F6F66153F6355009A24B9 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 201F6F65153F6355009A24B9 /* Location.m */; };
@@ -17,7 +17,6 @@
 		201F6F70153F789A009A24B9 /* DCAttributeSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 201F6F6E153F789A009A24B9 /* DCAttributeSetter.m */; };
 		201F6F73153F7C9E009A24B9 /* DCDictionaryRearranger.h in Headers */ = {isa = PBXBuildFile; fileRef = 201F6F71153F7C9E009A24B9 /* DCDictionaryRearranger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		201F6F74153F7C9E009A24B9 /* DCDictionaryRearranger.m in Sources */ = {isa = PBXBuildFile; fileRef = 201F6F72153F7C9E009A24B9 /* DCDictionaryRearranger.m */; };
-		205FD3AA153F02AA00693E13 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 205FD3A8153F02AA00693E13 /* InfoPlist.strings */; };
 		205FD3B4153F02AA00693E13 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205FD3B3153F02AA00693E13 /* SenTestingKit.framework */; };
 		205FD3B6153F02AA00693E13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205FD3B5153F02AA00693E13 /* UIKit.framework */; };
 		205FD3B8153F02AA00693E13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205FD3B7153F02AA00693E13 /* Foundation.framework */; };
@@ -89,7 +88,6 @@
 		201F6F72153F7C9E009A24B9 /* DCDictionaryRearranger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDictionaryRearranger.m; sourceTree = "<group>"; };
 		205FD3A3153F02AA00693E13 /* KeyValueObjectMapping.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeyValueObjectMapping.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		205FD3A7153F02AA00693E13 /* KeyValueObjectMapping-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KeyValueObjectMapping-Info.plist"; sourceTree = "<group>"; };
-		205FD3A9153F02AA00693E13 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		205FD3AB153F02AA00693E13 /* KeyValueObjectMapping-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyValueObjectMapping-Prefix.pch"; sourceTree = "<group>"; };
 		205FD3B1153F02AA00693E13 /* KeyValueObjectMappingTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeyValueObjectMappingTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		205FD3B3153F02AA00693E13 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -213,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				205FD3A7153F02AA00693E13 /* KeyValueObjectMapping-Info.plist */,
-				205FD3A8153F02AA00693E13 /* InfoPlist.strings */,
 				205FD3AB153F02AA00693E13 /* KeyValueObjectMapping-Prefix.pch */,
 				205FD42A153F053300693E13 /* DCFramework.h */,
 			);
@@ -359,6 +356,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				201F6F5E153F56BE009A24B9 /* DCPropertyAggregator.h in Headers */,
 				205FD3D0153F02F700693E13 /* DCPropertyFinder.h in Headers */,
 				205FD3D5153F030800693E13 /* DCReferenceKeyParser.h in Headers */,
 				205FD3DA153F031C00693E13 /* DCParserConfiguration.h in Headers */,
@@ -373,7 +371,6 @@
 				205FD3FF153F034D00693E13 /* DCArrayMapping.h in Headers */,
 				205FD403153F035700693E13 /* DCKeyValueObjectMapping.h in Headers */,
 				205FD42B153F053300693E13 /* DCFramework.h in Headers */,
-				201F6F5E153F56BE009A24B9 /* DCPropertyAggregator.h in Headers */,
 				201F6F6F153F789A009A24B9 /* DCAttributeSetter.h in Headers */,
 				201F6F73153F7C9E009A24B9 /* DCDictionaryRearranger.h in Headers */,
 			);
@@ -455,7 +452,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				205FD3AA153F02AA00693E13 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,14 +577,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		205FD3A8153F02AA00693E13 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				205FD3A9153F02AA00693E13 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		205FD3BF153F02AA00693E13 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
