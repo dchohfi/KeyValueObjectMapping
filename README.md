@@ -21,15 +21,19 @@ Features
 
 Installation
 -------------------------
-Since **KeyValueObjectMapping** uses [iOS-Universal-Framework](https://github.com/kstenerud/iOS-Universal-Framework) to build and compile the project, you can easily drag the *.framework* that **iOS-Universal-Framework** generates into your application, import the header *DCKeyValueObjectMapping.h* and start using the framework.
 
-* There is a zip of the *.framework* here: https://github.com/downloads/dchohfi/KeyValueObjectMapping/KeyValueObjectMapping.framework.zip
+* Using [`CocoaPods`][CocoaPods], the easier way to manage dependencies on Objective-C world.
 
-* Required import:
-
-```objc
-	#import <KeyValueObjectMapping/DCKeyValueObjectMapping.h>
-```
+* Using [`iOS-Universal-Framework`][iOS-Universal-Framework]
+	Since **KeyValueObjectMapping** uses [`iOS-Universal-Framework`][iOS-Universal-Framework] to build and compile the project, you can easily drag the *.framework* that **iOS-Universal-Framework** generates into your application, import the header *DCKeyValueObjectMapping.h* and start using the framework.
+	
+	* There is a zip of the *.framework* here: https://github.com/downloads/dchohfi/KeyValueObjectMapping/KeyValueObjectMapping.framework.zip
+	
+	* Required import:
+	
+	```objc
+		#import <KeyValueObjectMapping/DCKeyValueObjectMapping.h>
+	```
 
 Usage
 -------------------------
@@ -288,3 +292,5 @@ Tweet *tweet = [parser parseDictionary: json];
 [DCPropertyAggregator]: https://github.com/dchohfi/KeyValueObjectMapping/blob/master/KeyValueObjectMapping/DCPropertyAggregator.h
 [DCParserConfiguration]: https://github.com/dchohfi/KeyValueObjectMapping/blob/master/KeyValueObjectMapping/DCParserConfiguration.h
 [DCObjectMapping]: https://github.com/dchohfi/KeyValueObjectMapping/blob/master/KeyValueObjectMapping/DCObjectMapping.h
+[iOS-Universal-Framework]: https://github.com/kstenerud/iOS-Universal-Framework
+[CocoaPods]: http://cocoapods.org
