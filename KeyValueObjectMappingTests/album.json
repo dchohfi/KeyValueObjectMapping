@@ -1,6 +1,7 @@
 [
     {
         "name" : "Some Album",
+        "id":"1",
         "songs" : [
             {
                 "id":"1",
@@ -21,6 +22,7 @@
     },
     {
         "name" : "Some Album 2",
+        "id":"2",
         "songs" : [
             {
                 "id":"1",
