@@ -59,6 +59,8 @@
 		205FD426153F041F00693E13 /* tweet.json in Resources */ = {isa = PBXBuildFile; fileRef = 205FD423153F041F00693E13 /* tweet.json */; };
 		205FD427153F041F00693E13 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 205FD424153F041F00693E13 /* user.json */; };
 		205FD42B153F053300693E13 /* DCFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 205FD42A153F053300693E13 /* DCFramework.h */; };
+		205FD42B153F053300693E17 /* album.json in Resources */ = {isa = PBXBuildFile; fileRef = 205FD42B153F053300693E16 /* album.json */; };
+		205FD42B153F053300693E19 /* artist.json in Resources */ = {isa = PBXBuildFile; fileRef = 205FD42B153F053300693E18 /* artist.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +142,8 @@
 		205FD423153F041F00693E13 /* tweet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tweet.json; sourceTree = "<group>"; };
 		205FD424153F041F00693E13 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 		205FD42A153F053300693E13 /* DCFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCFramework.h; sourceTree = "<group>"; };
+		205FD42B153F053300693E16 /* album.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = album.json; sourceTree = "<group>"; };
+		205FD42B153F053300693E18 /* artist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = artist.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +257,8 @@
 		205FD3BD153F02AA00693E13 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				205FD42B153F053300693E18 /* artist.json */,
+				205FD42B153F053300693E16 /* album.json */,
 				205FD422153F041F00693E13 /* plist.plist */,
 				205FD423153F041F00693E13 /* tweet.json */,
 				205FD424153F041F00693E13 /* user.json */,
@@ -452,6 +458,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				205FD42B153F053300693E17 /* album.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +471,7 @@
 				205FD425153F041F00693E13 /* plist.plist in Resources */,
 				205FD426153F041F00693E13 /* tweet.json in Resources */,
 				205FD427153F041F00693E13 /* user.json in Resources */,
+				205FD42B153F053300693E19 /* artist.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
