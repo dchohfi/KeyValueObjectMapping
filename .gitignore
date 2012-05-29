@@ -15,3 +15,6 @@ profile
 *.moved-aside
 KeyValueObjectMapping.xcodeproj/project.xcworkspace
 KeyValueObjectMapping.xcodeproj/xcuserdata
+
+
+.idea/
