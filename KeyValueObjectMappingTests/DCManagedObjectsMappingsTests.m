@@ -11,6 +11,27 @@
 #import "DCManagedObjectMapping.h"
 
 
+@interface NSManagedObject(TestCase)
++ (NSEntityDescription *)entityDescriptionInContext:(NSManagedObjectContext *)context;
++ (NSArray *)findAllObjectsInContext:(NSManagedObjectContext *)context;
+@end
+
+@implementation NSManagedObject(TestCase)
++ (NSEntityDescription *)entityDescriptionInContext:(NSManagedObjectContext *)context
+{
+    return [self respondsToSelector:@selector(entityInManagedObjectContext:)] ?
+            [self performSelector:@selector(entityInManagedObjectContext:) withObject:context] :
+            [NSEntityDescription entityForName:NSStringFromClass(self) inManagedObjectContext:context];
+}
++ (NSArray *)findAllObjectsInContext:(NSManagedObjectContext *)context
+{
+    NSEntityDescription *entity = [self entityDescriptionInContext:context];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entity];
+    return [context executeFetchRequest:request error:nil];
+}
+@end
+
 @implementation DCManagedObjectsMappingsTests {
     NSArray *artistsFixture;
     NSArray *albumsFixture;
@@ -22,6 +43,25 @@
     NSPersistentStore *store;
 
 
+}
+
+
+
+
+
+- (DCManagedObjectMapping *)createArtistMapping
+{
+    DCParserConfiguration *config = [DCParserConfiguration configuration];
+
+    DCObjectMapping *nameMapping = [DCObjectMapping mapKeyPath:@"name" toAttribute:@"name" onClass:[Artist class]];
+    DCObjectMapping *idMapping = [DCObjectMapping mapKeyPath:@"objectId" toAttribute:@"id" onClass:[Artist class]];
+    [config addObjectMapping:nameMapping];
+    [config addObjectMapping:idMapping];
+
+
+    DCManagedObjectMapping *parser = [DCManagedObjectMapping mapperForClass:[Artist class]
+         andConfiguration:config andManagedObjectContext:ctx];
+    return parser;
 }
 
 - (void)setUp
@@ -65,16 +105,7 @@
 
 
 - (void) testBasicMapping {
-    DCParserConfiguration *config = [DCParserConfiguration configuration];
-
-    DCObjectMapping *nameMapping = [DCObjectMapping mapKeyPath:@"name" toAttribute:@"name" onClass:[Artist class]];
-    DCObjectMapping *idMapping = [DCObjectMapping mapKeyPath:@"objectId" toAttribute:@"id" onClass:[Artist class]];
-    [config addObjectMapping:nameMapping];
-    [config addObjectMapping:idMapping];
-
-
-    DCManagedObjectMapping *parser = [DCManagedObjectMapping mapperForClass:[Artist class]
-         andConfiguration:config andManagedObjectContext:ctx];
+    DCManagedObjectMapping *parser = [self createArtistMapping];
 
 
     NSArray *artists = [parser parseArray:artistsFixture];
@@ -84,5 +115,23 @@
     STAssertTrue([artist.id isEqualToString:[[artistsFixture lastObject] objectForKey:@"objectId"]], nil);
     STAssertTrue([artist.name isEqualToString:[[artistsFixture lastObject] objectForKey:@"name"]], nil);
 }
+
+- (void) testUniqueness
+{
+    DCManagedObjectMapping *parser = [self createArtistMapping];
+
+    [parser parseArray:artistsFixture];
+    NSArray *artistsFirstTime = [Artist findAllObjectsInContext:ctx];
+    STAssertTrue(artistsFirstTime.count == 2, nil);
+
+    [parser parseArray:artistsFixture];
+    NSArray *artistsSecondTime = [Artist findAllObjectsInContext:ctx];
+    STAssertTrue(artistsSecondTime.count == 2, nil);
+
+    STAssertTrue([artistsSecondTime containsObject:[artistsFirstTime objectAtIndex:0]], nil);
+    STAssertTrue([artistsSecondTime containsObject:[artistsFirstTime lastObject]], nil);
+}
+
+
 
 @end

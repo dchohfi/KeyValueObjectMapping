@@ -7,6 +7,7 @@
 //
 
 #import "Artist.h"
+#import "Album.h"
 #import "Song.h"
 
 
@@ -15,5 +16,6 @@
 @dynamic id;
 @dynamic name;
 @dynamic songs;
+@dynamic albums;
 
 @end

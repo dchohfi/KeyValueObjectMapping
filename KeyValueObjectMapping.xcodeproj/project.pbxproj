@@ -63,12 +63,12 @@
 		579956F51575499100C89F0C /* artists.json in Resources */ = {isa = PBXBuildFile; fileRef = 205FD42B153F053300693E18 /* artists.json */; };
 		579956F8157549AC00C89F0C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 579956F6157549AC00C89F0C /* Model.xcdatamodeld */; };
 		579956FE15754A8000C89F0C /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 579956FD15754A8000C89F0C /* Song.m */; };
-		5799570115754A9100C89F0C /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = 5799570015754A9100C89F0C /* Artist.m */; };
-		5799570415754A9100C89F0C /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 5799570315754A9100C89F0C /* Album.m */; };
 		5799570415754A9100C89F0E /* DCManagedObjectsMappingsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5799570415754A9100C89F0D /* DCManagedObjectsMappingsTests.m */; };
 		579957091575577F00C89F0C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 579957081575577F00C89F0C /* CoreData.framework */; };
 		579957141575678D00C89F0C /* DCManagedObjectMapping.h in Headers */ = {isa = PBXBuildFile; fileRef = 579957121575678D00C89F0C /* DCManagedObjectMapping.h */; };
 		579957151575678D00C89F0C /* DCManagedObjectMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 579957131575678D00C89F0C /* DCManagedObjectMapping.m */; };
+		5799571915756AF200C89F0C /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 5799571815756AF200C89F0C /* Album.m */; };
+		5799571C15756AF300C89F0C /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = 5799571B15756AF300C89F0C /* Artist.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,15 +155,15 @@
 		579956F7157549AC00C89F0C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		579956FC15754A8000C89F0C /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
 		579956FD15754A8000C89F0C /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
-		579956FF15754A9100C89F0C /* Artist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Artist.h; sourceTree = "<group>"; };
-		5799570015754A9100C89F0C /* Artist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Artist.m; sourceTree = "<group>"; };
-		5799570215754A9100C89F0C /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
-		5799570315754A9100C89F0C /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
 		5799570415754A9100C89F0D /* DCManagedObjectsMappingsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCManagedObjectsMappingsTests.m; sourceTree = "<group>"; };
 		5799570415754A9100C89F0F /* DCManagedObjectsMappingsTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCManagedObjectsMappingsTests.h; sourceTree = "<group>"; };
 		579957081575577F00C89F0C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		579957121575678D00C89F0C /* DCManagedObjectMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCManagedObjectMapping.h; sourceTree = "<group>"; };
 		579957131575678D00C89F0C /* DCManagedObjectMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCManagedObjectMapping.m; sourceTree = "<group>"; };
+		5799571715756AF200C89F0C /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
+		5799571815756AF200C89F0C /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
+		5799571A15756AF300C89F0C /* Artist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Artist.h; sourceTree = "<group>"; };
+		5799571B15756AF300C89F0C /* Artist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Artist.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -378,12 +378,12 @@
 				201F6F64153F6355009A24B9 /* Location.h */,
 				201F6F65153F6355009A24B9 /* Location.m */,
 				579956F6157549AC00C89F0C /* Model.xcdatamodeld */,
-				5799570215754A9100C89F0C /* Album.h */,
-				5799570315754A9100C89F0C /* Album.m */,
-				579956FF15754A9100C89F0C /* Artist.h */,
-				5799570015754A9100C89F0C /* Artist.m */,
 				579956FC15754A8000C89F0C /* Song.h */,
 				579956FD15754A8000C89F0C /* Song.m */,
+				5799571A15756AF300C89F0C /* Artist.h */,
+				5799571B15756AF300C89F0C /* Artist.m */,
+				5799571715756AF200C89F0C /* Album.h */,
+				5799571815756AF200C89F0C /* Album.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -607,10 +607,10 @@
 				201F6F66153F6355009A24B9 /* Location.m in Sources */,
 				201F6F6B153F6421009A24B9 /* DCPropertyAggregatorTests.m in Sources */,
 				579956FE15754A8000C89F0C /* Song.m in Sources */,
-				5799570115754A9100C89F0C /* Artist.m in Sources */,
 				579956F8157549AC00C89F0C /* Model.xcdatamodeld in Sources */,
-				5799570415754A9100C89F0C /* Album.m in Sources */,
 				5799570415754A9100C89F0E /* DCManagedObjectsMappingsTests.m in Sources */,
+				5799571915756AF200C89F0C /* Album.m in Sources */,
+				5799571C15756AF300C89F0C /* Artist.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

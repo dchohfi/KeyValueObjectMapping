@@ -9,13 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Song;
+@class Artist, Song;
 
 @interface Album : NSManagedObject
 
 @property (nonatomic, retain) NSString * id;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSSet *songs;
+@property (nonatomic, retain) Artist *artist;
 @end
 
 @interface Album (CoreDataGeneratedAccessors)
