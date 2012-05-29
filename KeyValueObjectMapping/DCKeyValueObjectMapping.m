@@ -20,6 +20,8 @@
 @property(nonatomic, strong) DCPropertyFinder *propertyFinder;
 @property(nonatomic, strong) DCParserConfiguration *configuration;
 
+
+
 @end
 
 @implementation DCKeyValueObjectMapping
@@ -58,12 +60,18 @@
     }
     return [NSArray arrayWithArray:values];
 }
+
+- (id) createInstanceOfClass:(Class)class
+{
+    return [[class alloc] init];
+}
 - (id) parseDictionary: (NSDictionary *) dictionary {
     if(!dictionary || !classToGenerate){
         return nil;
     }
-    NSObject *object = [[classToGenerate alloc] init];
-    
+
+    id object = [self createInstanceOfClass:classToGenerate];
+
     dictionary = [DCDictionaryRearranger rearrangeDictionary:dictionary forAggregators:configuration.aggregators];
     
     NSArray *keys = [dictionary allKeys];

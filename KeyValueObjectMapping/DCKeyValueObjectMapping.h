@@ -15,6 +15,11 @@
 
 + (DCKeyValueObjectMapping *) mapperForClass: (Class) classToGenerate;
 + (DCKeyValueObjectMapping *) mapperForClass: (Class) classToGenerate andConfiguration: (DCParserConfiguration *) configuration;
+
+- (id) initWithClass: (Class) _classToGenerate forConfiguration: (DCParserConfiguration *) _configuration;
+
+- (id)createInstanceOfClass:(Class)class;
+
 - (id) parseDictionary: (NSDictionary *) dictionary;
 - (NSArray *) parseArray: (NSArray *) array;
 

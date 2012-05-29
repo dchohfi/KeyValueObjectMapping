@@ -26,12 +26,22 @@
     }
     return self;
 }
-- (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) _key{
+
+- (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) _key {
+    return [self initWithAttributeDescription:description forKey:_key attributeName:nil];
+}
+
+- (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) _key attributeName: (NSString *)
+        _attibuteName
+{
     self = [super init];
     if (self) {
         NSArray *splitedDescription = [description componentsSeparatedByString:@","];
-        
-        NSString *attributeName = [self findTypeName: [splitedDescription lastObject]];
+        NSString *attributeName = nil;
+        if (!_attibuteName)
+            attributeName = [self findTypeName: [splitedDescription lastObject]];
+        else
+            attributeName = _attibuteName;
         typeName = [self findTypeInformation:[splitedDescription objectAtIndex:0]];
         
         Class attributeClass = NSClassFromString(typeName);
