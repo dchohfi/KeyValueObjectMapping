@@ -52,6 +52,7 @@
 - (DCManagedObjectMapping *)createArtistMapping
 {
     DCParserConfiguration *config = [DCParserConfiguration configuration];
+    config.primaryKeyName = @"objectId";
 
     DCObjectMapping *nameMapping = [DCObjectMapping mapKeyPath:@"name" toAttribute:@"name" onClass:[Artist class]];
     DCObjectMapping *idMapping = [DCObjectMapping mapKeyPath:@"objectId" toAttribute:@"id" onClass:[Artist class]];
@@ -100,6 +101,9 @@
     store = nil;
     coord = nil;
     model = nil;
+    albumsFixture = nil;
+    artistsFixture = nil;
+
 }
 
 
@@ -130,6 +134,31 @@
 
     STAssertTrue([artistsSecondTime containsObject:[artistsFirstTime objectAtIndex:0]], nil);
     STAssertTrue([artistsSecondTime containsObject:[artistsFirstTime lastObject]], nil);
+}
+
+-(void) testObjectsWithSamePrimaryKeyUpdate {
+    NSData *data = [NSData dataWithContentsOfFile:[[NSBundle bundleForClass: [self class]]
+                                                          pathForResource:@"artists2" ofType:@"json"]];
+    NSError *error;
+    NSArray *artists2Fixture = [NSJSONSerialization JSONObjectWithData:data
+                                                     options:NSJSONReadingMutableContainers error:&error];
+
+
+
+    DCManagedObjectMapping *parser = [self createArtistMapping];
+
+    [parser parseArray:artistsFixture];
+    NSArray *artistsFirstTime = [Artist findAllObjectsInContext:ctx];
+    NSString *firstName = [[artistsFirstTime lastObject] name];
+
+    [parser parseArray:artists2Fixture];
+    NSArray *artistsSecondTime = [Artist findAllObjectsInContext:ctx];
+    NSString *secondName = [[artistsSecondTime lastObject] name];
+
+    STAssertFalse([firstName isEqualToString:secondName], nil);
+    STAssertTrue([secondName isEqualToString:[[artists2Fixture lastObject] objectForKey:@"name"]]||
+            [secondName isEqualToString:[[artists2Fixture objectAtIndex:0] objectForKey:@"name"]], nil);
+
 }
 
 

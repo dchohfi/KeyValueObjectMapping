@@ -65,15 +65,43 @@
 {
     return [[class alloc] init];
 }
+
+
+
+
+- (DCDynamicAttribute *)primaryKeyAttribute
+{
+ return   [propertyFinder findAttributeForKey:configuration.primaryKeyName onClass:classToGenerate];
+}
+
+- (id)findObjectByPrimaryKeyValue:(id)primaryKeyValue forClassToGenerate:(Class)_classToGenerate
+{
+ return nil;
+}
+
 - (id) parseDictionary: (NSDictionary *) dictionary {
     if(!dictionary || !classToGenerate){
         return nil;
     }
 
-    id object = [self createInstanceOfClass:classToGenerate];
 
     dictionary = [DCDictionaryRearranger rearrangeDictionary:dictionary forAggregators:configuration.aggregators];
-    
+
+
+
+    id object = nil;
+    if (configuration.primaryKeyName) {
+        id primaryKeyValue = [dictionary valueForKey:configuration.primaryKeyName];
+        id primaryKeyConvertedValue = [converter transformValue:primaryKeyValue forDynamicAttribute:[self primaryKeyAttribute]];
+        object = [self findObjectByPrimaryKeyValue:primaryKeyConvertedValue forClassToGenerate:classToGenerate];
+        if (!object) {
+            object = [self createInstanceOfClass:classToGenerate];
+        }
+    } else {
+        object = [self createInstanceOfClass:classToGenerate];
+    }
+
+
     NSArray *keys = [dictionary allKeys];
     for (NSString *key in keys) {
         id value = [dictionary valueForKey:key];
@@ -84,9 +112,11 @@
     }
     return object;
 }
+
+
 - (void) parseValue: (id) value forObject: (id) object inAttribute: (DCDynamicAttribute *) dynamicAttribute {
     DCObjectMapping *objectMapping = dynamicAttribute.objectMapping;
-    
+
     NSString *attributeName = objectMapping.attributeName;
     value = [converter transformValue:value forDynamicAttribute:dynamicAttribute];
     [DCAttributeSetter assingValue:value forAttributeName:attributeName andAttributeClass:objectMapping.classReference onObject:object];

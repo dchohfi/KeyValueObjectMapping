@@ -15,7 +15,7 @@
 @end
 
 @implementation DCParserConfiguration
-@synthesize datePattern, splitToken, arrayMappers, objectMappers, aggregators;
+@synthesize datePattern, splitToken, primaryKeyName, arrayMappers, objectMappers, aggregators;
 
 + (DCParserConfiguration *) configuration {
     return [[self alloc] init];

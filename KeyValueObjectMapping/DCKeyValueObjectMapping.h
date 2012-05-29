@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "DCParserConfiguration.h"
 
+@class DCDynamicAttribute;
+
 @interface DCKeyValueObjectMapping : NSObject
 
 @property(nonatomic, readonly) Class classToGenerate;
@@ -19,6 +21,12 @@
 - (id) initWithClass: (Class) _classToGenerate forConfiguration: (DCParserConfiguration *) _configuration;
 
 - (id)createInstanceOfClass:(Class)class;
+
+
+- (DCDynamicAttribute *)primaryKeyAttribute;
+
+
+- (id)findObjectByPrimaryKeyValue:(id)primaryKeyValue forClassToGenerate:(Class)_classToGenerate;
 
 - (id) parseDictionary: (NSDictionary *) dictionary;
 - (NSArray *) parseArray: (NSArray *) array;

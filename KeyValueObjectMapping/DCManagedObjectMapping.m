@@ -5,6 +5,7 @@
 
 
 #import "DCManagedObjectMapping.h"
+#import "DCDynamicAttribute.h"
 
 
 @implementation DCManagedObjectMapping {
@@ -34,6 +35,28 @@
                                               inManagedObjectContext:context];
     return [[class alloc] initWithEntity:entity
                      insertIntoManagedObjectContext:context] ;
+
+}
+
+
+- (id)findObjectByPrimaryKeyValue:(id)primaryKeyValue forClassToGenerate:(Class)_classToGenerate
+{
+    DCDynamicAttribute * primaryKeyAttribute = [self primaryKeyAttribute];
+
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", primaryKeyAttribute.objectMapping
+                                                                                   .attributeName, primaryKeyValue];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass(_classToGenerate)];
+    request.predicate = predicate;
+
+    NSError *error;
+    NSArray *objects = [context executeFetchRequest:request error:&error];
+    if (error) {
+        NSLog(@"%@", [error localizedDescription]);
+        return nil;
+    }
+    assert(objects.count<=1);
+    return [objects lastObject];
+
 
 }
 
