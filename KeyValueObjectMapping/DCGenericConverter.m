@@ -13,6 +13,7 @@
 #import "DCNSArrayConverter.h"
 #import "DCKeyValueObjectMapping.h"
 #import "DCNSSetConverter.h"
+#import "DCForeignKeyConverter.h"
 
 @interface DCGenericConverter()
 @property(nonatomic, strong) DCParserConfiguration *configuration;
@@ -55,6 +56,12 @@
             }
         }
     }
+    if (attribute.objectMapping.parser) {
+        DCForeignKeyConverter* foreignKeyConverter = [[DCForeignKeyConverter alloc] init];
+        id result = [foreignKeyConverter transformValue:value forDynamicAttribute:attribute];
+        return result;
+    }
+
     DCSimpleConverter *simpleParser = [[DCSimpleConverter alloc] init];
     return [simpleParser transformValue:value forDynamicAttribute:attribute];
 }

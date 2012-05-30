@@ -39,13 +39,13 @@
 }
 
 
-- (id)findObjectByPrimaryKeyValue:(id)primaryKeyValue forClassToGenerate:(Class)_classToGenerate
+- (id)findObjectByPrimaryKeyValue:(id)primaryKeyValue
 {
     DCDynamicAttribute * primaryKeyAttribute = [self primaryKeyAttribute];
 
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", primaryKeyAttribute.objectMapping
                                                                                    .attributeName, primaryKeyValue];
-    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass(_classToGenerate)];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass(self.classToGenerate)];
     request.predicate = predicate;
 
     NSError *error;

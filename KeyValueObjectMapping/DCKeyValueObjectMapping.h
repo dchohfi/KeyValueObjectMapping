@@ -26,7 +26,7 @@
 - (DCDynamicAttribute *)primaryKeyAttribute;
 
 
-- (id)findObjectByPrimaryKeyValue:(id)primaryKeyValue forClassToGenerate:(Class)_classToGenerate;
+- (id)findObjectByPrimaryKeyValue:(id)primaryKeyValue;
 
 - (id) parseDictionary: (NSDictionary *) dictionary;
 - (NSArray *) parseArray: (NSArray *) array;

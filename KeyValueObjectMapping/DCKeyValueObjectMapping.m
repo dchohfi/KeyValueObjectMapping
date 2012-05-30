@@ -74,7 +74,7 @@
  return   [propertyFinder findAttributeForKey:configuration.primaryKeyName onClass:classToGenerate];
 }
 
-- (id)findObjectByPrimaryKeyValue:(id)primaryKeyValue forClassToGenerate:(Class)_classToGenerate
+- (id)findObjectByPrimaryKeyValue:(id)primaryKeyValue
 {
  return nil;
 }
@@ -93,7 +93,7 @@
     if (configuration.primaryKeyName) {
         id primaryKeyValue = [dictionary valueForKey:configuration.primaryKeyName];
         id primaryKeyConvertedValue = [converter transformValue:primaryKeyValue forDynamicAttribute:[self primaryKeyAttribute]];
-        object = [self findObjectByPrimaryKeyValue:primaryKeyConvertedValue forClassToGenerate:classToGenerate];
+        object = [self findObjectByPrimaryKeyValue:primaryKeyConvertedValue];
         if (!object) {
             object = [self createInstanceOfClass:classToGenerate];
         }

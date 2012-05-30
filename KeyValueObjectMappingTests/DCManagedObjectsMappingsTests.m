@@ -77,11 +77,16 @@
     DCObjectMapping *songsMapping = [DCObjectMapping mapKeyPath:@"songs" toAttribute:@"songs" onClass:[Album class]
                                                          parser:[self createSongMapping]];
 
+    DCObjectMapping *artistMapping = [DCObjectMapping mapKeyPath:@"artist" toAttribute:@"artist" onClass:[Album class]
+            parser:[self createArtistMapping]];
+
+
     DCArrayMapping *songsArrayMapping = [DCArrayMapping mapperForClass:[Song class]
                                                              onMapping:songsMapping];
 
     [config addObjectMapping:nameMapping];
     [config addObjectMapping:idMapping];
+    [config addObjectMapping:artistMapping];
     [config addArrayMapper:songsArrayMapping];
 
     DCManagedObjectMapping *parser = [DCManagedObjectMapping mapperForClass:[Album class]
@@ -96,6 +101,12 @@
 
     DCObjectMapping *nameMapping = [DCObjectMapping mapKeyPath:@"title" toAttribute:@"title" onClass:[Song class]];
     DCObjectMapping *idMapping = [DCObjectMapping mapKeyPath:@"id" toAttribute:@"id" onClass:[Song class]];
+    DCObjectMapping *artistMapping = [DCObjectMapping mapKeyPath:@"artist" toAttribute:@"artist" onClass:[Song class]
+            parser:[self createArtistMapping]];
+
+
+    [config addObjectMapping:artistMapping];
+
     [config addObjectMapping:nameMapping];
     [config addObjectMapping:idMapping];
 
@@ -227,6 +238,28 @@
         STAssertTrue(song.albums.count >= 1, nil);
         Album * album = [song.albums anyObject];
         STAssertTrue([album.songs containsObject:song], nil);
+    }
+}
+
+- (void)testForeignKeyRelationships
+{
+    DCManagedObjectMapping *parser = [self createArtistMapping];
+
+    [parser parseArray:artistsFixture];
+    NSArray *artists =  [Artist findAllObjectsInContext:ctx];
+
+    parser = [self createAlbumMapping];
+    [parser parseArray:albumsFixture];
+    NSArray *albums = [Album findAllObjectsInContext:ctx];
+
+    for (Album *album in albums) {
+        STAssertNotNil(album.artist, nil);
+        STAssertTrue([album.artist.albums containsObject:album], nil);
+    }
+
+    for (Artist *artist in artists) {
+        STAssertTrue(artist.albums.count >= 1, nil);
+        STAssertTrue(((Album *)[artist.albums anyObject]).artist == artist, nil);
     }
 }
 

@@ -73,6 +73,8 @@
 		5799571C15756AF300C89F10 /* DCManagedObjectToManyMapping.m in Sources */ = {isa = PBXBuildFile; };
 		5799571C15756AF300C89F14 /* DCNSSetConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F13 /* DCNSSetConverter.m */; };
 		5799571C15756AF300C89F16 /* DCNSSetConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F15 /* DCNSSetConverter.h */; };
+		5799571C15756AF300C89F18 /* DCForeignKeyConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F17 /* DCForeignKeyConverter.m */; };
+		5799571C15756AF300C89F1A /* DCForeignKeyConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F19 /* DCForeignKeyConverter.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +173,8 @@
 		5799571C15756AF300C89F0D /* artists2.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = artists2.json; sourceTree = "<group>"; };
 		5799571C15756AF300C89F13 /* DCNSSetConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNSSetConverter.m; sourceTree = "<group>"; };
 		5799571C15756AF300C89F15 /* DCNSSetConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNSSetConverter.h; sourceTree = "<group>"; };
+		5799571C15756AF300C89F17 /* DCForeignKeyConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCForeignKeyConverter.m; sourceTree = "<group>"; };
+		5799571C15756AF300C89F19 /* DCForeignKeyConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCForeignKeyConverter.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -345,6 +349,8 @@
 		205FD3E3153F033200693E13 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
+				5799571C15756AF300C89F19 /* DCForeignKeyConverter.h */,
+				5799571C15756AF300C89F17 /* DCForeignKeyConverter.m */,
 				5799571C15756AF300C89F15 /* DCNSSetConverter.h */,
 				5799571C15756AF300C89F13 /* DCNSSetConverter.m */,
 				205FD3E4153F033A00693E13 /* DCNSArrayConverter.h */,
@@ -424,6 +430,7 @@
 				201F6F73153F7C9E009A24B9 /* DCDictionaryRearranger.h in Headers */,
 				579957141575678D00C89F0C /* DCManagedObjectMapping.h in Headers */,
 				5799571C15756AF300C89F16 /* DCNSSetConverter.h in Headers */,
+				5799571C15756AF300C89F1A /* DCForeignKeyConverter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,6 +608,7 @@
 				201F6F74153F7C9E009A24B9 /* DCDictionaryRearranger.m in Sources */,
 				5799571C15756AF300C89F10 /* DCManagedObjectToManyMapping.m in Sources */,
 				5799571C15756AF300C89F14 /* DCNSSetConverter.m in Sources */,
+				5799571C15756AF300C89F18 /* DCForeignKeyConverter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
