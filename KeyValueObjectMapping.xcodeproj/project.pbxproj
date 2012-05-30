@@ -71,8 +71,8 @@
 		5799571C15756AF300C89F0C /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = 5799571B15756AF300C89F0C /* Artist.m */; };
 		5799571C15756AF300C89F0E /* artists2.json in Resources */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F0D /* artists2.json */; };
 		5799571C15756AF300C89F10 /* DCManagedObjectToManyMapping.m in Sources */ = {isa = PBXBuildFile; };
-		5799571C15756AF300C89F14 /* DCManagedObjectToManyConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F13 /* DCManagedObjectToManyConverter.m */; };
-		5799571C15756AF300C89F16 /* DCManagedObjectToManyConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F15 /* DCManagedObjectToManyConverter.h */; };
+		5799571C15756AF300C89F14 /* DCNSSetConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F13 /* DCNSSetConverter.m */; };
+		5799571C15756AF300C89F16 /* DCNSSetConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F15 /* DCNSSetConverter.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,8 +169,8 @@
 		5799571A15756AF300C89F0C /* Artist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Artist.h; sourceTree = "<group>"; };
 		5799571B15756AF300C89F0C /* Artist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Artist.m; sourceTree = "<group>"; };
 		5799571C15756AF300C89F0D /* artists2.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = artists2.json; sourceTree = "<group>"; };
-		5799571C15756AF300C89F13 /* DCManagedObjectToManyConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCManagedObjectToManyConverter.m; sourceTree = "<group>"; };
-		5799571C15756AF300C89F15 /* DCManagedObjectToManyConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCManagedObjectToManyConverter.h; sourceTree = "<group>"; };
+		5799571C15756AF300C89F13 /* DCNSSetConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNSSetConverter.m; sourceTree = "<group>"; };
+		5799571C15756AF300C89F15 /* DCNSSetConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNSSetConverter.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -345,8 +345,8 @@
 		205FD3E3153F033200693E13 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
-				5799571C15756AF300C89F15 /* DCManagedObjectToManyConverter.h */,
-				5799571C15756AF300C89F13 /* DCManagedObjectToManyConverter.m */,
+				5799571C15756AF300C89F15 /* DCNSSetConverter.h */,
+				5799571C15756AF300C89F13 /* DCNSSetConverter.m */,
 				205FD3E4153F033A00693E13 /* DCNSArrayConverter.h */,
 				205FD3E5153F033A00693E13 /* DCNSArrayConverter.m */,
 				205FD3E6153F033A00693E13 /* DCNSDateConverter.h */,
@@ -423,7 +423,7 @@
 				201F6F6F153F789A009A24B9 /* DCAttributeSetter.h in Headers */,
 				201F6F73153F7C9E009A24B9 /* DCDictionaryRearranger.h in Headers */,
 				579957141575678D00C89F0C /* DCManagedObjectMapping.h in Headers */,
-				5799571C15756AF300C89F16 /* DCManagedObjectToManyConverter.h in Headers */,
+				5799571C15756AF300C89F16 /* DCNSSetConverter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,7 +600,7 @@
 				201F6F70153F789A009A24B9 /* DCAttributeSetter.m in Sources */,
 				201F6F74153F7C9E009A24B9 /* DCDictionaryRearranger.m in Sources */,
 				5799571C15756AF300C89F10 /* DCManagedObjectToManyMapping.m in Sources */,
-				5799571C15756AF300C89F14 /* DCManagedObjectToManyConverter.m in Sources */,
+				5799571C15756AF300C89F14 /* DCNSSetConverter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,7 @@
 #import "DCSimpleConverter.h"
 #import "DCNSArrayConverter.h"
 #import "DCKeyValueObjectMapping.h"
+#import "DCNSSetConverter.h"
 
 @interface DCGenericConverter()
 @property(nonatomic, strong) DCParserConfiguration *configuration;
@@ -29,7 +30,9 @@
         parsers = [NSArray arrayWithObjects:
                    [DCNSDateConverter dateConverterForPattern:configuration.datePattern],
                    [DCNSURLConverter urlConverter],
-                   [DCNSArrayConverter arrayConverterForConfiguration: configuration], nil];
+                   [DCNSArrayConverter arrayConverterForConfiguration: configuration],
+                   [DCNSSetConverter arrayConverterForConfiguration: configuration],
+                   nil];
     }
     return self;
 }

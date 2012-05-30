@@ -8,5 +8,5 @@
 #import "DCNSArrayConverter.h"
 
 
-@interface DCManagedObjectToManyConverter : DCNSArrayConverter
+@interface DCNSSetConverter : DCNSArrayConverter
 @end

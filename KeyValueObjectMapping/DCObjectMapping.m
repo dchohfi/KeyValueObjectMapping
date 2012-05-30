@@ -27,12 +27,24 @@
     return [[self alloc] initWithKeyPath:keyPath toAttribute:attributeName onClass:attributeClass];
 }
 
-- (id)initWithKeyPath: (NSString *) _keyReference toAttribute: (NSString *) _attributeName onClass: (Class) _classReference {
++ (DCObjectMapping *) mapKeyPath: (NSString *) keyPath toAttribute: (NSString *) attributeName onClass: (Class)
+        attributeClass parser:(DCKeyValueObjectMapping *) parser{
+    return [[self alloc] initWithKeyPath:keyPath toAttribute:attributeName onClass:attributeClass parser: parser];
+}
+
+- (id)initWithKeyPath: (NSString *) _keyReference toAttribute: (NSString *) _attributeName onClass: (Class)
+        _classReference {
+    return [self initWithKeyPath:_keyReference toAttribute:_attributeName onClass:_classReference parser: nil];
+}
+
+- (id)initWithKeyPath: (NSString *) _keyReference toAttribute: (NSString *) _attributeName onClass: (Class)
+        _classReference parser:(DCKeyValueObjectMapping *) _parser {
     self = [super init];
     if (self) {
         attributeName = _attributeName;
         keyReference = _keyReference;
         classReference = _classReference;
+        parser = _parser;
     }
     return self;
 }

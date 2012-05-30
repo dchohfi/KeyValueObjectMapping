@@ -19,7 +19,13 @@
 
 + (DCObjectMapping *) mapKeyPath: (NSString *) keyPath toAttribute: (NSString *) attributeName onClass: (Class) attributeClass;
 
++ (DCObjectMapping *)mapKeyPath:(NSString *)keyPath toAttribute:(NSString *)attributeName onClass:(Class)attributeClass parser:(DCKeyValueObjectMapping *)parser;
+
+
 - (id)initWithClass: (Class) classReference;
+
+- (id)initWithKeyPath:(NSString *)_keyReference toAttribute:(NSString *)_attributeName onClass:(Class)_classReference parser:(DCKeyValueObjectMapping *)_parser;
+
 - (BOOL) sameKey: (NSString *) key andClassReference: (Class) classReference;
 
 @end
