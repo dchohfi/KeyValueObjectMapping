@@ -209,7 +209,7 @@
     STAssertTrue(songs.count == 4, nil);
     [parser parseArray:albumsFixture];
     NSArray *songsSecondTime = [Song findAllObjectsInContext:ctx];
-    STAssertTrue(songs.count == 4, nil);
+    STAssertTrue(songsSecondTime.count == 4, nil);
 }
 
 
