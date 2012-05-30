@@ -12,6 +12,11 @@
 }
 @synthesize id = _id;
 @synthesize name = _name;
+@synthesize primitiveArray = _primitiveArray;
+@synthesize homePageURL = _homePageURL;
+@synthesize numberFloat = _numberFloat;
+@synthesize numberInteger = _numberInteger;
+@synthesize birthday = _birthday;
 
 
 @end

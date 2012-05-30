@@ -77,6 +77,7 @@
 		5799571C15756AF300C89F1A /* DCForeignKeyConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F19 /* DCForeignKeyConverter.h */; };
 		5799571C15756AF300C89F1C /* DCSerializationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F1B /* DCSerializationTests.m */; };
 		5799571C15756AF300C89F1F /* SimpleArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F1E /* SimpleArtist.m */; };
+		5799571C15756AF300C89F22 /* simpleArtists.json in Resources */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F21 /* simpleArtists.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +182,7 @@
 		5799571C15756AF300C89F1D /* DCSerializationTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCSerializationTests.h; sourceTree = "<group>"; };
 		5799571C15756AF300C89F1E /* SimpleArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleArtist.m; sourceTree = "<group>"; };
 		5799571C15756AF300C89F20 /* SimpleArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleArtist.h; sourceTree = "<group>"; };
+		5799571C15756AF300C89F21 /* simpleArtists.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = simpleArtists.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +304,7 @@
 		205FD3BD153F02AA00693E13 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5799571C15756AF300C89F21 /* simpleArtists.json */,
 				5799571C15756AF300C89F0D /* artists2.json */,
 				205FD42B153F053300693E18 /* artists.json */,
 				205FD42B153F053300693E16 /* albums.json */,
@@ -535,6 +538,7 @@
 				579956F51575499100C89F0C /* artists.json in Resources */,
 				205FD427153F041F00693E13 /* user.json in Resources */,
 				5799571C15756AF300C89F0E /* artists2.json in Resources */,
+				5799571C15756AF300C89F22 /* simpleArtists.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

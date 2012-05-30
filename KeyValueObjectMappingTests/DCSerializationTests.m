@@ -17,7 +17,8 @@
 - (void)setUp
 {
 
-    NSData *data = [NSData dataWithContentsOfFile:[[NSBundle bundleForClass: [self class]] pathForResource:@"artists" ofType:@"json"]];
+    NSData *data = [NSData dataWithContentsOfFile:[[NSBundle bundleForClass: [self class]]
+                                                          pathForResource:@"simpleArtists" ofType:@"json"]];
     NSError *error;
     artistsFixture = [NSJSONSerialization JSONObjectWithData:data
                                                      options:NSJSONReadingMutableContainers error:&error];
@@ -30,8 +31,21 @@
 
     DCObjectMapping *nameMapping = [DCObjectMapping mapKeyPath:@"name" toAttribute:@"name" onClass:[SimpleArtist class]];
     DCObjectMapping *idMapping = [DCObjectMapping mapKeyPath:@"objectId" toAttribute:@"id" onClass:[SimpleArtist class]];
+    DCObjectMapping *dateMapping = [DCObjectMapping mapKeyPath:@"birthday" toAttribute:@"birthday" onClass:[SimpleArtist
+                                                                                                          class]];
+    DCObjectMapping *homePageURLMapping = [DCObjectMapping mapKeyPath:@"homePageURL" toAttribute:@"homePageURL"
+                                                       onClass:[SimpleArtist class]];
+    DCObjectMapping *numberIntegerMapping = [DCObjectMapping mapKeyPath:@"numberInteger" toAttribute:@"numberInteger"
+                                                              onClass:[SimpleArtist class]];
+
+    DCObjectMapping *numberFloatMapping = [DCObjectMapping mapKeyPath:@"numberFloat" toAttribute:@"numberFloat"
+                                                                    onClass:[SimpleArtist class]];
     [config addObjectMapping:nameMapping];
     [config addObjectMapping:idMapping];
+    [config addObjectMapping:dateMapping];
+    [config addObjectMapping:homePageURLMapping];
+    [config addObjectMapping:numberIntegerMapping];
+    [config addObjectMapping:numberFloatMapping];
 
 
     DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[SimpleArtist class]
@@ -39,7 +53,7 @@
     return parser;
 }
 
-- (void)testPrimitiveFieldSerialization
+- (void)testSimpleFieldSerialization
 {
     DCKeyValueObjectMapping *parser = [self createArtistMapping];
 
@@ -51,6 +65,39 @@
     STAssertTrue([[serializedArtist objectForKey:@"objectId"] isEqualToString:artist.id], nil);
     STAssertTrue([[serializedArtist objectForKey:@"name"] isEqualToString:artist.name], nil);
 }
+
+
+
+- (void)testPrimitiveFieldSerializationSanity
+{
+    DCKeyValueObjectMapping *parser = [self createArtistMapping];
+
+    NSDictionary * artistFixture = [artistsFixture lastObject];
+    SimpleArtist *artist = [parser parseDictionary:artistFixture];
+
+
+    NSDictionary * serializedArtist = [parser serializeObject:artist];
+//    STAssertTrue([serializedArtist allKeys].count== [artistFixture allKeys].count, nil);
+
+    STAssertTrue([[serializedArtist objectForKey:@"objectId"] isEqualToString:
+            [artistFixture objectForKey:@"objectId"]], nil);
+    STAssertTrue([[serializedArtist objectForKey:@"name"] isEqualToString:
+            [artistFixture objectForKey:@"name"]], nil);
+    STAssertTrue([[serializedArtist objectForKey:@"homePageURL"] isEqualToString:
+        [artistFixture objectForKey:@"homePageURL"]], nil);
+    STAssertTrue([[serializedArtist objectForKey:@"birthday"] isEqualToString:
+        [artistFixture objectForKey:@"birthday"]], nil);
+    STAssertTrue([[serializedArtist objectForKey:@"numberInteger"] isEqualToNumber:
+        [artistFixture objectForKey:@"numberInteger"]], nil);
+    STAssertTrue([[serializedArtist objectForKey:@"numberFloat"] isEqualToNumber:
+        [artistFixture objectForKey:@"numberFloat"]], nil);
+
+//    STAssertTrue([[serializedArtist objectForKey:@"primitiveArray"] isEqualToArray:
+//        [artistFixture objectForKey:@"primitiveArray"]], nil);
+
+}
+
+
 
 
 @end

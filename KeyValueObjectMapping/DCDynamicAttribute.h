@@ -18,8 +18,6 @@
 
 - (id)initWithClass: (Class) classs;
 - (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) _key attributeName: (NSString *)
-        _attibuteName;
-- (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) _key attributeName: (NSString *)
-        _attibuteName objectMapping:(DCObjectMapping *) _objectMapping;
+        _attibuteName  parser:(DCKeyValueObjectMapping *)_parser;
 - (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) _key;
 @end

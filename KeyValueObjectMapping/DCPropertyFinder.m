@@ -45,8 +45,7 @@
     
     DCDynamicAttribute *dynamicAttribute = [[DCDynamicAttribute alloc] initWithAttributeDescription: propertyDetails
                                                                                              forKey:originalKey
-                                                                                      attributeName:key
-                                                                                      objectMapping:mapper];
+                                                                                      attributeName:key parser:mapper.parser];
     return dynamicAttribute;
 }
 

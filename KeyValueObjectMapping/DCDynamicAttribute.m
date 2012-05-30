@@ -28,19 +28,15 @@
 }
 
 - (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) _key {
-    return [self initWithAttributeDescription:description forKey:_key attributeName:nil];
+    return [self initWithAttributeDescription:description forKey:_key attributeName:nil parser:nil];
 }
 
 
-- (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) _key attributeName: (NSString *)
-        _attibuteName {
-    return [self initWithAttributeDescription:description forKey:_key attributeName:_attibuteName
-                                objectMapping:nil];
-}
+
 
 
 - (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) _key attributeName: (NSString *)
-        _attibuteName objectMapping:(DCObjectMapping *) _objectMapping
+        _attibuteName  parser:(DCKeyValueObjectMapping *)_parser
 {
     self = [super init];
     if (self) {
@@ -53,9 +49,8 @@
         typeName = [self findTypeInformation:[splitedDescription objectAtIndex:0]];
         
         Class attributeClass = NSClassFromString(typeName);
-        objectMapping = _objectMapping;
-        if (!objectMapping)
-            objectMapping = [DCObjectMapping mapKeyPath:_key toAttribute:attributeName onClass:attributeClass];
+        objectMapping = [DCObjectMapping mapKeyPath:_key toAttribute:attributeName onClass:attributeClass
+                                             parser:_parser];
     }
     return self;
 }

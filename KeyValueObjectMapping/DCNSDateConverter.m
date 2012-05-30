@@ -33,7 +33,8 @@
         return [NSDate dateWithTimeIntervalSince1970:[value doubleValue]];
     }else{
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        formatter.dateFormat = pattern;
+        if (pattern)
+            formatter.dateFormat = pattern;
         return [formatter dateFromString:value];
     }
 }

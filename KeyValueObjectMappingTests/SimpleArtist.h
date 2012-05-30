@@ -8,7 +8,12 @@
 
 
 @interface SimpleArtist : NSObject
-@property (nonatomic, retain) NSString * id;
-@property (nonatomic, retain) NSString * name;
+@property (nonatomic, copy) NSString * id;
+@property (nonatomic, copy) NSString * name;
+@property (nonatomic, retain) NSDate * birthday;
+@property (nonatomic, copy) NSNumber * numberInteger;
+@property (nonatomic, copy) NSNumber * numberFloat;
+@property (nonatomic, copy) NSURL * homePageURL;
+@property (nonatomic, retain) NSArray * primitiveArray;
 
 @end
