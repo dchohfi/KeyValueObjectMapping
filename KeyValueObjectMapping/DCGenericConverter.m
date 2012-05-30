@@ -74,6 +74,13 @@
         }
     }
 
+    if (attribute.objectMapping.parser) {
+        DCForeignKeyConverter* foreignKeyConverter = [[DCForeignKeyConverter alloc] init];
+        id result = [foreignKeyConverter serializeValue:value forDynamicAttribute:attribute];
+        return result;
+    }
+
+
 
     DCSimpleConverter *simpleParser = [[DCSimpleConverter alloc] init];
     return [simpleParser serializeValue:value forDynamicAttribute:attribute];

@@ -293,18 +293,38 @@
 }
 
 
+- (void)testManagedObjectSimpleSerialization
+{
+    DCManagedObjectMapping *parser = [self createArtistMapping];
+
+    NSDictionary *artistFixture = [artistsFixture lastObject];
+
+    [parser parseDictionary:artistFixture];
+    Artist * artist = [[Artist findAllObjectsInContext:ctx] lastObject];
+    NSDictionary *serializedArtist = [parser serializeObject:artist];
+
+    STAssertEqualObjects(artistFixture, serializedArtist, nil);
+}
+
+
 - (void)testManagedObjectSerialization
 {
-//    DCManagedObjectMapping *parser = [self createArtistMapping];
-//
-//    NSDictionary *artistFixture = [artistsFixture lastObject];
-//
-//    [parser parseDictionary:art];
-//    NSArray *artists =  [Artist findAllObjectsInContext:ctx];
-//    [parser serializeObject:]
-//
-//    STAssertTrue(artist, <#description#>, <#__VA_ARGS__...#>)
+    DCManagedObjectMapping *parser = [self createArtistMapping];
+
+    [parser parseArray:artistsFixture];
+    NSArray *artists =  [Artist findAllObjectsInContext:ctx];
+
+    parser = [self createAlbumMapping];
+    [parser parseDictionary:[albumsFixture lastObject]];
+    Album *album = [[Album findAllObjectsInContext:ctx] lastObject];
+
+    NSDictionary *serializedAlbum = [parser serializeObject:album];
+
+    STAssertEqualObjects([serializedAlbum valueForKey:@"artist"], [[albumsFixture lastObject] valueForKey:@"artist"],
+    nil);
+
 }
+
 
 
 @end

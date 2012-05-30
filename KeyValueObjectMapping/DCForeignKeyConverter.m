@@ -26,6 +26,13 @@
     return result;
 }
 
+
+- (id) serializeValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute {
+    DCKeyValueObjectMapping *foreignObjectParser = attribute.objectMapping.parser;
+    NSString *primaryKeyNameOfForeignObject = foreignObjectParser.primaryKeyAttribute.objectMapping.attributeName;
+    return [value valueForKeyPath:primaryKeyNameOfForeignObject];
+}
+
 - (BOOL)canTransformValueForClass:(Class)class
 {
     return YES; //fixme
