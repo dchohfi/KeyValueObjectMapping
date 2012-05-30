@@ -25,7 +25,12 @@
 @end
 
 @implementation DCKeyValueObjectMapping
-@synthesize converter, propertyFinder, configuration, classToGenerate;
+@synthesize converter, propertyFinder, configuration, classToGenerate, fullSerialization;
+
+- (void)setFullSerialization:(BOOL)aFullSerialization
+{
+    fullSerialization=aFullSerialization;
+}
 
 + (DCKeyValueObjectMapping *) mapperForClass: (Class) classToGenerate {
     return [self mapperForClass:classToGenerate andConfiguration:[DCParserConfiguration configuration]];
@@ -37,6 +42,7 @@
 - (id) initWithClass: (Class) _classToGenerate forConfiguration: (DCParserConfiguration *) _configuration {
     self = [super init];
     if (self) {
+        fullSerialization = YES;
         configuration = _configuration;
         DCReferenceKeyParser *keyParser = [DCReferenceKeyParser parserForToken: configuration.splitToken];
         
@@ -81,6 +87,11 @@
 
 - (NSDictionary *)serializeObject:(id)object
 {
+    if (!fullSerialization) {
+        return [object valueForKeyPath:[self primaryKeyAttribute].objectMapping.attributeName];
+    }
+
+
     NSMutableDictionary *serializedObject = [[NSMutableDictionary alloc] init];
 
     for (DCObjectMapping *mapping in propertyFinder.mappers) {

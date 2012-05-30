@@ -53,11 +53,14 @@
 
 
 - (id) serializeValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute {
+    if (attribute.objectMapping.parser) {
+        return [attribute.objectMapping.parser serializeObjectArray:values];
+    }
     DCGenericConverter* genericConverter = [[DCGenericConverter alloc] initWithConfiguration:configuration];
     NSMutableArray *valuesHolder = [NSMutableArray array];
+
     for(id value in values){
-        DCDynamicAttribute *valueClassAsAttribute = [[DCDynamicAttribute alloc] initWithClass:[value class]
-                parser:attribute.objectMapping.parser];
+        DCDynamicAttribute *valueClassAsAttribute = [[DCDynamicAttribute alloc] initWithClass:[value class]];
         [valuesHolder addObject:[genericConverter serializeValue:value forDynamicAttribute:valueClassAsAttribute]];
     }
     if (valuesHolder.count)

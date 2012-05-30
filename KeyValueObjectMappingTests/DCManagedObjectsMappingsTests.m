@@ -68,18 +68,24 @@
     return parser;
 }
 
-- (DCManagedObjectMapping *)createAlbumMapping
+- (DCManagedObjectMapping *)createAlbumMappingWithFullSongSerialization:(BOOL) fullSongSerialization
 {
     DCParserConfiguration *config = [DCParserConfiguration configuration];
     config.primaryKeyName = @"album_id";
 
+    DCManagedObjectMapping *songParser = [self createSongMapping];
+    songParser.fullSerialization = fullSongSerialization;
     DCObjectMapping *nameMapping = [DCObjectMapping mapKeyPath:@"name" toAttribute:@"name" onClass:[Album class]];
     DCObjectMapping *idMapping = [DCObjectMapping mapKeyPath:@"album_id" toAttribute:@"id" onClass:[Album class]];
     DCObjectMapping *songsMapping = [DCObjectMapping mapKeyPath:@"songs" toAttribute:@"songs" onClass:[Album class]
-                                                         parser:[self createSongMapping]];
+                                                         parser:songParser];
 
+
+
+    DCManagedObjectMapping *artistParser = [self createArtistMapping];
+    artistParser.fullSerialization = NO;
     DCObjectMapping *artistMapping = [DCObjectMapping mapKeyPath:@"artist" toAttribute:@"artist" onClass:[Album class]
-            parser:[self createArtistMapping]];
+            parser:artistParser];
 
 
     DCArrayMapping *songsArrayMapping = [DCArrayMapping mapperForClass:[Song class]
@@ -101,10 +107,12 @@
     DCParserConfiguration *config = [DCParserConfiguration configuration];
     config.primaryKeyName = @"id";
 
+    DCManagedObjectMapping *artistParser = [self createArtistMapping];
+    artistParser.fullSerialization = NO;
     DCObjectMapping *nameMapping = [DCObjectMapping mapKeyPath:@"title" toAttribute:@"title" onClass:[Song class]];
     DCObjectMapping *idMapping = [DCObjectMapping mapKeyPath:@"id" toAttribute:@"id" onClass:[Song class]];
     DCObjectMapping *artistMapping = [DCObjectMapping mapKeyPath:@"artist" toAttribute:@"artist" onClass:[Song class]
-            parser:[self createArtistMapping]];
+            parser:artistParser];
 
     [config addObjectMapping:artistMapping];
 
@@ -214,7 +222,7 @@
 
 - (void)testNestedObjectUniqueness
 {
-    DCManagedObjectMapping *parser = [self createAlbumMapping];
+    DCManagedObjectMapping *parser = [self createAlbumMappingWithFullSongSerialization:NO];
 
     [parser parseArray:albumsFixture];
     NSArray *songs = [Song findAllObjectsInContext:ctx];
@@ -226,7 +234,7 @@
 
 - (void)testNestedObjectRelationships
 {
-    DCManagedObjectMapping *parser = [self createAlbumMapping];
+    DCManagedObjectMapping *parser = [self createAlbumMappingWithFullSongSerialization:NO];
 
     NSArray *albums = [parser parseArray:albumsFixture];
     NSArray *songs = [Song findAllObjectsInContext:ctx];
@@ -249,7 +257,7 @@
     [parser parseArray:artistsFixture];
     NSArray *artists =  [Artist findAllObjectsInContext:ctx];
 
-    parser = [self createAlbumMapping];
+    parser = [self createAlbumMappingWithFullSongSerialization:NO];
     [parser parseArray:albumsFixture];
     NSArray *albums = [Album findAllObjectsInContext:ctx];
 
@@ -273,7 +281,7 @@
                                                object:nil];
 
     DCManagedObjectMapping *parser;
-    parser = [self createAlbumMapping];
+    parser = [self createAlbumMappingWithFullSongSerialization:NO];
     [parser parseArray:albumsFixture];
     NSArray *albums = [Album findAllObjectsInContext:ctx];
     NSArray *artists = [Artist findAllObjectsInContext:ctx];
@@ -315,7 +323,7 @@
     [parser parseArray:artistsFixture];
     NSArray *artists =  [Artist findAllObjectsInContext:ctx];
 
-    parser = [self createAlbumMapping];
+    parser = [self createAlbumMappingWithFullSongSerialization:NO];
     [parser parseDictionary:[albumsFixture lastObject]];
     Album *album = [[Album findAllObjectsInContext:ctx] lastObject];
 
@@ -327,9 +335,42 @@
     for (Song *song in album.songs) {
         STAssertTrue([[serializedAlbum objectForKey:@"songs"] containsObject:song.id], nil);
     }
-
 }
 
+- (void)testNestedManagedObjectSerializationSanity
+{
+    DCManagedObjectMapping *parser = [self createArtistMapping];
+
+    [parser parseArray:artistsFixture];
+    NSArray *artists =  [Artist findAllObjectsInContext:ctx];
 
 
+    parser = [self createAlbumMappingWithFullSongSerialization:YES];
+
+    [parser parseArray:albumsFixture];
+    NSArray *albums =  [Album findAllObjectsInContext:ctx];
+
+    albums = [albums sortedArrayUsingComparator: ^(Album* obj1, Album* obj2) {
+        return [obj1.id compare:obj2.id];
+    }];
+
+    NSArray*serializedAlbums = [parser serializeObjectArray:albums];
+
+    STAssertTrue(albumsFixture.count == serializedAlbums.count, nil);
+
+    [albumsFixture enumerateObjectsUsingBlock:^(NSDictionary * albumDictionary, NSUInteger i, BOOL* stop){
+        NSMutableDictionary *mAlbumDictionary = [NSMutableDictionary dictionaryWithDictionary:albumDictionary];
+        NSMutableDictionary *mSerializedAlbumDictionary = [NSMutableDictionary
+                dictionaryWithDictionary:[serializedAlbums objectAtIndex:i]];
+        [mAlbumDictionary setObject:[NSSet setWithArray:[mAlbumDictionary objectForKey:@"songs"]] forKey:@"songs"];
+        [mSerializedAlbumDictionary setObject:[NSSet setWithArray:[mSerializedAlbumDictionary objectForKey:@"songs"]] forKey:@"songs"];
+
+        STAssertEqualObjects(mAlbumDictionary, mAlbumDictionary, nil);
+
+
+
+    }];
+
+    // compare two sets of songs
+}
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "DCObjectMapping.h"
+#include "DCKeyValueObjectMapping.h"
 
 @implementation DCObjectMapping {
 }
@@ -40,7 +41,10 @@
         attributeName = _attributeName;
         keyReference = _keyReference;
         classReference = _classReference;
-        parser = _parser;
+        if (_parser) {
+            parser = _parser;
+
+        }
     }
     return self;
 }

@@ -29,8 +29,7 @@
 
 - (id) serializeValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute {
     DCKeyValueObjectMapping *foreignObjectParser = attribute.objectMapping.parser;
-    NSString *primaryKeyNameOfForeignObject = foreignObjectParser.primaryKeyAttribute.objectMapping.attributeName;
-    return [value valueForKeyPath:primaryKeyNameOfForeignObject];
+    return [foreignObjectParser serializeObject:value];
 }
 
 - (BOOL)canTransformValueForClass:(Class)class
