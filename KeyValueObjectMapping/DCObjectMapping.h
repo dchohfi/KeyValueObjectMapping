@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class DCKeyValueObjectMapping;
+
 @interface DCObjectMapping : NSObject
 
 @property(nonatomic, readonly) NSString *keyReference;
 @property(nonatomic, readonly) NSString *attributeName;
 @property(nonatomic, readonly) Class classReference;
+@property (nonatomic, strong) DCKeyValueObjectMapping* parser;
 
 + (DCObjectMapping *) mapKeyPath: (NSString *) keyPath toAttribute: (NSString *) attributeName onClass: (Class) attributeClass;
 

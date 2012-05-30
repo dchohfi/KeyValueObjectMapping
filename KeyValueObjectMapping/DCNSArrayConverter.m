@@ -38,7 +38,10 @@
     }else{
         DCArrayMapping *mapper = [configuration arrayMapperForMapper:attribute.objectMapping];
         if(mapper){
-            DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:mapper.classForElementsOnArray andConfiguration:self.configuration];
+            DCKeyValueObjectMapping *parser =  attribute.objectMapping.parser;
+            if (!parser)
+                parser = [DCKeyValueObjectMapping mapperForClass:mapper.classForElementsOnArray
+                                                andConfiguration:self.configuration];
             return [parser parseArray:values];
         }
     }

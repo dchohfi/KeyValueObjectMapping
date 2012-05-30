@@ -39,7 +39,10 @@
         BOOL valueIsKindOfDictionary = [value isKindOfClass:[NSDictionary class]];
         BOOL attributeNotKindOfDictionary = ![attribute.objectMapping.classReference isSubclassOfClass:[NSDictionary class]];
         if( valueIsKindOfDictionary && attributeNotKindOfDictionary){
-            DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:attribute.objectMapping.classReference andConfiguration:self.configuration];
+            DCKeyValueObjectMapping *parser =  attribute.objectMapping.parser;
+            if (!parser)
+                parser = [DCKeyValueObjectMapping mapperForClass:attribute.objectMapping.classReference
+                                             andConfiguration:self.configuration];
             value = [parser parseDictionary:(NSDictionary *) value];
         }else {        
             for(id<DCValueConverter> parser in parsers){

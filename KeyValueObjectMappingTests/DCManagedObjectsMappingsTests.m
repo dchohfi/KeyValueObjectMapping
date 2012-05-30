@@ -67,28 +67,27 @@
     return parser;
 }
 
-- (DCManagedObjectMapping *)createAlbumMapping
-{
-    DCParserConfiguration *config = [DCParserConfiguration configuration];
-    config.primaryKeyName = @"album_id";
-
-    DCObjectMapping *nameMapping = [DCObjectMapping mapKeyPath:@"name" toAttribute:@"name" onClass:[Album class]];
-    DCObjectMapping *idMapping = [DCObjectMapping mapKeyPath:@"album_id" toAttribute:@"id" onClass:[Album class]];
-
-    [self createSongMapping];
-    DCArrayMapping *songsArrayMapping = [DCArrayMapping mapperForClassElements:[Song class] withConfiguration:[self ]
-                                                                                            forAttribute:@"songs"
-                                                                  onClass:[Album class]];
-    songsArrayMapping.objectMapping.primaryKeyAttribute =
-
-    [config addObjectMapping:nameMapping];
-    [config addObjectMapping:idMapping];
-    [config addArrayMapper:songsArrayMapping];
-
-    DCManagedObjectMapping *parser = [DCManagedObjectMapping mapperForClass:[Album class]
-            andConfiguration:config andManagedObjectContext:ctx];
-    return parser;
-}
+//- (DCManagedObjectMapping *)createAlbumMapping
+//{
+//    DCParserConfiguration *config = [DCParserConfiguration configuration];
+//    config.primaryKeyName = @"album_id";
+//
+//    DCObjectMapping *nameMapping = [DCObjectMapping mapKeyPath:@"name" toAttribute:@"name" onClass:[Album class]];
+//    DCObjectMapping *idMapping = [DCObjectMapping mapKeyPath:@"album_id" toAttribute:@"id" onClass:[Album class]];
+//
+//    [self createSongMapping];
+//    DCArrayMapping *songsArrayMapping = [DCArrayMapping mapperForClassElements:[Song class] withConfiguration:[self ]
+//                                                                                            forAttribute:@"songs"
+//                                                                  onClass:[Album class]];
+//
+//    [config addObjectMapping:nameMapping];
+//    [config addObjectMapping:idMapping];
+//    [config addArrayMapper:songsArrayMapping];
+//
+//    DCManagedObjectMapping *parser = [DCManagedObjectMapping mapperForClass:[Album class]
+//            andConfiguration:config andManagedObjectContext:ctx];
+//    return parser;
+//}
 
 - (DCManagedObjectMapping *)createSongMapping
 {
@@ -201,15 +200,15 @@
 
 }
 
-- (void)testNestedObjectUniqueness
-{
-    DCManagedObjectMapping *parser = [self createAlbumMapping];
-
-    [parser parseArray:albumsFixture];
-    NSArray *songs = [Song findAllObjectsInContext:ctx];
-    STAssertTrue(songs.count == 4, nil);
-}
-
+//- (void)testNestedObjectUniqueness
+//{
+//    DCManagedObjectMapping *parser = [self createAlbumMapping];
+//
+//    [parser parseArray:albumsFixture];
+//    NSArray *songs = [Song findAllObjectsInContext:ctx];
+//    STAssertTrue(songs.count == 4, nil);
+//}
+//
 
 
 @end

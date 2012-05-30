@@ -8,8 +8,10 @@
 
 #import "DCObjectMapping.h"
 
-@implementation DCObjectMapping
-@synthesize attributeName, keyReference, classReference;
+@implementation DCObjectMapping {
+}
+
+@synthesize attributeName, keyReference, classReference, parser;
 
 
 - (id)initWithClass: (Class) _classReference

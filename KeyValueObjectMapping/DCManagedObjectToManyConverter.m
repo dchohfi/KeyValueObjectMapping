@@ -19,15 +19,14 @@
 - (id)transformValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute andParentObject:(id)
         parentObject {
 
-    DCArrayMapping *mapper = [self.configuration arrayMapperForMapper:attribute.objectMapping];
-    mapper.objectMapping.man
-    if(mapper){
-        NSManagedObject *parentManagedObject = parentObject;
-        id parser = [DCManagedObjectMapping mapperForClass:mapper.classForElementsOnArray
-                                          andConfiguration:[mapper.classForElementsOnArray mappingConfiguration]
-                                   andManagedObjectContext:[parentManagedObject managedObjectContext]];
-        return [parser parseArray:values];
-    }
+//    DCArrayMapping *mapper = [self.configuration arrayMapperForMapper:attribute.objectMapping];
+//    if(mapper){
+//        NSManagedObject *parentManagedObject = parentObject;
+//        id parser = [DCManagedObjectMapping mapperForClass:mapper.classForElementsOnArray
+//                                          andConfiguration:[mapper.classForElementsOnArray mappingConfiguration]
+//                                   andManagedObjectContext:[parentManagedObject managedObjectContext]];
+//        return [parser parseArray:values];
+//    }
 
     return nil;
 }
