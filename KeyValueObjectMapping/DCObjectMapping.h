@@ -26,6 +26,8 @@
 
 - (id)initWithKeyPath:(NSString *)_keyReference toAttribute:(NSString *)_attributeName onClass:(Class)_classReference parser:(DCKeyValueObjectMapping *)_parser;
 
+- (id)initWithClass:(Class)class parser:(DCKeyValueObjectMapping *)parser;
+
 - (BOOL) sameKey: (NSString *) key andClassReference: (Class) classReference;
 
 @end

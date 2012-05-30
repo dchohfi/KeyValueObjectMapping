@@ -20,4 +20,6 @@
 - (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) _key attributeName: (NSString *)
         _attibuteName  parser:(DCKeyValueObjectMapping *)_parser;
 - (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) _key;
+
+- (id)initWithClass:(Class)class parser:(DCKeyValueObjectMapping *)parser;
 @end

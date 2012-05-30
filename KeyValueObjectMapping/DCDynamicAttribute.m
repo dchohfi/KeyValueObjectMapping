@@ -18,13 +18,8 @@
 @synthesize primitive, idType, validObject, objectMapping, typeName;
 
 
-- (id)initWithClass: (Class) classs {
-    self = [super init];
-    if (self) {
-        objectMapping = [[DCObjectMapping alloc] initWithClass:classs];
-        validObject = YES;
-    }
-    return self;
+- (id)initWithClass: (Class) class {
+    return [self initWithClass:class parser:nil];
 }
 
 - (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) _key {
@@ -53,6 +48,17 @@
                                              parser:_parser];
     }
     return self;
+}
+
+- (id)initWithClass:(Class)class parser:(DCKeyValueObjectMapping *)_parser
+{
+    self = [super init];
+    if (self) {
+        objectMapping = [[DCObjectMapping alloc] initWithClass:class parser:_parser];
+        validObject = YES;
+    }
+    return self;
+
 }
 
 - (NSString *) findTypeInformation: (NSString *) typeInformation {

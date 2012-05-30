@@ -16,11 +16,7 @@
 
 - (id)initWithClass: (Class) _classReference
 {
-    self = [super init];
-    if (self) {
-        classReference = _classReference;
-    }
-    return self;
+    return [self initWithClass:_classReference parser:nil];
 }
 
 + (DCObjectMapping *) mapKeyPath: (NSString *) keyPath toAttribute: (NSString *) attributeName onClass: (Class) attributeClass{
@@ -43,6 +39,16 @@
     if (self) {
         attributeName = _attributeName;
         keyReference = _keyReference;
+        classReference = _classReference;
+        parser = _parser;
+    }
+    return self;
+}
+
+- (id)initWithClass:(Class)_classReference parser:(DCKeyValueObjectMapping *)_parser
+{
+    self = [super init];
+    if (self) {
         classReference = _classReference;
         parser = _parser;
     }

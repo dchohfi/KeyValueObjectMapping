@@ -88,6 +88,7 @@
     [config addObjectMapping:nameMapping];
     [config addObjectMapping:idMapping];
     [config addObjectMapping:artistMapping];
+    [config addObjectMapping:songsMapping];
     [config addArrayMapper:songsArrayMapping];
 
     DCManagedObjectMapping *parser = [DCManagedObjectMapping mapperForClass:[Album class]
@@ -322,6 +323,10 @@
 
     STAssertEqualObjects([serializedAlbum valueForKey:@"artist"], [[albumsFixture lastObject] valueForKey:@"artist"],
     nil);
+
+    for (Song *song in album.songs) {
+        STAssertTrue([[serializedAlbum objectForKey:@"songs"] containsObject:song.id], nil);
+    }
 
 }
 

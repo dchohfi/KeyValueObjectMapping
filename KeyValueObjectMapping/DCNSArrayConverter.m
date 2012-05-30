@@ -56,8 +56,9 @@
     DCGenericConverter* genericConverter = [[DCGenericConverter alloc] initWithConfiguration:configuration];
     NSMutableArray *valuesHolder = [NSMutableArray array];
     for(id value in values){
-        DCDynamicAttribute *valueClassAsAttribute = [[DCDynamicAttribute alloc] initWithClass:[value class]];
-        [valuesHolder addObject:[genericConverter transformValue:value forDynamicAttribute:valueClassAsAttribute]];
+        DCDynamicAttribute *valueClassAsAttribute = [[DCDynamicAttribute alloc] initWithClass:[value class]
+                parser:attribute.objectMapping.parser];
+        [valuesHolder addObject:[genericConverter serializeValue:value forDynamicAttribute:valueClassAsAttribute]];
     }
     if (valuesHolder.count)
         return [NSArray arrayWithArray:valuesHolder];
