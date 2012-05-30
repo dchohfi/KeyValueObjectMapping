@@ -68,6 +68,13 @@
 
 - (id)serializeValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute
 {
+    for(id<DCValueConverter> parser in parsers){
+        if([parser canTransformValueForClass:attribute.objectMapping.classReference]){
+            return [parser serializeValue:value forDynamicAttribute:attribute];
+        }
+    }
+
+
     DCSimpleConverter *simpleParser = [[DCSimpleConverter alloc] init];
     return [simpleParser serializeValue:value forDynamicAttribute:attribute];
 

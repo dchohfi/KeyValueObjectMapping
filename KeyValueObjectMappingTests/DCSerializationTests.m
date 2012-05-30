@@ -28,6 +28,7 @@
 {
     DCParserConfiguration *config = [DCParserConfiguration configuration];
     config.primaryKeyName = @"objectId";
+    config.datePattern = @"yyyy-MM-dd HH:mm:ss";
 
     DCObjectMapping *nameMapping = [DCObjectMapping mapKeyPath:@"name" toAttribute:@"name" onClass:[SimpleArtist class]];
     DCObjectMapping *idMapping = [DCObjectMapping mapKeyPath:@"objectId" toAttribute:@"id" onClass:[SimpleArtist class]];
