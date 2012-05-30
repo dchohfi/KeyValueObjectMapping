@@ -10,6 +10,7 @@
 #import "DCSimpleConverter.h"
 #import "DCArrayMapping.h"
 #import "DCKeyValueObjectMapping.h"
+#import "DCGenericConverter.h"
 @interface DCNSArrayConverter()
 
 @property(nonatomic, strong) DCParserConfiguration *configuration;
@@ -34,7 +35,7 @@
 - (id)transformValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute {
     BOOL primitiveArray = ![[[values objectAtIndex:0] class] isSubclassOfClass:[NSDictionary class]];
     if(primitiveArray){
-        return [self parsePrimitveValues:values];
+        return [self parsePrimitiveValues:values];
     }else{
         DCArrayMapping *mapper = [configuration arrayMapperForMapper:attribute.objectMapping];
         if(mapper){
@@ -50,7 +51,21 @@
     return nil;
 }
 
-- (NSArray *) parsePrimitveValues: (NSArray *) primitiveValues {
+
+- (id) serializeValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute {
+    DCGenericConverter* genericConverter = [[DCGenericConverter alloc] initWithConfiguration:configuration];
+    NSMutableArray *valuesHolder = [NSMutableArray array];
+    for(id value in values){
+        DCDynamicAttribute *valueClassAsAttribute = [[DCDynamicAttribute alloc] initWithClass:[value class]];
+        [valuesHolder addObject:[genericConverter transformValue:value forDynamicAttribute:valueClassAsAttribute]];
+    }
+    return [NSArray arrayWithArray:valuesHolder];
+
+
+}
+
+
+- (NSArray *) parsePrimitiveValues: (NSArray *) primitiveValues {
     DCSimpleConverter *simpleParser = [[DCSimpleConverter alloc] init];
     NSMutableArray *valuesHolder = [NSMutableArray array];
     for(id value in primitiveValues){

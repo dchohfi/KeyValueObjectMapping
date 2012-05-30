@@ -41,12 +41,17 @@
 
     DCObjectMapping *numberFloatMapping = [DCObjectMapping mapKeyPath:@"numberFloat" toAttribute:@"numberFloat"
                                                                     onClass:[SimpleArtist class]];
+
+    DCObjectMapping *primitiveArrayObjectMapping = [DCObjectMapping mapKeyPath:@"primitiveArray"
+                                                                   toAttribute:@"primitiveArray"
+                                                                       onClass:[SimpleArtist class]];
     [config addObjectMapping:nameMapping];
     [config addObjectMapping:idMapping];
     [config addObjectMapping:dateMapping];
     [config addObjectMapping:homePageURLMapping];
     [config addObjectMapping:numberIntegerMapping];
     [config addObjectMapping:numberFloatMapping];
+    [config addObjectMapping:primitiveArrayObjectMapping];
 
 
     DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[SimpleArtist class]
@@ -93,8 +98,8 @@
     STAssertTrue([[serializedArtist objectForKey:@"numberFloat"] isEqualToNumber:
         [artistFixture objectForKey:@"numberFloat"]], nil);
 
-//    STAssertTrue([[serializedArtist objectForKey:@"primitiveArray"] isEqualToArray:
-//        [artistFixture objectForKey:@"primitiveArray"]], nil);
+    STAssertTrue([[serializedArtist objectForKey:@"primitiveArray"] isEqualToArray:
+        [artistFixture objectForKey:@"primitiveArray"]], nil);
 
 }
 
