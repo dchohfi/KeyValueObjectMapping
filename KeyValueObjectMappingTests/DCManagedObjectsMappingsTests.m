@@ -13,6 +13,7 @@
 #import "Song.h"
 
 
+
 @interface NSManagedObject(TestCase)
 + (NSEntityDescription *)entityDescriptionInContext:(NSManagedObjectContext *)context;
 + (NSArray *)findAllObjectsInContext:(NSManagedObjectContext *)context;
@@ -263,6 +264,34 @@
     }
 }
 
+
+- (void)testForeignKeyRelationshipsLazy
+{
+
+    NSMutableArray *notifications = [NSMutableArray array];
+    [[NSNotificationCenter defaultCenter] addObserver:notifications selector:@selector(addObject:) name:kDCKeyValueObjectMappingObjectLazyCreateNotification
+                                               object:nil];
+
+    DCManagedObjectMapping *parser;
+    parser = [self createAlbumMapping];
+    [parser parseArray:albumsFixture];
+    NSArray *albums = [Album findAllObjectsInContext:ctx];
+    NSArray *artists = [Artist findAllObjectsInContext:ctx];
+
+    for (Album *album in albums) {
+        STAssertNotNil(album.artist, nil);
+        STAssertTrue([album.artist.albums containsObject:album], nil);
+    }
+
+    for (Artist *artist in artists) {
+        STAssertTrue(artist.albums.count >= 1, nil);
+        STAssertTrue(((Album *)[artist.albums anyObject]).artist == artist, nil);
+    }
+    [[NSNotificationCenter defaultCenter] removeObserver:notifications name:kDCKeyValueObjectMappingObjectLazyCreateNotification object:nil];
+
+    STAssertTrue(notifications.count==artists.count, nil);
+
+}
 
 
 @end

@@ -13,7 +13,17 @@
 - (id)transformValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute
 {
     DCKeyValueObjectMapping *parser = attribute.objectMapping.parser;
-    return [parser findObjectByPrimaryKeyValue:value];
+    id result =  [parser findObjectByPrimaryKeyValue:value];
+    if (!result) {
+        result = [parser createObjectWithPrimaryKeyValue:value];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kDCKeyValueObjectMappingObjectLazyCreateNotification object:nil
+                                                          userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                         parser.classToGenerate, @"class",
+                                                         value, @"primaryKey"
+                                                                                  ,nil]];
+
+    }
+    return result;
 }
 
 - (BOOL)canTransformValueForClass:(Class)class

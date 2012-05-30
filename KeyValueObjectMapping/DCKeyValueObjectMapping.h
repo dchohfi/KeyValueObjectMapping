@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "DCParserConfiguration.h"
 
+
+#define kDCKeyValueObjectMappingObjectLazyCreateNotification @"kDCKeyValueObjectMappingObjectLazyCreateNotification"
+
 @class DCDynamicAttribute;
 
 @interface DCKeyValueObjectMapping : NSObject
@@ -20,8 +23,7 @@
 
 - (id) initWithClass: (Class) _classToGenerate forConfiguration: (DCParserConfiguration *) _configuration;
 
-- (id)createInstanceOfClass:(Class)class;
-
+- (id) createObjectWithPrimaryKeyValue:(id)primaryKeyValue;
 
 - (DCDynamicAttribute *)primaryKeyAttribute;
 

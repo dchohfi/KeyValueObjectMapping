@@ -29,13 +29,14 @@
     return self;
 }
 
-- (id)createInstanceOfClass:(Class)class
+- (id)createObjectWithPrimaryKeyValue:(id)primaryKeyValue
 {
-    NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass(class)
+    NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass(self.classToGenerate)
                                               inManagedObjectContext:context];
-    return [[class alloc] initWithEntity:entity
+    NSManagedObject * object = [[self.classToGenerate alloc] initWithEntity:entity
                      insertIntoManagedObjectContext:context] ;
-
+    [object setValue:primaryKeyValue forKey:self.primaryKeyAttribute.objectMapping.attributeName];
+    return object;
 }
 
 

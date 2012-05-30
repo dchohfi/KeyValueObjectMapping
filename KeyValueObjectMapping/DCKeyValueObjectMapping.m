@@ -61,9 +61,9 @@
     return [NSArray arrayWithArray:values];
 }
 
-- (id) createInstanceOfClass:(Class)class
+- (id) createObjectWithPrimaryKeyValue:(id)primaryKeyValue
 {
-    return [[class alloc] init];
+    return [[classToGenerate alloc] init];
 }
 
 
@@ -95,10 +95,10 @@
         id primaryKeyConvertedValue = [converter transformValue:primaryKeyValue forDynamicAttribute:[self primaryKeyAttribute]];
         object = [self findObjectByPrimaryKeyValue:primaryKeyConvertedValue];
         if (!object) {
-            object = [self createInstanceOfClass:classToGenerate];
+            object = [self createObjectWithPrimaryKeyValue:primaryKeyValue];
         }
     } else {
-        object = [self createInstanceOfClass:classToGenerate];
+        object = [self createObjectWithPrimaryKeyValue:nil];
     }
 
 
