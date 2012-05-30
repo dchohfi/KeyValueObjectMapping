@@ -212,6 +212,24 @@
     STAssertTrue(songsSecondTime.count == 4, nil);
 }
 
+- (void)testNestedObjectRelationships
+{
+    DCManagedObjectMapping *parser = [self createAlbumMapping];
+
+    NSArray *albums = [parser parseArray:albumsFixture];
+    NSArray *songs = [Song findAllObjectsInContext:ctx];
+
+    for (Album *album in albums) {
+        STAssertTrue(album.songs.count > 1, nil);
+    }
+
+    for (Song *song in songs) {
+        STAssertTrue(song.albums.count >= 1, nil);
+        Album * album = [song.albums anyObject];
+        STAssertTrue([album.songs containsObject:song], nil);
+    }
+}
+
 
 
 @end
