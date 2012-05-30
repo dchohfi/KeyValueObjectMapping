@@ -293,4 +293,18 @@
 }
 
 
+- (void)testManagedObjectSerialization
+{
+//    DCManagedObjectMapping *parser = [self createArtistMapping];
+//
+//    NSDictionary *artistFixture = [artistsFixture lastObject];
+//
+//    [parser parseDictionary:art];
+//    NSArray *artists =  [Artist findAllObjectsInContext:ctx];
+//    [parser serializeObject:]
+//
+//    STAssertTrue(artist, <#description#>, <#__VA_ARGS__...#>)
+}
+
+
 @end

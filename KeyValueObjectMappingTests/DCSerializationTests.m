@@ -104,6 +104,25 @@
 }
 
 
+- (void)testObjectArraySerializationSanity
+{
+    DCKeyValueObjectMapping *parser = [self createArtistMapping];
+
+    NSArray * artists = [parser parseArray:artistsFixture];
+    NSArray *serializedArtists = [parser serializeObjectArray:artists];
+
+    STAssertTrue(artists.count == serializedArtists.count, nil);
+
+    [serializedArtists enumerateObjectsUsingBlock:
+            ^(NSDictionary * serializedArtist, NSUInteger i, BOOL*stop) {
+               NSDictionary *originalArtist = [artistsFixture objectAtIndex:i];
+                STAssertTrue(serializedArtist.count == originalArtist.count, nil);
+                STAssertEqualObjects(serializedArtist, originalArtist, nil);
+            }];
+
+}
+
+
 
 
 @end

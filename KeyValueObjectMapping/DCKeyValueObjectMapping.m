@@ -97,6 +97,18 @@
     return [NSDictionary dictionaryWithDictionary:serializedObject];
 }
 
+
+- (NSArray *)serializeObjectArray:(NSArray *)objectArray
+{
+    NSMutableArray *serializedObjects = [[NSMutableArray alloc] init];
+
+    for (id object in objectArray) {
+        [serializedObjects addObject:[self serializeObject:object]];
+    }
+
+    return [NSArray arrayWithArray:serializedObjects];
+}
+
 - (id) parseDictionary: (NSDictionary *) dictionary {
     if(!dictionary || !classToGenerate){
         return nil;

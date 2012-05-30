@@ -23,7 +23,7 @@
 
 - (id) serializeValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute
 {
-    return [NSString stringWithFormat:@"%@", value];
+    return [((NSURL *)value) absoluteString];
 }
 
 @end

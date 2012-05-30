@@ -36,4 +36,5 @@
 - (NSDictionary *)serializeObject:(id)object;
 
 
+- (NSArray *)serializeObjectArray:(NSArray *)objectArray;
 @end

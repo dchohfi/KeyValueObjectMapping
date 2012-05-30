@@ -59,7 +59,10 @@
         DCDynamicAttribute *valueClassAsAttribute = [[DCDynamicAttribute alloc] initWithClass:[value class]];
         [valuesHolder addObject:[genericConverter transformValue:value forDynamicAttribute:valueClassAsAttribute]];
     }
-    return [NSArray arrayWithArray:valuesHolder];
+    if (valuesHolder.count)
+        return [NSArray arrayWithArray:valuesHolder];
+    else
+        return nil;
 
 
 }
