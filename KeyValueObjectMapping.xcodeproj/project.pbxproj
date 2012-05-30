@@ -75,6 +75,8 @@
 		5799571C15756AF300C89F16 /* DCNSSetConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F15 /* DCNSSetConverter.h */; };
 		5799571C15756AF300C89F18 /* DCForeignKeyConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F17 /* DCForeignKeyConverter.m */; };
 		5799571C15756AF300C89F1A /* DCForeignKeyConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F19 /* DCForeignKeyConverter.h */; };
+		5799571C15756AF300C89F1C /* DCSerializationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F1B /* DCSerializationTests.m */; };
+		5799571C15756AF300C89F1F /* SimpleArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F1E /* SimpleArtist.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +177,10 @@
 		5799571C15756AF300C89F15 /* DCNSSetConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNSSetConverter.h; sourceTree = "<group>"; };
 		5799571C15756AF300C89F17 /* DCForeignKeyConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCForeignKeyConverter.m; sourceTree = "<group>"; };
 		5799571C15756AF300C89F19 /* DCForeignKeyConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCForeignKeyConverter.h; sourceTree = "<group>"; };
+		5799571C15756AF300C89F1B /* DCSerializationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCSerializationTests.m; sourceTree = "<group>"; };
+		5799571C15756AF300C89F1D /* DCSerializationTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCSerializationTests.h; sourceTree = "<group>"; };
+		5799571C15756AF300C89F1E /* SimpleArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleArtist.m; sourceTree = "<group>"; };
+		5799571C15756AF300C89F20 /* SimpleArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleArtist.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +275,8 @@
 		205FD3BC153F02AA00693E13 /* KeyValueObjectMappingTests */ = {
 			isa = PBXGroup;
 			children = (
+				5799571C15756AF300C89F1D /* DCSerializationTests.h */,
+				5799571C15756AF300C89F1B /* DCSerializationTests.m */,
 				5799570415754A9100C89F0F /* DCManagedObjectsMappingsTests.h */,
 				5799570415754A9100C89F0D /* DCManagedObjectsMappingsTests.m */,
 				205FD406153F03E500693E13 /* Model */,
@@ -383,6 +391,8 @@
 		205FD406153F03E500693E13 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5799571C15756AF300C89F20 /* SimpleArtist.h */,
+				5799571C15756AF300C89F1E /* SimpleArtist.m */,
 				205FD407153F03F000693E13 /* Person.h */,
 				205FD408153F03F000693E13 /* Person.m */,
 				205FD409153F03F000693E13 /* Tweet.h */,
@@ -633,6 +643,8 @@
 				5799570415754A9100C89F0E /* DCManagedObjectsMappingsTests.m in Sources */,
 				5799571915756AF200C89F0C /* Album.m in Sources */,
 				5799571C15756AF300C89F0C /* Artist.m in Sources */,
+				5799571C15756AF300C89F1C /* DCSerializationTests.m in Sources */,
+				5799571C15756AF300C89F1F /* SimpleArtist.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

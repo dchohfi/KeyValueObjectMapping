@@ -105,7 +105,6 @@
     DCObjectMapping *artistMapping = [DCObjectMapping mapKeyPath:@"artist" toAttribute:@"artist" onClass:[Song class]
             parser:[self createArtistMapping]];
 
-
     [config addObjectMapping:artistMapping];
 
     [config addObjectMapping:nameMapping];

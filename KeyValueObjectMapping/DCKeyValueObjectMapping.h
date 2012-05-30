@@ -33,4 +33,7 @@
 - (id) parseDictionary: (NSDictionary *) dictionary;
 - (NSArray *) parseArray: (NSArray *) array;
 
+- (NSDictionary *)serializeObject:(id)object;
+
+
 @end

@@ -12,7 +12,6 @@
 @interface DCPropertyFinder()
 
 @property(nonatomic, strong) DCReferenceKeyParser *keyParser;
-@property(nonatomic, strong) NSArray *mappers;
 
 @end
 
@@ -82,4 +81,6 @@
     }
     return nil;
 }
+
+
 @end

@@ -66,4 +66,10 @@
     return [simpleParser transformValue:value forDynamicAttribute:attribute];
 }
 
+- (id)serializeValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute
+{
+    DCSimpleConverter *simpleParser = [[DCSimpleConverter alloc] init];
+    return [simpleParser serializeValue:value forDynamicAttribute:attribute];
+
+}
 @end

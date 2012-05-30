@@ -79,6 +79,24 @@
  return nil;
 }
 
+- (NSDictionary *)serializeObject:(id)object
+{
+    NSMutableDictionary *serializedObject = [[NSMutableDictionary alloc] init];
+
+    for (DCObjectMapping *mapping in propertyFinder.mappers) {
+        NSString * attributeName = mapping.attributeName;
+        id value = [object valueForKey:attributeName];
+        DCDynamicAttribute *dynamicAttribute = [propertyFinder findAttributeForKey:mapping.keyReference onClass:classToGenerate];
+        if(dynamicAttribute){
+            [self serializeValue:value toDictionary:serializedObject
+                     inAttribute:dynamicAttribute];
+        }
+
+    }
+
+    return [NSDictionary dictionaryWithDictionary:serializedObject];
+}
+
 - (id) parseDictionary: (NSDictionary *) dictionary {
     if(!dictionary || !classToGenerate){
         return nil;
@@ -121,4 +139,15 @@
     value = [converter transformValue:value forDynamicAttribute:dynamicAttribute];
     [DCAttributeSetter assingValue:value forAttributeName:attributeName andAttributeClass:objectMapping.classReference onObject:object];
 }
+
+
+- (void) serializeValue: (id) value toDictionary: (NSMutableDictionary *) dictionary inAttribute: (DCDynamicAttribute
+*) dynamicAttribute {
+    DCObjectMapping *objectMapping = dynamicAttribute.objectMapping;
+
+    value = [converter serializeValue:value forDynamicAttribute:dynamicAttribute];
+    [dictionary setValue:value forKeyPath:objectMapping.keyReference];
+}
+
+
 @end
