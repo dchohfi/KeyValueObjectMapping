@@ -9,6 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "DCValueConverter.h"
 
+@class DCParserConfiguration;
+@class DCKeyValueObjectMapping;
+
 @interface DCNSArrayConverter : NSObject <DCValueConverter>
+
+
+@property (strong, readonly) DCKeyValueObjectMapping* parser;
+@property (readonly) BOOL fullSerialization;
+
+- (id)initWithParser:(DCKeyValueObjectMapping *)_parser fullSerialization:(BOOL)_fullSerialization;
+
 + (DCNSArrayConverter *) arrayConverterForConfiguration: (DCParserConfiguration *)configuration;
 @end

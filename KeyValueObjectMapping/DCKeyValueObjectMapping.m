@@ -8,7 +8,6 @@
 
 #import "DCKeyValueObjectMapping.h"
 #import "DCGenericConverter.h"
-#import "DCDynamicAttribute.h"
 #import "DCReferenceKeyParser.h"
 #import "DCPropertyFinder.h"
 #import "DCAttributeSetter.h"
@@ -25,12 +24,8 @@
 @end
 
 @implementation DCKeyValueObjectMapping
-@synthesize converter, propertyFinder, configuration, classToGenerate, fullSerialization;
+@synthesize converter, propertyFinder, configuration, classToGenerate;
 
-- (void)setFullSerialization:(BOOL)aFullSerialization
-{
-    fullSerialization=aFullSerialization;
-}
 
 + (DCKeyValueObjectMapping *) mapperForClass: (Class) classToGenerate {
     return [self mapperForClass:classToGenerate andConfiguration:[DCParserConfiguration configuration]];
@@ -42,7 +37,6 @@
 - (id) initWithClass: (Class) _classToGenerate forConfiguration: (DCParserConfiguration *) _configuration {
     self = [super init];
     if (self) {
-        fullSerialization = YES;
         configuration = _configuration;
         DCReferenceKeyParser *keyParser = [DCReferenceKeyParser parserForToken: configuration.splitToken];
         
@@ -87,7 +81,7 @@
 
 - (NSDictionary *)serializeObject:(id)object
 {
-    if (!fullSerialization) {
+    if (NO) { //fixme
         return [object valueForKeyPath:[self primaryKeyAttribute].objectMapping.attributeName];
     }
 
@@ -159,7 +153,10 @@
     DCObjectMapping *objectMapping = dynamicAttribute.objectMapping;
 
     NSString *attributeName = objectMapping.attributeName;
-    value = [converter transformValue:value forDynamicAttribute:dynamicAttribute];
+    if (objectMapping.converter)
+        value = [objectMapping.converter transformValue:value forDynamicAttribute:dynamicAttribute];
+    else
+        value = [converter transformValue:value forDynamicAttribute:dynamicAttribute];
     [DCAttributeSetter assingValue:value forAttributeName:attributeName andAttributeClass:objectMapping.classReference onObject:object];
 }
 
@@ -168,7 +165,10 @@
 *) dynamicAttribute {
     DCObjectMapping *objectMapping = dynamicAttribute.objectMapping;
 
-    value = [converter serializeValue:value forDynamicAttribute:dynamicAttribute];
+    if (objectMapping.converter)
+        value = [objectMapping.converter serializeValue:value forDynamicAttribute:dynamicAttribute];
+    else
+        value = [converter serializeValue:value forDynamicAttribute:dynamicAttribute];
     [dictionary setValue:value forKeyPath:objectMapping.keyReference];
 }
 

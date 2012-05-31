@@ -18,20 +18,13 @@
 @synthesize primitive, idType, validObject, objectMapping, typeName;
 
 
-- (id)initWithClass: (Class) class {
-    return [self initWithClass:class parser:nil];
-}
-
-- (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) _key {
-    return [self initWithAttributeDescription:description forKey:_key attributeName:nil parser:nil];
-}
 
 
 
 
 
 - (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) _key attributeName: (NSString *)
-        _attibuteName  parser:(DCKeyValueObjectMapping *)_parser
+        _attibuteName
 {
     self = [super init];
     if (self) {
@@ -45,20 +38,27 @@
         
         Class attributeClass = NSClassFromString(typeName);
         objectMapping = [DCObjectMapping mapKeyPath:_key toAttribute:attributeName onClass:attributeClass
-                                             parser:_parser];
+                                            ];
     }
     return self;
 }
 
-- (id)initWithClass:(Class)class parser:(DCKeyValueObjectMapping *)_parser
+
+
+- (id)initWithClass:(Class)class
 {
     self = [super init];
     if (self) {
-        objectMapping = [[DCObjectMapping alloc] initWithClass:class parser:_parser];
+        objectMapping = [[DCObjectMapping alloc] initWithClass:class ];
         validObject = YES;
     }
     return self;
 
+}
+
+- (id)initWithAttributeDescription:(NSString *)description forKey:(NSString *)key
+{
+    return [self initWithAttributeDescription:description forKey:key attributeName:nil];
 }
 
 - (NSString *) findTypeInformation: (NSString *) typeInformation {

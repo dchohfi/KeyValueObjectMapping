@@ -10,9 +10,19 @@
 @implementation DCForeignKeyConverter {
 
 }
+@synthesize fullSerialization,parser;
+
+
+- (id) initWithParser:(DCKeyValueObjectMapping*) _parser fullSerialization: (BOOL) _fullSerialization {
+    self = [super init];
+    if (self) {
+        parser = _parser;
+        fullSerialization = _fullSerialization;
+    }
+    return self;
+}
 - (id)transformValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute
 {
-    DCKeyValueObjectMapping *parser = attribute.objectMapping.parser;
     id result =  [parser findObjectByPrimaryKeyValue:value];
     if (!result) {
         result = [parser createObjectWithPrimaryKeyValue:value];
@@ -28,8 +38,7 @@
 
 
 - (id) serializeValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute {
-        DCKeyValueObjectMapping *foreignObjectParser = attribute.objectMapping.parser;
-    return [foreignObjectParser serializeObject:value];
+    return [parser serializeObject:value];
 }
 
 - (BOOL)canTransformValueForClass:(Class)class

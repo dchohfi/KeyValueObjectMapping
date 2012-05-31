@@ -19,11 +19,22 @@
 
 @implementation DCNSArrayConverter
 @synthesize configuration;
+@synthesize fullSerialization, parser;
+
 
 + (DCNSArrayConverter *) arrayConverterForConfiguration: (DCParserConfiguration *)configuration {
     return [[self alloc] initWithConfiguration: configuration];
 }
 
+
+- (id) initWithParser:(DCKeyValueObjectMapping*) _parser fullSerialization: (BOOL) _fullSerialization {
+    self = [super init];
+    if (self) {
+        parser = _parser;
+        fullSerialization = _fullSerialization;
+    }
+    return self;
+}
 - (id)initWithConfiguration:(DCParserConfiguration *)_configuration{
     self = [super init];
     if (self) {
@@ -36,26 +47,25 @@
     BOOL primitiveArray = ![[[values objectAtIndex:0] class] isSubclassOfClass:[NSDictionary class]];
     if(primitiveArray){
         return [self parsePrimitiveValues:values];
-    }else{
+    }
+    DCKeyValueObjectMapping* currentParser = parser;
+    if (!currentParser) {
         DCArrayMapping *mapper = [configuration arrayMapperForMapper:attribute.objectMapping];
         if(mapper){
-            id parser =  mapper.objectMapping.parser;
-            if (!parser) {
-                parser = [DCKeyValueObjectMapping mapperForClass:mapper.classForElementsOnArray
-                                                andConfiguration:self.configuration];
+            currentParser = [DCKeyValueObjectMapping mapperForClass:mapper.classForElementsOnArray
+                                                                     andConfiguration:self.configuration];
 
-            }
-            return [parser parseArray:values];
         }
+
     }
-    return nil;
+    return [currentParser parseArray:values];
 }
 
 
 - (id) serializeValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute {
-    if (attribute.objectMapping.parser) {
-        return [attribute.objectMapping.parser serializeObjectArray:values];
-    }
+//    if (attribute.objectMapping.parser) {
+//        return [attribute.objectMapping.parser serializeObjectArray:values];
+//    }
     DCGenericConverter* genericConverter = [[DCGenericConverter alloc] initWithConfiguration:configuration];
     NSMutableArray *valuesHolder = [NSMutableArray array];
 

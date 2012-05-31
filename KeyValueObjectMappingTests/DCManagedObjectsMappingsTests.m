@@ -11,6 +11,7 @@
 #import "DCManagedObjectMapping.h"
 #import "Album.h"
 #import "Song.h"
+#import "DCForeignKeyConverter.h"
 
 
 
@@ -74,18 +75,18 @@
     config.primaryKeyName = @"album_id";
 
     DCManagedObjectMapping *songParser = [self createSongMapping];
-    songParser.fullSerialization = fullSongSerialization;
     DCObjectMapping *nameMapping = [DCObjectMapping mapKeyPath:@"name" toAttribute:@"name" onClass:[Album class]];
     DCObjectMapping *idMapping = [DCObjectMapping mapKeyPath:@"album_id" toAttribute:@"id" onClass:[Album class]];
     DCObjectMapping *songsMapping = [DCObjectMapping mapKeyPath:@"songs" toAttribute:@"songs" onClass:[Album class]
-                                                         parser:songParser];
+                                                         converter:[[DCForeignKeyConverter alloc] initWithParser:songParser
+                                                                                               fullSerialization:fullSongSerialization]];
 
 
 
     DCManagedObjectMapping *artistParser = [self createArtistMapping];
-    artistParser.fullSerialization = NO;
     DCObjectMapping *artistMapping = [DCObjectMapping mapKeyPath:@"artist" toAttribute:@"artist" onClass:[Album class]
-            parser:artistParser];
+            converter:[[DCForeignKeyConverter alloc] initWithParser:artistParser
+                                                  fullSerialization:NO]];
 
 
     DCArrayMapping *songsArrayMapping = [DCArrayMapping mapperForClass:[Song class]
@@ -108,11 +109,11 @@
     config.primaryKeyName = @"id";
 
     DCManagedObjectMapping *artistParser = [self createArtistMapping];
-    artistParser.fullSerialization = NO;
     DCObjectMapping *nameMapping = [DCObjectMapping mapKeyPath:@"title" toAttribute:@"title" onClass:[Song class]];
     DCObjectMapping *idMapping = [DCObjectMapping mapKeyPath:@"id" toAttribute:@"id" onClass:[Song class]];
     DCObjectMapping *artistMapping = [DCObjectMapping mapKeyPath:@"artist" toAttribute:@"artist" onClass:[Song class]
-            parser:artistParser];
+            converter:[[DCForeignKeyConverter alloc] initWithParser:artistParser
+                                                  fullSerialization:NO]];
 
     [config addObjectMapping:artistMapping];
 

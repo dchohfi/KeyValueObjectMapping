@@ -7,6 +7,13 @@
 #import <Foundation/Foundation.h>
 #import "DCValueConverter.h"
 
+@class DCKeyValueObjectMapping;
+
 
 @interface DCForeignKeyConverter : NSObject <DCValueConverter>
+@property (strong, readonly) DCKeyValueObjectMapping* parser;
+@property (readonly) BOOL fullSerialization;
+
+- (id)initWithParser:(DCKeyValueObjectMapping *)_parser fullSerialization:(BOOL)_fullSerialization;
+
 @end

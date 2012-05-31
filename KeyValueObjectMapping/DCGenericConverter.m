@@ -43,9 +43,7 @@
         BOOL valueIsKindOfDictionary = [value isKindOfClass:[NSDictionary class]];
         BOOL attributeNotKindOfDictionary = ![attribute.objectMapping.classReference isSubclassOfClass:[NSDictionary class]];
         if( valueIsKindOfDictionary && attributeNotKindOfDictionary){
-            DCKeyValueObjectMapping *parser =  attribute.objectMapping.parser;
-            if (!parser)
-                parser = [DCKeyValueObjectMapping mapperForClass:attribute.objectMapping.classReference
+            DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:attribute.objectMapping.classReference
                                              andConfiguration:self.configuration];
             value = [parser parseDictionary:(NSDictionary *) value];
         }else {        
@@ -56,11 +54,11 @@
             }
         }
     }
-    if (attribute.objectMapping.parser) {
-        DCForeignKeyConverter* foreignKeyConverter = [[DCForeignKeyConverter alloc] init];
-        id result = [foreignKeyConverter transformValue:value forDynamicAttribute:attribute];
-        return result;
-    }
+//    if (attribute.objectMapping.parser) {
+//        DCForeignKeyConverter* foreignKeyConverter = [[DCForeignKeyConverter alloc] init];
+//        id result = [foreignKeyConverter transformValue:value forDynamicAttribute:attribute];
+//        return result;
+//    }
 
     DCSimpleConverter *simpleParser = [[DCSimpleConverter alloc] init];
     return [simpleParser transformValue:value forDynamicAttribute:attribute];
@@ -74,11 +72,11 @@
         }
     }
 
-    if (attribute.objectMapping.parser) {
-        DCForeignKeyConverter* foreignKeyConverter = [[DCForeignKeyConverter alloc] init];
-        id result = [foreignKeyConverter serializeValue:value forDynamicAttribute:attribute];
-        return result;
-    }
+//    if (attribute.objectMapping.parser) {
+//        DCForeignKeyConverter* foreignKeyConverter = [[DCForeignKeyConverter alloc] init];
+//        id result = [foreignKeyConverter serializeValue:value forDynamicAttribute:attribute];
+//        return result;
+//    }
 
 
 

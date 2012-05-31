@@ -17,7 +17,6 @@
 @interface DCKeyValueObjectMapping : NSObject
 
 @property(nonatomic, readonly) Class classToGenerate;
-@property BOOL fullSerialization;
 
 + (DCKeyValueObjectMapping *) mapperForClass: (Class) classToGenerate;
 + (DCKeyValueObjectMapping *) mapperForClass: (Class) classToGenerate andConfiguration: (DCParserConfiguration *) configuration;

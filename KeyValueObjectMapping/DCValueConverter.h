@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DCParserConfiguration.h"
-#import "DCDynamicAttribute.h"
+@class DCDynamicAttribute;
 @protocol DCValueConverter <NSObject>
 
 - (id) transformValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute;
