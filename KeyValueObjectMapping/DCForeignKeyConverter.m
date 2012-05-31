@@ -28,7 +28,7 @@
 
 
 - (id) serializeValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute {
-    DCKeyValueObjectMapping *foreignObjectParser = attribute.objectMapping.parser;
+        DCKeyValueObjectMapping *foreignObjectParser = attribute.objectMapping.parser;
     return [foreignObjectParser serializeObject:value];
 }
 

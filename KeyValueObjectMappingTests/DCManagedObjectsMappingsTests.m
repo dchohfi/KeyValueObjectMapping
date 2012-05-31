@@ -358,6 +358,8 @@
 
     STAssertTrue(albumsFixture.count == serializedAlbums.count, nil);
 
+    // replace songs array within each album with a set of same songs
+    // because we don't care about order of songs
     [albumsFixture enumerateObjectsUsingBlock:^(NSDictionary * albumDictionary, NSUInteger i, BOOL* stop){
         NSMutableDictionary *mAlbumDictionary = [NSMutableDictionary dictionaryWithDictionary:albumDictionary];
         NSMutableDictionary *mSerializedAlbumDictionary = [NSMutableDictionary
@@ -366,11 +368,6 @@
         [mSerializedAlbumDictionary setObject:[NSSet setWithArray:[mSerializedAlbumDictionary objectForKey:@"songs"]] forKey:@"songs"];
 
         STAssertEqualObjects(mAlbumDictionary, mAlbumDictionary, nil);
-
-
-
     }];
-
-    // compare two sets of songs
 }
 @end
