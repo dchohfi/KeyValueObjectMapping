@@ -33,10 +33,19 @@
         return [NSDate dateWithTimeIntervalSince1970:[value doubleValue]];
     }else{
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        formatter.dateFormat = pattern;
+        if (pattern)
+            formatter.dateFormat = pattern;
         return [formatter dateFromString:value];
     }
 }
+
+- (id) serializeValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = pattern;
+    return [formatter stringFromDate:value];
+}
+
 - (BOOL) canTransformValueForClass: (Class) class {
     return [class isSubclassOfClass:[NSDate class]];
 }

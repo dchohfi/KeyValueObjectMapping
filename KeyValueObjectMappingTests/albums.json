@@ -1,0 +1,41 @@
+[
+    {
+        "artist": "1",
+        "name" : "Some Album",
+        "album_id":"1",
+        "songs" : [
+            {
+                "id":"1",
+                "title":"Some song 1",
+                "artist":"1"
+            },
+            {
+                "id":"2",
+                "title":"Some song 2",
+                "artist":"1"
+            },
+            {
+                "id":"3",
+                "title":"Some song 3",
+                "artist":"1"
+            }
+        ]
+    },
+    {
+        "name" : "Some Album 2",
+        "artist": "2",
+        "album_id":"2",
+        "songs" : [
+            {
+                "id":"1",
+                "title":"Some song 1",
+                "artist":"1"
+            },
+            {
+                "id":"4",
+                "title":"Some song from artist 2",
+                "artist":"2"
+            }
+        ]
+    }
+]

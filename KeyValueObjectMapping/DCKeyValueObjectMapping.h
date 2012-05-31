@@ -9,13 +9,32 @@
 #import <Foundation/Foundation.h>
 #import "DCParserConfiguration.h"
 
+
+#define kDCKeyValueObjectMappingRequestPopulationNotification @"kDCKeyValueObjectMappingRequestPopulationNotification"
+
+@class DCDynamicAttribute;
+
 @interface DCKeyValueObjectMapping : NSObject
 
 @property(nonatomic, readonly) Class classToGenerate;
 
 + (DCKeyValueObjectMapping *) mapperForClass: (Class) classToGenerate;
 + (DCKeyValueObjectMapping *) mapperForClass: (Class) classToGenerate andConfiguration: (DCParserConfiguration *) configuration;
+
+- (id) initWithClass: (Class) _classToGenerate forConfiguration: (DCParserConfiguration *) _configuration;
+
+- (id) createObjectWithPrimaryKeyValue:(id)primaryKeyValue;
+
+- (DCDynamicAttribute *)primaryKeyAttribute;
+
+
+- (id)findObjectByPrimaryKeyValue:(id)primaryKeyValue;
+
 - (id) parseDictionary: (NSDictionary *) dictionary;
 - (NSArray *) parseArray: (NSArray *) array;
 
+- (NSDictionary *)serializeObject:(id)object;
+
+
+- (NSArray *)serializeObjectArray:(NSArray *)objectArray;
 @end

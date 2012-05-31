@@ -21,4 +21,9 @@
     return [class isSubclassOfClass:[NSURL class]];
 }
 
+- (id) serializeValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute
+{
+    return [((NSURL *)value) absoluteString];
+}
+
 @end

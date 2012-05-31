@@ -12,9 +12,11 @@
 
 @interface DCPropertyFinder : NSObject
 
+@property(nonatomic, strong) NSArray *mappers;
+
+
 + (DCPropertyFinder *) finderWithKeyParser: (DCReferenceKeyParser *) keyParser;
 - (DCDynamicAttribute *) findAttributeForKey: (NSString *) key onClass: (Class) className;
-- (void) setMappers: (NSArray *) mappers;
 
 
 @end
