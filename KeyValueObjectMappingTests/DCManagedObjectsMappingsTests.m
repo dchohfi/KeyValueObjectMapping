@@ -265,7 +265,7 @@
 {
 
     NSMutableArray *notifications = [NSMutableArray array];
-    [[NSNotificationCenter defaultCenter] addObserver:notifications selector:@selector(addObject:) name:kDCKeyValueObjectMappingObjectLazyCreateNotification
+    [[NSNotificationCenter defaultCenter] addObserver:notifications selector:@selector(addObject:) name:kDCKeyValueObjectMappingRequestPopulationNotification
                                                object:nil];
 
     DCManagedObjectMapping *parser;
@@ -283,7 +283,7 @@
         STAssertTrue(artist.albums.count >= 1, nil);
         STAssertTrue(((Album *)[artist.albums anyObject]).artist == artist, nil);
     }
-    [[NSNotificationCenter defaultCenter] removeObserver:notifications name:kDCKeyValueObjectMappingObjectLazyCreateNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:notifications name:kDCKeyValueObjectMappingRequestPopulationNotification object:nil];
 
     STAssertTrue(notifications.count==artists.count, nil);
 

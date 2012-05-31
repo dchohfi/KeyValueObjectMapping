@@ -10,7 +10,7 @@
 #import "DCParserConfiguration.h"
 
 
-#define kDCKeyValueObjectMappingObjectLazyCreateNotification @"kDCKeyValueObjectMappingObjectLazyCreateNotification"
+#define kDCKeyValueObjectMappingRequestPopulationNotification @"kDCKeyValueObjectMappingRequestPopulationNotification"
 
 @class DCDynamicAttribute;
 

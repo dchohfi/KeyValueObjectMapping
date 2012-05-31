@@ -18,6 +18,7 @@
     NSMutableArray *foreignKeysToPopulateWithParsers;
     NSManagedObjectContext *context;
 }
+@synthesize delegate = _delegate;
 
 
 - (id<DCValueConverter>) createConverterFromDictionary:(NSDictionary *)converterDict {
@@ -90,6 +91,15 @@
     return [self initWithConfiguration:configurationDictionary andManagedObjectContext:nil];
 }
 
+- (void)requestPopulationCallback:(NSNotification *)notification
+{
+    Class class = [notification.userInfo objectForKey:@"class"];
+    id primaryKey = [notification.userInfo objectForKey:@"primaryKey"];
+
+    [self.delegate mapperManager:self
+            requestedPopulatingOfObjectOfClass:class primaryKey:primaryKey];
+}
+
 - (id)initWithConfiguration:(NSDictionary *)configurationDictionary andManagedObjectContext:(NSManagedObjectContext
 *)_context
 {
@@ -114,6 +124,10 @@
         }
         foreignKeysToPopulateWithParsers = nil;
 
+
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestPopulationCallback:)
+                                                     name:kDCKeyValueObjectMappingRequestPopulationNotification
+                                                   object:nil];       //fixme should monitor only myown parsers
     }
     return self;
 }
@@ -127,4 +141,31 @@
 {
     return [self mapperForClass:class];
 }
+
+
+-(void) dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
+-(id) parse:(id) dictionaryOrArray ForClass:(Class) class{
+    DCKeyValueObjectMapping * mapper = [self mapperForClass:class];
+    if ([dictionaryOrArray isKindOfClass:[NSArray class]]) {
+        return [mapper parseArray:dictionaryOrArray];
+    } else {
+        return [mapper parseDictionary:dictionaryOrArray];
+    }
+}
+
+-(id) serialize:(id) objectOrArray {
+    DCKeyValueObjectMapping * mapper;
+    if ([objectOrArray isKindOfClass:[NSArray class]]) {
+        mapper = [self mapperForClass:[[objectOrArray lastObject] class]];
+        return [mapper serializeObjectArray:objectOrArray];
+    } else {
+        mapper = [self mapperForClass:[objectOrArray class]];
+        return [mapper serializeObject:objectOrArray];
+    }
+}
+
 @end

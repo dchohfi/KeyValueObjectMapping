@@ -40,7 +40,7 @@
         result =  [parser findObjectByPrimaryKeyValue:primaryKey];
         if (!result) {
             result = [parser createObjectWithPrimaryKeyValue:primaryKey];
-            [[NSNotificationCenter defaultCenter] postNotificationName:kDCKeyValueObjectMappingObjectLazyCreateNotification object:nil
+            [[NSNotificationCenter defaultCenter] postNotificationName:kDCKeyValueObjectMappingRequestPopulationNotification object:nil
                                                               userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
                                                                       parser.classToGenerate, @"class",
                                                                       value, @"primaryKey"

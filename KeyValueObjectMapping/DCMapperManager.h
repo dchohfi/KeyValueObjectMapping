@@ -9,8 +9,17 @@
 @class DCManagedObjectMapping;
 @class NSManagedObjectContext;
 
+@class DCMapperManager;
+
+@protocol DCMapperManagerDelegate
+- (void) mapperManager:(DCMapperManager *)mapperManager
+        requestedPopulatingOfObjectOfClass:(Class)class
+            primaryKey:(id) primaryKey;
+@end
+
 
 @interface DCMapperManager : NSObject
+@property (unsafe_unretained) id<DCMapperManagerDelegate> delegate;
 - (id)initWithConfiguration:(NSDictionary *)configurationDictionary;
 
 - (id)initWithConfiguration:(NSDictionary *)configurationDictionary andManagedObjectContext:(NSManagedObjectContext
@@ -18,4 +27,10 @@
 - (id)mapperForClass:(Class)class;
 
 - (DCManagedObjectMapping *)managedMapperForClass:(Class)class;
+
+- (id)parse:(id)dictionaryOrArray ForClass:(Class)class;
+
+
+- (id)serialize:(id)objectOrArray;
+
 @end
