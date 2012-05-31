@@ -6,6 +6,24 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
+@class DCManagedObjectMapping;
+@class NSManagedObjectContext;
 
-@interface DCManagedObjectsMappingsTests : SenTestCase
+
+@interface DCManagedObjectsMappingsTests : SenTestCase   {
+    NSManagedObjectContext *ctx;
+
+}
+- (DCManagedObjectMapping *)createArtistMapping;
+
+- (DCManagedObjectMapping *)createAlbumMapping;
+
+
+- (DCManagedObjectMapping *)createSongMapping;
+
+- (void)setUp;
+
+- (void)tearDown;
+
+
 @end

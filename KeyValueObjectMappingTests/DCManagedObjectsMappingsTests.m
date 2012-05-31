@@ -4,6 +4,7 @@
 //
 
 
+#import <CoreData/CoreData.h>
 #import "DCManagedObjectsMappingsTests.h"
 #import "DCParserConfiguration.h"
 
@@ -13,29 +14,12 @@
 #import "Song.h"
 #import "DCForeignKeyConverter.h"
 #import "DCNSSetConverter.h"
+#import "NSManagedObject+TestCase.h"
 
 
 
-@interface NSManagedObject(TestCase)
-+ (NSEntityDescription *)entityDescriptionInContext:(NSManagedObjectContext *)context;
-+ (NSArray *)findAllObjectsInContext:(NSManagedObjectContext *)context;
-@end
 
-@implementation NSManagedObject(TestCase)
-+ (NSEntityDescription *)entityDescriptionInContext:(NSManagedObjectContext *)context
-{
-    return [self respondsToSelector:@selector(entityInManagedObjectContext:)] ?
-            [self performSelector:@selector(entityInManagedObjectContext:) withObject:context] :
-            [NSEntityDescription entityForName:NSStringFromClass(self) inManagedObjectContext:context];
-}
-+ (NSArray *)findAllObjectsInContext:(NSManagedObjectContext *)context
-{
-    NSEntityDescription *entity = [self entityDescriptionInContext:context];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:entity];
-    return [context executeFetchRequest:request error:nil];
-}
-@end
+
 
 @implementation DCManagedObjectsMappingsTests {
     NSArray *artistsFixture;
@@ -43,7 +27,6 @@
     
     
     NSPersistentStoreCoordinator *coord;
-    NSManagedObjectContext *ctx;
     NSManagedObjectModel *model;
     NSPersistentStore *store;
 
@@ -68,6 +51,10 @@
     DCManagedObjectMapping *parser = [DCManagedObjectMapping mapperForClass:[Artist class]
          andConfiguration:config andManagedObjectContext:ctx];
     return parser;
+}
+
+- (DCManagedObjectMapping *)createAlbumMapping {
+    return [self createAlbumMappingWithFullSongSerialization:NO];
 }
 
 - (DCManagedObjectMapping *)createAlbumMappingWithFullSongSerialization:(BOOL) fullSongSerialization
@@ -223,7 +210,7 @@
 
 - (void)testNestedObjectUniqueness
 {
-    DCManagedObjectMapping *parser = [self createAlbumMappingWithFullSongSerialization:NO];
+    DCManagedObjectMapping *parser = [self createAlbumMapping];
 
     [parser parseArray:albumsFixture];
     NSArray *songs = [Song findAllObjectsInContext:ctx];
@@ -235,7 +222,7 @@
 
 - (void)testNestedObjectRelationships
 {
-    DCManagedObjectMapping *parser = [self createAlbumMappingWithFullSongSerialization:NO];
+    DCManagedObjectMapping *parser = [self createAlbumMapping];
 
     NSArray *albums = [parser parseArray:albumsFixture];
     NSArray *songs = [Song findAllObjectsInContext:ctx];
@@ -258,7 +245,7 @@
     [parser parseArray:artistsFixture];
     NSArray *artists =  [Artist findAllObjectsInContext:ctx];
 
-    parser = [self createAlbumMappingWithFullSongSerialization:NO];
+    parser = [self createAlbumMapping];
     [parser parseArray:albumsFixture];
     NSArray *albums = [Album findAllObjectsInContext:ctx];
 
@@ -282,7 +269,7 @@
                                                object:nil];
 
     DCManagedObjectMapping *parser;
-    parser = [self createAlbumMappingWithFullSongSerialization:NO];
+    parser = [self createAlbumMapping];
     [parser parseArray:albumsFixture];
     NSArray *albums = [Album findAllObjectsInContext:ctx];
     NSArray *artists = [Artist findAllObjectsInContext:ctx];
@@ -313,7 +300,7 @@
     Artist * artist = [[Artist findAllObjectsInContext:ctx] lastObject];
     NSDictionary *serializedArtist = [parser serializeObject:artist];
 
-    STAssertEqualObjects(artistFixture, serializedArtist, nil);
+    STAssertEqualObjects(serializedArtist, artistFixture, nil);
 }
 
 
@@ -324,13 +311,13 @@
     [parser parseArray:artistsFixture];
     NSArray *artists =  [Artist findAllObjectsInContext:ctx];
 
-    parser = [self createAlbumMappingWithFullSongSerialization:NO];
+    parser = [self createAlbumMapping];
     [parser parseDictionary:[albumsFixture lastObject]];
     Album *album = [[Album findAllObjectsInContext:ctx] lastObject];
 
     NSDictionary *serializedAlbum = [parser serializeObject:album];
 
-    STAssertEqualObjects([serializedAlbum valueForKey:@"artist"], [[albumsFixture lastObject] valueForKey:@"artist"],
+    STAssertEqualObjects([[albumsFixture lastObject] valueForKey:@"artist"], [serializedAlbum valueForKey:@"artist"],
     nil);
 
     for (Song *song in album.songs) {

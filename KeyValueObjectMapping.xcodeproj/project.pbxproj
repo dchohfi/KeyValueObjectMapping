@@ -59,6 +59,10 @@
 		205FD426153F041F00693E13 /* tweet.json in Resources */ = {isa = PBXBuildFile; fileRef = 205FD423153F041F00693E13 /* tweet.json */; };
 		205FD427153F041F00693E13 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 205FD424153F041F00693E13 /* user.json */; };
 		205FD42B153F053300693E13 /* DCFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 205FD42A153F053300693E13 /* DCFramework.h */; };
+		57332E181577D2C800A67DD7 /* configurationPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57332E171577D2C800A67DD7 /* configurationPlist.plist */; };
+		57332E1D1577DC4700A67DD7 /* DCMappingManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F23 /* DCMappingManagerTests.m */; };
+		57332E271577E0B800A67DD7 /* DCMapperManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 57332E251577E0B800A67DD7 /* DCMapperManager.h */; };
+		57332E281577E0B800A67DD7 /* DCMapperManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57332E261577E0B800A67DD7 /* DCMapperManager.m */; };
 		579956F41575498400C89F0C /* albums.json in Resources */ = {isa = PBXBuildFile; fileRef = 205FD42B153F053300693E16 /* albums.json */; };
 		579956F51575499100C89F0C /* artists.json in Resources */ = {isa = PBXBuildFile; fileRef = 205FD42B153F053300693E18 /* artists.json */; };
 		579956F8157549AC00C89F0C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 579956F6157549AC00C89F0C /* Model.xcdatamodeld */; };
@@ -70,7 +74,7 @@
 		5799571915756AF200C89F0C /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 5799571815756AF200C89F0C /* Album.m */; };
 		5799571C15756AF300C89F0C /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = 5799571B15756AF300C89F0C /* Artist.m */; };
 		5799571C15756AF300C89F0E /* artists2.json in Resources */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F0D /* artists2.json */; };
-		5799571C15756AF300C89F10 /* DCManagedObjectToManyMapping.m in Sources */ = {isa = PBXBuildFile; };
+		5799571C15756AF300C89F10 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		5799571C15756AF300C89F14 /* DCNSSetConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F13 /* DCNSSetConverter.m */; };
 		5799571C15756AF300C89F16 /* DCNSSetConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F15 /* DCNSSetConverter.h */; };
 		5799571C15756AF300C89F18 /* DCForeignKeyConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F17 /* DCForeignKeyConverter.m */; };
@@ -78,6 +82,7 @@
 		5799571C15756AF300C89F1C /* DCSerializationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F1B /* DCSerializationTests.m */; };
 		5799571C15756AF300C89F1F /* SimpleArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F1E /* SimpleArtist.m */; };
 		5799571C15756AF300C89F22 /* simpleArtists.json in Resources */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F21 /* simpleArtists.json */; };
+		5799571C15756AF300C89F28 /* NSManagedObject+TestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5799571C15756AF300C89F27 /* NSManagedObject+TestCase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +166,9 @@
 		205FD42A153F053300693E13 /* DCFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCFramework.h; sourceTree = "<group>"; };
 		205FD42B153F053300693E16 /* albums.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = albums.json; sourceTree = "<group>"; };
 		205FD42B153F053300693E18 /* artists.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = artists.json; sourceTree = "<group>"; };
+		57332E171577D2C800A67DD7 /* configurationPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = configurationPlist.plist; sourceTree = "<group>"; };
+		57332E251577E0B800A67DD7 /* DCMapperManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCMapperManager.h; sourceTree = "<group>"; };
+		57332E261577E0B800A67DD7 /* DCMapperManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCMapperManager.m; sourceTree = "<group>"; };
 		579956F7157549AC00C89F0C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		579956FC15754A8000C89F0C /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
 		579956FD15754A8000C89F0C /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
@@ -183,6 +191,10 @@
 		5799571C15756AF300C89F1E /* SimpleArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleArtist.m; sourceTree = "<group>"; };
 		5799571C15756AF300C89F20 /* SimpleArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleArtist.h; sourceTree = "<group>"; };
 		5799571C15756AF300C89F21 /* simpleArtists.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = simpleArtists.json; sourceTree = "<group>"; };
+		5799571C15756AF300C89F23 /* DCMappingManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCMappingManagerTests.m; sourceTree = "<group>"; };
+		5799571C15756AF300C89F25 /* DCMappingManagerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCMappingManagerTests.h; sourceTree = "<group>"; };
+		5799571C15756AF300C89F27 /* NSManagedObject+TestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+TestCase.m"; sourceTree = "<group>"; };
+		5799571C15756AF300C89F29 /* NSManagedObject+TestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+TestCase.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +289,10 @@
 		205FD3BC153F02AA00693E13 /* KeyValueObjectMappingTests */ = {
 			isa = PBXGroup;
 			children = (
+				5799571C15756AF300C89F29 /* NSManagedObject+TestCase.h */,
+				5799571C15756AF300C89F27 /* NSManagedObject+TestCase.m */,
+				5799571C15756AF300C89F25 /* DCMappingManagerTests.h */,
+				5799571C15756AF300C89F23 /* DCMappingManagerTests.m */,
 				5799571C15756AF300C89F1D /* DCSerializationTests.h */,
 				5799571C15756AF300C89F1B /* DCSerializationTests.m */,
 				5799570415754A9100C89F0F /* DCManagedObjectsMappingsTests.h */,
@@ -313,6 +329,7 @@
 				205FD424153F041F00693E13 /* user.json */,
 				205FD3BE153F02AA00693E13 /* KeyValueObjectMappingTests-Info.plist */,
 				205FD3BF153F02AA00693E13 /* InfoPlist.strings */,
+				57332E171577D2C800A67DD7 /* configurationPlist.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -340,6 +357,8 @@
 		205FD3D7153F030F00693E13 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				57332E251577E0B800A67DD7 /* DCMapperManager.h */,
+				57332E261577E0B800A67DD7 /* DCMapperManager.m */,
 				205FD3D8153F031C00693E13 /* DCParserConfiguration.h */,
 				205FD3D9153F031C00693E13 /* DCParserConfiguration.m */,
 			);
@@ -444,6 +463,7 @@
 				579957141575678D00C89F0C /* DCManagedObjectMapping.h in Headers */,
 				5799571C15756AF300C89F16 /* DCNSSetConverter.h in Headers */,
 				5799571C15756AF300C89F1A /* DCForeignKeyConverter.h in Headers */,
+				57332E271577E0B800A67DD7 /* DCMapperManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,6 +559,7 @@
 				205FD427153F041F00693E13 /* user.json in Resources */,
 				5799571C15756AF300C89F0E /* artists2.json in Resources */,
 				5799571C15756AF300C89F22 /* simpleArtists.json in Resources */,
+				57332E181577D2C800A67DD7 /* configurationPlist.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,9 +641,10 @@
 				201F6F5F153F56BE009A24B9 /* DCPropertyAggregator.m in Sources */,
 				201F6F70153F789A009A24B9 /* DCAttributeSetter.m in Sources */,
 				201F6F74153F7C9E009A24B9 /* DCDictionaryRearranger.m in Sources */,
-				5799571C15756AF300C89F10 /* DCManagedObjectToManyMapping.m in Sources */,
+				5799571C15756AF300C89F10 /* (null) in Sources */,
 				5799571C15756AF300C89F14 /* DCNSSetConverter.m in Sources */,
 				5799571C15756AF300C89F18 /* DCForeignKeyConverter.m in Sources */,
+				57332E281577E0B800A67DD7 /* DCMapperManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,6 +671,8 @@
 				5799571C15756AF300C89F0C /* Artist.m in Sources */,
 				5799571C15756AF300C89F1C /* DCSerializationTests.m in Sources */,
 				5799571C15756AF300C89F1F /* SimpleArtist.m in Sources */,
+				5799571C15756AF300C89F28 /* NSManagedObject+TestCase.m in Sources */,
+				57332E1D1577DC4700A67DD7 /* DCMappingManagerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

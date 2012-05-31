@@ -11,7 +11,7 @@
 
 
 @interface DCForeignKeyConverter : NSObject <DCValueConverter>
-@property (strong, readonly) DCKeyValueObjectMapping* parser;
+@property (strong) DCKeyValueObjectMapping* parser;
 @property (readonly) BOOL isNested;
 @property (readonly) BOOL fullSerialization;
 

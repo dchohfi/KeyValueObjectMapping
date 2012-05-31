@@ -14,6 +14,8 @@
 @synthesize isNested, fullSerialization, parser;
 
 
+
+
 - (id) initWithParser:(DCKeyValueObjectMapping*) _parser isNested:(BOOL)_isNested fullSerialization: (BOOL)
         _fullSerialization {
     self = [super init];
