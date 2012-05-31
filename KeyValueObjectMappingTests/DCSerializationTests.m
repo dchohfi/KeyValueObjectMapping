@@ -7,6 +7,7 @@
 #import "DCSerializationTests.h"
 #import "DCKeyValueObjectMapping.h"
 #import "SimpleArtist.h"
+#import "DCNSDateConverter.h"
 
 
 @implementation DCSerializationTests {
@@ -28,12 +29,13 @@
 {
     DCParserConfiguration *config = [DCParserConfiguration configuration];
     config.primaryKeyName = @"objectId";
-    config.datePattern = @"yyyy-MM-dd HH:mm:ss";
 
     DCObjectMapping *nameMapping = [DCObjectMapping mapKeyPath:@"name" toAttribute:@"name" onClass:[SimpleArtist class]];
     DCObjectMapping *idMapping = [DCObjectMapping mapKeyPath:@"objectId" toAttribute:@"id" onClass:[SimpleArtist class]];
     DCObjectMapping *dateMapping = [DCObjectMapping mapKeyPath:@"birthday" toAttribute:@"birthday" onClass:[SimpleArtist
-                                                                                                          class]];
+                                                                                                          class]
+                                                     converter:[DCNSDateConverter
+                                                                       dateConverterForPattern:@"yyyy-MM-dd HH:mm:ss"]];
     DCObjectMapping *homePageURLMapping = [DCObjectMapping mapKeyPath:@"homePageURL" toAttribute:@"homePageURL"
                                                        onClass:[SimpleArtist class]];
     DCObjectMapping *numberIntegerMapping = [DCObjectMapping mapKeyPath:@"numberInteger" toAttribute:@"numberInteger"
