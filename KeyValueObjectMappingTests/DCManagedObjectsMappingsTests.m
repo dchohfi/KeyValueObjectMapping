@@ -12,6 +12,7 @@
 #import "Album.h"
 #import "Song.h"
 #import "DCForeignKeyConverter.h"
+#import "DCNSSetConverter.h"
 
 
 
@@ -78,8 +79,10 @@
     DCObjectMapping *nameMapping = [DCObjectMapping mapKeyPath:@"name" toAttribute:@"name" onClass:[Album class]];
     DCObjectMapping *idMapping = [DCObjectMapping mapKeyPath:@"album_id" toAttribute:@"id" onClass:[Album class]];
     DCObjectMapping *songsMapping = [DCObjectMapping mapKeyPath:@"songs" toAttribute:@"songs" onClass:[Album class]
-                                                         converter:[[DCForeignKeyConverter alloc] initWithParser:songParser
-                                                                                               fullSerialization:fullSongSerialization]];
+           converter:
+                   [[DCNSSetConverter alloc] initWithConverter:
+                        [[DCForeignKeyConverter alloc] initWithParser:songParser isNested:YES
+                                                    fullSerialization:fullSongSerialization]]];
 
 
 
@@ -89,14 +92,11 @@
                                                   fullSerialization:NO]];
 
 
-    DCArrayMapping *songsArrayMapping = [DCArrayMapping mapperForClass:[Song class]
-                                                             onMapping:songsMapping];
 
     [config addObjectMapping:nameMapping];
     [config addObjectMapping:idMapping];
     [config addObjectMapping:artistMapping];
     [config addObjectMapping:songsMapping];
-    [config addArrayMapper:songsArrayMapping];
 
     DCManagedObjectMapping *parser = [DCManagedObjectMapping mapperForClass:[Album class]
             andConfiguration:config andManagedObjectContext:ctx];

@@ -19,7 +19,7 @@
 
 @implementation DCNSArrayConverter
 @synthesize configuration;
-@synthesize fullSerialization, parser;
+@synthesize converter;
 
 
 + (DCNSArrayConverter *) arrayConverterForConfiguration: (DCParserConfiguration *)configuration {
@@ -27,11 +27,10 @@
 }
 
 
-- (id) initWithParser:(DCKeyValueObjectMapping*) _parser fullSerialization: (BOOL) _fullSerialization {
+- (id) initWithConverter:(id <DCValueConverter>)_converter {
     self = [super init];
     if (self) {
-        parser = _parser;
-        fullSerialization = _fullSerialization;
+        converter = _converter;
     }
     return self;
 }
@@ -44,28 +43,39 @@
 }
 
 - (id)transformValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute {
+    if (converter) {
+        //fixme more efficient way
+        NSMutableArray * result = [NSMutableArray array];
+        for (id value in values) {
+            [result addObject:[converter transformValue:value forDynamicAttribute:attribute]];
+        }
+        return result;
+    }
+
     BOOL primitiveArray = ![[[values objectAtIndex:0] class] isSubclassOfClass:[NSDictionary class]];
     if(primitiveArray){
         return [self parsePrimitiveValues:values];
-    }
-    DCKeyValueObjectMapping* currentParser = parser;
-    if (!currentParser) {
+    }else{
         DCArrayMapping *mapper = [configuration arrayMapperForMapper:attribute.objectMapping];
         if(mapper){
-            currentParser = [DCKeyValueObjectMapping mapperForClass:mapper.classForElementsOnArray
-                                                                     andConfiguration:self.configuration];
-
+            DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:mapper.classForElementsOnArray andConfiguration:self.configuration];
+            return [parser parseArray:values];
         }
-
     }
-    return [currentParser parseArray:values];
+    return nil;
 }
 
 
 - (id) serializeValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute {
-//    if (attribute.objectMapping.parser) {
-//        return [attribute.objectMapping.parser serializeObjectArray:values];
-//    }
+    if (converter) {
+        //fixme more efficient way
+        NSMutableArray * result = [NSMutableArray array];
+        for (id value in values) {
+            [result addObject:[converter serializeValue:value forDynamicAttribute:attribute]];
+        }
+        return result;
+    }
+
     DCGenericConverter* genericConverter = [[DCGenericConverter alloc] initWithConfiguration:configuration];
     NSMutableArray *valuesHolder = [NSMutableArray array];
 

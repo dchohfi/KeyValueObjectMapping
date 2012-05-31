@@ -15,10 +15,11 @@
 @interface DCNSArrayConverter : NSObject <DCValueConverter>
 
 
-@property (strong, readonly) DCKeyValueObjectMapping* parser;
-@property (readonly) BOOL fullSerialization;
+@property (strong, readonly) id <DCValueConverter> converter;
 
-- (id)initWithParser:(DCKeyValueObjectMapping *)_parser fullSerialization:(BOOL)_fullSerialization;
 
 + (DCNSArrayConverter *) arrayConverterForConfiguration: (DCParserConfiguration *)configuration;
+
+- (id)initWithConverter:(id <DCValueConverter>)_converter;
+
 @end

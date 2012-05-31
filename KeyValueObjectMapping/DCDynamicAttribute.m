@@ -26,7 +26,14 @@
 - (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) _key attributeName: (NSString *)
         _attibuteName
 {
+    return [self initWithAttributeDescription:description forKey:_key attributeName:_attibuteName
+                                    converter:nil];
+}
+
+- (id)initWithAttributeDescription:(NSString *)description forKey:(NSString *)_key attributeName:(NSString *)_attibuteName converter:(id <DCValueConverter>)converter
+{
     self = [super init];
+
     if (self) {
         NSArray *splitedDescription = [description componentsSeparatedByString:@","];
         NSString *attributeName = nil;
@@ -35,14 +42,12 @@
         else
             attributeName = _attibuteName;
         typeName = [self findTypeInformation:[splitedDescription objectAtIndex:0]];
-        
-        Class attributeClass = NSClassFromString(typeName);
-        objectMapping = [DCObjectMapping mapKeyPath:_key toAttribute:attributeName onClass:attributeClass
-                                            ];
-    }
-    return self;
-}
 
+        Class attributeClass = NSClassFromString(typeName);
+        objectMapping = [DCObjectMapping mapKeyPath:_key toAttribute:attributeName onClass:attributeClass converter:
+                converter];
+    }
+    return self;}
 
 
 - (id)initWithClass:(Class)class

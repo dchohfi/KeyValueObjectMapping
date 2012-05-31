@@ -20,5 +20,8 @@
 - (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) _key attributeName: (NSString *)
         _attibuteName;
 
+- (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) _key attributeName: (NSString *)
+        _attibuteName converter:(id<DCValueConverter>) converter;
+
 - (id)initWithAttributeDescription:(NSString *)description forKey:(NSString *)key;
 @end
