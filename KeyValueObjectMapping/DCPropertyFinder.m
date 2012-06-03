@@ -12,7 +12,6 @@
 @interface DCPropertyFinder()
 
 @property(nonatomic, strong) DCReferenceKeyParser *keyParser;
-@property(nonatomic, strong) NSArray *mappers;
 
 @end
 
@@ -42,8 +41,12 @@
     
     if(!propertyDetails)
         return nil;
+
     
-    DCDynamicAttribute *dynamicAttribute = [[DCDynamicAttribute alloc] initWithAttributeDescription: propertyDetails forKey:originalKey];
+    DCDynamicAttribute *dynamicAttribute = [[DCDynamicAttribute alloc] initWithAttributeDescription: propertyDetails
+                                                                                             forKey:originalKey
+                                                                                      attributeName:key
+                                                                                          converter:mapper.converter];
     return dynamicAttribute;
 }
 
@@ -78,4 +81,6 @@
     }
     return nil;
 }
+
+
 @end

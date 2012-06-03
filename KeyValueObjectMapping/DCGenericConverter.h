@@ -13,4 +13,6 @@
 @interface DCGenericConverter : NSObject
 - (id)initWithConfiguration:(DCParserConfiguration *) configuration;
 - (id)transformValue:(id)value forDynamicAttribute: (DCDynamicAttribute *) attribute;
+
+- (id)serializeValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute;
 @end

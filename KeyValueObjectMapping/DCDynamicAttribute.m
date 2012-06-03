@@ -18,26 +18,52 @@
 @synthesize primitive, idType, validObject, objectMapping, typeName;
 
 
-- (id)initWithClass: (Class) classs {
+
+
+
+
+
+- (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) _key attributeName: (NSString *)
+        _attibuteName
+{
+    return [self initWithAttributeDescription:description forKey:_key attributeName:_attibuteName
+                                    converter:nil];
+}
+
+- (id)initWithAttributeDescription:(NSString *)description forKey:(NSString *)_key attributeName:(NSString *)_attibuteName converter:(id <DCValueConverter>)converter
+{
+    self = [super init];
+
+    if (self) {
+        NSArray *splitedDescription = [description componentsSeparatedByString:@","];
+        NSString *attributeName = nil;
+        if (!_attibuteName)
+            attributeName = [self findTypeName: [splitedDescription lastObject]];
+        else
+            attributeName = _attibuteName;
+        typeName = [self findTypeInformation:[splitedDescription objectAtIndex:0]];
+
+        Class attributeClass = NSClassFromString(typeName);
+        objectMapping = [DCObjectMapping mapKeyPath:_key toAttribute:attributeName onClass:attributeClass converter:
+                converter];
+    }
+    return self;}
+
+
+- (id)initWithClass:(Class)class
+{
     self = [super init];
     if (self) {
-        objectMapping = [[DCObjectMapping alloc] initWithClass:classs];
+        objectMapping = [[DCObjectMapping alloc] initWithClass:class ];
         validObject = YES;
     }
     return self;
+
 }
-- (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) _key{
-    self = [super init];
-    if (self) {
-        NSArray *splitedDescription = [description componentsSeparatedByString:@","];
-        
-        NSString *attributeName = [self findTypeName: [splitedDescription lastObject]];
-        typeName = [self findTypeInformation:[splitedDescription objectAtIndex:0]];
-        
-        Class attributeClass = NSClassFromString(typeName);
-        objectMapping = [DCObjectMapping mapKeyPath:_key toAttribute:attributeName onClass:attributeClass];
-    }
-    return self;
+
+- (id)initWithAttributeDescription:(NSString *)description forKey:(NSString *)key
+{
+    return [self initWithAttributeDescription:description forKey:key attributeName:nil];
 }
 
 - (NSString *) findTypeInformation: (NSString *) typeInformation {
