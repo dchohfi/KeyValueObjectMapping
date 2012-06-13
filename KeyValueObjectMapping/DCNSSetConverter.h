@@ -1,12 +1,17 @@
 //
-// Created by Sergey Klimov on 5/29/12.
-// Copyright (c) 2012 Sanders New Media, LLC. All rights reserved.
+//  DCNSSetConverter.h
+//  KeyValueObjectMapping
+//
+//  Created by Diego Chohfi on 6/13/12.
+//  Copyright (c) 2012 dchohfi. All rights reserved.
 //
 
-
 #import <Foundation/Foundation.h>
-#import "DCNSArrayConverter.h"
+#import "DCValueConverter.h"
 
+@class DCParserConfiguration;
+@interface DCNSSetConverter : NSObject <DCValueConverter>
 
-@interface DCNSSetConverter : DCNSArrayConverter
++ (DCNSSetConverter *) setConverterForConfiguration: (DCParserConfiguration *) configuration;
+
 @end

@@ -10,6 +10,7 @@
 #import "DCSimpleConverter.h"
 #import "DCArrayMapping.h"
 #import "DCKeyValueObjectMapping.h"
+#import "DCDynamicAttribute.h"
 #import "DCGenericConverter.h"
 @interface DCNSArrayConverter()
 
@@ -19,21 +20,11 @@
 
 @implementation DCNSArrayConverter
 @synthesize configuration;
-@synthesize converter;
-
 
 + (DCNSArrayConverter *) arrayConverterForConfiguration: (DCParserConfiguration *)configuration {
     return [[self alloc] initWithConfiguration: configuration];
 }
 
-
-- (id) initWithConverter:(id <DCValueConverter>)_converter {
-    self = [super init];
-    if (self) {
-        converter = _converter;
-    }
-    return self;
-}
 - (id)initWithConfiguration:(DCParserConfiguration *)_configuration{
     self = [super init];
     if (self) {
@@ -43,15 +34,6 @@
 }
 
 - (id)transformValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute {
-    if (converter) {
-        //fixme more efficient way
-        NSMutableArray * result = [NSMutableArray array];
-        for (id value in values) {
-            [result addObject:[converter transformValue:value forDynamicAttribute:attribute]];
-        }
-        return result;
-    }
-
     BOOL primitiveArray = ![[[values objectAtIndex:0] class] isSubclassOfClass:[NSDictionary class]];
     if(primitiveArray){
         return [self parsePrimitiveValues:values];
@@ -64,34 +46,15 @@
     }
     return nil;
 }
-
-
-- (id) serializeValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute {
-    if (converter) {
-        //fixme more efficient way
-        NSMutableArray * result = [NSMutableArray array];
-        for (id value in values) {
-            [result addObject:[converter serializeValue:value forDynamicAttribute:attribute]];
-        }
-        return result;
-    }
-
+- (id)serializeValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute{
     DCGenericConverter* genericConverter = [[DCGenericConverter alloc] initWithConfiguration:configuration];
     NSMutableArray *valuesHolder = [NSMutableArray array];
-
     for(id value in values){
         DCDynamicAttribute *valueClassAsAttribute = [[DCDynamicAttribute alloc] initWithClass:[value class]];
         [valuesHolder addObject:[genericConverter serializeValue:value forDynamicAttribute:valueClassAsAttribute]];
-    }
-    if (valuesHolder.count)
-        return [NSArray arrayWithArray:valuesHolder];
-    else
-        return nil;
-
-
+    }    
+    return [NSArray arrayWithArray:valuesHolder];
 }
-
-
 - (NSArray *) parsePrimitiveValues: (NSArray *) primitiveValues {
     DCSimpleConverter *simpleParser = [[DCSimpleConverter alloc] init];
     NSMutableArray *valuesHolder = [NSMutableArray array];

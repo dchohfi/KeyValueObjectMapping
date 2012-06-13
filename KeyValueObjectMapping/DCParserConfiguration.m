@@ -15,7 +15,7 @@
 @end
 
 @implementation DCParserConfiguration
-@synthesize defaultDatePattern, splitToken, primaryKeyName, arrayMappers, objectMappers, aggregators;
+@synthesize datePattern, splitToken, arrayMappers, objectMappers, aggregators;
 
 + (DCParserConfiguration *) configuration {
     return [[self alloc] init];
@@ -29,7 +29,7 @@
         objectMappers = [[NSMutableArray alloc] init];
         aggregators = [[NSMutableArray alloc] init];
         splitToken = @"_";
-        defaultDatePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
+        datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
     }
     return self;
 }

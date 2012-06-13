@@ -14,9 +14,8 @@
 
 @property(nonatomic, strong) NSArray *mappers;
 
-
 + (DCPropertyFinder *) finderWithKeyParser: (DCReferenceKeyParser *) keyParser;
-- (DCDynamicAttribute *) findAttributeForKey: (NSString *) key onClass: (Class) className;
-
+- (DCDynamicAttribute *) findAttributeForKey: (NSString *) key 
+                                     onClass: (Class) className;
 
 @end

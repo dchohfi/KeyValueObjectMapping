@@ -40,7 +40,7 @@
 - (void) testValidPlistToPerson
 {         
     DCParserConfiguration *configuration = [DCParserConfiguration configuration];
-    configuration.defaultDatePattern = @"yyyy-MM-dd'T'hh:mm:ssZ";
+    configuration.datePattern = @"yyyy-MM-dd'T'hh:mm:ssZ";
     DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[Person class] andConfiguration:configuration];
     Person *person = [parser parseDictionary: plist];
     STAssertEqualObjects(person.name, @"Diego Chohfi Turini", @"Should be equals name");
@@ -63,9 +63,9 @@
 
 -(void) testValidJsonToTweet {
     DCParserConfiguration *config = [DCParserConfiguration configuration];
-    config.defaultDatePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
+    config.datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = config.defaultDatePattern;
+    formatter.dateFormat = config.datePattern;
     NSDate *data = [formatter dateFromString:@"Sat Apr 14 00:20:07 +0000 2012"];
     
     DCKeyValueObjectMapping * parser = [DCKeyValueObjectMapping mapperForClass:[Tweet class] andConfiguration:config];
@@ -100,7 +100,7 @@
     
     NSArray *arrayTweets = [NSArray arrayWithObjects:json, json, json, nil];
     DCParserConfiguration *configuration = [DCParserConfiguration configuration];
-    configuration.defaultDatePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
+    configuration.datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
     DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:tweetClass andConfiguration:configuration];
     NSArray *parsedArray = [parser parseArray:arrayTweets];
     
@@ -122,7 +122,7 @@
     
     
     DCParserConfiguration *configuration = [DCParserConfiguration configuration];
-    configuration.defaultDatePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
+    configuration.datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
     
     [configuration addArrayMapper:[DCArrayMapping mapperForClassElements:[Tweet class] forAttribute:@"tweets" onClass:[User class]]];
     

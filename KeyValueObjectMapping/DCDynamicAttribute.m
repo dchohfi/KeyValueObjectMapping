@@ -18,54 +18,53 @@
 @synthesize primitive, idType, validObject, objectMapping, typeName;
 
 
-
-
-
-
-
-- (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) _key attributeName: (NSString *)
-        _attibuteName
-{
-    return [self initWithAttributeDescription:description forKey:_key attributeName:_attibuteName
-                                    converter:nil];
-}
-
-- (id)initWithAttributeDescription:(NSString *)description forKey:(NSString *)_key attributeName:(NSString *)_attibuteName converter:(id <DCValueConverter>)converter
-{
-    self = [super init];
-
-    if (self) {
-        NSArray *splitedDescription = [description componentsSeparatedByString:@","];
-        NSString *attributeName = nil;
-        if (!_attibuteName)
-            attributeName = [self findTypeName: [splitedDescription lastObject]];
-        else
-            attributeName = _attibuteName;
-        typeName = [self findTypeInformation:[splitedDescription objectAtIndex:0]];
-
-        Class attributeClass = NSClassFromString(typeName);
-        objectMapping = [DCObjectMapping mapKeyPath:_key toAttribute:attributeName onClass:attributeClass converter:
-                converter];
-    }
-    return self;}
-
-
-- (id)initWithClass:(Class)class
-{
+- (id)initWithClass: (Class) classs {
     self = [super init];
     if (self) {
-        objectMapping = [[DCObjectMapping alloc] initWithClass:class ];
+        objectMapping = [[DCObjectMapping alloc] initWithClass:classs];
         validObject = YES;
     }
     return self;
-
 }
-
-- (id)initWithAttributeDescription:(NSString *)description forKey:(NSString *)key
-{
-    return [self initWithAttributeDescription:description forKey:key attributeName:nil];
+- (id)initWithAttributeDescription: (NSString *) description 
+                            forKey: (NSString *) _key{
+    return [self initWithAttributeDescription:description 
+                                       forKey:_key 
+                                attributeName:nil];
 }
-
+- (id)initWithAttributeDescription: (NSString *) description 
+                            forKey: (NSString *) _key
+                     attributeName: (NSString *) _attibuteName {
+    return [self initWithAttributeDescription:description 
+                                       forKey:_key 
+                                attributeName:_attibuteName 
+                                    converter:nil];
+}
+- (id)initWithAttributeDescription:(NSString *)description 
+                            forKey:(NSString *)_key 
+                     attributeName:(NSString *)_attibuteName 
+                         converter:(id <DCValueConverter>)converter {
+    
+    
+    self = [super init];
+    if (self) {
+        NSArray *splitedDescription = [description componentsSeparatedByString:@","];
+        NSString *attributeName;
+        
+        if(!_attibuteName){
+            attributeName = _attibuteName;
+        } else {
+            attributeName = [self findTypeName: [splitedDescription lastObject]];   
+        }
+        
+        typeName = [self findTypeInformation:[splitedDescription objectAtIndex:0]];
+        
+        Class attributeClass = NSClassFromString(typeName);
+        objectMapping = [DCObjectMapping mapKeyPath:_key toAttribute:attributeName onClass:attributeClass converter:converter];
+    }
+    return self;
+    
+}
 - (NSString *) findTypeInformation: (NSString *) typeInformation {
     NSString *attrituteClass = nil;
     

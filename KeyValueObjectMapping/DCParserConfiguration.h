@@ -11,9 +11,8 @@
 #import "DCPropertyAggregator.h"
 @interface DCParserConfiguration : NSObject
 
-@property(nonatomic, strong) NSString *defaultDatePattern;
+@property(nonatomic, strong) NSString *datePattern;
 @property(nonatomic, strong) NSString *splitToken;
-@property(nonatomic, strong) NSString *primaryKeyName;
 @property(nonatomic, readonly) NSMutableArray *objectMappers;
 @property(nonatomic, readonly) NSMutableArray *aggregators;
 

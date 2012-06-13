@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DCObjectMapping.h"
+#import "DCValueConverter.h"
 @interface DCDynamicAttribute : NSObject
 
 @property(nonatomic, readonly) DCObjectMapping *objectMapping;
@@ -17,11 +18,10 @@
 @property(nonatomic, readonly, getter = isValidObject) BOOL validObject;
 
 - (id)initWithClass: (Class) classs;
-- (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) _key attributeName: (NSString *)
-        _attibuteName;
-
-- (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) _key attributeName: (NSString *)
-        _attibuteName converter:(id<DCValueConverter>) converter;
-
-- (id)initWithAttributeDescription:(NSString *)description forKey:(NSString *)key;
+- (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) key;
+- (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) key
+                     attributeName: (NSString *) attibuteName;
+- (id)initWithAttributeDescription: (NSString *) description forKey: (NSString *) key 
+                     attributeName: (NSString *) attibuteName 
+                         converter:(id<DCValueConverter>) converter;
 @end

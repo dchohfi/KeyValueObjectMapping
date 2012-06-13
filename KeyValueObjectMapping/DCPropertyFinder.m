@@ -41,12 +41,8 @@
     
     if(!propertyDetails)
         return nil;
-
     
-    DCDynamicAttribute *dynamicAttribute = [[DCDynamicAttribute alloc] initWithAttributeDescription: propertyDetails
-                                                                                             forKey:originalKey
-                                                                                      attributeName:key
-                                                                                          converter:mapper.converter];
+    DCDynamicAttribute *dynamicAttribute = [[DCDynamicAttribute alloc] initWithAttributeDescription: propertyDetails forKey:originalKey];
     return dynamicAttribute;
 }
 
@@ -81,6 +77,4 @@
     }
     return nil;
 }
-
-
 @end

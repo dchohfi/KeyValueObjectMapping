@@ -7,52 +7,51 @@
 //
 
 #import "DCObjectMapping.h"
-#include "DCKeyValueObjectMapping.h"
-#import "DCValueConverter.h"
 
-@implementation DCObjectMapping {
-}
-
+@implementation DCObjectMapping
 @synthesize attributeName, keyReference, classReference, converter;
 
 
-
-+ (DCObjectMapping *) mapKeyPath: (NSString *) keyPath toAttribute: (NSString *) attributeName onClass: (Class) attributeClass{
-    return [[self alloc] initWithKeyPath:keyPath toAttribute:attributeName onClass:attributeClass];
-}
-
-+ (DCObjectMapping *) mapKeyPath: (NSString *) keyPath toAttribute: (NSString *) attributeName onClass: (Class)
-        attributeClass converter:(id <DCValueConverter>)converter
+- (id)initWithClass: (Class) _classReference
 {
-    return [[self alloc] initWithKeyPath:keyPath toAttribute:attributeName onClass:attributeClass converter:converter];
+    self = [super init];
+    if (self) {
+        classReference = _classReference;
+    }
+    return self;
 }
 
-- (id)initWithKeyPath: (NSString *) _keyReference toAttribute: (NSString *) _attributeName onClass: (Class)
-        _classReference {
-    return [self initWithKeyPath:_keyReference toAttribute:_attributeName onClass:_classReference converter: nil];
++ (DCObjectMapping *) mapKeyPath: (NSString *) keyPath 
+                     toAttribute: (NSString *) attributeName 
+                         onClass: (Class) attributeClass{
+    
+    return [[self alloc] initWithKeyPath:keyPath 
+                             toAttribute:attributeName 
+                                 onClass:attributeClass 
+                               converter:nil];
 }
 
-- (id)initWithKeyPath: (NSString *) _keyReference toAttribute: (NSString *) _attributeName onClass: (Class)
-        _classReference converter:(id <DCValueConverter>)_converter
-{
++ (DCObjectMapping *) mapKeyPath: (NSString *) keyPath 
+                     toAttribute: (NSString *) attributeName 
+                         onClass: (Class) attributeClass
+                       converter:(id <DCValueConverter>)converter {
+    return [[self alloc] initWithKeyPath:keyPath 
+                             toAttribute:attributeName 
+                                 onClass:attributeClass 
+                               converter:converter];
+}
+
+- (id)initWithKeyPath: (NSString *) _keyReference 
+          toAttribute: (NSString *) _attributeName 
+              onClass: (Class) _classReference 
+            converter: (id <DCValueConverter>)_converter {
+    
     self = [super init];
     if (self) {
         attributeName = _attributeName;
         keyReference = _keyReference;
         classReference = _classReference;
-        if (_converter) {
-            converter = _converter;
-
-        }
-    }
-    return self;
-}
-
-- (id)initWithClass:(Class)_classReference
-{
-    self = [super init];
-    if (self) {
-        classReference = _classReference;
+        converter = _converter;
     }
     return self;
 }

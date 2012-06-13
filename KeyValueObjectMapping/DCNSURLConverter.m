@@ -17,13 +17,11 @@
 - (id)transformValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute {
     return [NSURL URLWithString:value];
 }
+- (id)serializeValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute {
+    return [((NSURL *)value) absoluteString];
+}
 - (BOOL) canTransformValueForClass: (Class) class {
     return [class isSubclassOfClass:[NSURL class]];
-}
-
-- (id) serializeValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute
-{
-    return [((NSURL *)value) absoluteString];
 }
 
 @end

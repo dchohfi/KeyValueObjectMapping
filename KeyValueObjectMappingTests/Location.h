@@ -10,7 +10,9 @@
 
 @interface Location : NSObject
 
-@property(nonatomic, readonly) NSDecimalNumber *latitude;
-@property(nonatomic, readonly) NSDecimalNumber *longitude;
+@property(nonatomic, readonly) NSNumber *latitude;
+@property(nonatomic, readonly) NSNumber *longitude;
+
+-(id)initWithLatitude: (NSNumber *) latitude andLongitude: (NSNumber *) longitude;
 
 @end
