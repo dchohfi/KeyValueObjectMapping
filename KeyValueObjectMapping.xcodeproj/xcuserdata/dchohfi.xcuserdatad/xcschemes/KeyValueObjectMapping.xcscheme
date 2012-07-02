@@ -38,21 +38,6 @@
             </BuildableReference>
             <SkippedTests>
                <Test
-                  Identifier = "DCArrayOfTweetsOnUserTests">
-               </Test>
-               <Test
-                  Identifier = "DCDynamicAttributeTest">
-               </Test>
-               <Test
-                  Identifier = "DCPropertyFinderTests">
-               </Test>
-               <Test
-                  Identifier = "DCReferenceKeyParserTests">
-               </Test>
-               <Test
-                  Identifier = "KeyValueObjectMappingTests">
-               </Test>
-               <Test
                   Identifier = "DCPropertyAggregatorTests/testAggregateProperties">
                </Test>
             </SkippedTests>

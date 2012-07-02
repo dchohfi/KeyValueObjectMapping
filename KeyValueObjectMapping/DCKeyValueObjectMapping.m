@@ -67,12 +67,14 @@
     }
     NSObject *object = [self createInstanceOfClass:classToGenerate];
     
-    dictionary = [DCDictionaryRearranger rearrangeDictionary:dictionary forAggregators:configuration.aggregators];
+    dictionary = [DCDictionaryRearranger rearrangeDictionary:dictionary 
+                                              forAggregators:configuration.aggregators];
     
     NSArray *keys = [dictionary allKeys];
     for (NSString *key in keys) {
         id value = [dictionary valueForKey:key];
-        DCDynamicAttribute *dynamicAttribute = [propertyFinder findAttributeForKey:key onClass:classToGenerate];
+        DCDynamicAttribute *dynamicAttribute = [propertyFinder findAttributeForKey:key 
+                                                                           onClass:classToGenerate];
         if(dynamicAttribute){
             [self parseValue:value forObject:object inAttribute:dynamicAttribute];
         }

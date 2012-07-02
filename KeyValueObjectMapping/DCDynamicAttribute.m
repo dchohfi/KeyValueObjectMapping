@@ -51,12 +51,11 @@
         NSArray *splitedDescription = [description componentsSeparatedByString:@","];
         NSString *attributeName;
         
-        if(!_attibuteName){
+        if (_attibuteName == nil){
+            attributeName = [self findTypeName: [splitedDescription lastObject]];
+        }else{
             attributeName = _attibuteName;
-        } else {
-            attributeName = [self findTypeName: [splitedDescription lastObject]];   
         }
-        
         typeName = [self findTypeInformation:[splitedDescription objectAtIndex:0]];
         
         Class attributeClass = NSClassFromString(typeName);
