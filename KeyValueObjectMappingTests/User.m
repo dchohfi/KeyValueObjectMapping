@@ -21,4 +21,5 @@
 @synthesize createdAt;
 @synthesize following;
 @synthesize tweets;
+@synthesize params;
 @end

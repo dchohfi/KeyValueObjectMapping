@@ -34,6 +34,10 @@
 }
 
 - (id)transformValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute {
+    if(!values || values == [NSNull null] || [values count] == 0){
+        return nil;
+    }
+    
     BOOL primitiveArray = ![[[values objectAtIndex:0] class] isSubclassOfClass:[NSDictionary class]];
     if(primitiveArray){
         return [self parsePrimitiveValues:values];

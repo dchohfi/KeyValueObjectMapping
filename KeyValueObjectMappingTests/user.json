@@ -18,5 +18,11 @@
            "id_str": 190957570511478800,
            "text": "Tweet text"
        }
-   ]
+   ],
+   "tweets_nullable": null,
+   "tweets_empty": [],
+   "params" : [
+        "User",
+        "Pass"
+    ]
 }

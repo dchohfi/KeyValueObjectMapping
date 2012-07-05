@@ -40,6 +40,24 @@
                <Test
                   Identifier = "DCPropertyAggregatorTests/testAggregateProperties">
                </Test>
+               <Test
+                  Identifier = "DCDynamicAttributeTest">
+               </Test>
+               <Test
+                  Identifier = "DCPropertyAggregatorTests">
+               </Test>
+               <Test
+                  Identifier = "DCPropertyFinderTests">
+               </Test>
+               <Test
+                  Identifier = "DCReferenceKeyParserTests">
+               </Test>
+               <Test
+                  Identifier = "DCSerializationTests">
+               </Test>
+               <Test
+                  Identifier = "KeyValueObjectMappingTests">
+               </Test>
             </SkippedTests>
          </TestableReference>
       </Testables>

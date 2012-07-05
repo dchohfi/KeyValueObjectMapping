@@ -36,6 +36,7 @@
 
 - (void)addArrayMapper: (DCArrayMapping *)mapper{
     [arrayMappers addObject:mapper];
+    [objectMappers addObject:mapper.objectMapping];
 }
 - (void) addObjectMapping: (DCObjectMapping *) mapper {
     [objectMappers addObject:mapper];
