@@ -26,10 +26,8 @@ Installation
 * Using [`CocoaPods`][CocoaPods], the easier way to manage dependencies on Objective-C world.
 
 * Using [`iOS-Universal-Framework`][iOS-Universal-Framework]
-	Since **KeyValueObjectMapping** uses [`iOS-Universal-Framework`][iOS-Universal-Framework] to build and compile the project, you can easily drag the *.framework* that **iOS-Universal-Framework** generates into your application, import the header *DCKeyValueObjectMapping.h* and start using the framework.
-	
-	* There is a zip of the *.framework* here: https://github.com/downloads/dchohfi/KeyValueObjectMapping/KeyValueObjectMapping.framework.zip
-	
+	Since **KeyValueObjectMapping** uses [`iOS-Universal-Framework`][iOS-Universal-Framework] to build and compile the project, you can easily compile and drag the *.framework* that **iOS-Universal-Framework** generates into your application, import the header *DCKeyValueObjectMapping.h* and start using the framework.
+		
 	* Required import:
 	
 	```objc
