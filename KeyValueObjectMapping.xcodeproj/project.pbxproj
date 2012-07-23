@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2011BA0415BCF8CC0098BE81 /* DCTestParseOnlyValuesToObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2011BA0315BCF8CC0098BE81 /* DCTestParseOnlyValuesToObject.m */; };
 		201F6F53153F31FD009A24B9 /* DCCoverageFix.m in Sources */ = {isa = PBXBuildFile; fileRef = 201F6F52153F31FD009A24B9 /* DCCoverageFix.m */; };
 		201F6F5E153F56BE009A24B9 /* DCPropertyAggregator.h in Headers */ = {isa = PBXBuildFile; fileRef = 201F6F5C153F56BE009A24B9 /* DCPropertyAggregator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		201F6F5F153F56BE009A24B9 /* DCPropertyAggregator.m in Sources */ = {isa = PBXBuildFile; fileRef = 201F6F5D153F56BE009A24B9 /* DCPropertyAggregator.m */; };
@@ -75,6 +76,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2011BA0215BCF8CC0098BE81 /* DCTestParseOnlyValuesToObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTestParseOnlyValuesToObject.h; sourceTree = "<group>"; };
+		2011BA0315BCF8CC0098BE81 /* DCTestParseOnlyValuesToObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTestParseOnlyValuesToObject.m; sourceTree = "<group>"; };
 		201F6F51153F31FD009A24B9 /* DCCoverageFix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCoverageFix.h; sourceTree = "<group>"; };
 		201F6F52153F31FD009A24B9 /* DCCoverageFix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCoverageFix.m; sourceTree = "<group>"; };
 		201F6F5C153F56BE009A24B9 /* DCPropertyAggregator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPropertyAggregator.h; sourceTree = "<group>"; };
@@ -254,6 +257,8 @@
 				201F6F6A153F6421009A24B9 /* DCPropertyAggregatorTests.m */,
 				20D62C221588F8D700484122 /* DCSerializationTests.h */,
 				20D62C231588F8D700484122 /* DCSerializationTests.m */,
+				2011BA0215BCF8CC0098BE81 /* DCTestParseOnlyValuesToObject.h */,
+				2011BA0315BCF8CC0098BE81 /* DCTestParseOnlyValuesToObject.m */,
 				205FD3BD153F02AA00693E13 /* Supporting Files */,
 			);
 			path = KeyValueObjectMappingTests;
@@ -577,6 +582,7 @@
 				201F6F66153F6355009A24B9 /* Location.m in Sources */,
 				201F6F6B153F6421009A24B9 /* DCPropertyAggregatorTests.m in Sources */,
 				20D62C241588F8D700484122 /* DCSerializationTests.m in Sources */,
+				2011BA0415BCF8CC0098BE81 /* DCTestParseOnlyValuesToObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

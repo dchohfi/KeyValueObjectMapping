@@ -20,6 +20,8 @@
 - (id)initWithClass: (Class) classToGenerate 
    forConfiguration: (DCParserConfiguration *) configuration;
 
+- (void) setValuesOnObject: (id) object withDictionary: (NSDictionary *) dictionary;
+
 - (id) parseDictionary: (NSDictionary *) dictionary;
 - (NSArray *) parseArray: (NSArray *) array;
 

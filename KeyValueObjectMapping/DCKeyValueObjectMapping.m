@@ -67,6 +67,14 @@
     }
     NSObject *object = [self createInstanceOfClass:classToGenerate];
     
+    [self setValuesOnObject:object withDictionary:dictionary];
+    return object;
+}
+- (void) setValuesOnObject: (id) object withDictionary: (NSDictionary *) dictionary {
+    if([object class] != self.classToGenerate){
+        return;
+    }
+    
     dictionary = [DCDictionaryRearranger rearrangeDictionary:dictionary 
                                               forAggregators:configuration.aggregators];
     
@@ -79,7 +87,6 @@
             [self parseValue:value forObject:object inAttribute:dynamicAttribute];
         }
     }
-    return object;
 }
 - (NSDictionary *)serializeObject:(id)object
 {    
