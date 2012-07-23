@@ -28,7 +28,7 @@
 		205FD3D6153F030800693E13 /* DCReferenceKeyParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD3D4153F030800693E13 /* DCReferenceKeyParser.m */; };
 		205FD3DA153F031C00693E13 /* DCParserConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 205FD3D8153F031C00693E13 /* DCParserConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		205FD3DB153F031C00693E13 /* DCParserConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD3D9153F031C00693E13 /* DCParserConfiguration.m */; };
-		205FD3E0153F032F00693E13 /* DCValueConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 205FD3DD153F032F00693E13 /* DCValueConverter.h */; };
+		205FD3E0153F032F00693E13 /* DCValueConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 205FD3DD153F032F00693E13 /* DCValueConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		205FD3E1153F032F00693E13 /* DCGenericConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 205FD3DE153F032F00693E13 /* DCGenericConverter.h */; };
 		205FD3E2153F032F00693E13 /* DCGenericConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FD3DF153F032F00693E13 /* DCGenericConverter.m */; };
 		205FD3EC153F033A00693E13 /* DCNSArrayConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 205FD3E4153F033A00693E13 /* DCNSArrayConverter.h */; };
