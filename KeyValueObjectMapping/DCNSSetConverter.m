@@ -16,28 +16,28 @@
 @end
 
 @implementation DCNSSetConverter
-@synthesize arrayConverter, configuration;
+@synthesize arrayConverter = _arrayConverter;
+@synthesize configuration = _configuration;
 + (DCNSSetConverter *) setConverterForConfiguration: (DCParserConfiguration *) configuration {
     return [[self alloc] initWithConfiguration: configuration];
 }
 
-- (id)initWithConfiguration: (DCParserConfiguration *) _configuration
-{
+- (id)initWithConfiguration: (DCParserConfiguration *) configuration {
     self = [super init];
     if (self) {
-        self.configuration = _configuration;
-        self.arrayConverter = [DCNSArrayConverter arrayConverterForConfiguration:_configuration];
+        self.configuration = configuration;
+        self.arrayConverter = [DCNSArrayConverter arrayConverterForConfiguration:self.configuration];
     }
     return self;
 }
 
 - (id)transformValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute {
-    NSArray *result = [arrayConverter transformValue:values forDynamicAttribute:attribute];
+    NSArray *result = [self.arrayConverter transformValue:values forDynamicAttribute:attribute];
     return [NSSet setWithArray:result];
 }
 
 - (id)serializeValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute {
-    return [arrayConverter serializeValue:value forDynamicAttribute:attribute];
+    return [self.arrayConverter serializeValue:value forDynamicAttribute:attribute];
 }
 
 - (BOOL)canTransformValueForClass:(Class) classe {

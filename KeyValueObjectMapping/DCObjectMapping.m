@@ -9,21 +9,22 @@
 #import "DCObjectMapping.h"
 
 @implementation DCObjectMapping
-@synthesize attributeName, keyReference, classReference, converter;
+@synthesize attributeName = _attributeName;
+@synthesize keyReference = _keyReference;
+@synthesize classReference = _classReference;
+@synthesize converter = _converter;
 
-
-- (id)initWithClass: (Class) _classReference
-{
+- (id)initWithClass: (Class) classReference {
     self = [super init];
     if (self) {
-        classReference = _classReference;
+        _classReference = classReference;
     }
     return self;
 }
 
 + (DCObjectMapping *) mapKeyPath: (NSString *) keyPath 
                      toAttribute: (NSString *) attributeName 
-                         onClass: (Class) attributeClass{
+                         onClass: (Class) attributeClass {
     
     return [[self alloc] initWithKeyPath:keyPath 
                              toAttribute:attributeName 
@@ -41,23 +42,23 @@
                                converter:converter];
 }
 
-- (id)initWithKeyPath: (NSString *) _keyReference 
-          toAttribute: (NSString *) _attributeName 
-              onClass: (Class) _classReference 
-            converter: (id <DCValueConverter>)_converter {
+- (id)initWithKeyPath: (NSString *) keyReference
+          toAttribute: (NSString *) attributeName
+              onClass: (Class) classReference
+            converter: (id <DCValueConverter>) converter {
     
     self = [super init];
     if (self) {
-        attributeName = _attributeName;
-        keyReference = _keyReference;
-        classReference = _classReference;
-        converter = _converter;
+        _attributeName = attributeName;
+        _keyReference = keyReference;
+        _classReference = classReference;
+        _converter = converter;
     }
     return self;
 }
 
-- (BOOL) sameKey: (NSString *) key andClassReference: (Class) _classReference {
-    if([self.keyReference isEqualToString:key] && self.classReference == _classReference){
+- (BOOL) sameKey: (NSString *) key andClassReference: (Class) classReference {
+    if([self.keyReference isEqualToString:key] && self.classReference == classReference){
         return YES;
     }
     return NO;

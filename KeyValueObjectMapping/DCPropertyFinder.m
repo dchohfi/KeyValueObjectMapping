@@ -16,7 +16,8 @@
 @end
 
 @implementation DCPropertyFinder
-@synthesize keyParser, mappers;
+@synthesize keyParser = _keyParser;
+@synthesize mappers = _mappers;
 
 #pragma mark - public methods
 
@@ -35,7 +36,7 @@
     
     NSString *propertyDetails = [self findPropertyDetailsForKey:key onClass:class];
     if(!propertyDetails){
-        key = [keyParser splitKeyAndMakeCamelcased:key];
+        key = [self.keyParser splitKeyAndMakeCamelcased:key];
         propertyDetails = [self findPropertyDetailsForKey:key onClass:class];
     }
     
@@ -46,16 +47,16 @@
     return dynamicAttribute;
 }
 
-- (void) setMappers: (NSArray *) _mappers{
-    mappers = [NSArray arrayWithArray:_mappers];
+- (void) setMappers: (NSArray *) mappers{
+    self.mappers = [NSArray arrayWithArray:mappers];
 }
 
 #pragma mark - private methods
-- (id)initWithKeyParser: (DCReferenceKeyParser *) _keyParser {
+- (id)initWithKeyParser: (DCReferenceKeyParser *) keyParser {
     self = [super init];
     if (self) {
-        keyParser = _keyParser;
-        mappers = [[NSMutableArray alloc] init];
+        _keyParser = keyParser;
+        _mappers = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -70,7 +71,7 @@
 }
 
 - (DCObjectMapping *) findMapperForKey: (NSString *) key onClass: (Class) class {
-    for(DCObjectMapping *mapper in mappers){
+    for(DCObjectMapping *mapper in self.mappers){
         if([mapper sameKey:key andClassReference:class]){
             return mapper;
         }

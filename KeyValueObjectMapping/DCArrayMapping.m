@@ -9,7 +9,8 @@
 #import "DCArrayMapping.h"
 
 @implementation DCArrayMapping
-@synthesize objectMapping, classForElementsOnArray;
+@synthesize objectMapping = _objectMapping;
+@synthesize classForElementsOnArray = _classForElementsOnArray;
 
 + (DCArrayMapping *) mapperForClassElements: (Class) classForElementsOnArray 
                                forAttribute: (NSString *) attribute 
@@ -29,13 +30,13 @@
                          forArrayElementOfType:classForElementsOnArray];
 }
 
-- (id)initWithObjectMapping: (DCObjectMapping *) _objectMapping 
-      forArrayElementOfType: (Class) _classForElementsOnArray {
+- (id)initWithObjectMapping: (DCObjectMapping *) objectMapping
+      forArrayElementOfType: (Class) classForElementsOnArray {
     
     self = [super init];
     if (self) {
-        objectMapping = _objectMapping;
-        classForElementsOnArray = _classForElementsOnArray;
+        _objectMapping = objectMapping;
+        _classForElementsOnArray = classForElementsOnArray;
     }
     return self;
 }

@@ -9,17 +9,18 @@
 #import "DCPropertyAggregator.h"
 
 @implementation DCPropertyAggregator
-@synthesize keysToAggregate, attribute;
+@synthesize keysToAggregate = _keysToAggregate;
+@synthesize attribute = _attribute;
 
 + (DCPropertyAggregator *) aggregateKeys: (NSSet *) keys intoAttribute: (NSString *) attribute {
     return [[self alloc] initWithKeysToAggregate:keys intoAttribute:attribute];
 }
 
-- (id)initWithKeysToAggregate: (NSSet *) keys intoAttribute: (NSString *) _attribute  {
+- (id)initWithKeysToAggregate: (NSSet *) keysToAggregate intoAttribute: (NSString *) attribute  {
     self = [super init];
     if (self) {
-        keysToAggregate = keys;
-        attribute = _attribute;
+        _keysToAggregate = keysToAggregate;
+        _attribute = attribute;
     }
     return self;
 }
@@ -27,7 +28,7 @@
 - (NSDictionary *) aggregateKeysOnDictionary: (NSDictionary *) baseDictionary {
     NSMutableDictionary *aggregateHolder = [[NSMutableDictionary alloc] init];
     for (NSString *key in baseDictionary) {
-        if([keysToAggregate containsObject:key]){
+        if([self.keysToAggregate containsObject:key]){
             [aggregateHolder setValue:[baseDictionary objectForKey:key] forKey:key];
         }
     }

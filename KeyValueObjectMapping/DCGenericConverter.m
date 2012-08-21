@@ -20,18 +20,18 @@
 @end
 
 @implementation DCGenericConverter
-@synthesize configuration, parsers;
+@synthesize configuration = _configuration;
+@synthesize parsers = _parsers;
 
-- (id)initWithConfiguration:(DCParserConfiguration *) _configuration
-{
+- (id)initWithConfiguration:(DCParserConfiguration *) configuration {
     self = [super init];
     if (self) {
-        configuration = _configuration;
-        parsers = [NSArray arrayWithObjects:
-                   [DCNSDateConverter dateConverterForPattern:configuration.datePattern],
+        _configuration = configuration;
+        _parsers = [NSArray arrayWithObjects:
+                   [DCNSDateConverter dateConverterForPattern:self.configuration.datePattern],
                    [DCNSURLConverter urlConverter],
-                   [DCNSArrayConverter arrayConverterForConfiguration: configuration], 
-                   [DCNSSetConverter setConverterForConfiguration: configuration], nil];
+                   [DCNSArrayConverter arrayConverterForConfiguration: self.configuration], 
+                   [DCNSSetConverter setConverterForConfiguration: self.configuration], nil];
     }
     return self;
 }
@@ -45,7 +45,7 @@
                                                                      andConfiguration:self.configuration];
             value = [parser parseDictionary:(NSDictionary *) value];
         }else {        
-            for(id<DCValueConverter> parser in parsers){
+            for(id<DCValueConverter> parser in self.parsers){
                 if([parser canTransformValueForClass:attribute.objectMapping.classReference]){
                     return [parser transformValue:value forDynamicAttribute:attribute];
                 }

@@ -19,16 +19,16 @@
 @end
 
 @implementation DCNSArrayConverter
-@synthesize configuration;
+@synthesize configuration = _configuration;
 
 + (DCNSArrayConverter *) arrayConverterForConfiguration: (DCParserConfiguration *)configuration {
     return [[self alloc] initWithConfiguration: configuration];
 }
 
-- (id)initWithConfiguration:(DCParserConfiguration *)_configuration{
+- (id)initWithConfiguration:(DCParserConfiguration *)configuration{
     self = [super init];
     if (self) {
-        configuration = _configuration;
+        _configuration = configuration;
     }
     return self;   
 }
@@ -42,7 +42,7 @@
     if(primitiveArray){
         return [self parsePrimitiveValues:values];
     }else{
-        DCArrayMapping *mapper = [configuration arrayMapperForMapper:attribute.objectMapping];
+        DCArrayMapping *mapper = [self.configuration arrayMapperForMapper:attribute.objectMapping];
         if(mapper){
             DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:mapper.classForElementsOnArray andConfiguration:self.configuration];
             return [parser parseArray:values];
@@ -50,8 +50,8 @@
     }
     return nil;
 }
-- (id)serializeValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute{
-    DCGenericConverter* genericConverter = [[DCGenericConverter alloc] initWithConfiguration:configuration];
+- (id)serializeValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute {
+    DCGenericConverter* genericConverter = [[DCGenericConverter alloc] initWithConfiguration:self.configuration];
     NSMutableArray *valuesHolder = [NSMutableArray array];
     for(id value in values){
         DCDynamicAttribute *valueClassAsAttribute = [[DCDynamicAttribute alloc] initWithClass:[value class]];

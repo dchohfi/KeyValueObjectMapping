@@ -181,6 +181,7 @@
     NSString *customText = @"custom text to be on attribute";
     DCCustomInitializeBlock block = ^id(__weak Class classToGenerate, __weak NSDictionary *values){
         STAssertEquals(classToGenerate, [User class], @"classToGenerate should be a user");
+        STAssertEqualObjects([values objectForKey:@"name"], @"Diego Chohfi", @"Should have same user name");
         User *user = [[classToGenerate alloc] init];
         user.customText = customText;
         return user;
