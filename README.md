@@ -18,7 +18,6 @@ Features
 * Aggregate values to an specific attribute using [`DCPropertyAggregator`][DCPropertyAggregator].
 * Parse [`NSDate`][NSDate] using a specific date pattern(passed through the configuration) or if it's send on [`JSON`][JSON] in milliseconds since Jan 1, 1970 (*UNIX* timestamp) will be parsed with no additional configuration.
 * Having a property pointing to a [`NSURL`][NSURL], framework will try to use `[NSURL URLWithString:]` method passing the value as a [`NSString`][NSString].
-* Compatible with CoreData objects, use method `setValuesOnObject:withDictionary:` to set values on a previous created instance.
 
 Installation
 -------------------------
