@@ -14,7 +14,7 @@
 @implementation DCParserConfigurationTest
 
 - (void) testCreateCustomTweetWithBlock {
-    DCCustomInitializeBlock block = ^id(__weak Class classToGenerate){
+    DCCustomInitializeBlock block = ^id(__weak Class classToGenerate, NSDictionary *values){
         STAssertEquals(classToGenerate, [Tweet class], @"classToGenerate should be an tweet");
         Tweet *tweet = [[Tweet alloc] init];
         tweet.text = @"Should be an text";
@@ -27,13 +27,13 @@
     DCParserConfiguration *configuration = [DCParserConfiguration configuration];
     [configuration addCustomInitializer:initializer];
     
-    Tweet *tweet = [configuration instantiateObjectForClass:[Tweet class]];
+    Tweet *tweet = [configuration instantiateObjectForClass:[Tweet class] withValues:nil];
     STAssertTrue([tweet.text isEqualToString: @"Should be an text"], @"should have the same text passed on custom initialize");
 }
 - (void) testCreateObjectWithNormalInitialize {
     DCParserConfiguration *configuration = [DCParserConfiguration configuration];
     
-    Tweet *tweet = [configuration instantiateObjectForClass:[Tweet class]];
+    Tweet *tweet = [configuration instantiateObjectForClass:[Tweet class] withValues:nil];
     STAssertNotNil(tweet, @"should create an tweet when no custom initialize is used");
 }
 

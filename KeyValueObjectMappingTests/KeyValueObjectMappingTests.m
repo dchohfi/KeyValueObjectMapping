@@ -179,7 +179,7 @@
 
 -(void) testShouldUseCustomInitializeForPropertyClasses {
     NSString *customText = @"custom text to be on attribute";
-    DCCustomInitializeBlock block = ^id(__weak Class classToGenerate){
+    DCCustomInitializeBlock block = ^id(__weak Class classToGenerate, __weak NSDictionary *values){
         STAssertEquals(classToGenerate, [User class], @"classToGenerate should be a user");
         User *user = [[classToGenerate alloc] init];
         user.customText = customText;

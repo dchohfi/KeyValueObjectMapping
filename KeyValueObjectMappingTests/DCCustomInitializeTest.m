@@ -13,7 +13,7 @@
 @implementation DCCustomInitializeTest
 
 - (void) testShouldCreateAnDCCustomInitialize {
-    DCCustomInitializeBlock customBlock = ^(__weak Class classOfObjectToGenerate) {
+    DCCustomInitializeBlock customBlock = ^(__weak Class classOfObjectToGenerate, NSDictionary *values) {
         return [[classOfObjectToGenerate alloc] init];
     };
     DCCustomInitialize *customInitialize = [[DCCustomInitialize alloc] initWithBlockInitialize:customBlock forClass:[Tweet class]];

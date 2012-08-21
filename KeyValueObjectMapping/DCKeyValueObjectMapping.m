@@ -59,7 +59,8 @@
     if(!dictionary || !classToGenerate){
         return nil;
     }
-    NSObject *object = [[self configuration] instantiateObjectForClass:classToGenerate];
+    NSObject *object = [[self configuration] instantiateObjectForClass:classToGenerate
+                                                            withValues:dictionary];
     
     [self setValuesOnObject:object withDictionary:dictionary];
     return object;

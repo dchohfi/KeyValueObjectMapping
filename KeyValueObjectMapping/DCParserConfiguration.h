@@ -23,6 +23,6 @@
 - (void) addObjectMapping: (DCObjectMapping *) mapper;
 - (void) addAggregator: (DCPropertyAggregator *) aggregator;
 - (void) addCustomInitializer: (DCCustomInitialize *) customInitialize;
-- (id) instantiateObjectForClass: (Class) classOfObjectToGenerate;
+- (id) instantiateObjectForClass: (Class) classOfObjectToGenerate withValues: (NSDictionary *) values;
 - (DCArrayMapping *) arrayMapperForMapper: (DCObjectMapping *) mapper;
 @end

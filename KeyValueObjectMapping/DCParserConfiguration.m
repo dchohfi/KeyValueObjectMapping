@@ -51,10 +51,10 @@
 - (void) addCustomInitializer: (DCCustomInitialize *) customInitialize {
     [customInitializers addObject:customInitialize];
 }
-- (id) instantiateObjectForClass: (Class) classOfObjectToGenerate {
+- (id) instantiateObjectForClass: (Class) classOfObjectToGenerate withValues: (NSDictionary *) values {
     for(DCCustomInitialize *customInitialize in customInitializers){
         if([customInitialize validToPerformBlock:classOfObjectToGenerate]){
-            return customInitialize.blockInitialize(classOfObjectToGenerate);
+            return customInitialize.blockInitialize(classOfObjectToGenerate, values);
         }
     }
     return [[classOfObjectToGenerate alloc] init];

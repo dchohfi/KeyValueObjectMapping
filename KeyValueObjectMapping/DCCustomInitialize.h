@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef id(^DCCustomInitializeBlock)(__weak Class classOfObjectToGenerate);
+typedef id(^DCCustomInitializeBlock)(__weak Class classOfObjectToGenerate, __weak NSDictionary *values);
 
 @interface DCCustomInitialize : NSObject
 
