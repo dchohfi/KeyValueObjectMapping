@@ -35,7 +35,7 @@
         [parsedKeyName appendString:[[splitedKey substringWithRange:NSMakeRange(0, 1)] uppercaseString]];
         [parsedKeyName appendString:[[splitedKey substringFromIndex:1] lowercaseString]];
     }
-    return [NSString stringWithFormat:parsedKeyName];
+    return [NSString stringWithString:parsedKeyName];
 }
 
 @end

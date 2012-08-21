@@ -8,6 +8,8 @@
 
 #import "DCSerializationTests.h"
 #import "DCKeyValueObjectMapping.h"
+#import "DCObjectMapping.h"
+#import "DCParserConfiguration.h"
 #import "Bus.h"
 
 @interface DCSerializationTests()

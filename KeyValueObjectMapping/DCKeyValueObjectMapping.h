@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DCParserConfiguration.h"
 
+@class DCParserConfiguration;
 @interface DCKeyValueObjectMapping : NSObject
 
 @property(nonatomic, readonly) Class classToGenerate;
@@ -19,8 +19,6 @@
 
 - (id)initWithClass: (Class) classToGenerate 
    forConfiguration: (DCParserConfiguration *) configuration;
-
-- (void) setValuesOnObject: (id) object withDictionary: (NSDictionary *) dictionary;
 
 - (id) parseDictionary: (NSDictionary *) dictionary;
 - (NSArray *) parseArray: (NSArray *) array;

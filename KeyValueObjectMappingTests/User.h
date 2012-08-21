@@ -21,5 +21,6 @@
 @property(nonatomic, readonly) NSDate *createdAt;
 @property(nonatomic, readonly) BOOL following;
 @property(nonatomic, readonly) NSArray *tweets;
+@property(nonatomic, strong) NSString *customText;
 @property(nonatomic, readonly) NSMutableArray *params;
 @end

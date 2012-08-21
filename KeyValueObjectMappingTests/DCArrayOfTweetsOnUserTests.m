@@ -8,6 +8,8 @@
 
 #import "DCArrayOfTweetsOnUserTests.h"
 #import "DCKeyValueObjectMapping.h"
+#import "DCArrayMapping.h"
+#import "DCParserConfiguration.h"
 #import "Tweet.h"
 #import "User.h"
 
@@ -65,7 +67,8 @@
     NSMutableDictionary *copy = [jsonParsed mutableCopy];
     [copy removeObjectForKey:@"tweets"];
     
-    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[User class] andConfiguration:configuration];
+    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[User class]
+                                                             andConfiguration:configuration];
 
     User *user = [parser parseDictionary:copy];
     STAssertNil(user.tweets, @"Tweets should be nil");
@@ -85,7 +88,8 @@
     NSMutableDictionary *copy = [jsonParsed mutableCopy];
     [copy removeObjectForKey:@"tweets"];
     
-    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[User class] andConfiguration:configuration];
+    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[User class]
+                                                             andConfiguration:configuration];
     
     User *user = [parser parseDictionary:copy];
     STAssertNil(user.tweets, @"Tweets should be nil");

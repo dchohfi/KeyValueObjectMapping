@@ -19,9 +19,6 @@
 @property(nonatomic, strong) DCGenericConverter *converter;
 @property(nonatomic, strong) DCPropertyFinder *propertyFinder;
 @property(nonatomic, strong) DCParserConfiguration *configuration;
-
-- (id)createInstanceOfClass:(Class)class;
-
 @end
 
 @implementation DCKeyValueObjectMapping
@@ -47,9 +44,6 @@
     }
     return self;   
 }
-- (id)createInstanceOfClass:(Class)_classToGenerate {
-    return [[_classToGenerate alloc]init];
-}
 - (NSArray *) parseArray: (NSArray *) array {
     if(!array){
         return nil;
@@ -65,7 +59,7 @@
     if(!dictionary || !classToGenerate){
         return nil;
     }
-    NSObject *object = [self createInstanceOfClass:classToGenerate];
+    NSObject *object = [[self configuration] instantiateObjectForClass:classToGenerate];
     
     [self setValuesOnObject:object withDictionary:dictionary];
     return object;
@@ -115,11 +109,15 @@
     
     return [NSArray arrayWithArray:serializedObjects];
 }
-- (void) parseValue: (id) value forObject: (id) object inAttribute: (DCDynamicAttribute *) dynamicAttribute {
+- (void) parseValue: (id) value
+          forObject: (id) object
+        inAttribute: (DCDynamicAttribute *) dynamicAttribute {
     DCObjectMapping *objectMapping = dynamicAttribute.objectMapping;
-    
     NSString *attributeName = objectMapping.attributeName;
-    value = [converter transformValue:value forDynamicAttribute:dynamicAttribute];
+    
+    value = [converter transformValue:value
+                  forDynamicAttribute:dynamicAttribute];
+    
     [DCAttributeSetter assingValue:value 
                   forAttributeName:attributeName 
                  andAttributeClass:objectMapping.classReference 

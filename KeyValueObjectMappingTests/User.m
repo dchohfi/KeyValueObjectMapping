@@ -22,4 +22,5 @@
 @synthesize following;
 @synthesize tweets;
 @synthesize params;
+@synthesize customText;
 @end

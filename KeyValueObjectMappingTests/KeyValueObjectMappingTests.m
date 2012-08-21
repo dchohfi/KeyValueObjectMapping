@@ -9,6 +9,8 @@
 #import "KeyValueObjectMappingTests.h"
 #import "DCParserConfiguration.h"
 #import "DCKeyValueObjectMapping.h"
+#import "DCArrayMapping.h"
+#import "DCCustomInitialize.h"
 #import "Person.h"
 #import "Tweet.h"
 
@@ -124,7 +126,9 @@
     DCParserConfiguration *configuration = [DCParserConfiguration configuration];
     configuration.datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
     
-    [configuration addArrayMapper:[DCArrayMapping mapperForClassElements:[Tweet class] forAttribute:@"tweets" onClass:[User class]]];
+    [configuration addArrayMapper:[DCArrayMapping mapperForClassElements:[Tweet class]
+                                                            forAttribute:@"tweets"
+                                                                 onClass:[User class]]];
     
     DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[User class] andConfiguration:configuration];
     User *user = [parser parseDictionary:userDictionary];
@@ -171,6 +175,26 @@
     persons = [parser parseArray: [NSArray array]];
     STAssertNotNil(persons, @"Should not be when class is nil");
     STAssertEquals((int)[persons count], 0, @"Should return empty array when class is nil");
+}
+
+-(void) testShouldUseCustomInitializeForPropertyClasses {
+    NSString *customText = @"custom text to be on attribute";
+    DCCustomInitializeBlock block = ^id(__weak Class classToGenerate){
+        STAssertEquals(classToGenerate, [User class], @"classToGenerate should be a user");
+        User *user = [[classToGenerate alloc] init];
+        user.customText = customText;
+        return user;
+    };
+    DCCustomInitialize *customInitialize = [[DCCustomInitialize alloc] initWithBlockInitialize:block
+                                                                                      forClass:[User class]];
+    DCParserConfiguration *config = [DCParserConfiguration configuration];
+    [config addCustomInitializer:customInitialize];
+    
+    DCKeyValueObjectMapping * parser = [DCKeyValueObjectMapping mapperForClass:[Tweet class] andConfiguration:config];
+    
+    Tweet *tweet = [parser parseDictionary:json];
+    User *user = tweet.user;
+    STAssertEqualObjects(customText, user.customText, @"should be equals to customText");
 }
 
 @end

@@ -7,6 +7,9 @@
 //
 
 #import "DCParserConfiguration.h"
+#import "DCArrayMapping.h"
+#import "DCPropertyAggregator.h"
+#import "DCCustomInitialize.h"
 
 @interface DCParserConfiguration()
 
@@ -15,7 +18,7 @@
 @end
 
 @implementation DCParserConfiguration
-@synthesize datePattern, splitToken, arrayMappers, objectMappers, aggregators;
+@synthesize datePattern, splitToken, arrayMappers, objectMappers, aggregators, customInitializers;
 
 + (DCParserConfiguration *) configuration {
     return [[self alloc] init];
@@ -28,6 +31,7 @@
         arrayMappers = [[NSMutableArray alloc] init];
         objectMappers = [[NSMutableArray alloc] init];
         aggregators = [[NSMutableArray alloc] init];
+        customInitializers = [[NSMutableArray alloc] init];
         splitToken = @"_";
         datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
     }
@@ -43,6 +47,17 @@
 }
 - (void) addAggregator: (DCPropertyAggregator *) aggregator {
     [aggregators addObject:aggregator];
+}
+- (void) addCustomInitializer: (DCCustomInitialize *) customInitialize {
+    [customInitializers addObject:customInitialize];
+}
+- (id) instantiateObjectForClass: (Class) classOfObjectToGenerate {
+    for(DCCustomInitialize *customInitialize in customInitializers){
+        if([customInitialize validToPerformBlock:classOfObjectToGenerate]){
+            return customInitialize.blockInitialize(classOfObjectToGenerate);
+        }
+    }
+    return [[classOfObjectToGenerate alloc] init];
 }
 - (DCArrayMapping *) arrayMapperForMapper: (DCObjectMapping *) mapper{
     for(DCArrayMapping *arrayMapper in arrayMappers){

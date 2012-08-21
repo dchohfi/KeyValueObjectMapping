@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2011BA0415BCF8CC0098BE81 /* DCTestParseOnlyValuesToObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2011BA0315BCF8CC0098BE81 /* DCTestParseOnlyValuesToObject.m */; };
 		201F6F53153F31FD009A24B9 /* DCCoverageFix.m in Sources */ = {isa = PBXBuildFile; fileRef = 201F6F52153F31FD009A24B9 /* DCCoverageFix.m */; };
 		201F6F5E153F56BE009A24B9 /* DCPropertyAggregator.h in Headers */ = {isa = PBXBuildFile; fileRef = 201F6F5C153F56BE009A24B9 /* DCPropertyAggregator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		201F6F5F153F56BE009A24B9 /* DCPropertyAggregator.m in Sources */ = {isa = PBXBuildFile; fileRef = 201F6F5D153F56BE009A24B9 /* DCPropertyAggregator.m */; };
@@ -59,7 +58,10 @@
 		205FD425153F041F00693E13 /* plist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 205FD422153F041F00693E13 /* plist.plist */; };
 		205FD426153F041F00693E13 /* tweet.json in Resources */ = {isa = PBXBuildFile; fileRef = 205FD423153F041F00693E13 /* tweet.json */; };
 		205FD427153F041F00693E13 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 205FD424153F041F00693E13 /* user.json */; };
-		205FD42B153F053300693E13 /* DCFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 205FD42A153F053300693E13 /* DCFramework.h */; };
+		2077210015E3E406000A4FA3 /* DCCustomInitialize.h in Headers */ = {isa = PBXBuildFile; fileRef = 207720FE15E3E406000A4FA3 /* DCCustomInitialize.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2077210115E3E406000A4FA3 /* DCCustomInitialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 207720FF15E3E406000A4FA3 /* DCCustomInitialize.m */; };
+		2077210615E3F9FD000A4FA3 /* DCCustomInitializeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2077210515E3F9FD000A4FA3 /* DCCustomInitializeTest.m */; };
+		2077210915E40084000A4FA3 /* DCParserConfigurationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2077210815E40083000A4FA3 /* DCParserConfigurationTest.m */; };
 		20D62C1F1588EF2F00484122 /* DCNSSetConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 20D62C1D1588EF2F00484122 /* DCNSSetConverter.h */; };
 		20D62C201588EF2F00484122 /* DCNSSetConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D62C1E1588EF2F00484122 /* DCNSSetConverter.m */; };
 		20D62C241588F8D700484122 /* DCSerializationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D62C231588F8D700484122 /* DCSerializationTests.m */; };
@@ -76,8 +78,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2011BA0215BCF8CC0098BE81 /* DCTestParseOnlyValuesToObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTestParseOnlyValuesToObject.h; sourceTree = "<group>"; };
-		2011BA0315BCF8CC0098BE81 /* DCTestParseOnlyValuesToObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTestParseOnlyValuesToObject.m; sourceTree = "<group>"; };
 		201F6F51153F31FD009A24B9 /* DCCoverageFix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCoverageFix.h; sourceTree = "<group>"; };
 		201F6F52153F31FD009A24B9 /* DCCoverageFix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCoverageFix.m; sourceTree = "<group>"; };
 		201F6F5C153F56BE009A24B9 /* DCPropertyAggregator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPropertyAggregator.h; sourceTree = "<group>"; };
@@ -145,7 +145,12 @@
 		205FD422153F041F00693E13 /* plist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = plist.plist; sourceTree = "<group>"; };
 		205FD423153F041F00693E13 /* tweet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tweet.json; sourceTree = "<group>"; };
 		205FD424153F041F00693E13 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
-		205FD42A153F053300693E13 /* DCFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCFramework.h; sourceTree = "<group>"; };
+		207720FE15E3E406000A4FA3 /* DCCustomInitialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCustomInitialize.h; sourceTree = "<group>"; };
+		207720FF15E3E406000A4FA3 /* DCCustomInitialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCustomInitialize.m; sourceTree = "<group>"; };
+		2077210415E3F9FD000A4FA3 /* DCCustomInitializeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCustomInitializeTest.h; sourceTree = "<group>"; };
+		2077210515E3F9FD000A4FA3 /* DCCustomInitializeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCustomInitializeTest.m; sourceTree = "<group>"; };
+		2077210715E40083000A4FA3 /* DCParserConfigurationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCParserConfigurationTest.h; sourceTree = "<group>"; };
+		2077210815E40083000A4FA3 /* DCParserConfigurationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCParserConfigurationTest.m; sourceTree = "<group>"; };
 		20D62C1D1588EF2F00484122 /* DCNSSetConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNSSetConverter.h; sourceTree = "<group>"; };
 		20D62C1E1588EF2F00484122 /* DCNSSetConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNSSetConverter.m; sourceTree = "<group>"; };
 		20D62C221588F8D700484122 /* DCSerializationTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCSerializationTests.h; sourceTree = "<group>"; };
@@ -209,6 +214,7 @@
 				205FD3CD153F02EE00693E13 /* Finders */,
 				201F6F6C153F7885009A24B9 /* Setters */,
 				205FD3D2153F02FD00693E13 /* Utils */,
+				2077210315E3E40C000A4FA3 /* Objecs */,
 				205FD3D7153F030F00693E13 /* Configuration */,
 				205FD3DC153F032300693E13 /* Converters */,
 				205FD3F4153F034300693E13 /* Mappers */,
@@ -222,7 +228,6 @@
 			children = (
 				205FD3A7153F02AA00693E13 /* KeyValueObjectMapping-Info.plist */,
 				205FD3AB153F02AA00693E13 /* KeyValueObjectMapping-Prefix.pch */,
-				205FD42A153F053300693E13 /* DCFramework.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -257,8 +262,10 @@
 				201F6F6A153F6421009A24B9 /* DCPropertyAggregatorTests.m */,
 				20D62C221588F8D700484122 /* DCSerializationTests.h */,
 				20D62C231588F8D700484122 /* DCSerializationTests.m */,
-				2011BA0215BCF8CC0098BE81 /* DCTestParseOnlyValuesToObject.h */,
-				2011BA0315BCF8CC0098BE81 /* DCTestParseOnlyValuesToObject.m */,
+				2077210415E3F9FD000A4FA3 /* DCCustomInitializeTest.h */,
+				2077210515E3F9FD000A4FA3 /* DCCustomInitializeTest.m */,
+				2077210715E40083000A4FA3 /* DCParserConfigurationTest.h */,
+				2077210815E40083000A4FA3 /* DCParserConfigurationTest.m */,
 				205FD3BD153F02AA00693E13 /* Supporting Files */,
 			);
 			path = KeyValueObjectMappingTests;
@@ -288,6 +295,7 @@
 		205FD3D2153F02FD00693E13 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				205FD3DE153F032F00693E13 /* DCGenericConverter.h */,
 				205FD3D3153F030800693E13 /* DCReferenceKeyParser.h */,
 				205FD3D4153F030800693E13 /* DCReferenceKeyParser.m */,
 				201F6F71153F7C9E009A24B9 /* DCDictionaryRearranger.h */,
@@ -310,7 +318,6 @@
 			children = (
 				205FD3E3153F033200693E13 /* Implementation */,
 				205FD3DD153F032F00693E13 /* DCValueConverter.h */,
-				205FD3DE153F032F00693E13 /* DCGenericConverter.h */,
 				205FD3DF153F032F00693E13 /* DCGenericConverter.m */,
 			);
 			name = Converters;
@@ -365,6 +372,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		2077210315E3E40C000A4FA3 /* Objecs */ = {
+			isa = PBXGroup;
+			children = (
+				207720FE15E3E406000A4FA3 /* DCCustomInitialize.h */,
+				207720FF15E3E406000A4FA3 /* DCCustomInitialize.m */,
+			);
+			name = Objecs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -386,10 +402,10 @@
 				205FD3FD153F034D00693E13 /* DCObjectMapping.h in Headers */,
 				205FD3FF153F034D00693E13 /* DCArrayMapping.h in Headers */,
 				205FD403153F035700693E13 /* DCKeyValueObjectMapping.h in Headers */,
-				205FD42B153F053300693E13 /* DCFramework.h in Headers */,
 				201F6F6F153F789A009A24B9 /* DCAttributeSetter.h in Headers */,
 				201F6F73153F7C9E009A24B9 /* DCDictionaryRearranger.h in Headers */,
 				20D62C1F1588EF2F00484122 /* DCNSSetConverter.h in Headers */,
+				2077210015E3E406000A4FA3 /* DCCustomInitialize.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,6 +578,7 @@
 				201F6F70153F789A009A24B9 /* DCAttributeSetter.m in Sources */,
 				201F6F74153F7C9E009A24B9 /* DCDictionaryRearranger.m in Sources */,
 				20D62C201588EF2F00484122 /* DCNSSetConverter.m in Sources */,
+				2077210115E3E406000A4FA3 /* DCCustomInitialize.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,7 +599,8 @@
 				201F6F66153F6355009A24B9 /* Location.m in Sources */,
 				201F6F6B153F6421009A24B9 /* DCPropertyAggregatorTests.m in Sources */,
 				20D62C241588F8D700484122 /* DCSerializationTests.m in Sources */,
-				2011BA0415BCF8CC0098BE81 /* DCTestParseOnlyValuesToObject.m in Sources */,
+				2077210615E3F9FD000A4FA3 /* DCCustomInitializeTest.m in Sources */,
+				2077210915E40084000A4FA3 /* DCParserConfigurationTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

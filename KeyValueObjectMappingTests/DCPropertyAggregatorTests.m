@@ -10,6 +10,7 @@
 #import "DCKeyValueObjectMapping.h"
 #import "DCParserConfiguration.h"
 #import "DCDictionaryRearranger.h"
+#import "DCPropertyAggregator.h"
 #import "Bus.h"
 @implementation DCPropertyAggregatorTests
 
@@ -22,12 +23,15 @@
     [dictionaryToParse setObject:latitude forKey:@"latitude"];
     [dictionaryToParse setObject:longitude forKey:@"longitude"];
     
-    DCPropertyAggregator *aggregator = [DCPropertyAggregator aggregateKeys:[NSSet setWithObjects:@"latitude", @"longitude", nil] intoAttribute:@"location"];
+    NSSet *keys = [NSSet setWithObjects:@"latitude", @"longitude", nil];
+    DCPropertyAggregator *aggregator = [DCPropertyAggregator aggregateKeys:keys
+                                                             intoAttribute:@"location"];
     
     DCParserConfiguration *configuration = [DCParserConfiguration configuration];
     [configuration addAggregator:aggregator];
     
-    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[Bus class] andConfiguration:configuration];
+    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[Bus class]
+                                                             andConfiguration:configuration];
     Bus *bus = [parser parseDictionary:dictionaryToParse];
     STAssertNotNil(bus.location, @"Should be able to create a location using aggregator");
     STAssertEqualObjects(bus.name, busName, @"Should be equals");
