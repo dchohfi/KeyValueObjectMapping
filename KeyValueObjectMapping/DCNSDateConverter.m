@@ -46,9 +46,6 @@
     return [class isSubclassOfClass:[NSDate class]];
 }
 - (BOOL) validDouble: (NSString *) doubleValue {
-    NSCharacterSet *alphaNums = [NSCharacterSet decimalDigitCharacterSet];
-    NSCharacterSet *inStringSet = [NSCharacterSet characterSetWithCharactersInString:doubleValue];
-    
-    return [alphaNums isSupersetOfSet:inStringSet];
+  return [[[NSNumberFormatter alloc] init] numberFromString:doubleValue] != nil;
 }
 @end
