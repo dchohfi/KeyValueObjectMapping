@@ -65,6 +65,7 @@
 		20D62C1F1588EF2F00484122 /* DCNSSetConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 20D62C1D1588EF2F00484122 /* DCNSSetConverter.h */; };
 		20D62C201588EF2F00484122 /* DCNSSetConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D62C1E1588EF2F00484122 /* DCNSSetConverter.m */; };
 		20D62C241588F8D700484122 /* DCSerializationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D62C231588F8D700484122 /* DCSerializationTests.m */; };
+		2840FF7615E827F40047AF2E /* DCNSDateConverterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2840FF7515E827F40047AF2E /* DCNSDateConverterTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +156,8 @@
 		20D62C1E1588EF2F00484122 /* DCNSSetConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNSSetConverter.m; sourceTree = "<group>"; };
 		20D62C221588F8D700484122 /* DCSerializationTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCSerializationTests.h; sourceTree = "<group>"; };
 		20D62C231588F8D700484122 /* DCSerializationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCSerializationTests.m; sourceTree = "<group>"; };
+		2840FF7415E827F40047AF2E /* DCNSDateConverterTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNSDateConverterTests.h; sourceTree = "<group>"; };
+		2840FF7515E827F40047AF2E /* DCNSDateConverterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNSDateConverterTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +269,8 @@
 				2077210515E3F9FD000A4FA3 /* DCCustomInitializeTest.m */,
 				2077210715E40083000A4FA3 /* DCParserConfigurationTest.h */,
 				2077210815E40083000A4FA3 /* DCParserConfigurationTest.m */,
+				2840FF7415E827F40047AF2E /* DCNSDateConverterTests.h */,
+				2840FF7515E827F40047AF2E /* DCNSDateConverterTests.m */,
 				205FD3BD153F02AA00693E13 /* Supporting Files */,
 			);
 			path = KeyValueObjectMappingTests;
@@ -601,6 +606,7 @@
 				20D62C241588F8D700484122 /* DCSerializationTests.m in Sources */,
 				2077210615E3F9FD000A4FA3 /* DCCustomInitializeTest.m in Sources */,
 				2077210915E40084000A4FA3 /* DCParserConfigurationTest.m in Sources */,
+				2840FF7615E827F40047AF2E /* DCNSDateConverterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
