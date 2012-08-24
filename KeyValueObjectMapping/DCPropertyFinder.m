@@ -48,7 +48,7 @@
 }
 
 - (void) setMappers: (NSArray *) mappers{
-    self.mappers = [NSArray arrayWithArray:mappers];
+    _mappers = [NSArray arrayWithArray:mappers];
 }
 
 #pragma mark - private methods
