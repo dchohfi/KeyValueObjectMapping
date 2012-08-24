@@ -43,7 +43,7 @@
         [self.propertyFinder setMappers:[configuration objectMappers]];
         
         self.converter = [[DCGenericConverter alloc] initWithConfiguration:configuration];
-        classToGenerate = _classToGenerate;
+        _classToGenerate = classToGenerate;
     }
     return self;   
 }
