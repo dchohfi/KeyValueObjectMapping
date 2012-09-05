@@ -8,10 +8,14 @@
 
 #import "DCDynamicAttributeTest.h"
 #import "DCDynamicAttribute.h"
+#import "Tweet.h"
 @implementation DCDynamicAttributeTest
 
 - (void) testDynamicAttributeForPrimitiveInt {
-    DCDynamicAttribute *attribute = [[DCDynamicAttribute alloc] initWithAttributeDescription:@"Ti,R,N,Vage" forKey:@"age"];
+    DCDynamicAttribute *attribute = [[DCDynamicAttribute alloc] initWithAttributeDescription:@"Ti,R,N,Vage"
+                                                                                      forKey:@"age"
+                                                                                     onClass:[Tweet class]];
+    STAssertEquals(attribute.classe, [Tweet class], @"Should be the same class");
     STAssertTrue([attribute isPrimitive], @"Should be a primitive attribute");
     STAssertFalse([attribute isIdType], @"Should not be and id type");
     STAssertFalse([attribute isValidObject], @"Should not be a valid object");
@@ -21,7 +25,8 @@
 }
 
 - (void) testDynamicAttributeForNSStringType {
-    DCDynamicAttribute *attribute = [[DCDynamicAttribute alloc] initWithAttributeDescription:@"T@\"NSString\",&,N,Vadress" forKey:@"adress"];
+    DCDynamicAttribute *attribute = [[DCDynamicAttribute alloc] initWithAttributeDescription:@"T@\"NSString\",&,N,Vadress" forKey:@"adress" onClass:[Tweet class]];
+    STAssertEquals(attribute.classe, [Tweet class], @"Should be the same class");
     STAssertFalse([attribute isPrimitive], @"Should be a class");
     STAssertFalse([attribute isIdType], @"Should not be and id type");
     STAssertTrue([attribute isValidObject], @"Should not be a valid object");
@@ -31,7 +36,8 @@
 }
 
 - (void) testDynamicAttributeForNSDateType {
-    DCDynamicAttribute *attribute = [[DCDynamicAttribute alloc] initWithAttributeDescription:@"T@\"NSDate\",&,N,VdataNascimento" forKey:@"dataNascimento"];
+    DCDynamicAttribute *attribute = [[DCDynamicAttribute alloc] initWithAttributeDescription:@"T@\"NSDate\",&,N,VdataNascimento" forKey:@"dataNascimento" onClass:[Tweet class]];
+    STAssertEquals(attribute.classe, [Tweet class], @"Should be the same class");
     STAssertFalse([attribute isPrimitive], @"Should be a class");
     STAssertFalse([attribute isIdType], @"Should not be and id type");
     STAssertTrue([attribute isValidObject], @"Should not be a valid object");
@@ -41,7 +47,8 @@
 }
 
 - (void) testDynamicAttributeForIdType {
-    DCDynamicAttribute *attribute = [[DCDynamicAttribute alloc] initWithAttributeDescription:@"T@,&,N,Vid" forKey:@"id"];
+    DCDynamicAttribute *attribute = [[DCDynamicAttribute alloc] initWithAttributeDescription:@"T@,&,N,Vid" forKey:@"id" onClass:[Tweet class]];
+    STAssertEquals(attribute.classe, [Tweet class], @"Should be the same class");
     STAssertFalse([attribute isPrimitive], @"Should be a class");
     STAssertFalse([attribute isValidObject], @"Should not be a valid object");
     STAssertTrue([attribute isIdType], @"Should be and id type");

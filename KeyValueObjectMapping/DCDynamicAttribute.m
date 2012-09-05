@@ -20,7 +20,7 @@
 @synthesize validObject = _validObject;
 @synthesize objectMapping = _objectMapping;
 @synthesize typeName = _typeName;
-
+@synthesize classe = _classe;
 
 - (id)initWithClass: (Class) classs {
     self = [super init];
@@ -30,28 +30,34 @@
     }
     return self;
 }
-- (id)initWithAttributeDescription: (NSString *) description 
-                            forKey: (NSString *) key{
+- (id)initWithAttributeDescription: (NSString *) description
+                            forKey: (NSString *) key
+                           onClass: (Class) classe {
     return [self initWithAttributeDescription:description
-                                       forKey:key 
+                                       forKey:key
+                                      onClass:classe
                                 attributeName:nil];
 }
 - (id)initWithAttributeDescription: (NSString *) description 
                             forKey: (NSString *) key
+                           onClass: (Class) classe
                      attributeName: (NSString *) attibuteName {
     return [self initWithAttributeDescription:description 
                                        forKey:key
-                                attributeName:attibuteName 
+                                      onClass:classe
+                                attributeName:attibuteName
                                     converter:nil];
 }
-- (id)initWithAttributeDescription:(NSString *) description 
-                            forKey:(NSString *) key
-                     attributeName:(NSString *) attibuteName
-                         converter:(id <DCValueConverter>)converter {
+- (id)initWithAttributeDescription: (NSString *) description
+                            forKey: (NSString *) key
+                           onClass: (Class) classe
+                     attributeName: (NSString *) attibuteName
+                         converter: (id <DCValueConverter>)converter {
     
     
     self = [super init];
     if (self) {
+        _classe = classe;
         NSArray *splitedDescription = [description componentsSeparatedByString:@","];
         NSString *attributeName;
         

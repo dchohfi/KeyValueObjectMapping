@@ -17,5 +17,5 @@ typedef id(^DCCustomInitializeBlock)(__weak Class classOfObjectToGenerate, __wea
 
 - (id) initWithBlockInitialize: (DCCustomInitializeBlock) blockInitialize
                       forClass: (Class) classOfObjectToGenerate;
-- (BOOL) validToPerformBlock: (Class) classOfObjectToGenerate;
+- (BOOL) isValidToPerformBlock: (Class) classOfObjectToGenerate;
 @end

@@ -22,5 +22,6 @@
 @property(nonatomic, readonly) NSNumber *retweetCount;
 @property(nonatomic, readonly) BOOL favorited;
 @property(nonatomic, readonly) BOOL retweeted;
+@property(nonatomic, strong) NSDate *data;
 
 @end

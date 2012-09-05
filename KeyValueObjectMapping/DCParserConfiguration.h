@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class DCArrayMapping, DCPropertyAggregator, DCObjectMapping, DCCustomInitialize;
+@class DCArrayMapping, DCPropertyAggregator, DCObjectMapping, DCCustomInitialize, DCCustomParser;
 @interface DCParserConfiguration : NSObject
 
 @property(nonatomic, strong) NSString *datePattern;
@@ -16,13 +16,16 @@
 @property(nonatomic, readonly) NSMutableArray *objectMappers;
 @property(nonatomic, readonly) NSMutableArray *aggregators;
 @property(nonatomic, readonly) NSMutableArray *customInitializers;
+@property(nonatomic, readonly) NSMutableArray *customParsers;
 
 + (DCParserConfiguration *) configuration;
 
 - (void) addArrayMapper: (DCArrayMapping *)mapper;
 - (void) addObjectMapping: (DCObjectMapping *) mapper;
 - (void) addAggregator: (DCPropertyAggregator *) aggregator;
-- (void) addCustomInitializer: (DCCustomInitialize *) customInitialize;
+- (void) addCustomInitializersObject:(DCCustomInitialize *) customInitialize;
+- (void) addCustomParsersObject:(DCCustomParser *)parser;
+
 - (id) instantiateObjectForClass: (Class) classOfObjectToGenerate withValues: (NSDictionary *) values;
 - (DCArrayMapping *) arrayMapperForMapper: (DCObjectMapping *) mapper;
 @end

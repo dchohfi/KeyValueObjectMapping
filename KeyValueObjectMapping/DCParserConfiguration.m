@@ -24,6 +24,7 @@
 @synthesize objectMappers = _objectMappers;
 @synthesize aggregators = _aggregators;
 @synthesize customInitializers = _customInitializers;
+@synthesize customParsers = _customParsers;
 
 + (DCParserConfiguration *) configuration {
     return [[self alloc] init];
@@ -36,6 +37,7 @@
         _objectMappers = [[NSMutableArray alloc] init];
         _aggregators = [[NSMutableArray alloc] init];
         _customInitializers = [[NSMutableArray alloc] init];
+        _customParsers = [[NSMutableArray alloc] init];
         _splitToken = @"_";
         _datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
     }
@@ -52,12 +54,16 @@
 - (void) addAggregator: (DCPropertyAggregator *) aggregator {
     [self.aggregators addObject:aggregator];
 }
-- (void) addCustomInitializer: (DCCustomInitialize *) customInitialize {
+- (void) addCustomInitializersObject:(DCCustomInitialize *) customInitialize {
     [self.customInitializers addObject:customInitialize];
 }
+- (void) addCustomParsersObject:(DCCustomParser *)parser {
+    [self.customParsers addObject:parser];
+}
+
 - (id) instantiateObjectForClass: (Class) classOfObjectToGenerate withValues: (NSDictionary *) values {
     for(DCCustomInitialize *customInitialize in self.customInitializers){
-        if([customInitialize validToPerformBlock:classOfObjectToGenerate]){
+        if([customInitialize isValidToPerformBlock:classOfObjectToGenerate]){
             return customInitialize.blockInitialize(classOfObjectToGenerate, values);
         }
     }

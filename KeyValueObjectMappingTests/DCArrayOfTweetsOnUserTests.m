@@ -71,7 +71,7 @@
                                                              andConfiguration:configuration];
 
     User *user = [parser parseDictionary:copy];
-    STAssertNil(user.tweets, @"Tweets should be nil");
+    STAssertEqualObjects(user.tweets, nil, @"Tweets should be nil", nil);
 }
 
 - (void) testShouldCreateUserWithEmptyTweetsOnArray{
@@ -92,7 +92,9 @@
                                                              andConfiguration:configuration];
     
     User *user = [parser parseDictionary:copy];
-    STAssertNil(user.tweets, @"Tweets should be nil");
+    NSArray *tweets = user.tweets;
+    STAssertNotNil(tweets, @"Tweets should be nil");
+    STAssertEquals((int)[tweets count], (int)0, @"Tweets length should be 0");
 }
 
 @end

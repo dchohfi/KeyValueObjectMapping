@@ -62,6 +62,9 @@
 		2077210115E3E406000A4FA3 /* DCCustomInitialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 207720FF15E3E406000A4FA3 /* DCCustomInitialize.m */; };
 		2077210615E3F9FD000A4FA3 /* DCCustomInitializeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2077210515E3F9FD000A4FA3 /* DCCustomInitializeTest.m */; };
 		2077210915E40084000A4FA3 /* DCParserConfigurationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2077210815E40083000A4FA3 /* DCParserConfigurationTest.m */; };
+		20D0C2C115F51569001B7278 /* DCCustomParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 20D0C2BF15F51569001B7278 /* DCCustomParser.h */; };
+		20D0C2C215F51569001B7278 /* DCCustomParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C2C015F51569001B7278 /* DCCustomParser.m */; };
+		20D0C2C915F54895001B7278 /* DCCustomParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C2C815F54895001B7278 /* DCCustomParserTests.m */; };
 		20D62C1F1588EF2F00484122 /* DCNSSetConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 20D62C1D1588EF2F00484122 /* DCNSSetConverter.h */; };
 		20D62C201588EF2F00484122 /* DCNSSetConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D62C1E1588EF2F00484122 /* DCNSSetConverter.m */; };
 		20D62C241588F8D700484122 /* DCSerializationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D62C231588F8D700484122 /* DCSerializationTests.m */; };
@@ -152,6 +155,10 @@
 		2077210515E3F9FD000A4FA3 /* DCCustomInitializeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCustomInitializeTest.m; sourceTree = "<group>"; };
 		2077210715E40083000A4FA3 /* DCParserConfigurationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCParserConfigurationTest.h; sourceTree = "<group>"; };
 		2077210815E40083000A4FA3 /* DCParserConfigurationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCParserConfigurationTest.m; sourceTree = "<group>"; };
+		20D0C2BF15F51569001B7278 /* DCCustomParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCustomParser.h; sourceTree = "<group>"; };
+		20D0C2C015F51569001B7278 /* DCCustomParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCustomParser.m; sourceTree = "<group>"; };
+		20D0C2C715F54895001B7278 /* DCCustomParserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCustomParserTests.h; sourceTree = "<group>"; };
+		20D0C2C815F54895001B7278 /* DCCustomParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCustomParserTests.m; sourceTree = "<group>"; };
 		20D62C1D1588EF2F00484122 /* DCNSSetConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNSSetConverter.h; sourceTree = "<group>"; };
 		20D62C1E1588EF2F00484122 /* DCNSSetConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNSSetConverter.m; sourceTree = "<group>"; };
 		20D62C221588F8D700484122 /* DCSerializationTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCSerializationTests.h; sourceTree = "<group>"; };
@@ -263,10 +270,12 @@
 				205FD41B153F040900693E13 /* DCReferenceKeyParserTests.m */,
 				201F6F69153F6421009A24B9 /* DCPropertyAggregatorTests.h */,
 				201F6F6A153F6421009A24B9 /* DCPropertyAggregatorTests.m */,
-				20D62C221588F8D700484122 /* DCSerializationTests.h */,
-				20D62C231588F8D700484122 /* DCSerializationTests.m */,
+				20D0C2C715F54895001B7278 /* DCCustomParserTests.h */,
+				20D0C2C815F54895001B7278 /* DCCustomParserTests.m */,
 				2077210415E3F9FD000A4FA3 /* DCCustomInitializeTest.h */,
 				2077210515E3F9FD000A4FA3 /* DCCustomInitializeTest.m */,
+				20D62C231588F8D700484122 /* DCSerializationTests.m */,
+				20D62C221588F8D700484122 /* DCSerializationTests.h */,
 				2077210715E40083000A4FA3 /* DCParserConfigurationTest.h */,
 				2077210815E40083000A4FA3 /* DCParserConfigurationTest.m */,
 				2840FF7415E827F40047AF2E /* DCNSDateConverterTests.h */,
@@ -300,7 +309,6 @@
 		205FD3D2153F02FD00693E13 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				205FD3DE153F032F00693E13 /* DCGenericConverter.h */,
 				205FD3D3153F030800693E13 /* DCReferenceKeyParser.h */,
 				205FD3D4153F030800693E13 /* DCReferenceKeyParser.m */,
 				201F6F71153F7C9E009A24B9 /* DCDictionaryRearranger.h */,
@@ -323,6 +331,7 @@
 			children = (
 				205FD3E3153F033200693E13 /* Implementation */,
 				205FD3DD153F032F00693E13 /* DCValueConverter.h */,
+				205FD3DE153F032F00693E13 /* DCGenericConverter.h */,
 				205FD3DF153F032F00693E13 /* DCGenericConverter.m */,
 			);
 			name = Converters;
@@ -382,6 +391,8 @@
 			children = (
 				207720FE15E3E406000A4FA3 /* DCCustomInitialize.h */,
 				207720FF15E3E406000A4FA3 /* DCCustomInitialize.m */,
+				20D0C2BF15F51569001B7278 /* DCCustomParser.h */,
+				20D0C2C015F51569001B7278 /* DCCustomParser.m */,
 			);
 			name = Objecs;
 			sourceTree = "<group>";
@@ -411,6 +422,7 @@
 				201F6F73153F7C9E009A24B9 /* DCDictionaryRearranger.h in Headers */,
 				20D62C1F1588EF2F00484122 /* DCNSSetConverter.h in Headers */,
 				2077210015E3E406000A4FA3 /* DCCustomInitialize.h in Headers */,
+				20D0C2C115F51569001B7278 /* DCCustomParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +596,7 @@
 				201F6F74153F7C9E009A24B9 /* DCDictionaryRearranger.m in Sources */,
 				20D62C201588EF2F00484122 /* DCNSSetConverter.m in Sources */,
 				2077210115E3E406000A4FA3 /* DCCustomInitialize.m in Sources */,
+				20D0C2C215F51569001B7278 /* DCCustomParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,6 +620,7 @@
 				2077210615E3F9FD000A4FA3 /* DCCustomInitializeTest.m in Sources */,
 				2077210915E40084000A4FA3 /* DCParserConfigurationTest.m in Sources */,
 				2840FF7615E827F40047AF2E /* DCNSDateConverterTests.m in Sources */,
+				20D0C2C915F54895001B7278 /* DCCustomParserTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

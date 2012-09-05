@@ -17,8 +17,8 @@
         return [[classOfObjectToGenerate alloc] init];
     };
     DCCustomInitialize *customInitialize = [[DCCustomInitialize alloc] initWithBlockInitialize:customBlock forClass:[Tweet class]];
-    BOOL valid = [customInitialize validToPerformBlock:[Tweet class]];
-    BOOL invalid = [customInitialize validToPerformBlock:[Person class]];
+    BOOL valid = [customInitialize isValidToPerformBlock:[Tweet class]];
+    BOOL invalid = [customInitialize isValidToPerformBlock:[Person class]];
     STAssertTrue(valid, @"should be valid to perform block on a tweet class");
     STAssertFalse(invalid, @"shouldn't be valid to perform block on a person class");
 }

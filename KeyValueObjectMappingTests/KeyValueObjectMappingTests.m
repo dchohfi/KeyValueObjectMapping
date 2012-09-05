@@ -11,6 +11,7 @@
 #import "DCKeyValueObjectMapping.h"
 #import "DCArrayMapping.h"
 #import "DCCustomInitialize.h"
+#import "DCCustomParser.h"
 #import "Person.h"
 #import "Tweet.h"
 
@@ -50,7 +51,7 @@
     STAssertEqualObjects(person.phone, @"+551199999999", @"Should be equals phone");
     STAssertEquals(person.age, 24, nil, @"Should be equals age");
     STAssertEqualObjects(person.birthDay, [NSDate dateWithTimeIntervalSince1970:565927200], nil, @"Should be equals NSDate");
-    STAssertNil(person.parents, @"Should ignore NSArray");
+    STAssertNotNil(person.parents, @"Should be able to parse NSArray");
     STAssertTrue(person.valid, @"Person should be valid");
     STAssertEqualObjects(person.url, [NSURL URLWithString:@"http://dchohfi.com/"], @"Should create equals urls");
     STAssertEqualObjects(person.nota, [NSNumber numberWithInt:10], @"Should be equals");
@@ -189,13 +190,36 @@
     DCCustomInitialize *customInitialize = [[DCCustomInitialize alloc] initWithBlockInitialize:block
                                                                                       forClass:[User class]];
     DCParserConfiguration *config = [DCParserConfiguration configuration];
-    [config addCustomInitializer:customInitialize];
+    [config addCustomInitializersObject:customInitialize];
     
     DCKeyValueObjectMapping * parser = [DCKeyValueObjectMapping mapperForClass:[Tweet class] andConfiguration:config];
     
     Tweet *tweet = [parser parseDictionary:json];
     User *user = tweet.user;
     STAssertEqualObjects(customText, user.customText, @"should be equals to customText");
+}
+
+- (void) testShouldUseBlocksToParseValues {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd/MM/yyyy"];
+    DCCustomParserBlock parserBlock = ^id(NSString *__weak attributeName, __weak Class destinationClass, __weak id value) {
+        STAssertTrue([@"08/12/1987" isEqualToString:value], @"The value inside the block should be equals to the value on the source");
+        STAssertTrue([@"data" isEqualToString:attributeName], @"The attribute should be the same that is mapped for");
+        STAssertEquals(destinationClass, [Tweet class], @"The destionation class should be the same that is mapped for");
+        return [dateFormatter dateFromString:value];
+    };
+    DCCustomParser *customParser = [[DCCustomParser alloc] initWithBlockParser:parserBlock
+                                                        forAttributeName:@"data"
+                                                      onDestinationClass:[Tweet class]];
+    
+    DCParserConfiguration *config = [DCParserConfiguration configuration];
+    [config addCustomParsersObject:customParser];
+    
+    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[Tweet class]
+                                                             andConfiguration:config];
+    
+    Tweet *tweet = [parser parseDictionary:json];
+    STAssertTrue([tweet.data isEqualToDate:[dateFormatter dateFromString:@"08/12/1987"]], nil);
 }
 
 @end

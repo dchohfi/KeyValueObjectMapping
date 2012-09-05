@@ -12,6 +12,7 @@
 #import "DCSimpleConverter.h"
 #import "DCNSArrayConverter.h"
 #import "DCNSSetConverter.h"
+#import "DCCustomParser.h"
 #import "DCKeyValueObjectMapping.h"
 
 @interface DCGenericConverter()
@@ -35,21 +36,17 @@
     }
     return self;
 }
-
 - (id)transformValue:(id)value forDynamicAttribute: (DCDynamicAttribute *) attribute {
     if([attribute isValidObject]){
         BOOL valueIsKindOfDictionary = [value isKindOfClass:[NSDictionary class]];
         BOOL attributeNotKindOfDictionary = ![attribute.objectMapping.classReference isSubclassOfClass:[NSDictionary class]];
-        if( valueIsKindOfDictionary && attributeNotKindOfDictionary){
+        if( valueIsKindOfDictionary && attributeNotKindOfDictionary ){
             DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:attribute.objectMapping.classReference 
                                                                      andConfiguration:self.configuration];
             value = [parser parseDictionary:(NSDictionary *) value];
-        }else {        
-            for(id<DCValueConverter> parser in self.parsers){
-                if([parser canTransformValueForClass:attribute.objectMapping.classReference]){
-                    return [parser transformValue:value forDynamicAttribute:attribute];
-                }
-            }
+        }else {
+            id parsedValue = [self parseSimpeValue:value forDynamicAttribute:attribute];
+            if(parsedValue) return parsedValue;
         }
     }
     DCSimpleConverter *simpleParser = [[DCSimpleConverter alloc] init];
@@ -65,6 +62,39 @@
     
     DCSimpleConverter *simpleParser = [[DCSimpleConverter alloc] init];	
     return [simpleParser serializeValue:value forDynamicAttribute:attribute];
+}
+
+#pragma mark - private methods
+
+- (id)parseSimpeValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute {
+    id parsedValue = [self parseValueForBlock:value forObjectMapping:attribute];
+    
+    if(parsedValue){
+        return parsedValue;
+    }
+    
+    return [self parseValueForParsers:value forDynamicAttribute:attribute];
+}
+
+- (id) parseValueForParsers: (id) value forDynamicAttribute: (DCDynamicAttribute *) attribute {
+    for(id<DCValueConverter> parser in self.parsers){
+        if([parser canTransformValueForClass:attribute.objectMapping.classReference]){
+            return [parser transformValue:value forDynamicAttribute:attribute];
+        }
+    }
+    return nil;
+}
+
+- (id) parseValueForBlock: (id) value forObjectMapping: (DCDynamicAttribute *) attribute {
+    DCObjectMapping *objectMapping = attribute.objectMapping;
+    for(DCCustomParser *parser in self.configuration.customParsers){
+        if([parser isValidToPerformBlockOnAttributeName:objectMapping.attributeName
+                                               forClass:attribute.classe]){
+            
+            return parser.blockParser(objectMapping.attributeName, attribute.classe, value);
+        }
+    }
+    return nil;
 }
 
 @end

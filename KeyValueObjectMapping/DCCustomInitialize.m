@@ -15,13 +15,13 @@
                       forClass: (Class) classOfObjectToGenerate {
     self = [super init];
     if (self) {
-        _blockInitialize = blockInitialize;
+        _blockInitialize = [blockInitialize copy];
         _classOfObjectToGenerate = classOfObjectToGenerate;
     }
     return self;
 }
 
-- (BOOL) validToPerformBlock: (Class) classOfObjectToGenerate {
+- (BOOL) isValidToPerformBlock: (Class) classOfObjectToGenerate {
     return _classOfObjectToGenerate == classOfObjectToGenerate;
 }
 @end

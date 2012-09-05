@@ -43,7 +43,9 @@
     if(!propertyDetails)
         return nil;
     
-    DCDynamicAttribute *dynamicAttribute = [[DCDynamicAttribute alloc] initWithAttributeDescription: propertyDetails forKey:originalKey];
+    DCDynamicAttribute *dynamicAttribute = [[DCDynamicAttribute alloc] initWithAttributeDescription: propertyDetails
+                                                                                             forKey:originalKey
+                                                                                            onClass:class];
     return dynamicAttribute;
 }
 

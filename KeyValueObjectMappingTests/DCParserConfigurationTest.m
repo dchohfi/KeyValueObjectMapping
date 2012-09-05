@@ -25,7 +25,7 @@
                                                                                  forClass:[Tweet class]];
     
     DCParserConfiguration *configuration = [DCParserConfiguration configuration];
-    [configuration addCustomInitializer:initializer];
+    [configuration addCustomInitializersObject:initializer];
     
     Tweet *tweet = [configuration instantiateObjectForClass:[Tweet class] withValues:nil];
     STAssertTrue([tweet.text isEqualToString: @"Should be an text"], @"should have the same text passed on custom initialize");

@@ -36,11 +36,6 @@
                BlueprintName = "KeyValueObjectMappingTests"
                ReferencedContainer = "container:KeyValueObjectMapping.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "DCPropertyAggregatorTests/testAggregateProperties">
-               </Test>
-            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>

@@ -21,4 +21,5 @@
 @synthesize retweetCount;
 @synthesize favorited;
 @synthesize retweeted;
+@synthesize data;
 @end
