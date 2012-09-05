@@ -13,6 +13,7 @@ Features
 * Based on Convention over Configuration
     1. If your attribute follow the same name of the key on the [`NSDictionary`][NSDictionary] everything will be done automatically.
     1. If the keys on source are separated by some character, you can configure which character is and the framework will split and camelcase it to find the properly attribute.
+* Awesome customizations via **blocks**, change the default behavior when creating an instance or parsing a value. Using [`DCCustomInitialize`][DCCustomInitialize] and [`DCCustomParser`][DCCustomParser].
 * Map any key to a specific attribute that doesn't follow the convention using [`DCObjectMapping`][DCObjectMapping].
 * To map an *one-to-many* relation use [`DCArrayMapping`][DCArrayMapping] to tell what is the specific type of elements that will be inserted.
 * Aggregate values to an specific attribute using [`DCPropertyAggregator`][DCPropertyAggregator].
@@ -290,5 +291,7 @@ Tweet *tweet = [parser parseDictionary: json];
 [DCPropertyAggregator]: https://github.com/dchohfi/KeyValueObjectMapping/blob/master/KeyValueObjectMapping/DCPropertyAggregator.h
 [DCParserConfiguration]: https://github.com/dchohfi/KeyValueObjectMapping/blob/master/KeyValueObjectMapping/DCParserConfiguration.h
 [DCObjectMapping]: https://github.com/dchohfi/KeyValueObjectMapping/blob/master/KeyValueObjectMapping/DCObjectMapping.h
+[DCCustomInitialize]: https://github.com/dchohfi/KeyValueObjectMapping/blob/master/KeyValueObjectMapping/DCCustomInitialize.h
+[DCCustomParser]: https://github.com/dchohfi/KeyValueObjectMapping/blob/master/KeyValueObjectMapping/DCCustomParser.h
 [iOS-Universal-Framework]: https://github.com/kstenerud/iOS-Universal-Framework
 [CocoaPods]: http://cocoapods.org
