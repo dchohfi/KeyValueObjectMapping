@@ -37,7 +37,7 @@
                                                    error:&error];
 }
 
-- (void)atestShouldCreateAnUserWithTweets {
+- (void) testShouldCreateAnUserWithTweets {
     
     DCArrayMapping *mapper = [DCArrayMapping mapperForClassElements:[Tweet class] 
                                                        forAttribute:@"tweets" 
