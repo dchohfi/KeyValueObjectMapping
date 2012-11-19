@@ -9,7 +9,7 @@
 #import "DCPropertyFinderTests.h"
 #import "DCPropertyFinder.h"
 #import "User.h"
-
+#import "Person.h"
 @interface DCPropertyFinderTests()
 
 @property(nonatomic, strong) DCPropertyFinder *finder;
@@ -51,5 +51,4 @@
     STAssertEqualObjects(@"name", dynamicProperty.objectMapping.attributeName, @"Attribute name should be equals to name");
     STAssertEqualObjects(@"borba", dynamicProperty.objectMapping.keyReference, @"Keyreference should be equals to borba");
 }
-
 @end

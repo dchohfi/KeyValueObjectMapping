@@ -23,5 +23,5 @@
 @property(nonatomic, readonly) BOOL favorited;
 @property(nonatomic, readonly) BOOL retweeted;
 @property(nonatomic, strong) NSDate *data;
-
+@property(nonatomic, strong) NSString *property;
 @end

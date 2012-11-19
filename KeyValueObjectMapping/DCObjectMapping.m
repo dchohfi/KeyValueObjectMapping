@@ -58,10 +58,10 @@
 }
 
 - (BOOL) sameKey: (NSString *) key andClassReference: (Class) classReference {
-    if([self.keyReference isEqualToString:key] && self.classReference == classReference){
+    BOOL sameProperty = [self.keyReference isEqualToString:key];
+    if( sameProperty && self.classReference == classReference){
         return YES;
     }
     return NO;
 }
-
 @end

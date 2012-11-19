@@ -22,4 +22,5 @@
 @synthesize favorited;
 @synthesize retweeted;
 @synthesize data;
+@synthesize property = _property;
 @end

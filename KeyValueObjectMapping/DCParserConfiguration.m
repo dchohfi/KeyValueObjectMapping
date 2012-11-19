@@ -71,12 +71,20 @@
 }
 - (DCArrayMapping *) arrayMapperForMapper: (DCObjectMapping *) mapper {
     for(DCArrayMapping *arrayMapper in self.arrayMappers){
-        BOOL sameKey = [arrayMapper.objectMapping.keyReference isEqualToString:mapper.keyReference];
-        BOOL sameAttributeName = [arrayMapper.objectMapping.attributeName isEqualToString:mapper.attributeName];
-        if(sameKey && sameAttributeName){
+        DCObjectMapping *mapping = arrayMapper.objectMapping;
+        BOOL sameKey = [mapping.keyReference isEqualToString:mapper.keyReference];
+        BOOL sameAttributeName = [mapping.attributeName isEqualToString:mapper.attributeName];
+        BOOL sameAttributeNameWithUnderscore = [[self addUnderScoreToPropertyName:mapping.attributeName] isEqualToString:mapper.attributeName];
+        if(sameKey && (sameAttributeName || sameAttributeNameWithUnderscore)){
             return arrayMapper;
         }
     }
     return nil;
+}
+- (NSString *) addUnderScoreToPropertyName: (NSString *) key{
+    if(!key || [key isEqualToString:@""]){
+        return @"";
+    }
+    return [NSString stringWithFormat:@"_%@", key];
 }
 @end

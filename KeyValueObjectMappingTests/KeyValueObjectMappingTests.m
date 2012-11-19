@@ -14,6 +14,7 @@
 #import "DCCustomParser.h"
 #import "Person.h"
 #import "Tweet.h"
+#import "User.h"
 
 @interface KeyValueObjectMappingTests()
 
@@ -131,7 +132,8 @@
                                                             forAttribute:@"tweets"
                                                                  onClass:[User class]]];
     
-    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[User class] andConfiguration:configuration];
+    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[User class]
+                                                             andConfiguration:configuration];
     User *user = [parser parseDictionary:userDictionary];
     STAssertEquals((int)[user.tweets count], 2, @"Should have same Tweets array size");
     
@@ -220,6 +222,34 @@
     
     Tweet *tweet = [parser parseDictionary:json];
     STAssertTrue([tweet.data isEqualToDate:[dateFormatter dateFromString:@"08/12/1987"]], nil);
+}
+
+-(void) testCustomMap {
+    NSMutableDictionary *tweet1 = [NSMutableDictionary dictionary];
+    [tweet1 setValue:@"First Value" forKey:@"property"];
+    [tweet1 setValue:@"Frist Tweet" forKey:@"text"];
+    
+    NSMutableDictionary *tweet2 = [NSMutableDictionary dictionary];
+    [tweet2 setValue:@"Second Value" forKey:@"title"];
+    [tweet2 setValue:@"Second Tweet" forKey:@"text"];
+    
+    NSMutableDictionary *userValues = [NSMutableDictionary dictionary];
+    [userValues setValue:@"Diego" forKey:@"name"];
+    [userValues setValue:[NSArray arrayWithObjects:tweet1, tweet2, nil] forKey:@"tweets"];
+    
+    
+    DCArrayMapping *arrayMapper = [DCArrayMapping mapperForClassElements:[Tweet class]
+                                                            forAttribute:@"tweets"
+                                                                 onClass:[User class]];
+    DCParserConfiguration *configuration = [DCParserConfiguration configuration];
+    [configuration addArrayMapper:arrayMapper];
+    
+    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[User class]
+                                                             andConfiguration:configuration];
+    
+    User *user = [parser parseDictionary:userValues];
+    STAssertEqualObjects(@"Diego", [user name], @"");
+    STAssertEquals(2, (int)[user.tweets count], @"Should have two tweet");
 }
 
 @end

@@ -36,5 +36,4 @@
     Tweet *tweet = [configuration instantiateObjectForClass:[Tweet class] withValues:nil];
     STAssertNotNil(tweet, @"should create an tweet when no custom initialize is used");
 }
-
 @end

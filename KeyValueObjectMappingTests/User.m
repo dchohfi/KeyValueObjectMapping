@@ -20,7 +20,7 @@
 @synthesize friendsCount;
 @synthesize createdAt;
 @synthesize following;
-@synthesize tweets;
+@synthesize tweets = _tweets;
 @synthesize params;
 @synthesize customText;
 @end

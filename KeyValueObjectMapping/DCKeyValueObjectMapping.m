@@ -31,13 +31,14 @@
     return [self mapperForClass:classToGenerate andConfiguration:[DCParserConfiguration configuration]];
 }
 + (DCKeyValueObjectMapping *) mapperForClass: (Class) classToGenerate andConfiguration: (DCParserConfiguration *) configuration {
-    return [[self alloc] initWithClass: classToGenerate forConfiguration: configuration];
+    return [[self alloc] initWithClass: classToGenerate
+                      forConfiguration: configuration];
 }
 - (id) initWithClass: (Class) classToGenerate forConfiguration: (DCParserConfiguration *) configuration {
     self = [super init];
     if (self) {
         self.configuration = configuration;
-        DCReferenceKeyParser *keyParser = [DCReferenceKeyParser parserForToken: _configuration.splitToken];
+        DCReferenceKeyParser *keyParser = [DCReferenceKeyParser parserForToken: self.configuration.splitToken];
         
         self.propertyFinder = [DCPropertyFinder finderWithKeyParser:keyParser];
         [self.propertyFinder setMappers:[configuration objectMappers]];
@@ -121,7 +122,7 @@
     NSString *attributeName = objectMapping.attributeName;
     
     value = [self.converter transformValue:value
-                  forDynamicAttribute:dynamicAttribute];
+                       forDynamicAttribute:dynamicAttribute];
     
     [DCAttributeSetter assingValue:value 
                   forAttributeName:attributeName 
