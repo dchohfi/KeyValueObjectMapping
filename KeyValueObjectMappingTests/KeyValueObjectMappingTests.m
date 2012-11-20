@@ -252,4 +252,16 @@
     STAssertEquals(2, (int)[user.tweets count], @"Should have two tweet");
 }
 
+- (void)testNestedProperties{
+    NSDictionary *source = @{@"idStr" : @"12345" , @"tweet" : @{@"text" : @"Some text"}};
+    DCParserConfiguration *configuration = [DCParserConfiguration configuration];
+
+    DCObjectMapping *nestedMapping = [DCObjectMapping mapKeyPath:@"tweet.text" toAttribute:@"text" onClass:[Tweet class]];
+    [configuration addObjectMapping:nestedMapping];
+    
+    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[Tweet class] andConfiguration:configuration];
+    Tweet *tweet = [parser parseDictionary:source];
+    STAssertEqualObjects(tweet.idStr, @"12345", @"wrong id string");
+    STAssertEqualObjects(tweet.text, @"Some text", @"wrong text string");
+}
 @end
