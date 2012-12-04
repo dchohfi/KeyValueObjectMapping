@@ -53,4 +53,14 @@
     STAssertEqualObjects(@"", emptyWordSplited, @"Should be empty NSString when the property name passed is an empty NSString");
 }
 
+- (void) testWithEmptyToken {
+    //this happen when you try parse witout config object and property doesn't exist.
+    /* example
+      DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass: [SomeClass class]  andConfiguration:nil];
+    */
+    parser = [DCReferenceKeyParser parserForToken:nil];
+    NSString *NotExistingProperty = @"id";
+    STAssertNoThrow([parser splitKeyAndMakeCamelcased:NotExistingProperty], @"shouldn't throw an exception");
+}
+
 @end
