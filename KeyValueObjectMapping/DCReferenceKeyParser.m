@@ -25,7 +25,7 @@
 }
 
 - (NSString *) splitKeyAndMakeCamelcased: (NSString *) key {
-    if(!key || [key isEqualToString:@""])
+    if(!key || [key isEqualToString:@""] || splitToken == nil)
         return @"";
     NSArray *splitedKeys = [key componentsSeparatedByString:splitToken];
     NSMutableString *parsedKeyName = [NSMutableString string];
