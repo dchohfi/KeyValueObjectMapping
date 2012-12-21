@@ -14,7 +14,7 @@
 
 - (id) transformValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute;
 - (id) serializeValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute;
-- (BOOL) canTransformValueForClass: (Class) class;
+- (BOOL) canTransformValueForClass: (Class)classe;
 
 
 @end
