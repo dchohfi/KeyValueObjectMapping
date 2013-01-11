@@ -75,7 +75,7 @@
     }
     
     dictionary = [DCDictionaryRearranger rearrangeDictionary:dictionary 
-                                              forAggregators:self.configuration.aggregators];
+                                              forConfiguration:self.configuration];
     
     NSArray *keys = [dictionary allKeys];
     for (NSString *key in keys) {

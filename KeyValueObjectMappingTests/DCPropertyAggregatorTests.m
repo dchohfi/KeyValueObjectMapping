@@ -54,7 +54,10 @@
 
     DCPropertyAggregator *aggregatePointDist = [DCPropertyAggregator aggregateKeys:[NSSet setWithObjects:@"point", @"distance", nil] intoAttribute:@"location"];
 
-    NSDictionary *aggregatedDict = [DCDictionaryRearranger rearrangeDictionary:dictionaryToParse forAggregators:[NSArray arrayWithObjects:aggregteLatLong, aggregatePointDist, nil]];
+    DCParserConfiguration* configuration = [DCParserConfiguration configuration];
+    [configuration addAggregator:aggregteLatLong];
+    [configuration addAggregator:aggregatePointDist];
+    NSDictionary *aggregatedDict = [DCDictionaryRearranger rearrangeDictionary:dictionaryToParse forConfiguration:configuration];
     STAssertNotNil(aggregatedDict, @"Should be able to create a location using aggregator");
     STAssertEqualObjects([aggregatedDict objectForKey:@"name"], busName, @"Should be equals");
     STAssertEqualObjects([[aggregatedDict objectForKey:@"location"] objectForKey:@"distance"], distance, @"Should be equals");
