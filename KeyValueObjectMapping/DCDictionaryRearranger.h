@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DCParserConfiguration.h"
 
 @interface DCDictionaryRearranger : NSObject
 
-+ (NSDictionary *) rearrangeDictionary: (NSDictionary *) dictionary forAggregators: (NSMutableArray *) aggregators;
++ (NSDictionary *) rearrangeDictionary: (NSDictionary *) dictionary forConfiguration: (DCParserConfiguration *) configuration;
 
 @end

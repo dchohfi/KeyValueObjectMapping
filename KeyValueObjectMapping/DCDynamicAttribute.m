@@ -59,11 +59,9 @@
     if (self) {
         _classe = classe;
         NSArray *splitedDescription = [description componentsSeparatedByString:@","];
-        NSString *attributeName;
+        NSString *attributeName = [self findTypeName: [splitedDescription lastObject]];
         
-        if (attibuteName == nil){
-            attributeName = [self findTypeName: [splitedDescription lastObject]];
-        }else{
+        if (attributeName.length == 0 && attibuteName.length){
             attributeName = attibuteName;
         }
         _typeName = [self findTypeInformation:[splitedDescription objectAtIndex:0]];

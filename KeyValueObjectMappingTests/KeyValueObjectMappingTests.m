@@ -37,12 +37,12 @@
     NSData *data = [NSData dataWithContentsOfFile:caminhoJson];
     
     json = [NSJSONSerialization JSONObjectWithData:data
-                                                 options:NSJSONReadingMutableContainers error:nil];
+                                           options:NSJSONReadingMutableContainers error:nil];
     
 }
 
 - (void) testValidPlistToPerson
-{         
+{
     DCParserConfiguration *configuration = [DCParserConfiguration configuration];
     configuration.datePattern = @"yyyy-MM-dd'T'hh:mm:ssZ";
     DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[Person class] andConfiguration:configuration];
@@ -59,7 +59,7 @@
     STAssertEqualObjects(person.dateWithString, [NSDate dateWithTimeIntervalSince1970:0], @"Should create equals NSDate");
     STAssertEquals((int)[person.arrayPrimitive count], 4, @"Should have same size");
     STAssertEqualObjects([person.arrayPrimitive objectAtIndex:0], @"hello", @"Should have hello on first position of array");
-    STAssertEqualObjects([person.arrayPrimitive objectAtIndex:1], @"mutchaco", @"Should have muthaco on first position of array");    
+    STAssertEqualObjects([person.arrayPrimitive objectAtIndex:1], @"mutchaco", @"Should have muthaco on first position of array");
     STAssertEqualObjects([person.arrayPrimitive objectAtIndex:2], [NSNumber numberWithInt:1], @"Should have muthaco on first position of array");
     STAssertEqualObjects([person.arrayPrimitive objectAtIndex:3], [NSNumber numberWithDouble:3.1416], @"Should have muthaco on first position of array");
     configuration = nil;
@@ -211,8 +211,8 @@
         return [dateFormatter dateFromString:value];
     };
     DCCustomParser *customParser = [[DCCustomParser alloc] initWithBlockParser:parserBlock
-                                                        forAttributeName:@"data"
-                                                      onDestinationClass:[Tweet class]];
+                                                              forAttributeName:@"data"
+                                                            onDestinationClass:[Tweet class]];
     
     DCParserConfiguration *config = [DCParserConfiguration configuration];
     [config addCustomParsersObject:customParser];
@@ -250,6 +250,32 @@
     User *user = [parser parseDictionary:userValues];
     STAssertEqualObjects(@"Diego", [user name], @"");
     STAssertEquals(2, (int)[user.tweets count], @"Should have two tweet");
+}
+
+- (void)testNestedProperties{
+    NSDictionary *source = @{@"idStr" : @"12345" , @"tweet" : @{@"text" : @"Some text"}};
+    DCParserConfiguration *configuration = [DCParserConfiguration configuration];
+    
+    DCObjectMapping *nestedMapping = [DCObjectMapping mapKeyPath:@"tweet.text" toAttribute:@"text" onClass:[Tweet class]];
+    [configuration addObjectMapping:nestedMapping];
+    
+    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[Tweet class] andConfiguration:configuration];
+    Tweet *tweet = [parser parseDictionary:source];
+    STAssertEqualObjects(tweet.idStr, @"12345", @"wrong id string");
+    STAssertEqualObjects(tweet.text, @"Some text", @"wrong text string");
+}
+
+- (void)testDeeplyNestedProperties{
+    NSDictionary *source = @{@"idStr" : @"12345" , @"tweet" : @{@"key1" : @{@"key2" : @{@"text" : @"Some text"}}}};
+    DCParserConfiguration *configuration = [DCParserConfiguration configuration];
+    
+    DCObjectMapping *nestedMapping = [DCObjectMapping mapKeyPath:@"tweet.key1.key2.text" toAttribute:@"text" onClass:[Tweet class]];
+    [configuration addObjectMapping:nestedMapping];
+    
+    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[Tweet class] andConfiguration:configuration];
+    Tweet *tweet = [parser parseDictionary:source];
+    STAssertEqualObjects(tweet.idStr, @"12345", @"wrong id string");
+    STAssertEqualObjects(tweet.text, @"Some text", @"wrong text string");
 }
 
 @end

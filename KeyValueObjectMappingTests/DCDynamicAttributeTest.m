@@ -56,4 +56,15 @@
     STAssertNil(attribute.typeName, @"Should be null when attribut is id");
     STAssertEqualObjects(attribute.objectMapping.attributeName, @"id", @"AttributeName should be id");
 }
+
+- (void) testDynamicNotSynthetizedAttribute {
+    DCDynamicAttribute *attribute = [[DCDynamicAttribute alloc] initWithAttributeDescription:@"T@\"NSString\",&,D,N" forKey:@"adress" onClass:[Tweet class] attributeName:@"adress"];
+    STAssertEquals(attribute.classe, [Tweet class], @"Should be the same class");
+    STAssertFalse([attribute isPrimitive], @"Should be a class");
+    STAssertFalse([attribute isIdType], @"Should not be and id type");
+    STAssertTrue([attribute isValidObject], @"Should not be a valid object");
+    STAssertEquals(attribute.objectMapping.classReference, [NSString class], @"Should be NSString class");
+    STAssertEqualObjects(attribute.typeName, @"NSString", @"Should be a NSString attribute");
+    STAssertEqualObjects(attribute.objectMapping.attributeName, @"adress", @"AttributeName should be adress");
+}
 @end

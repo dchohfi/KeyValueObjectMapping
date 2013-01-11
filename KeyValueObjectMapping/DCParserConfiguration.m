@@ -39,9 +39,19 @@
         _customInitializers = [[NSMutableArray alloc] init];
         _customParsers = [[NSMutableArray alloc] init];
         _splitToken = @"_";
+        _nestedPrepertiesSplitToken = @".";
         _datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
     }
     return self;
+}
+
+- (void)setSplitToken:(NSString *)splitToken
+{
+    if (splitToken &&
+        ![splitToken isEqualToString:_splitToken] &&
+        ![splitToken isEqualToString:_nestedPrepertiesSplitToken]) {
+        _splitToken = splitToken;
+    }
 }
 
 - (void)addArrayMapper: (DCArrayMapping *)mapper {

@@ -13,6 +13,7 @@
 
 @property(nonatomic, strong) NSString *datePattern;
 @property(nonatomic, strong) NSString *splitToken;
+@property(nonatomic, strong) NSString *nestedPrepertiesSplitToken;
 @property(nonatomic, readonly) NSMutableArray *objectMappers;
 @property(nonatomic, readonly) NSMutableArray *aggregators;
 @property(nonatomic, readonly) NSMutableArray *customInitializers;
