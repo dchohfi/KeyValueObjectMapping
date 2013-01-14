@@ -7,23 +7,51 @@
 //
 
 #import "DCDictionaryRearranger.h"
+
+#import "DCObjectMapping.h"
 #import "DCPropertyAggregator.h"
 
 @implementation DCDictionaryRearranger
 
 
-+ (NSDictionary *) rearrangeDictionary: (NSDictionary *) dictionary forAggregators: (NSMutableArray *) aggregators {
-    aggregators = [NSMutableArray arrayWithArray:[[aggregators reverseObjectEnumerator] allObjects]];
++ (NSDictionary *) rearrangeDictionary: (NSDictionary *) dictionary forConfiguration: (DCParserConfiguration *) configuration {
+    NSMutableArray* aggregators = [NSMutableArray arrayWithArray:[[configuration.aggregators reverseObjectEnumerator] allObjects]];
     NSMutableDictionary *mutableDictionary = [NSMutableDictionary dictionaryWithDictionary:dictionary];
     if(aggregators && [aggregators count] > 0){
         for(int i=[aggregators count] - 1; i >= 0; --i){
-            DCPropertyAggregator *aggretor = [aggregators objectAtIndex:i];
-            [aggregators removeObject:aggretor];
-            NSDictionary *aggregatedValues = [aggretor aggregateKeysOnDictionary:mutableDictionary];
-            [mutableDictionary setValue:aggregatedValues forKey:aggretor.attribute];
+            DCPropertyAggregator* aggregator = [aggregators objectAtIndex:i];
+            [aggregators removeObject:aggregator];
+            NSMutableDictionary *aggregatedValues = [[aggregator aggregateKeysOnDictionary:mutableDictionary] mutableCopy];
+            if([mutableDictionary objectForKey:aggregator.attribute]){
+                [aggregatedValues addEntriesFromDictionary:[mutableDictionary objectForKey:aggregator.attribute]];
+            }
+            [mutableDictionary setValue:aggregatedValues forKey:aggregator.attribute];
         }
     }
-    return mutableDictionary;
+    
+    for (DCObjectMapping* mapper in configuration.objectMappers) {
+        NSArray* keys = [mapper.keyReference componentsSeparatedByString:configuration.nestedPrepertiesSplitToken];
+        // Composed key
+        id value;
+        if (keys.count >1) {
+            
+            for (NSString* key in keys) {
+                if ([key isEqualToString:keys[0]]) {
+                    value = [mutableDictionary objectForKey:key];
+                } else if ([value isKindOfClass:[NSDictionary class]]) {
+                    NSMutableDictionary* dict = [(NSDictionary*)value mutableCopy];
+                    value = [dict objectForKey:key];
+                    if ([key isEqualToString:[keys lastObject]]) {
+                        [dict removeObjectForKey:key];
+                        [mutableDictionary setValue:value forKey:key];
+                    }
+                }
+            }
+        }
+    }
+    
+    return [NSDictionary dictionaryWithDictionary:mutableDictionary];
 }
+
 
 @end
