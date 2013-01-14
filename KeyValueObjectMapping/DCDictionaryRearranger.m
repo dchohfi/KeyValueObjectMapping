@@ -39,11 +39,10 @@
                 if ([key isEqualToString:keys[0]]) {
                     value = [mutableDictionary objectForKey:key];
                 } else if ([value isKindOfClass:[NSDictionary class]]) {
-                    NSMutableDictionary* dict = [(NSDictionary*)value mutableCopy];
+                    NSDictionary* dict = (NSDictionary*)value;
                     value = [dict objectForKey:key];
                     if ([key isEqualToString:[keys lastObject]]) {
-                        [dict removeObjectForKey:key];
-                        [mutableDictionary setValue:value forKey:key];
+                        [mutableDictionary setValue:value forKey:mapper.keyReference];
                     }
                 }
             }
