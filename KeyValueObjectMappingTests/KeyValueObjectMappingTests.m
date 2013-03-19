@@ -278,4 +278,36 @@
     STAssertEqualObjects(tweet.text, @"Some text", @"wrong text string");
 }
 
+- (void)testObjectUpdateWithDictionary{
+    NSDictionary *source = @{@"idStr" : @"12345", @"text" : @"Text 1"};
+    
+    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[Tweet class]];
+    Tweet *tweet = [parser parseDictionary:source];
+    
+    NSDictionary *newSource = @{@"idStr" : @"67890", @"text" : @"New Text"};
+    
+    [parser updateObject:tweet withDictionary:newSource];
+    
+    STAssertEqualObjects(tweet.idStr, @"67890", @"wrong id string");
+    STAssertEqualObjects(tweet.text, @"New Text", @"wrong text string");
+}
+
+- (void)textObjectUpdateWithNestedDictionary{
+    NSDictionary *source = @{@"idStr" : @"12345", @"tweet" : @{@"text" : @"Text 1"}};
+    
+    DCParserConfiguration *configuration = [DCParserConfiguration configuration];
+    
+    DCObjectMapping *nestedMapping = [DCObjectMapping mapKeyPath:@"tweet.text" toAttribute:@"text" onClass:[Tweet class]];
+    [configuration addObjectMapping:nestedMapping];
+    
+    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[Tweet class] andConfiguration:configuration];
+    Tweet *tweet = [parser parseDictionary:source];
+    
+    NSDictionary *newSource = @{@"idStr" : @"67890", @"tweet" : @{@"text" : @"New Text"}};
+    
+    [parser updateObject:tweet withDictionary:newSource];
+    
+    STAssertEqualObjects(tweet.idStr, @"67890", @"wrong id string");
+    STAssertEqualObjects(tweet.text, @"New Text", @"wrong text string");
+}
 @end

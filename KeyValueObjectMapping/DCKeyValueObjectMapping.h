@@ -26,4 +26,6 @@
 - (NSDictionary *)serializeObject:(id)object;
 - (NSArray *)serializeObjectArray:(NSArray *)objectArray;
 
+- (void)updateObject:(id)object withDictionary:(NSDictionary *)dictionary;
+
 @end
