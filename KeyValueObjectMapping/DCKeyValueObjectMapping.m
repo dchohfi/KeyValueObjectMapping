@@ -138,4 +138,12 @@
         value = [self.converter serializeValue:value forDynamicAttribute:dynamicAttribute];
     [dictionary setValue:value forKeyPath:objectMapping.keyReference];
 }
+
+- (void)updateObject:(id)object withDictionary:(NSDictionary *)dictionary {
+    if (!dictionary || !self.classToGenerate || !object || ![object isKindOfClass:self.classToGenerate])
+        return;
+
+    [self setValuesOnObject:object withDictionary:dictionary];
+    return;
+}
 @end
