@@ -42,11 +42,19 @@
     
     if(!propertyDetails)
         return nil;
-    
-    DCDynamicAttribute *dynamicAttribute = [[DCDynamicAttribute alloc] initWithAttributeDescription:propertyDetails
-                                                                                             forKey:originalKey
-                                                                                            onClass:class
-                                                                                      attributeName:key];
+
+    DCDynamicAttribute *dynamicAttribute;
+    if (mapper && mapper.converter)
+        dynamicAttribute = [[DCDynamicAttribute alloc] initWithAttributeDescription:propertyDetails
+                                                                             forKey:originalKey
+                                                                            onClass:class
+                                                                      attributeName:key
+                                                                          converter:mapper.converter];
+    else
+        dynamicAttribute = [[DCDynamicAttribute alloc] initWithAttributeDescription:propertyDetails
+                                                                             forKey:originalKey
+                                                                            onClass:class
+                                                                      attributeName:key];
     return dynamicAttribute;
 }
 

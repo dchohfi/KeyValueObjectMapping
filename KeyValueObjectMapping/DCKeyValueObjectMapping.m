@@ -120,10 +120,12 @@
         inAttribute: (DCDynamicAttribute *) dynamicAttribute {
     DCObjectMapping *objectMapping = dynamicAttribute.objectMapping;
     NSString *attributeName = objectMapping.attributeName;
-    
-    value = [self.converter transformValue:value
-                       forDynamicAttribute:dynamicAttribute];
-    
+
+    if (objectMapping.converter)
+        value = [objectMapping.converter transformValue:value forDynamicAttribute:dynamicAttribute];
+    else
+        value = [self.converter transformValue:value forDynamicAttribute:dynamicAttribute];
+
     [DCAttributeSetter assingValue:value 
                   forAttributeName:attributeName 
                  andAttributeClass:objectMapping.classReference 
