@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef id(^DCCustomParserBlock)(__weak NSString *attributeName, __weak Class destinationClass, __weak id value);
+typedef id(^DCCustomParserBlock)(__weak NSDictionary *dictionary, __weak NSString *attributeName, __weak Class destinationClass, __weak id value);
 
 @interface DCCustomParser : NSObject
 

@@ -33,14 +33,14 @@
     return self;   
 }
 
-- (id)transformValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute {
+- (id)transformValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute dictionary:(NSDictionary *)dictionary {
     if(!values || values == [NSNull null] || [values count] == 0){
         return nil;
     }
     
     BOOL primitiveArray = ![[[values objectAtIndex:0] class] isSubclassOfClass:[NSDictionary class]];
     if(primitiveArray){
-        return [self parsePrimitiveValues:values];
+        return [self parsePrimitiveValues:values dictionary:dictionary];
     }else{
         DCArrayMapping *mapper = [self.configuration arrayMapperForMapper:attribute.objectMapping];
         if(mapper){
@@ -59,12 +59,12 @@
     }    
     return [NSArray arrayWithArray:valuesHolder];
 }
-- (NSArray *) parsePrimitiveValues: (NSArray *) primitiveValues {
+- (NSArray *) parsePrimitiveValues: (NSArray *) primitiveValues dictionary:(NSDictionary *)dictionary {
     DCSimpleConverter *simpleParser = [[DCSimpleConverter alloc] init];
     NSMutableArray *valuesHolder = [NSMutableArray array];
     for(id value in primitiveValues){
         DCDynamicAttribute *valueClassAsAttribute = [[DCDynamicAttribute alloc] initWithClass:[value class]];
-        [valuesHolder addObject:[simpleParser transformValue:value forDynamicAttribute:valueClassAsAttribute]];
+        [valuesHolder addObject:[simpleParser transformValue:value forDynamicAttribute:valueClassAsAttribute dictionary:dictionary]];
     }
     return [NSArray arrayWithArray:valuesHolder];
 }
