@@ -27,7 +27,7 @@
     }
     return self;
 }
-- (id)transformValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute {
+- (id)transformValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute dictionary:(NSDictionary *)dictionary {
     BOOL validDouble = [self validDouble:[NSString stringWithFormat:@"%@", value]];
     if(validDouble){
         return [NSDate dateWithTimeIntervalSince1970:[value doubleValue]];

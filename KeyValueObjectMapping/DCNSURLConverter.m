@@ -14,7 +14,7 @@
     return [[self alloc] init];
 }
 
-- (id)transformValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute {
+- (id)transformValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute dictionary:(NSDictionary *)dictionary {
     return [NSURL URLWithString:value];
 }
 - (id)serializeValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute {

@@ -31,8 +31,8 @@
     return self;
 }
 
-- (id)transformValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute {
-    NSArray *result = [self.arrayConverter transformValue:values forDynamicAttribute:attribute];
+- (id)transformValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute dictionary:(NSDictionary *)dictionary {
+    NSArray *result = [self.arrayConverter transformValue:values forDynamicAttribute:attribute dictionary:dictionary];
     return [NSSet setWithArray:result];
 }
 

@@ -44,17 +44,20 @@
         return nil;
 
     DCDynamicAttribute *dynamicAttribute;
-    if (mapper && mapper.converter)
+    if (mapper && mapper.converter) {
         dynamicAttribute = [[DCDynamicAttribute alloc] initWithAttributeDescription:propertyDetails
                                                                              forKey:originalKey
                                                                             onClass:class
                                                                       attributeName:key
                                                                           converter:mapper.converter];
-    else
+    }
+    else {
         dynamicAttribute = [[DCDynamicAttribute alloc] initWithAttributeDescription:propertyDetails
                                                                              forKey:originalKey
                                                                             onClass:class
                                                                       attributeName:key];
+    }
+
     return dynamicAttribute;
 }
 
