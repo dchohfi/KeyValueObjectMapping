@@ -9,7 +9,7 @@
 #import "DCSimpleConverter.h"
 
 @implementation DCSimpleConverter
-- (id)transformValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute {
+- (id)transformValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute dictionary:(NSDictionary *)dictionary {
     return value;
 }
 -(id)serializeValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute{

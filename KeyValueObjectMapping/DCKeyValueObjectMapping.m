@@ -83,7 +83,7 @@
         DCDynamicAttribute *dynamicAttribute = [self.propertyFinder findAttributeForKey:key
                                                                                 onClass:self.classToGenerate];
         if(dynamicAttribute){
-            [self parseValue:value forObject:object inAttribute:dynamicAttribute];
+            [self parseValue:value forObject:object inAttribute:dynamicAttribute dictionary:dictionary];
         }
     }
 }
@@ -117,14 +117,17 @@
 }
 - (void) parseValue: (id) value
           forObject: (id) object
-        inAttribute: (DCDynamicAttribute *) dynamicAttribute {
+        inAttribute: (DCDynamicAttribute *) dynamicAttribute
+         dictionary: (NSDictionary *) dictionary {
     DCObjectMapping *objectMapping = dynamicAttribute.objectMapping;
     NSString *attributeName = objectMapping.attributeName;
 
-    if (objectMapping.converter)
-        value = [objectMapping.converter transformValue:value forDynamicAttribute:dynamicAttribute];
-    else
-        value = [self.converter transformValue:value forDynamicAttribute:dynamicAttribute];
+    if (objectMapping.converter) {
+        value = [objectMapping.converter transformValue:value forDynamicAttribute:dynamicAttribute dictionary:dictionary];
+    }
+    else {
+        value = [self.converter transformValue:value forDynamicAttribute:dynamicAttribute dictionary:dictionary];
+    }
 
     [DCAttributeSetter assingValue:value 
                   forAttributeName:attributeName 
