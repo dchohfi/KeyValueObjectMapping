@@ -36,26 +36,27 @@
     }
     return self;
 }
-- (id)transformValue:(id)value forDynamicAttribute: (DCDynamicAttribute *) attribute dictionary:dictionary {
+
+- (id)transformValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute dictionary:(NSDictionary *)dictionary parentObject:(id)parentObject {
     if([attribute isValidObject]){
         BOOL valueIsKindOfDictionary = [value isKindOfClass:[NSDictionary class]];
         BOOL attributeNotKindOfDictionary = ![attribute.objectMapping.classReference isSubclassOfClass:[NSDictionary class]];
-        if( valueIsKindOfDictionary && attributeNotKindOfDictionary ){
-            id parsedValue = [self parseValueForBlock:value forObjectMapping:attribute dictionary:dictionary];
-            if(parsedValue) {
+        if (valueIsKindOfDictionary && attributeNotKindOfDictionary) {
+            id parsedValue = [self parseValueForBlock:value forObjectMapping:attribute dictionary:dictionary parentObject:parentObject];
+            if (parsedValue) {
                 return parsedValue;
             }
 
             DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:attribute.objectMapping.classReference
                                                                      andConfiguration:self.configuration];
-            value = [parser parseDictionary:(NSDictionary *) value];
+            value = [parser parseDictionary:(NSDictionary *) value forParentObject:parentObject];
         }else {
-            id parsedValue = [self parseSimpeValue:value forDynamicAttribute:attribute dictionary:dictionary];
-            if(parsedValue) return parsedValue;
+            id parsedValue = [self parseSimpleValue:value forDynamicAttribute:attribute dictionary:dictionary parentObject:parentObject];
+            if (parsedValue) return parsedValue;
         }
     }
     DCSimpleConverter *simpleParser = [[DCSimpleConverter alloc] init];
-    return [simpleParser transformValue:value forDynamicAttribute:attribute dictionary:dictionary];
+    return [simpleParser transformValue:value forDynamicAttribute:attribute dictionary:dictionary parentObject:parentObject];
 }
 
 - (id)serializeValue:(id)value forDynamicAttribute: (DCDynamicAttribute *) attribute {
@@ -71,30 +72,30 @@
 
 #pragma mark - private methods
 
-- (id)parseSimpeValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute dictionary:(NSDictionary *)dictionary {
-    id parsedValue = [self parseValueForBlock:value forObjectMapping:attribute dictionary:dictionary];
+- (id)parseSimpleValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute dictionary:(NSDictionary *)dictionary parentObject:(id)parentObject {
+    id parsedValue = [self parseValueForBlock:value forObjectMapping:attribute dictionary:dictionary parentObject:parentObject];
     
     if(parsedValue){
         return parsedValue;
     }
     
-    return [self parseValueForParsers:value forDynamicAttribute:attribute dictionary:dictionary];
+    return [self parseValueForParsers:value forDynamicAttribute:attribute dictionary:dictionary parentObject:parentObject];
 }
 
-- (id) parseValueForParsers: (id) value forDynamicAttribute: (DCDynamicAttribute *) attribute dictionary:(NSDictionary *)dictionary{
-    for(id<DCValueConverter> parser in self.parsers){
+- (id)parseValueForParsers:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute dictionary:(NSDictionary *)dictionary parentObject:(id)parentObject {
+    for (id<DCValueConverter> parser in self.parsers) {
         if([parser canTransformValueForClass:attribute.objectMapping.classReference]){
-            return [parser transformValue:value forDynamicAttribute:attribute dictionary:dictionary];
+            return [parser transformValue:value forDynamicAttribute:attribute dictionary:dictionary parentObject:parentObject];
         }
     }
     return nil;
 }
 
-- (id) parseValueForBlock: (id) value forObjectMapping: (DCDynamicAttribute *) attribute  dictionary:(NSDictionary *)dictionary {
+- (id)parseValueForBlock:(id)value forObjectMapping:(DCDynamicAttribute *)attribute dictionary:(NSDictionary *)dictionary parentObject:(id)parentObject {
     DCObjectMapping *objectMapping = attribute.objectMapping;
     for(DCCustomParser *parser in self.configuration.customParsers){
-        if([parser isValidToPerformBlockOnAttributeName:objectMapping.attributeName
-                                               forClass:attribute.classe]){
+        if ([parser isValidToPerformBlockOnAttributeName:objectMapping.attributeName
+                                               forClass:attribute.classe]) {
             
             return parser.blockParser(dictionary, objectMapping.attributeName, attribute.classe, value);
         }

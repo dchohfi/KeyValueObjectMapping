@@ -71,10 +71,14 @@
     [self.customParsers addObject:parser];
 }
 
-- (id) instantiateObjectForClass: (Class) classOfObjectToGenerate withValues: (NSDictionary *) values {
+- (id)instantiateObjectForClass:(Class)classOfObjectToGenerate withValues:(NSDictionary *)values {
+    return [self instantiateObjectForClass:classOfObjectToGenerate withValues:values parentObject:nil];
+}
+
+- (id)instantiateObjectForClass:(Class)classOfObjectToGenerate withValues:(NSDictionary *)values parentObject:(id)parentObject {
     for(DCCustomInitialize *customInitialize in self.customInitializers){
         if([customInitialize isValidToPerformBlock:classOfObjectToGenerate]){
-            return customInitialize.blockInitialize(classOfObjectToGenerate, values);
+            return customInitialize.blockInitialize(classOfObjectToGenerate, values, parentObject);
         }
     }
     return [[classOfObjectToGenerate alloc] init];
