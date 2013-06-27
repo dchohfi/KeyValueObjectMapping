@@ -33,19 +33,19 @@
     return self;   
 }
 
-- (id)transformValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute dictionary:(NSDictionary *)dictionary {
-    if(!values || values == [NSNull null] || [values count] == 0){
+- (id)transformValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute dictionary:(NSDictionary *)dictionary parentObject:(id)parentObject {
+    if (!values || values == [NSNull null] || [values count] == 0) {
         return nil;
     }
     
     BOOL primitiveArray = ![[[values objectAtIndex:0] class] isSubclassOfClass:[NSDictionary class]];
-    if(primitiveArray){
-        return [self parsePrimitiveValues:values dictionary:dictionary];
-    }else{
+    if (primitiveArray) {
+        return [self parsePrimitiveValues:values dictionary:dictionary parentObject:parentObject];
+    } else {
         DCArrayMapping *mapper = [self.configuration arrayMapperForMapper:attribute.objectMapping];
-        if(mapper){
+        if (mapper) {
             DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:mapper.classForElementsOnArray andConfiguration:self.configuration];
-            return [parser parseArray:values];
+            return [parser parseArray:values forParentObject:parentObject];
         }
     }
     return nil;
@@ -59,17 +59,18 @@
     }    
     return [NSArray arrayWithArray:valuesHolder];
 }
-- (NSArray *) parsePrimitiveValues: (NSArray *) primitiveValues dictionary:(NSDictionary *)dictionary {
+
+- (NSArray *)parsePrimitiveValues:(NSArray *)primitiveValues dictionary:(NSDictionary *)dictionary parentObject:(id)parentObject {
     DCSimpleConverter *simpleParser = [[DCSimpleConverter alloc] init];
     NSMutableArray *valuesHolder = [NSMutableArray array];
-    for(id value in primitiveValues){
+    for (id value in primitiveValues) {
         DCDynamicAttribute *valueClassAsAttribute = [[DCDynamicAttribute alloc] initWithClass:[value class]];
-        [valuesHolder addObject:[simpleParser transformValue:value forDynamicAttribute:valueClassAsAttribute dictionary:dictionary]];
+        [valuesHolder addObject:[simpleParser transformValue:value forDynamicAttribute:valueClassAsAttribute dictionary:dictionary parentObject:parentObject]];
     }
     return [NSArray arrayWithArray:valuesHolder];
 }
 
-- (BOOL)canTransformValueForClass:(Class) classe {
-    return [classe isSubclassOfClass:[NSArray class]];
+- (BOOL)canTransformValueForClass:(Class)class {
+    return [class isSubclassOfClass:[NSArray class]];
 }
 @end

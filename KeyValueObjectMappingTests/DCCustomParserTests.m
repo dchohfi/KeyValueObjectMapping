@@ -13,7 +13,7 @@
 @implementation DCCustomParserTests
 
 - (void) testShouldCreateAnDCCustomInitialize {
-    DCCustomParserBlock customBlock = ^(__weak NSString *attributeName, __weak Class destinationClass, __weak id value){
+    DCCustomParserBlock customBlock = ^(__weak NSDictionary *dictionary, __weak NSString *attributeName, __weak Class destinationClass, __weak id value){
         return value;
     };
     DCCustomParser *customParser = [[DCCustomParser alloc] initWithBlockParser:customBlock

@@ -14,7 +14,7 @@
 @implementation DCParserConfigurationTest
 
 - (void) testCreateCustomTweetWithBlock {
-    DCCustomInitializeBlock block = ^id(__weak Class classToGenerate, NSDictionary *values){
+    DCCustomInitializeBlock block = ^id(__weak Class classToGenerate, NSDictionary *values, id parentObject){
         STAssertEquals(classToGenerate, [Tweet class], @"classToGenerate should be an tweet");
         Tweet *tweet = [[Tweet alloc] init];
         tweet.text = @"Should be an text";

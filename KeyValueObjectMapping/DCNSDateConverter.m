@@ -7,6 +7,8 @@
 //
 
 #import "DCNSDateConverter.h"
+#import "DCDynamicAttribute.h"
+
 @interface DCNSDateConverter()
 @property(nonatomic, strong) NSString *pattern;
 - (BOOL) validDouble: (NSString *) doubleValue;
@@ -27,7 +29,8 @@
     }
     return self;
 }
-- (id)transformValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute dictionary:(NSDictionary *)dictionary {
+
+- (id)transformValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute dictionary:(NSDictionary *)dictionary parentObject:(id)parentObject {
     BOOL validDouble = [self validDouble:[NSString stringWithFormat:@"%@", value]];
     if(validDouble){
         return [NSDate dateWithTimeIntervalSince1970:[value doubleValue]];
@@ -42,7 +45,7 @@
     formatter.dateFormat = self.pattern;
     return [formatter stringFromDate:value];    
 }
-- (BOOL) canTransformValueForClass: (Class) class {
+- (BOOL)canTransformValueForClass: (Class) class {
     return [class isSubclassOfClass:[NSDate class]];
 }
 - (BOOL) validDouble: (NSString *) doubleValue {

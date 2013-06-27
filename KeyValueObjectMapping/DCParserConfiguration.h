@@ -27,6 +27,7 @@
 - (void) addCustomInitializersObject:(DCCustomInitialize *) customInitialize;
 - (void) addCustomParsersObject:(DCCustomParser *)parser;
 
-- (id) instantiateObjectForClass: (Class) classOfObjectToGenerate withValues: (NSDictionary *) values;
+- (id)instantiateObjectForClass:(Class)classOfObjectToGenerate withValues:(NSDictionary *)values;
+- (id)instantiateObjectForClass:(Class)classOfObjectToGenerate withValues:(NSDictionary *)values parentObject:(id)parentObject;
 - (DCArrayMapping *) arrayMapperForMapper: (DCObjectMapping *) mapper;
 @end

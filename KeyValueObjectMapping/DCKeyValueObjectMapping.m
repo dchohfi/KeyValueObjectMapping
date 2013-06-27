@@ -48,23 +48,32 @@
     }
     return self;   
 }
-- (NSArray *) parseArray: (NSArray *) array {
+
+- (NSArray *)parseArray:(NSArray *)array {
+    return [self parseArray:array forParentObject:nil];
+}
+
+- (NSArray *)parseArray:(NSArray *)array forParentObject:(id)parentObject {
     if(!array){
         return nil;
     }
     NSMutableArray *values = [[NSMutableArray alloc] initWithCapacity:[array count]];
     for (NSDictionary *dictionary in array) {
-        id value = [self parseDictionary:dictionary];
+        id value = [self parseDictionary:dictionary forParentObject:parentObject];
         [values addObject:value];
     }
     return [NSArray arrayWithArray:values];
 }
-- (id) parseDictionary: (NSDictionary *) dictionary {
-    if(!dictionary || !self.classToGenerate){
+
+- (id)parseDictionary:(NSDictionary *)dictionary {
+    return [self parseDictionary:dictionary forParentObject:nil];
+}
+
+- (id)parseDictionary:(NSDictionary *)dictionary forParentObject:(id)parentObject {
+    if (!dictionary || !self.classToGenerate) {
         return nil;
     }
-    NSObject *object = [[self configuration] instantiateObjectForClass:self.classToGenerate
-                                                            withValues:dictionary];
+    NSObject *object = [[self configuration] instantiateObjectForClass:self.classToGenerate withValues:dictionary parentObject:parentObject];
     
     [self setValuesOnObject:object withDictionary:dictionary];
     return object;
@@ -115,6 +124,7 @@
     
     return [NSArray arrayWithArray:serializedObjects];
 }
+
 - (void) parseValue: (id) value
           forObject: (id) object
         inAttribute: (DCDynamicAttribute *) dynamicAttribute
@@ -123,10 +133,10 @@
     NSString *attributeName = objectMapping.attributeName;
 
     if (objectMapping.converter) {
-        value = [objectMapping.converter transformValue:value forDynamicAttribute:dynamicAttribute dictionary:dictionary];
+        value = [objectMapping.converter transformValue:value forDynamicAttribute:dynamicAttribute dictionary:dictionary parentObject:object];
     }
     else {
-        value = [self.converter transformValue:value forDynamicAttribute:dynamicAttribute dictionary:dictionary];
+        value = [self.converter transformValue:value forDynamicAttribute:dynamicAttribute dictionary:dictionary parentObject:object];
     }
 
     [DCAttributeSetter assingValue:value 
