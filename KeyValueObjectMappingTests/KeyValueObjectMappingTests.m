@@ -46,7 +46,7 @@
     DCParserConfiguration *configuration = [DCParserConfiguration configuration];
     configuration.datePattern = @"yyyy-MM-dd'T'hh:mm:ssZ";
     DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[Person class] andConfiguration:configuration];
-    Person *person = [parser parseDictionary: plist];
+    Person *person = [parser parseDictionary:plist];
     STAssertEqualObjects(person.name, @"Diego Chohfi Turini", @"Should be equals name");
     STAssertEqualObjects(person.adress, @"Rua dos bobos, n 0", @"Should be equals adress");
     STAssertEqualObjects(person.phone, @"+551199999999", @"Should be equals phone");
@@ -165,24 +165,24 @@
 - (void) testNullValuesPassed
 {
     DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[Person class]];
-    Person *person = [parser parseDictionary: nil];
+    Person *person = [parser parseDictionary:nil];
     STAssertNil(person, @"Should be nill when dictionary is nil");
     
-    NSArray *persons = [parser parseArray: nil];
+    NSArray *persons = [parser parseArray:nil];
     STAssertNil(persons, @"Should be nill when array is nil");
     
     parser = [DCKeyValueObjectMapping mapperForClass:nil];
-    person = [parser parseDictionary: [NSDictionary dictionary]];
+    person = [parser parseDictionary:[NSDictionary dictionary]];
     STAssertNil(person, @"Should be nill when class is nil");
     
-    persons = [parser parseArray: [NSArray array]];
+    persons = [parser parseArray:[NSArray array]];
     STAssertNotNil(persons, @"Should not be when class is nil");
     STAssertEquals((int)[persons count], 0, @"Should return empty array when class is nil");
 }
 
 -(void) testShouldUseCustomInitializeForPropertyClasses {
     NSString *customText = @"custom text to be on attribute";
-    DCCustomInitializeBlock block = ^id(__weak Class classToGenerate, __weak NSDictionary *values){
+    DCCustomInitializeBlock block = ^id(__weak Class classToGenerate, __weak NSDictionary *values, id parentObject){
         STAssertEquals(classToGenerate, [User class], @"classToGenerate should be a user");
         STAssertEqualObjects([values objectForKey:@"name"], @"Diego Chohfi", @"Should have same user name");
         User *user = [[classToGenerate alloc] init];
@@ -204,7 +204,7 @@
 - (void) testShouldUseBlocksToParseValues {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"dd/MM/yyyy"];
-    DCCustomParserBlock parserBlock = ^id(NSString *__weak attributeName, __weak Class destinationClass, __weak id value) {
+    DCCustomParserBlock parserBlock = ^id(NSDictionary *dictionary, NSString *__weak attributeName, __weak Class destinationClass, __weak id value) {
         STAssertTrue([@"08/12/1987" isEqualToString:value], @"The value inside the block should be equals to the value on the source");
         STAssertTrue([@"data" isEqualToString:attributeName], @"The attribute should be the same that is mapped for");
         STAssertEquals(destinationClass, [Tweet class], @"The destionation class should be the same that is mapped for");

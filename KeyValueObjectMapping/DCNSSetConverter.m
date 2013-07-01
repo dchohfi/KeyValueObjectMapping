@@ -8,6 +8,8 @@
 
 #import "DCNSSetConverter.h"
 #import "DCNSArrayConverter.h"
+#import "DCDynamicAttribute.h"
+
 @interface DCNSSetConverter()
 
 @property(nonatomic, strong) DCParserConfiguration *configuration;
@@ -31,8 +33,8 @@
     return self;
 }
 
-- (id)transformValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute dictionary:(NSDictionary *)dictionary {
-    NSArray *result = [self.arrayConverter transformValue:values forDynamicAttribute:attribute dictionary:dictionary];
+- (id)transformValue:(id)values forDynamicAttribute:(DCDynamicAttribute *)attribute dictionary:(NSDictionary *)dictionary parentObject:(id)parentObject {
+    NSArray *result = [self.arrayConverter transformValue:values forDynamicAttribute:attribute dictionary:dictionary parentObject:parentObject];
     return [NSSet setWithArray:result];
 }
 
@@ -40,8 +42,8 @@
     return [self.arrayConverter serializeValue:value forDynamicAttribute:attribute];
 }
 
-- (BOOL)canTransformValueForClass:(Class) classe {
-    return [classe isSubclassOfClass:[NSSet class]];
+- (BOOL)canTransformValueForClass:(Class)class {
+    return [class isSubclassOfClass:[NSSet class]];
 }
 
 @end
