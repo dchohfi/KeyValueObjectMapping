@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.author       = { 'Diego Chohfi' => 'dchohfi@gmail.com' }
 
   s.license      = ''
-  s.source       = { :git => "https://github.com/viteinfinite/KeyValueObjectMapping.git", :tag => "1.4.0" }
+  s.source       = { :git => "https://github.com/dchohfi/KeyValueObjectMapping.git", :tag => "1.4.0" }
 
   s.ios.deployment_target = '5.0'
   s.source_files = 'KeyValueObjectMapping/**/*.{h,m}'
