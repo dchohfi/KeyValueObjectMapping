@@ -84,7 +84,7 @@ User *user = [[User alloc] init];
 [user setScreenName: [jsonParsed objectForKey: @"screen_name"]];
 
 NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-formatter.dateFormat = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
+formatter.datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
 NSDate *date = [formatter dateFromString:@"Sat Apr 14 00:20:07 +0000 2012"];
 
 [user setCreatedAt: date];
@@ -107,7 +107,7 @@ Using [`DCParserConfiguration`][DCParserConfiguration] you can change the defaul
 
 ```objective-c
 DCParserConfiguration *config = [DCParserConfiguration configuration];
-config.dateFormat = @"dd/MM/yyyy";
+config.datePattern = @"dd/MM/yyyy";
 
 DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass: [Tweet class] andConfiguration: config];
 ```
