@@ -9,6 +9,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/dchohfi/KeyValueObjectMapping.git", :tag => "1.4.0" }
 
   s.ios.deployment_target = '5.0'
+  s.osx.deployment_target = '10.7'
   s.source_files = 'KeyValueObjectMapping/**/*.{h,m}'
 
   s.requires_arc = true
