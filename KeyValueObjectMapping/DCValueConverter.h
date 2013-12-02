@@ -15,6 +15,6 @@
 @required
 - (id)transformValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute dictionary:(NSDictionary *)dictionary parentObject:(id)parentObject;
 - (id)serializeValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute;
-- (BOOL)canTransformValueForClass:(Class)class;
+- (BOOL)canTransformValueForClass:(Class)cls;
 
 @end
