@@ -21,8 +21,8 @@
 - (id)serializeValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute {
     return [((NSURL *)value) absoluteString];
 }
-- (BOOL)canTransformValueForClass: (Class) class {
-    return [class isSubclassOfClass:[NSURL class]];
+- (BOOL)canTransformValueForClass: (Class) cls {
+    return [cls isSubclassOfClass:[NSURL class]];
 }
 
 @end

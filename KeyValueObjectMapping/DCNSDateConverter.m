@@ -45,8 +45,8 @@
     formatter.dateFormat = self.pattern;
     return [formatter stringFromDate:value];    
 }
-- (BOOL)canTransformValueForClass: (Class) class {
-    return [class isSubclassOfClass:[NSDate class]];
+- (BOOL)canTransformValueForClass: (Class) cls {
+    return [cls isSubclassOfClass:[NSDate class]];
 }
 - (BOOL) validDouble: (NSString *) doubleValue {
   return [[[NSNumberFormatter alloc] init] numberFromString:doubleValue] != nil;
