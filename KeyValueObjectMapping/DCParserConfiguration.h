@@ -23,6 +23,7 @@
 
 - (void) addArrayMapper: (DCArrayMapping *)mapper;
 - (void) addObjectMapping: (DCObjectMapping *) mapper;
+- (void) addObjectMappings: (NSArray *)mappers;
 - (void) addAggregator: (DCPropertyAggregator *) aggregator;
 - (void) addCustomInitializersObject:(DCCustomInitialize *) customInitialize;
 - (void) addCustomParsersObject:(DCCustomParser *)parser;
