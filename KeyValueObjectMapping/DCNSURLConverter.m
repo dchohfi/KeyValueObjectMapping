@@ -16,7 +16,7 @@
 }
 
 - (id)transformValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute dictionary:(NSDictionary *)dictionary parentObject:(id)parentObject {
-    return [NSURL URLWithString:value];
+    return [NSURL URLWithString:[value stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 }
 - (id)serializeValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute {
     return [((NSURL *)value) absoluteString];
