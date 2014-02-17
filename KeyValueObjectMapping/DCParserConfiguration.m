@@ -61,6 +61,9 @@
 - (void) addObjectMapping: (DCObjectMapping *) mapper {
     [self.objectMappers addObject:mapper];
 }
+- (void) addObjectMappings: (NSArray *) mappings {
+    [self.objectMappers addObjectsFromArray:mappings];
+}
 - (void) addAggregator: (DCPropertyAggregator *) aggregator {
     [self.aggregators addObject:aggregator];
 }
