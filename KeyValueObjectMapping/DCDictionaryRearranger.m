@@ -18,7 +18,7 @@
     NSMutableArray* aggregators = [NSMutableArray arrayWithArray:[[configuration.aggregators reverseObjectEnumerator] allObjects]];
     NSMutableDictionary *mutableDictionary = [NSMutableDictionary dictionaryWithDictionary:dictionary];
     if(aggregators && [aggregators count] > 0){
-        for(int i=[aggregators count] - 1; i >= 0; --i){
+        for(int i=(int)[aggregators count] - 1; i >= 0; --i){
             DCPropertyAggregator* aggregator = [aggregators objectAtIndex:i];
             [aggregators removeObject:aggregator];
             NSMutableDictionary *aggregatedValues = [[aggregator aggregateKeysOnDictionary:mutableDictionary] mutableCopy];
