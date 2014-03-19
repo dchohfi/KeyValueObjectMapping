@@ -32,8 +32,11 @@
     [parsedKeyName appendString:[[splitedKeys objectAtIndex:0] lowercaseString]];
     for(int i=1; i<[splitedKeys count]; i++){
         NSString *splitedKey = [splitedKeys objectAtIndex:i];
-        [parsedKeyName appendString:[[splitedKey substringWithRange:NSMakeRange(0, 1)] uppercaseString]];
-        [parsedKeyName appendString:[[splitedKey substringFromIndex:1] lowercaseString]];
+        if (splitedKey.length > 0)
+        {
+            [parsedKeyName appendString:[[splitedKey substringWithRange:NSMakeRange(0, 1)] uppercaseString]];
+            [parsedKeyName appendString:[[splitedKey substringFromIndex:1] lowercaseString]];
+        }
     }
     return [NSString stringWithString:parsedKeyName];
 }
