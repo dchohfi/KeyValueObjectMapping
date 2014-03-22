@@ -295,3 +295,6 @@ Tweet *tweet = [parser parseDictionary: json];
 [DCCustomParser]: https://github.com/dchohfi/KeyValueObjectMapping/blob/master/KeyValueObjectMapping/DCCustomParser.h
 [iOS-Universal-Framework]: https://github.com/kstenerud/iOS-Universal-Framework
 [CocoaPods]: http://cocoapods.org
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dchohfi/keyvalueobjectmapping/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
