@@ -29,7 +29,7 @@
     if (self) {
         _configuration = configuration;
         _parsers = [NSArray arrayWithObjects:
-                   [DCNSDateConverter dateConverterForPattern:self.configuration.datePattern],
+                   [DCNSDateConverter dateConverterForPattern:self.configuration.datePattern locale:self.configuration.dateLocale],
                    [DCNSURLConverter urlConverter],
                    [DCNSArrayConverter arrayConverterForConfiguration: self.configuration], 
                    [DCNSSetConverter setConverterForConfiguration: self.configuration], nil];

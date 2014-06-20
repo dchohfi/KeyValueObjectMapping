@@ -11,6 +11,7 @@
 
 @interface DCNSDateConverter()
 @property(nonatomic, strong) NSString *pattern;
+@property(nonatomic, strong) NSLocale *locale;
 - (BOOL) validDouble: (NSString *) doubleValue;
 @end
 
@@ -18,14 +19,15 @@
 @synthesize pattern = _pattern;
 
 
-+ (DCNSDateConverter *) dateConverterForPattern: (NSString *) pattern{
-    return [[self alloc] initWithDatePattern: pattern];
++ (DCNSDateConverter *) dateConverterForPattern: (NSString *) pattern locale:(NSLocale *)locale {
+    return [[self alloc] initWithDatePattern: pattern locale:locale];
 }
 
-- (id) initWithDatePattern: (NSString *) pattern {
+- (id) initWithDatePattern: (NSString *) pattern locale:(NSLocale *)locale {
     self = [super init];
     if (self) {
         _pattern = pattern;
+        _locale = locale;
     }
     return self;
 }
@@ -37,13 +39,19 @@
     }else{
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         formatter.dateFormat = self.pattern;
+        if (self.locale) {
+            formatter.locale = self.locale;
+        }
         return [formatter dateFromString:value];
     }
 }
 - (id)serializeValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = self.pattern;
-    return [formatter stringFromDate:value];    
+    if (self.locale) {
+        formatter.locale = self.locale;
+    }
+    return [formatter stringFromDate:value];
 }
 - (BOOL)canTransformValueForClass: (Class) cls {
     return [cls isSubclassOfClass:[NSDate class]];
