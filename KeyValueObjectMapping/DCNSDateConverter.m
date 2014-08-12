@@ -35,9 +35,13 @@
     if(validDouble){
         return [NSDate dateWithTimeIntervalSince1970:[value doubleValue]];
     }else{
+      if ([value isKindOfClass:[NSString class]]) {
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         formatter.dateFormat = self.pattern;
         return [formatter dateFromString:value];
+      } else {
+        return nil;
+      }
     }
 }
 - (id)serializeValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute {
