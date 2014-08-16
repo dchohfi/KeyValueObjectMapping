@@ -11,10 +11,14 @@
 @implementation DCAttributeSetter
 
 + (void)assingValue:(id)value forAttributeName: (NSString *)attributeName andAttributeClass: (Class) attributeClass onObject:(id)object {
+    
+    if ([value isKindOfClass:[NSNull class]]) {
+        
+        value = nil;
+    }
+    
     if([object validateValue:&value forKey:attributeName error:nil]){
-        if([value isKindOfClass:[NSNull class]]){
-            value = nil;
-        }
+        
         if(([value isKindOfClass:[NSNull class]] || value == nil) && attributeClass == [NSString class]){
             [object setValue:nil forKey:attributeName];
         }else {
