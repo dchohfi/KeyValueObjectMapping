@@ -10,6 +10,6 @@
 #import "DCValueConverter.h"
 @interface DCNSDateConverter : NSObject <DCValueConverter>
 
-+ (DCNSDateConverter *) dateConverterForPattern: (NSString *) pattern;
++ (DCNSDateConverter *) dateConverterForPattern: (NSString *) pattern locale:(NSLocale *)locale;
 
 @end

@@ -12,6 +12,7 @@
 @interface DCParserConfiguration : NSObject
 
 @property(nonatomic, strong) NSString *datePattern;
+@property(nonatomic, strong) NSLocale *dateLocale;
 @property(nonatomic, strong) NSString *splitToken;
 @property(nonatomic, strong) NSString *nestedPrepertiesSplitToken;
 @property(nonatomic, readonly) NSMutableArray *objectMappers;
