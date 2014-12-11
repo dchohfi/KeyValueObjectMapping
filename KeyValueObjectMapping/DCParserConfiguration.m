@@ -25,6 +25,7 @@
 @synthesize aggregators = _aggregators;
 @synthesize customInitializers = _customInitializers;
 @synthesize customParsers = _customParsers;
+@synthesize userInfo = _userInfo;
 
 + (DCParserConfiguration *) configuration {
     return [[self alloc] init];
@@ -41,6 +42,7 @@
         _splitToken = @"_";
         _nestedPrepertiesSplitToken = @".";
         _datePattern = @"eee MMM dd HH:mm:ss ZZZZ yyyy";
+        _userInfo = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
