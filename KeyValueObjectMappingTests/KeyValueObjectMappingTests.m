@@ -79,7 +79,7 @@
     STAssertEqualObjects(tweet.text, @"@pedroh96 cara, comecei uma lib pra iOS, se puder dar uma olhada e/ou contribuir :D KeyValue Parse for Objective-C https://t.co/NWMMc60v", @"Should have same text");
     STAssertEqualObjects(tweet.source, @"<a href=\"http://www.osfoora.com/mac\" rel=\"nofollow\">Osfoora for Mac</a>", @"Should have same source");
     STAssertNil(tweet.inReplyToStatusIdStr, @"inRepryToStatusIdStr should be null");
-    STAssertEquals(tweet.retweetCount, [NSNumber numberWithInt: 0], @"RetweetCount should be equals to 0");
+    STAssertTrue([tweet.retweetCount isEqualToNumber:@(0)], @"RetweetCount should be equals to 0");
     STAssertFalse(tweet.favorited, @"favorited should be false");
     STAssertFalse(tweet.retweeted, @"favorited should be false");
     STAssertEqualObjects(tweet.createdAt, data, @"CreatedAt should be equals");
