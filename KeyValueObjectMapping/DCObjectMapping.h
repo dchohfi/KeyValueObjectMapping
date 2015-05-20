@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "DCValueConverter.h"
+#import "DCMapping.h"
 
-@interface DCObjectMapping : NSObject
+@interface DCObjectMapping : NSObject <DCMapping>
 
 @property(nonatomic, readonly) NSString *keyReference;
 @property(nonatomic, readonly) NSString *attributeName;

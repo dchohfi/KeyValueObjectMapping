@@ -172,6 +172,7 @@
 		B5FD89B01851D1EC00EB816F /* NSObject+DCKeyValueObjectMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DCKeyValueObjectMapping.h"; sourceTree = "<group>"; };
 		B5FD89B11851D1EC00EB816F /* NSObject+DCKeyValueObjectMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DCKeyValueObjectMapping.m"; sourceTree = "<group>"; };
 		B5FD89B41851D21600EB816F /* NSObject+DCKeyValueObjectMappingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DCKeyValueObjectMappingTests.m"; sourceTree = "<group>"; };
+		C12EAC931B0B323A0007247B /* DCMapping.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCMapping.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -375,6 +376,7 @@
 				205FD3FA153F034D00693E13 /* DCArrayMapping.m */,
 				201F6F5C153F56BE009A24B9 /* DCPropertyAggregator.h */,
 				201F6F5D153F56BE009A24B9 /* DCPropertyAggregator.m */,
+				C12EAC931B0B323A0007247B /* DCMapping.h */,
 			);
 			name = Mappers;
 			sourceTree = "<group>";
@@ -487,7 +489,7 @@
 			name = KeyValueObjectMappingTests;
 			productName = KeyValueObjectMappingTests;
 			productReference = 205FD3B1153F02AA00693E13 /* KeyValueObjectMappingTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
 
