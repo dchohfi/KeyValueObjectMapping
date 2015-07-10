@@ -16,7 +16,7 @@
 -(id)serializeValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute{
     return value;
 }
-- (BOOL)canTransformValueForClass:(Class)class {
+- (BOOL)canTransformValueForClass:(Class)cls {
     return YES;
 }
 

@@ -42,8 +42,8 @@
     return [self.arrayConverter serializeValue:value forDynamicAttribute:attribute];
 }
 
-- (BOOL)canTransformValueForClass:(Class)class {
-    return [class isSubclassOfClass:[NSSet class]];
+- (BOOL)canTransformValueForClass:(Class)cls {
+    return [cls isSubclassOfClass:[NSSet class]];
 }
 
 @end
