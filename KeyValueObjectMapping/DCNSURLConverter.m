@@ -16,7 +16,10 @@
 }
 
 - (id)transformValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute dictionary:(NSDictionary *)dictionary parentObject:(id)parentObject {
-    return [NSURL URLWithString:[value stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    if ([value isKindOfClass:[NSString class]]) {
+        return [NSURL URLWithString:[value stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    }
+    return nil;
 }
 - (id)serializeValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute {
     return [((NSURL *)value) absoluteString];
