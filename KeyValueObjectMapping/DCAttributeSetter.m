@@ -22,7 +22,12 @@
         if(([value isKindOfClass:[NSNull class]] || value == nil) && attributeClass == [NSString class]){
             [object setValue:nil forKey:attributeName];
         }else {
-            [object setValue:value forKey:attributeName];
+            @try {
+                [object setValue:value forKey:attributeName];
+            }
+            @catch (NSException *e) {
+                [object setValue:@(0) forKey:attributeName];
+            }
         }
     }
 }
