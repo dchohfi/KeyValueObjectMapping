@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "DCObjectMapping.h"
-@interface DCArrayMapping : NSObject
+
+@interface DCArrayMapping : NSObject <DCMapping>
 
 @property(nonatomic, readonly) DCObjectMapping *objectMapping;
 @property(nonatomic, readonly) Class classForElementsOnArray;

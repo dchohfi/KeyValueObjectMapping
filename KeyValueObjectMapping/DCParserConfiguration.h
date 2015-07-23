@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DCMapping.h"
 
 @class DCArrayMapping, DCPropertyAggregator, DCObjectMapping, DCCustomInitialize, DCCustomParser;
 @interface DCParserConfiguration : NSObject
@@ -21,6 +22,7 @@
 
 + (DCParserConfiguration *) configuration;
 
+- (void)addMapper: (id<DCMapping>)mapper;
 - (void) addArrayMapper: (DCArrayMapping *)mapper;
 - (void) addObjectMapping: (DCObjectMapping *) mapper;
 - (void) addObjectMappings: (NSArray *)mappers;
