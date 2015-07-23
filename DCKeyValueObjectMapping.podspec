@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/dchohfi/KeyValueObjectMapping"
   s.author       = { 'Diego Chohfi' => 'dchohfi@gmail.com' }
 
-  s.license      = ''
+  s.license      = 'MIT'
   s.source       = { :git => "https://github.com/dchohfi/KeyValueObjectMapping.git", :tag => "1.5" }
 
   s.ios.deployment_target = '5.0'
