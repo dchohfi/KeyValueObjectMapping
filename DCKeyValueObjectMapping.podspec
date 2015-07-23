@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version      = "1.5"
   s.summary      = "Automatic KeyValue Object Mapping for Objective-C, parse JSON/plist/Dictionary automatically"
   s.homepage     = "https://github.com/dchohfi/KeyValueObjectMapping"
-  s.author       = { 'Diego Chohfi' => 'dchohfi@gmail.com' }
+  s.authors      = { 'Diego Chohfi' => 'dchohfi@gmail.com' }
 
   s.license      = 'MIT'
   s.source       = { :git => "https://github.com/dchohfi/KeyValueObjectMapping.git", :tag => "1.5" }
