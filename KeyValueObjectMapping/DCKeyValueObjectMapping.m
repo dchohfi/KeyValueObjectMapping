@@ -82,7 +82,7 @@
     return object;
 }
 - (void) setValuesOnObject: (id) object withDictionary: (NSDictionary *) dictionary {
-    if([object class] != self.classToGenerate){
+    if(![[object class] isSubclassOfClass:self.classToGenerate]){
         return;
     }
     
