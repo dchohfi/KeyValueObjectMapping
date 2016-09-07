@@ -219,7 +219,7 @@ And the [`JSON`][JSON] looks like:
 Using [`DCArrayMapping`][DCArrayMapping] and adding it to the configuration, you tell to the **KeyValueObjectMapping** how to parse this specific attribute.
 
 ```objective-c
-DCArrayMapping *mapper = [DCArrayMapping mapperForClassElements: :[Tweet class] forAttribute:@"tweets"] onClass:[User class]];
+DCArrayMapping *mapper = [DCArrayMapping mapperForClassElements:[Tweet class] forAttribute:@"tweets" onClass:[User class]];
 											
 DCParserConfiguration *config = [DCParserConfiguration configuration];
 [config addArrayMapper:mapper];
