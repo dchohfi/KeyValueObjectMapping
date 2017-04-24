@@ -31,7 +31,7 @@ Installation
 	* Required import:
 	
 	```objc
-		#import <KeyValueObjectMapping/DCKeyValueObjectMapping.h>
+		#import <DCKeyValueObjectMapping/DCKeyValueObjectMapping.h>
 	```
 
 Usage
