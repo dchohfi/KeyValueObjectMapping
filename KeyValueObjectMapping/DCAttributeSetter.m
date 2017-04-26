@@ -21,6 +21,8 @@
         
         if(([value isKindOfClass:[NSNull class]] || value == nil) && attributeClass == [NSString class]){
             [object setValue:nil forKey:attributeName];
+        }else if(([value isKindOfClass:[NSNull class]] || value == nil) && attributeClass == nil) {
+            [object setValue:@0 forKey:attributeName];
         }else {
             @try {
                 [object setValue:value forKey:attributeName];
