@@ -19,6 +19,7 @@
 @property(nonatomic, readonly) NSMutableArray *aggregators;
 @property(nonatomic, readonly) NSMutableArray *customInitializers;
 @property(nonatomic, readonly) NSMutableArray *customParsers;
+@property(nonatomic, strong) NSMutableDictionary *userInfo;
 
 + (DCParserConfiguration *) configuration;
 
