@@ -53,6 +53,26 @@
     STAssertEquals((int)user.tweets.count, 2, @"Should have 2 tweets on array of tweets");
 }
 
+- (void) testShouldCreateAnUserWithOneImplicitTweet {
+    
+    DCArrayMapping *mapper = [DCArrayMapping mapperForClassElements:[Tweet class]
+                                                       forAttribute:@"tweets"
+                                                            onClass:[User class]];
+    
+    DCParserConfiguration *configuration = [DCParserConfiguration configuration];
+    [configuration addArrayMapper:mapper];
+    
+    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[User class]
+                                                             andConfiguration:configuration];
+    
+    NSArray *tweetArray = [jsonParsed valueForKey:@"tweets"];
+    Tweet *tweet = [tweetArray objectAtIndex:0];
+    [jsonParsed setValue:tweet forKey:@"tweets"];
+    User *user = [parser parseDictionary:jsonParsed];
+    STAssertNotNil(user.tweets, @"Tweets should not be nil");
+    STAssertEquals((int)user.tweets.count, 1, @"Should have 1 tweet on array of tweets");
+}
+
 - (void) testShouldCreateUserWithNilOnTweetsArray{
     DCObjectMapping *objectMapping = [DCObjectMapping mapKeyPath:@"tweets_nullable" 
                                                      toAttribute:@"tweets"
