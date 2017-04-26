@@ -103,10 +103,9 @@
 - (DCArrayMapping *) arrayMapperForMapper: (DCObjectMapping *) mapper {
     for(DCArrayMapping *arrayMapper in self.arrayMappers){
         DCObjectMapping *mapping = arrayMapper.objectMapping;
-        BOOL sameKey = [mapping.keyReference isEqualToString:mapper.keyReference];
         BOOL sameAttributeName = [mapping.attributeName isEqualToString:mapper.attributeName];
         BOOL sameAttributeNameWithUnderscore = [[self addUnderScoreToPropertyName:mapping.attributeName] isEqualToString:mapper.attributeName];
-        if(sameKey && (sameAttributeName || sameAttributeNameWithUnderscore)){
+        if(sameAttributeName || sameAttributeNameWithUnderscore){
             return arrayMapper;
         }
     }
