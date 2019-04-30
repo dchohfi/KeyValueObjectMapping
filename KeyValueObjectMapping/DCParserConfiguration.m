@@ -100,13 +100,14 @@
     }
     return [[classOfObjectToGenerate alloc] init];
 }
-- (DCArrayMapping *) arrayMapperForMapper: (DCObjectMapping *) mapper {
+- (DCArrayMapping *) arrayMapperForMapper: (DCObjectMapping *) mapper parentObject:(id)parentObject {
     for(DCArrayMapping *arrayMapper in self.arrayMappers){
         DCObjectMapping *mapping = arrayMapper.objectMapping;
+        BOOL sameClass = [parentObject class] == mapping.classReference;
         BOOL sameKey = [mapping.keyReference isEqualToString:mapper.keyReference];
         BOOL sameAttributeName = [mapping.attributeName isEqualToString:mapper.attributeName];
         BOOL sameAttributeNameWithUnderscore = [[self addUnderScoreToPropertyName:mapping.attributeName] isEqualToString:mapper.attributeName];
-        if(sameKey && (sameAttributeName || sameAttributeNameWithUnderscore)){
+        if(sameClass && sameKey && (sameAttributeName || sameAttributeNameWithUnderscore)){
             return arrayMapper;
         }
     }
