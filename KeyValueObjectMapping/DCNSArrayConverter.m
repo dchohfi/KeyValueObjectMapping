@@ -42,7 +42,7 @@
     if (primitiveArray) {
         return [self parsePrimitiveValues:values dictionary:dictionary parentObject:parentObject];
     } else {
-        DCArrayMapping *mapper = [self.configuration arrayMapperForMapper:attribute.objectMapping];
+        DCArrayMapping *mapper = [self.configuration arrayMapperForMapper:attribute.objectMapping parentObject:parentObject];
         if (mapper) {
             DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:mapper.classForElementsOnArray andConfiguration:self.configuration];
             return [parser parseArray:values forParentObject:parentObject];

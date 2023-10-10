@@ -32,5 +32,5 @@
 
 - (id)instantiateObjectForClass:(Class)classOfObjectToGenerate withValues:(NSDictionary *)values;
 - (id)instantiateObjectForClass:(Class)classOfObjectToGenerate withValues:(NSDictionary *)values parentObject:(id)parentObject;
-- (DCArrayMapping *) arrayMapperForMapper: (DCObjectMapping *) mapper;
+- (DCArrayMapping *) arrayMapperForMapper: (DCObjectMapping *) mapper parentObject:(id)parentObject;
 @end
