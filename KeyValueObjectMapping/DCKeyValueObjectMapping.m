@@ -58,13 +58,17 @@
         return nil;
     }
     NSMutableArray *values = [[NSMutableArray alloc] initWithCapacity:[array count]];
-    for (id dictionary in array) {
-        if ([dictionary isKindOfClass:[NSNull class]]) {
+    for (id value in array) {
+        if ([value isKindOfClass:[NSNull class]]) {
             continue;
+        } else if ([value isKindOfClass:[NSDictionary class]]) {
+            id parsedValue = [self parseDictionary:value forParentObject:parentObject];
+            [values addObject:parsedValue];
+        } else {
+            [values addObject:value];
         }
-        id value = [self parseDictionary:dictionary forParentObject:parentObject];
-        [values addObject:value];
     }
+    
     return [NSArray arrayWithArray:values];
 }
 
