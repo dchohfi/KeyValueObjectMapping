@@ -14,6 +14,7 @@
 #import "DCNSSetConverter.h"
 #import "DCCustomParser.h"
 #import "DCKeyValueObjectMapping.h"
+#import "DCArrayMapping.h"
 
 @interface DCGenericConverter()
 @property(nonatomic, strong) DCParserConfiguration *configuration;
@@ -46,7 +47,13 @@
             if (parsedValue) {
                 return parsedValue;
             }
-
+            
+            //handle "implicit" arrays, a single instance of the element type represented as a dictionary
+            DCArrayMapping *mapper = [self.configuration arrayMapperForMapper:attribute.objectMapping];
+            if (mapper) {
+                DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:mapper.classForElementsOnArray andConfiguration:self.configuration];
+                return [parser parseArray:[NSArray arrayWithObject:value] forParentObject:parentObject];
+            }
             DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:attribute.objectMapping.classReference
                                                                      andConfiguration:self.configuration];
             value = [parser parseDictionary:(NSDictionary *) value forParentObject:parentObject];
