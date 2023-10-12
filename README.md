@@ -90,7 +90,7 @@ NSDate *date = [formatter dateFromString:@"Sat Apr 14 00:20:07 +0000 2012"];
 [user setCreatedAt: date];
 ```
 
-Boring job, don't you think? So, if you use **KeyValueObjectMapping** you just need to give the dictionary and the class that you want to create, and everthing else will be made automatically. 
+Boring job, don't you think? So, if you use **KeyValueObjectMapping** you just need to give the dictionary and the class that you want to create, and everything else will be made automatically. 
 
 ```objective-c
 DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass: [Tweet class]];
